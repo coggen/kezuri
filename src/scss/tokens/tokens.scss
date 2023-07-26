@@ -1,0 +1,85 @@
+:root {
+  /**
+  * @tokens Colors
+  * @presenter Color
+  */
+  --color-evergreen:  #2C5652;
+  --color-pine:       #31776C;
+  --color-mint:       #C8EBD7;
+  --color-sky:        #BFE5F0;
+  --color-sunrise:    #FCE7AE;
+  --color-ivory:      #FDF6EC;
+  --color-putty:      #FFFBF6;
+
+  --color-black:      #000000;
+  --color-gray-1:     #626262;
+  --color-gray-2:     #9D9D9D;
+  --color-gray-3:     #AEAEAE;
+  --color-gray-4:     #E6E6E6;
+  --color-gray-5:     #F5F5F5;
+  --color-white:      #FFFFFF;
+
+  --color-dark-red:     #A11B1B;
+  --color-light-red:    rgb(252, 212, 222);
+
+  --color-dark-yellow:  #A11B1B;
+  --color-light-yellow: #A11B1B;
+
+  --color-dark-green:   #A11B1B;
+  --color-light-green:  #A11B1B;
+
+  /**
+   * @tokens Fonts
+   * @presenter FontFamily
+   */
+  --font-family-serif: 'Sharpen Serif', serif;      /* i.e P22 Mackinac Pro */
+  --font-family-sans:  'Sharpen Sans', sans-serif;  /* i.e. Sohne */
+
+  /**
+   * @tokens Font Weights
+   * @presenter FontWeight
+   */
+  --font-weight-book:  400;
+  --font-weight-bold:  700;
+
+  /**
+   * @tokens Font Sizes
+   * @presenter FontSize
+   */
+  --font-size-xs:    0.875rem;
+  --font-size-sm:    1rem;
+  --font-size-md:    1.125rem;
+  --font-size-lg:    1.25rem;
+  --font-size-xl:    1.375rem;
+  --font-size-2xl:   1.625rem;
+  --font-size-3xl:   2.125rem;
+  --font-size-4xl:   2.75rem;
+  --font-size-5xl:   4rem;
+
+  /**
+   * @tokens Padding
+   */
+  --padding-xsmall:  4px;
+  --padding-small:   8px;
+  --padding-medium:  16px;
+  --padding-large:   32px;
+  --padding-xlarge:  64px;
+
+  --grid-gutter:     var(--padding-medium);
+
+  /**
+   * @tokens Borders
+   */
+  --border-thin-solid-gray-4:     2px solid var(--color-gray-4);
+  --border-thin-solid-evergreen:  2px solid var(--color-evergreen);
+  --border-thin-solid-sunrise:    2px solid var(--color-sunrise);
+  --border-thin-solid-dark-red:   2px solid var(--color-dark-red);
+
+
+  /**
+   * @tokens Border Radius
+   * @presenter BorderRadius
+   */
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+}

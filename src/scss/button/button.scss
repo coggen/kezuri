@@ -1,0 +1,66 @@
+.sharpen-button {
+  display: inline-block;
+  font-family: var(--font-family-sans);
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  line-height: 1.5;
+  vertical-align: middle;
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    border: var(--border-thin-solid-evergreen);
+    background-color: var(--color-evergreen);
+    color: var(--color-ivory);
+  }
+
+  &--secondary {
+    background-color: white;
+    color: var(--color-evergreen);
+    border: var(--border-thin-solid-evergreen);
+  }
+
+  &--danger {
+    background-color: white;
+    color: var(--color-dark-red);
+    border: var(--border-thin-solid-dark-red);
+  }
+
+  &--muted {
+    background-color: var(--color-gray-4);
+    color: var(--color-black);
+    border: var(--border-thin-solid-gray-4);
+  }
+
+  &--link {
+    color: var(--color-evergreen);
+    text-decoration: underline;
+  }
+
+  &--small {
+    // With this typeface, the vertical alignment looks more balanced if we add a bit extra on the bottom
+    padding: var(--padding-small) var(--padding-large) calc(var(--padding-small) * 1.25);
+    font-size: var(--font-size-sm);
+  }
+
+  &--large {
+    padding: var(--padding-small) var(--padding-xlarge) calc(var(--padding-small) * 1.25);
+    font-size: var(--font-size-lg);
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  // Helps with the vertical alignment of an icon within a button
+  .sharpen-icon {
+    vertical-align: -6px;
+    margin-bottom: -1px;
+  }
+}

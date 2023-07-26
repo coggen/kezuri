@@ -1,0 +1,40 @@
+sharpen-page-navigation {
+  font-family: var(--font-family-serif);
+  display: flex;
+  margin-bottom: var(--padding-medium);
+
+  sharpen-nav-link {
+    display: flex;
+    flex: 1;
+
+    a {
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      text-decoration: none;
+      color: var(--color-evergreen);
+      padding: var(--padding-xsmall) var(--padding-small);
+      
+    }
+
+    &[selected="true"] a {
+      border-radius: var(--border-radius-sm);
+      background-color: var(--color-evergreen);
+      color: white;
+      text-decoration: none;
+    }
+
+    .sharpen-icon { margin-right: var(--padding-xsmall); }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  sharpen-page-navigation {
+    flex-direction: column;
+
+    sharpen-nav-link a {
+      padding: var(--padding-small) var(--padding-medium);
+    }
+  }
+}

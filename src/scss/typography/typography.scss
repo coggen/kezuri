@@ -1,0 +1,40 @@
+.sharpen-text-xs  { font-size: var(--font-size-xs); }
+.sharpen-text-sm  { font-size: var(--font-size-sm); }
+.sharpen-text-md  { font-size: var(--font-size-md); }
+.sharpen-text-lg  { font-size: var(--font-size-lg); }
+.sharpen-text-xl  { font-size: var(--font-size-xl); }
+.sharpen-text-2xl { font-size: var(--font-size-2xl); }
+.sharpen-text-3xl { font-size: var(--font-size-3xl); }
+.sharpen-text-4xl { font-size: var(--font-size-4xl); }
+.sharpen-text-5xl { font-size: var(--font-size-5xl); }
+
+[class^="sharpen-heading-"] {
+  margin: 0 0 0.75em;
+
+  .sharpen-icon {
+    vertical-align: -3px;
+    margin-right: var(--padding-small);
+  }
+}
+
+.sharpen-heading-xl {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-xl);
+  color: var(--color-evergreen);
+}
+
+.sharpen-heading-2xl {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-2xl);
+  color: var(--color-evergreen);
+}
+
+.sharpen-intro {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-md);
+  color: var(--color-gray-1); 
+}
+
+.sharpen-text-muted {
+  color: var(--color-gray-2);
+}

@@ -1,0 +1,12 @@
+/**
+ * Media queries can't use custom CSS properties, so we use a Sass variable
+ * instead to define/apply our breakpoints.
+ */
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

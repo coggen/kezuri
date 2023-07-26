@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { CardBorder, CardPadding } from "./components/sharpen-card/sharpen-card";
+export { CardBorder, CardPadding } from "./components/sharpen-card/sharpen-card";
 export namespace Components {
     interface MyComponent {
         /**
@@ -20,6 +22,24 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface SharpenCard {
+        /**
+          * Border style
+         */
+        "border": CardBorder;
+        /**
+          * Padding size
+         */
+        "padding": CardPadding;
+    }
+    interface SharpenNavLink {
+        "href": string;
+        "icon": string;
+        "name": string;
+        "selected": boolean;
+    }
+    interface SharpenPageNavigation {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +48,29 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLSharpenCardElement extends Components.SharpenCard, HTMLStencilElement {
+    }
+    var HTMLSharpenCardElement: {
+        prototype: HTMLSharpenCardElement;
+        new (): HTMLSharpenCardElement;
+    };
+    interface HTMLSharpenNavLinkElement extends Components.SharpenNavLink, HTMLStencilElement {
+    }
+    var HTMLSharpenNavLinkElement: {
+        prototype: HTMLSharpenNavLinkElement;
+        new (): HTMLSharpenNavLinkElement;
+    };
+    interface HTMLSharpenPageNavigationElement extends Components.SharpenPageNavigation, HTMLStencilElement {
+    }
+    var HTMLSharpenPageNavigationElement: {
+        prototype: HTMLSharpenPageNavigationElement;
+        new (): HTMLSharpenPageNavigationElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "sharpen-card": HTMLSharpenCardElement;
+        "sharpen-nav-link": HTMLSharpenNavLinkElement;
+        "sharpen-page-navigation": HTMLSharpenPageNavigationElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +88,29 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface SharpenCard {
+        /**
+          * Border style
+         */
+        "border"?: CardBorder;
+        /**
+          * Padding size
+         */
+        "padding"?: CardPadding;
+    }
+    interface SharpenNavLink {
+        "href"?: string;
+        "icon"?: string;
+        "name"?: string;
+        "selected"?: boolean;
+    }
+    interface SharpenPageNavigation {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "sharpen-card": SharpenCard;
+        "sharpen-nav-link": SharpenNavLink;
+        "sharpen-page-navigation": SharpenPageNavigation;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +118,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sharpen-card": LocalJSX.SharpenCard & JSXBase.HTMLAttributes<HTMLSharpenCardElement>;
+            "sharpen-nav-link": LocalJSX.SharpenNavLink & JSXBase.HTMLAttributes<HTMLSharpenNavLinkElement>;
+            "sharpen-page-navigation": LocalJSX.SharpenPageNavigation & JSXBase.HTMLAttributes<HTMLSharpenPageNavigationElement>;
         }
     }
 }
