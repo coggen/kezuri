@@ -20,7 +20,7 @@ export class SharpenCard {
 
   render() {
     return (
-      <Host>
+      <Host border={this.border} padding={this.padding}>
         <slot></slot>
       </Host>
     );

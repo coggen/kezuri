@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Account</title>
+    <link rel="stylesheet" href="/build/kezuri2.css" />
+    <script type="module" src="/build/kezuri2.esm.js"></script>
+    <script nomodule src="/build/kezuri2.js"></script>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="#"></sharpen-nav-link>
+    </sharpen-primary-navigation>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <sharpen-page-navigation>
+            <sharpen-nav-link name="Account" icon="account_circle" href="index.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Payment Method" icon="credit_card" href="payment.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Learners" icon="school" href="learners.html" selected="true"></sharpen-nav-link>
+            <sharpen-nav-link name="Invoices" icon="receipt" href="invoices.html"></sharpen-nav-link>
+          </sharpen-page-navigation>
+        </div>
+        <div class="col-md-9">
+          
+          <sharpen-card border="gray" padding="large">
+            <h1 class="sharpen-heading-2xl">
+              <i class="sharpen-icon">school</i>Learners &rsaquo; Jurickson Profar &rsaquo; Select products
+            </h1>
+            <table class="sharpen-table sharpen-table-controls-end" style="margin-bottom:2em;">
+              <thead>
+                <tr>
+                  <th style="width:50%;">Product</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Sharpen Reading
+                    <div class="sharpen-text-xs sharpen-text-muted">Sharpen Reading rapidly develops a learner's decoding skills, phonics and advanced phonemic awareness. For ages 4+.</div>
+                  </td>
+                  <td>
+                    $49.99/month
+                    <!-- <div class="sharpen-text-xs" style="margin-top:0.5em;">
+                      + $10/month<br />
+                      each additional learner
+                    </div> -->
+                  </td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--danger sharpen-button--small sharpen-button--full-width">
+                      <i class="sharpen-icon">close</i> Cancel
+                    </button>
+                    <!-- <div class="sharpen-text-xs" style="text-align:center; margin-top:0.5em;">
+                      Subscribed since May 2023
+                    </div> -->
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Early Advantage Assessment
+                    <div class="sharpen-text-xs sharpen-text-muted">Assess and monitor your child's reading skills and risk for reading struggles from age 2 until the start of Grade 3.</div>
+                  </td>
+                  <td>
+                    $29
+                  </td>
+                  <td>
+                    <button disabled class="sharpen-button sharpen-button--secondary sharpen-button--small sharpen-button--full-width">
+                      <i class="sharpen-icon">check</i>
+                      Purchased
+                    </button>
+                  </td>
+                </tr>
+                <!-- <tr>
+                  <td>
+                    Early Advantage Assessment with Genetic Kit
+                    <div class="sharpen-text-xs sharpen-text-muted">Identify the presence of DNA markers associated with reading-related skills.</div>
+                  </td>
+                  <td>
+                    $129
+                  </td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">
+                      <i class="sharpen-icon">shopping_cart</i> Buy Now
+                    </button>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+            <a href="learners.html" class="sharpen-button sharpen-button--primary sharpen-button--small">
+              <i class="sharpen-icon">arrow_back</i>
+              Back
+            </a>
+          </sharpen-card>
+
+          <sharpen-card border="gray" padding="large">
+            <h1 class="sharpen-heading-xl">Cancel Jurickson's subscription to Sharpen Reading?</h1>
+
+            <p class="sharpen-intro">Jurickson can continue Sharpen Reading lessons until the current billing cycle ends on <strong>August 7, 2023</strong>. You may reactivate Jurickson's subscription in the future and continue where you left off.</p>
+            
+            <button class="sharpen-button sharpen-button--danger sharpen-button--small">
+              Confirm Cancellation
+            </button>
+
+            <button class="sharpen-button sharpen-button--primary sharpen-button--small">
+              Stay Subscribed
+            </button>
+          </sharpen-card>
+          
+        </div>
+      </div>
+    </main>
+
+
+  </body>
+</html>

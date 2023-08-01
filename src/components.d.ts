@@ -5,7 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AlertType } from "./components/sharpen-alert/sharpen-alert";
 import { CardBorder, CardPadding } from "./components/sharpen-card/sharpen-card";
+export { AlertType } from "./components/sharpen-alert/sharpen-alert";
 export { CardBorder, CardPadding } from "./components/sharpen-card/sharpen-card";
 export namespace Components {
     interface MyComponent {
@@ -21,6 +23,20 @@ export namespace Components {
           * The middle name
          */
         "middle": string;
+    }
+    interface SharpenAlert {
+        /**
+          * The alert heading
+         */
+        "heading": string;
+        /**
+          * Icon
+         */
+        "icon": string;
+        /**
+          * Alert type
+         */
+        "type": AlertType;
     }
     interface SharpenCard {
         /**
@@ -40,6 +56,18 @@ export namespace Components {
     }
     interface SharpenPageNavigation {
     }
+    interface SharpenPrimaryNavigation {
+        /**
+          * Border style
+         */
+        "currentUser": string;
+    }
+    interface SharpenProfileCard {
+        "buttonText": string;
+        "initial": string;
+        "name": string;
+        "url": string;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -47,6 +75,12 @@ declare global {
     var HTMLMyComponentElement: {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
+    };
+    interface HTMLSharpenAlertElement extends Components.SharpenAlert, HTMLStencilElement {
+    }
+    var HTMLSharpenAlertElement: {
+        prototype: HTMLSharpenAlertElement;
+        new (): HTMLSharpenAlertElement;
     };
     interface HTMLSharpenCardElement extends Components.SharpenCard, HTMLStencilElement {
     }
@@ -66,11 +100,26 @@ declare global {
         prototype: HTMLSharpenPageNavigationElement;
         new (): HTMLSharpenPageNavigationElement;
     };
+    interface HTMLSharpenPrimaryNavigationElement extends Components.SharpenPrimaryNavigation, HTMLStencilElement {
+    }
+    var HTMLSharpenPrimaryNavigationElement: {
+        prototype: HTMLSharpenPrimaryNavigationElement;
+        new (): HTMLSharpenPrimaryNavigationElement;
+    };
+    interface HTMLSharpenProfileCardElement extends Components.SharpenProfileCard, HTMLStencilElement {
+    }
+    var HTMLSharpenProfileCardElement: {
+        prototype: HTMLSharpenProfileCardElement;
+        new (): HTMLSharpenProfileCardElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "sharpen-alert": HTMLSharpenAlertElement;
         "sharpen-card": HTMLSharpenCardElement;
         "sharpen-nav-link": HTMLSharpenNavLinkElement;
         "sharpen-page-navigation": HTMLSharpenPageNavigationElement;
+        "sharpen-primary-navigation": HTMLSharpenPrimaryNavigationElement;
+        "sharpen-profile-card": HTMLSharpenProfileCardElement;
     }
 }
 declare namespace LocalJSX {
@@ -87,6 +136,20 @@ declare namespace LocalJSX {
           * The middle name
          */
         "middle"?: string;
+    }
+    interface SharpenAlert {
+        /**
+          * The alert heading
+         */
+        "heading"?: string;
+        /**
+          * Icon
+         */
+        "icon"?: string;
+        /**
+          * Alert type
+         */
+        "type": AlertType;
     }
     interface SharpenCard {
         /**
@@ -106,11 +169,26 @@ declare namespace LocalJSX {
     }
     interface SharpenPageNavigation {
     }
+    interface SharpenPrimaryNavigation {
+        /**
+          * Border style
+         */
+        "currentUser"?: string;
+    }
+    interface SharpenProfileCard {
+        "buttonText"?: string;
+        "initial": string;
+        "name": string;
+        "url": string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "sharpen-alert": SharpenAlert;
         "sharpen-card": SharpenCard;
         "sharpen-nav-link": SharpenNavLink;
         "sharpen-page-navigation": SharpenPageNavigation;
+        "sharpen-primary-navigation": SharpenPrimaryNavigation;
+        "sharpen-profile-card": SharpenProfileCard;
     }
 }
 export { LocalJSX as JSX };
@@ -118,9 +196,12 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sharpen-alert": LocalJSX.SharpenAlert & JSXBase.HTMLAttributes<HTMLSharpenAlertElement>;
             "sharpen-card": LocalJSX.SharpenCard & JSXBase.HTMLAttributes<HTMLSharpenCardElement>;
             "sharpen-nav-link": LocalJSX.SharpenNavLink & JSXBase.HTMLAttributes<HTMLSharpenNavLinkElement>;
             "sharpen-page-navigation": LocalJSX.SharpenPageNavigation & JSXBase.HTMLAttributes<HTMLSharpenPageNavigationElement>;
+            "sharpen-primary-navigation": LocalJSX.SharpenPrimaryNavigation & JSXBase.HTMLAttributes<HTMLSharpenPrimaryNavigationElement>;
+            "sharpen-profile-card": LocalJSX.SharpenProfileCard & JSXBase.HTMLAttributes<HTMLSharpenProfileCardElement>;
         }
     }
 }

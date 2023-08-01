@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Account</title>
+    <link rel="stylesheet" href="/build/kezuri2.css" />
+    <script type="module" src="/build/kezuri2.esm.js"></script>
+    <script nomodule src="/build/kezuri2.js"></script>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="#"></sharpen-nav-link>
+    </sharpen-primary-navigation>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <sharpen-page-navigation>
+            <sharpen-nav-link name="Account" icon="account_circle" href="index.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Payment Method" icon="credit_card" href="payment.html" selected="true"></sharpen-nav-link>
+            <sharpen-nav-link name="Learners" icon="school" href="learners.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Invoices" icon="receipt" href="invoices.html"></sharpen-nav-link>
+          </sharpen-page-navigation>
+        </div>
+        <div class="col-md-9">
+          <sharpen-card border="gray" padding="large">
+            <h1 class="sharpen-heading-2xl"><i class="sharpen-icon">credit_card</i>Payment Method</h1>
+            <p class="sharpen-intro">
+              Your payment method is billed monthly for all active subscriptions.
+            </p>
+
+            <!-- <sharpen-alert type="danger" icon="warning" heading="Please update your credit card information">
+              We attempted to bill your credit card on July 26, 2023 but the charge was declined.
+            </sharpen-alert> -->
+
+            <table class="sharpen-table" style="margin-bottom:2em;">
+              <tbody>
+                <tr>
+                  <th>Card</th>
+                  <td>Card ending in 9999, expires 9/2024</td>
+                </tr>
+                <tr>
+                  <th>Billing ZIP</th>
+                  <td>
+                    02445
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <button class="sharpen-button sharpen-button--primary sharpen-button--small">
+              <i class="sharpen-icon">edit</i>
+              Change payment method
+            </button>
+          </sharpen-card>
+        </div>
+      </div>
+    </main>
+
+
+  </body>
+</html>

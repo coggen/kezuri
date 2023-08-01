@@ -1,0 +1,92 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Design Tokens/Colors" />
+
+# Colors
+
+## Brand colors
+
+These colors are unique to the Sharpen brand and are used across all our
+web properties, e-mails, and print materials.
+
+<ColorPalette>
+  <ColorItem 
+    title="Evergreen" 
+    colors={['var(--color-evergreen)']} 
+  />
+  <ColorItem 
+    title="Pine" 
+    colors={['var(--color-pine)']} 
+  />
+  <ColorItem 
+    title="Mint" 
+    colors={['var(--color-mint)']} 
+  />
+  <ColorItem 
+    title="Sky" 
+    colors={['var(--color-sky)']} 
+  />
+  <ColorItem 
+    title="Sunrise" 
+    colors={['var(--color-sunrise)']} 
+  />
+  <ColorItem 
+    title="Ivory" 
+    colors={['var(--color-ivory)']} 
+  />
+  <ColorItem 
+    title="Putty" 
+    colors={['var(--color-putty)']} 
+  />
+</ColorPalette>
+
+
+## Recommended brand color combinations
+
+<div className="tokens-preview-combination" style={{ color: "var(--color-ivory)",     backgroundColor: "var(--color-evergreen)" }}>Ivory on Evergreen</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-sunrise)",   backgroundColor: "var(--color-evergreen)" }}>Sunrise on Evergreen</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-mint)",      backgroundColor: "var(--color-pine)" }}>Mint on Pine</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-sunrise)",   backgroundColor: "var(--color-pine)" }}>Sunrise on Pine</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-evergreen)", backgroundColor: "var(--color-mint)" }}>Evergreen on Mint</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-evergreen)", backgroundColor: "var(--color-sky)" }}>Evergreen on Sky</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-pine)",      backgroundColor: "var(--color-sky)" }}>Pine on Sky</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-evergreen)", backgroundColor: "var(--color-sunrise)" }}>Evergreen on Sunrise</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-pine)",      backgroundColor: "var(--color-sunrise)" }}>Pine on Sunrise</div>
+<div className="tokens-preview-combination" style={{ color: "var(--color-evergreen)", backgroundColor: "var(--color-ivory)" }}>Evergreen on Ivory</div>
+
+## Grays
+
+<ColorPalette>
+  <ColorItem 
+    title="Black" 
+    colors={['var(--color-black)']} 
+  />
+  <ColorItem
+    title="Grays"
+    colors={["var(--color-gray-1)", "var(--color-gray-2)", "var(--color-gray-3)", "var(--color-gray-4)", "var(--color-gray-5)"]}
+  />
+  <ColorItem 
+    title="White" 
+    colors={['var(--color-white)']} 
+  />
+</ColorPalette>
+
+## Semantic colors
+
+<ColorPalette>
+  <ColorItem 
+    title="Reds" 
+    subtitle="To highlight powerful actions or error messages."
+    colors={['var(--color-dark-red)', 'var(--color-red)', 'var(--color-light-red)']} 
+  />
+  <ColorItem 
+    title="Oranges" 
+    subtitle="To highlight warnings or important information."
+    colors={['var(--color-dark-orange)', 'var(--color-orange)', 'var(--color-light-orange)']} 
+  />
+  <ColorItem 
+    title="Greens" 
+    subtitle="To highlight successful actions."
+    colors={['var(--color-light-green)']} 
+  />
+</ColorPalette>

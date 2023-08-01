@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Account</title>
+    <link rel="stylesheet" href="/build/kezuri2.css" />
+    <script type="module" src="/build/kezuri2.esm.js"></script>
+    <script nomodule src="/build/kezuri2.js"></script>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="javascript:void();"></sharpen-nav-link>
+    </sharpen-primary-navigation>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <sharpen-page-navigation>
+            <sharpen-nav-link name="Account" icon="account_circle" href="index.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Payment Method" icon="credit_card" href="payment.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Learners" icon="school" href="learners.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Invoices" icon="receipt" href="invoices.html" selected="true"></sharpen-nav-link>
+          </sharpen-page-navigation>
+        </div>
+        <div class="col-md-9">
+          
+          <sharpen-card border="gray" padding="large">
+            <h1 class="sharpen-heading-2xl"><i class="sharpen-icon">receipt</i>Invoices</h1>
+            <p class="sharpen-intro">
+              Sharpen invoices you monthly for active learner subscriptions. You may see more than one invoice per month when
+              you add or cancel subscriptions.
+            </p>
+            <table class="sharpen-table sharpen-table-controls-end sharpen-table-hover">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Period</th>
+                  <th>Amount</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jul 1, 2023</td>
+                  <td>
+                    Jul 1, 2023 &ndash; Jul 31, 2023
+                  </td>
+                  <td>$49.00</td>
+                  <td><a href="javascript:void();">View</a></td>
+                </tr>
+                <tr>
+                  <td>Jun 1, 2023</td>
+                  <td>
+                    Jun 1, 2023 &ndash; Jun 30, 2023
+                  </td>
+                  <td>$49.00</td>
+                  <td><a href="javascript:void();">View</a></td>
+                </tr>
+                <tr>
+                  <td>May 1, 2023</td>
+                  <td>
+                    May 1, 2023 &ndash; May 31, 2023
+                  </td>
+                  <td>$98.00</td>
+                  <td><a href="javascript:void();">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </sharpen-card>
+
+        </div>
+      </div>
+    </main>
+
+
+  </body>
+</html>

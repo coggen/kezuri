@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Account</title>
+    <link rel="stylesheet" href="/build/kezuri2.css" />
+    <script type="module" src="/build/kezuri2.esm.js"></script>
+    <script nomodule src="/build/kezuri2.js"></script>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="javascript:void();"></sharpen-nav-link>
+    </sharpen-primary-navigation>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <sharpen-page-navigation>
+            <sharpen-nav-link name="Account" icon="account_circle" href="index.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Payment Method" icon="credit_card" href="payment.html"></sharpen-nav-link>
+            <sharpen-nav-link name="Learners" icon="school" href="learners.html" selected="true"></sharpen-nav-link>
+            <sharpen-nav-link name="Invoices" icon="receipt" href="invoices.html"></sharpen-nav-link>
+          </sharpen-page-navigation>
+        </div>
+        <div class="col-md-9">
+          <sharpen-card border="gray" padding="large">
+            <h1 class="sharpen-heading-2xl"><i class="sharpen-icon">school</i>Learners</h1>
+            <p class="sharpen-intro">
+              Sharpen offers your learners a selection of reading products. Click <i class="sharpen-icon">edit</i> to edit a learner's profile.
+              Click <em>Select</em> to choose the right products for your learner.
+            </p>
+            <a href="learners_add.html" class="sharpen-button sharpen-button--primary sharpen-button--small" style="margin-bottom:1em;">
+              <i class="sharpen-icon">add</i>
+              Add new learner
+            </a>
+            <table class="sharpen-table sharpen-table-controls-end">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Products</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Jurickson Profar <a href="javascript:void();"><i class="sharpen-icon">edit</i></a>
+                  </td>
+                  <td>
+                    <div style="display: flex; align-items: center;"><i class="sharpen-icon">check</i> Sharpen Reading (Subscription)</div>
+                    <!-- <div style="display: flex; align-items: center;"><i class="sharpen-icon">check</i> Early Advantage Assessment</div>
+                    <div style="display: flex; align-items: center;" class="sharpen-text-muted"><i class="sharpen-icon">close</i> with Genetic Kit</div> -->
+                  </td>
+                  <td>
+                    <a href="learners_select.html" class="sharpen-button sharpen-button--primary sharpen-button--small">
+                      <i class="sharpen-icon">rule</i> Select
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Abernathy Profar <a href="javascript:void();"><i class="sharpen-icon">edit</i></a>
+                  </td>
+                  <td>
+                    <!-- <div style="display: flex; align-items: center;" class="sharpen-text-muted"><i class="sharpen-icon">close</i> Sharpen Reading (Subscription)</div> -->
+                    <div style="display: flex; align-items: center;"><i class="sharpen-icon">check</i> Early Advantage Assessment with Genetic Kit</div>
+                  </td>
+                  <td>
+                    <a href="learners_select.html" class="sharpen-button sharpen-button--primary sharpen-button--small">
+                      <i class="sharpen-icon">rule</i> Select
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </sharpen-card>
+        </div>
+      </div>
+    </main>
+
+
+  </body>
+</html>

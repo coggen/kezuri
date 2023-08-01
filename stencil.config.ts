@@ -18,16 +18,17 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       copy: [ {
         src: '../assets',
-        dest: 'kezuri2/assets'
+        dest: 'assets'
       } ],
     },
     {
       type: 'www',
       serviceWorker: null, // disable service workers
-      copy: [ {
-        src: '../assets',
-        dest: 'build/assets'
-      } ],
+      baseUrl: 'http://prototypes.sharpen.com/',
+      copy: [
+        { src: '../assets', dest: 'build/assets' },
+        { src: 'prototypes' }
+      ],
     },
   ],
   testing: {

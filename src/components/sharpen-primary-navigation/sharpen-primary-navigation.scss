@@ -1,0 +1,45 @@
+sharpen-primary-navigation {
+  height: 4.5rem;
+  background-color: var(--color-evergreen);
+  color: var(--color-ivory);
+
+  nav {
+    flex: 1;
+    gap: var(--padding-large);
+
+    sharpen-nav-link {
+      a {
+        font-family: var(--font-family-sans);
+        color: var(--color-ivory);
+        text-decoration: none;
+        padding-bottom: 5px;
+      }
+
+      &[selected] a {
+        padding-bottom: 3px;
+        border-bottom: var(--border-thin-solid-sunrise); 
+      }
+    } 
+  }
+
+  .current-user {
+    justify-content: right;
+  }
+
+  img.brand {
+    max-width: 170px;
+  }
+
+  .current-user {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-lg);
+
+    .sharpen-icon { vertical-align: -4px;}
+  }
+  
+  &, & .container-fluid, & .container-fluid nav {
+    display: flex;
+    align-items: center;
+  }
+}
+

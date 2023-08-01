@@ -1,0 +1,59 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Design Tokens/Fonts" />
+
+# Fonts
+
+## Families & Weights
+
+<table class="tokens-table">
+  <thead>
+    <tr>
+      <th>Font Family</th>
+      <th>Font Weight</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--font-family-serif</code></td>
+      <td></td>
+      <td>
+        <div style={{ padding: "1rem 0", fontSize: "24pt", fontFamily: "var(--font-family-serif)" }}>Sharpen Serif</div>
+      </td>
+    </tr>
+    <tr>
+      <td><code>--font-family-sans</code></td>
+      <td><code>--font-weight-book</code></td>
+      <td>
+        <div style={{ padding: "1rem 0", fontSize: "24pt", fontFamily: "var(--font-family-sans)", fontWeight: "var(--font-weight-book)" }}>Sharpen Sans Book</div>
+      </td>
+    </tr>
+    <tr>
+      <td><code>--font-family-sans</code></td>
+      <td><code>--font-weight-bold</code></td>
+      <td>
+        <div style={{ padding: "1rem 0", fontSize: "24pt", fontFamily: "var(--font-family-sans)", fontWeight: "var(--font-weight-bold)" }}>Sharpen Sans Bold</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Sizes
+
+<Typeset
+  fontSizes={[
+    "var(--font-size-xs)",
+    "var(--font-size-sm)",
+    "var(--font-size-md)",
+    "var(--font-size-lg)",
+    "var(--font-size-xl)",
+    "var(--font-size-2xl)",
+    "var(--font-size-3xl)",
+    "var(--font-size-4xl)",
+    "var(--font-size-5xl)",
+  ]}
+  fontWeight="400"
+  sampleText="Good night, moon."
+  fontFamily="Sharpen Sans"
+/>

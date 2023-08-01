@@ -10,6 +10,30 @@ TBD
 
 First, clone the repository and install dependencies with `npm install`.
 
+### Run Storybook
+
+In one Terminal window, run the Stencil builder in "watch" mode:
+
+```
+$ stencil build --watch
+```
+
+In another Terminal window, start Storybook:
+
+```
+$ npm run storybook
+```
+
+The Kezuri Storybook site will appear in your browser at `http://localhost:6006/`.
+
+### Run a local dev server
+
+```
+$ npm start
+```
+
+The web page at `src/index.html` will appear in your browser at `http://localhost:3333/`
+
 ### Add a new component
 
 ```
@@ -28,4 +52,9 @@ provided, and within that folder the files will be generated.
 Some guidance on component development:
 
 * Rename the `css` file to `scss` since we use Sass.
-* In your `@Component` metadata, remove the `shadow` setting since we do not use the Shadow DOM unless we absolutely need it.
+* In your `@Component` metadata, remove the `shadow` setting since we do not use the Shadow DOM (unless you absolutely need it).
+
+## Inspirations
+
+* [You might not need shadow DOM](https://www.hjorthhansen.dev/you-might-not-need-shadow-dom/)
+* [Styling Web Components Using A Shared Style Sheet](https://www.smashingmagazine.com/2016/12/styling-web-components-using-a-shared-style-sheet/)

@@ -1,0 +1,49 @@
+.sharpen-form-group {
+  margin-bottom: var(--padding-medium);
+  
+}
+
+.sharpen-form-label {
+  display: block;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-1);
+  line-height: 1.4;
+  padding: var(--padding-small) 0;
+}
+
+.sharpen-form-control {
+  width: 100%;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  padding: var(--padding-medium);
+  background: var(--color-white);
+  border: var(--border-thin-solid-gray-4);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  line-height: 140%;
+  color: var(--color-black);
+}
+
+.sharpen-form-check {
+  display: flex;
+  align-items: center;
+
+  .sharpen-form-label {
+    display: inline;
+  }
+
+  .sharpen-form-check-input[type="radio"], .sharpen-form-check-input[type="radio"]:checked::before {
+    border-radius: 100%;
+    margin-left: -1.5em;
+  }
+
+  .sharpen-form-check-input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: solid 4px #e6e6e6;
+    position: relative;
+  }
+
+}
