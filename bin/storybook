@@ -1,0 +1,19 @@
+#!/bin/bash
+
+node bin/watcher.js & pid=$!
+PID_LIST+=" $pid";
+
+npm run watch & pid=$!
+PID_LIST+=" $pid";
+
+npm run storybook & pid=$!
+PID_LIST+=" $pid";
+
+trap "kill $PID_LIST" SIGINT
+
+echo "\Storybook development mode starting with workaround SCSS watcher\n";
+
+wait $PID_LIST
+
+echo
+echo "\n\nAll processes have completed";

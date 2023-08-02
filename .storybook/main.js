@@ -16,6 +16,6 @@ const config = {
   docs: {
     autodocs: 'tag',
   },
-  staticDirs: ['../dist/kezuri2']
+  staticDirs: ['../dist/kezuri']
 };
 export default config;

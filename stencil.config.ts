@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'kezuri2',
+  namespace: 'kezuri',
   plugins: [
     sass({
       injectGlobalPaths: [
@@ -11,7 +11,7 @@ export const config: Config = {
       ],
     })
   ],
-  globalStyle: 'src/scss/global.scss',
+  globalStyle: 'src/index.scss',
   outputTargets: [
     {
       type: 'dist',

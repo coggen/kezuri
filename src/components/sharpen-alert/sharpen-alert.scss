@@ -2,9 +2,9 @@ sharpen-alert {
   display: block;
   font-family: var(--font-family-sans);
   border-radius: var(--border-radius-md);
-  padding: var(--padding-medium);
+  padding: var(--spacing-md);
   display: flex;
-  margin-bottom: var(--padding-medium);
+  margin-bottom: var(--spacing-md);
 
   &[type="success"] {
     background-color: var(--color-light-green);
@@ -19,7 +19,7 @@ sharpen-alert {
   }
 
   .sharpen-alert--icon {
-    padding-right: var(--padding-medium);
+    padding-right: var(--spacing-md);
   }
 
   .sharpen-alert--heading {
@@ -28,7 +28,7 @@ sharpen-alert {
   }
 
   .sharpen-alert--heading + * {
-    margin-top: var(--padding-small);
+    margin-top: var(--spacing-sm);
   }
 
   .sharpen-alert--message > :last-child {

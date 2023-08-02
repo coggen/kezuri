@@ -4,27 +4,150 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Sharpen Prototype: Form Elements</title>
-    <link rel="stylesheet" href="/build/kezuri2.css" />
-    <script type="module" src="/build/kezuri2.esm.js"></script>
-    <script nomodule src="/build/kezuri2.js"></script>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
   </head>
   <body>
 
     <main class="container">
       
-      <form>
-        
-        <div class="sharpen-form-group">
-          <label class="sharpen-form-label">Label name</label>
-          <input type="text" class="sharpen-form-control" placeholder="Enter your value..." />
-        </div>
+      <sharpen-card border="gray" padding="large">
+        <form>
+          
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Input label</label>
+            <input type="text" class="sharpen-form-control" placeholder="Enter your value..." />
+          </div>
 
-        <div class="sharpen-form-group">
-          <label class="sharpen-form-label">Label name</label>
-          <input type="text" class="sharpen-form-control" value="Jurickson Profar" />
-        </div>
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Input label</label>
+            <input type="text" class="sharpen-form-control" value="Jurickson Profar" />
+          </div>
 
-      </form>
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Input label</label>
+            <input type="text" class="sharpen-form-control" />
+            <div class="sharpen-form-text">Special instructions for this field</div>
+          </div>
+
+          <div class="sharpen-form-group sharpen-form-error">
+            <label class="sharpen-form-label">Input label</label>
+            <input type="text" class="sharpen-form-control" />
+            <div class="sharpen-form-text sharpen-form-text--error">This field is required</div>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Input label</label>
+            <input type="text" disabled class="sharpen-form-control" value="Jurickson Profar" />
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Input label</label>
+            <input type="text" readonly class="sharpen-form-control" value="Jurickson Profar" />
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Textarea label</label>
+            <textarea class="sharpen-form-control">Once more. Say you are in the country; in some high land of lakes. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream. There is magic in it.</textarea>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Textarea label</label>
+            <textarea disabled class="sharpen-form-control">Once more. Say you are in the country; in some high land of lakes. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream. There is magic in it.</textarea>
+          </div>
+
+          <div class="sharpen-form-group sharpen-form-error">
+            <label class="sharpen-form-label">Textarea label</label>
+            <textarea class="sharpen-form-control"></textarea>
+            <div class="sharpen-form-text sharpen-form-text--error">This field is required</div>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Select label</label>
+            <select class="sharpen-form-control">
+              <option>First</option>
+              <option>Second</option>
+              <option>Third</option>
+            </select>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Select multiple label</label>
+            <select multiple class="sharpen-form-control">
+              <option>First</option>
+              <option>Second</option>
+              <option>Third</option>
+            </select>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Choose one wisely</label>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="radio" id="radio1" />
+              <label class="sharpen-form-label" for="radio1">Chocolate</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="radio" id="radio2" />
+              <label class="sharpen-form-label" for="radio2">Strawberry</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="radio" id="radio3" />
+              <label class="sharpen-form-label" for="radio3">
+                Other
+                <div class="sharpen-text-xs">E-mail us with the flavor you desire.</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Choose as many as you like</label>
+            <div class="sharpen-form-check">
+              <input type="checkbox" class="sharpen-form-check-input" name="checkbox" id="checkbox1" />
+              <label class="sharpen-form-label" for="checkbox1">Chocolate</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="checkbox" class="sharpen-form-check-input" name="checkbox" id="checkbox2" />
+              <label class="sharpen-form-label" for="checkbox2">Strawberry</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="checkbox" class="sharpen-form-check-input" name="checkbox" id="checkbox3" />
+              <label class="sharpen-form-label" for="checkbox3">
+                Other
+                <div class="sharpen-text-xs">E-mail us with the flavor you desire.</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="sharpen-form-group sharpen-form-error">
+            <label class="sharpen-form-label">Choose one wisely</label>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="radio_error" id="radio_error1" />
+              <label class="sharpen-form-label" for="radio_error1">Chocolate</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="radio_error" id="radio_error2" />
+              <label class="sharpen-form-label" for="radio_error2">Strawberry</label>
+            </div>
+            <div class="sharpen-form-text sharpen-form-text--error">Please select one</div>
+          </div>
+
+          <div class="sharpen-form-group sharpen-form-error">
+            <label class="sharpen-form-label">Choose as many as you like</label>
+            <div class="sharpen-form-check">
+              <input type="checkbox" class="sharpen-form-check-input" name="checkbox_error" id="checkbox_error1" />
+              <label class="sharpen-form-label" for="checkbox_error1">Chocolate</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="checkbox" class="sharpen-form-check-input" name="checkbox_error" id="checkbox_error2" />
+              <label class="sharpen-form-label" for="checkbox_error2">Strawberry</label>
+            </div>
+            <div class="sharpen-form-text sharpen-form-text--error">Please select at least one</div>
+          </div>
+          
+
+        </form>
+      </sharpen-card>
 
 
     </main>

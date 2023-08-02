@@ -1,5 +1,5 @@
 // Load our Kezuri CSS
-import '../dist/kezuri2/kezuri2.css';
+import '../dist/kezuri/kezuri.css';
 
 // Load our Kezuri Custom Elements
 import {defineCustomElements} from '../loader';

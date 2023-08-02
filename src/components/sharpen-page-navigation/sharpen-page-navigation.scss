@@ -1,7 +1,7 @@
 sharpen-page-navigation {
   font-family: var(--font-family-serif);
   display: flex;
-  margin-bottom: var(--padding-medium);
+  margin-bottom: var(--spacing-md);
 
   sharpen-nav-link {
     display: flex;
@@ -14,7 +14,7 @@ sharpen-page-navigation {
 
       text-decoration: none;
       color: var(--color-evergreen);
-      padding: var(--padding-xsmall) var(--padding-small);
+      padding: var(--spacing-xs) var(--spacing-sm);
       
     }
 
@@ -25,7 +25,7 @@ sharpen-page-navigation {
       text-decoration: none;
     }
 
-    .sharpen-icon { margin-right: var(--padding-xsmall); }
+    .sharpen-icon { margin-right: var(--spacing-xs); }
   }
 }
 
@@ -34,7 +34,7 @@ sharpen-page-navigation {
     flex-direction: column;
 
     sharpen-nav-link a {
-      padding: var(--padding-small) var(--padding-medium);
+      padding: var(--spacing-sm) var(--spacing-md);
     }
   }
 }

@@ -10,20 +10,6 @@ import { CardBorder, CardPadding } from "./components/sharpen-card/sharpen-card"
 export { AlertType } from "./components/sharpen-alert/sharpen-alert";
 export { CardBorder, CardPadding } from "./components/sharpen-card/sharpen-card";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface SharpenAlert {
         /**
           * The alert heading
@@ -48,6 +34,8 @@ export namespace Components {
          */
         "padding": CardPadding;
     }
+    interface SharpenEmpty {
+    }
     interface SharpenNavLink {
         "href": string;
         "icon": string;
@@ -70,12 +58,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLSharpenAlertElement extends Components.SharpenAlert, HTMLStencilElement {
     }
     var HTMLSharpenAlertElement: {
@@ -87,6 +69,12 @@ declare global {
     var HTMLSharpenCardElement: {
         prototype: HTMLSharpenCardElement;
         new (): HTMLSharpenCardElement;
+    };
+    interface HTMLSharpenEmptyElement extends Components.SharpenEmpty, HTMLStencilElement {
+    }
+    var HTMLSharpenEmptyElement: {
+        prototype: HTMLSharpenEmptyElement;
+        new (): HTMLSharpenEmptyElement;
     };
     interface HTMLSharpenNavLinkElement extends Components.SharpenNavLink, HTMLStencilElement {
     }
@@ -113,9 +101,9 @@ declare global {
         new (): HTMLSharpenProfileCardElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "sharpen-alert": HTMLSharpenAlertElement;
         "sharpen-card": HTMLSharpenCardElement;
+        "sharpen-empty": HTMLSharpenEmptyElement;
         "sharpen-nav-link": HTMLSharpenNavLinkElement;
         "sharpen-page-navigation": HTMLSharpenPageNavigationElement;
         "sharpen-primary-navigation": HTMLSharpenPrimaryNavigationElement;
@@ -123,20 +111,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface SharpenAlert {
         /**
           * The alert heading
@@ -161,6 +135,8 @@ declare namespace LocalJSX {
          */
         "padding"?: CardPadding;
     }
+    interface SharpenEmpty {
+    }
     interface SharpenNavLink {
         "href"?: string;
         "icon"?: string;
@@ -182,9 +158,9 @@ declare namespace LocalJSX {
         "url": string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "sharpen-alert": SharpenAlert;
         "sharpen-card": SharpenCard;
+        "sharpen-empty": SharpenEmpty;
         "sharpen-nav-link": SharpenNavLink;
         "sharpen-page-navigation": SharpenPageNavigation;
         "sharpen-primary-navigation": SharpenPrimaryNavigation;
@@ -195,9 +171,9 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sharpen-alert": LocalJSX.SharpenAlert & JSXBase.HTMLAttributes<HTMLSharpenAlertElement>;
             "sharpen-card": LocalJSX.SharpenCard & JSXBase.HTMLAttributes<HTMLSharpenCardElement>;
+            "sharpen-empty": LocalJSX.SharpenEmpty & JSXBase.HTMLAttributes<HTMLSharpenEmptyElement>;
             "sharpen-nav-link": LocalJSX.SharpenNavLink & JSXBase.HTMLAttributes<HTMLSharpenNavLinkElement>;
             "sharpen-page-navigation": LocalJSX.SharpenPageNavigation & JSXBase.HTMLAttributes<HTMLSharpenPageNavigationElement>;
             "sharpen-primary-navigation": LocalJSX.SharpenPrimaryNavigation & JSXBase.HTMLAttributes<HTMLSharpenPrimaryNavigationElement>;

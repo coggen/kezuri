@@ -1,7 +1,10 @@
 {
-  "name": "kezuri2",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "name": "@sharpen-com/kezuri",
+  "description": "The Sharpen Design System",
+  "license": "MIT",
+
+  "version": "0.2.0",
+
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,17 +12,21 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/kezuri2/kezuri2.esm.js",
+  "unpkg": "dist/kezuri/kezuri.esm.js",
+
   "repository": {
     "type": "git",
     "url": "https://github.com/ionic-team/stencil-component-starter.git"
   },
+
   "files": [
     "dist/",
     "loader/"
   ],
+
   "scripts": {
     "build": "stencil build --docs",
+    "watch": "stencil build --docs --watch",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -27,9 +34,11 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+
   "dependencies": {
     "@stencil/core": "^4.0.0"
   },
+
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
     "@stencil/sass": "^3.0.5",
@@ -48,6 +57,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.1.1"
-  },
-  "license": "MIT"
+  }
 }

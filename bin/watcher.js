@@ -1,3 +1,8 @@
+/**
+ * This is a temporary workaround until this PR is merged:
+ * https://github.com/ionic-team/stencil/pull/3110#issuecomment-1603110616
+ */
+
 const chokidar = require('chokidar');
 const fs = require('fs');
 const path = require('path');

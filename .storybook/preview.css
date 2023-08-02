@@ -4,3 +4,17 @@
   padding: 1em;
   text-align: center;
 }
+
+.tokens-preview-combination {
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.10) 0 1px 3px 0;
+  border: 1px solid hsla(203, 50%, 30%, 0.15);
+  padding: 1em;
+  overflow: hidden;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tokens-preview-combination + .tokens-preview-combination {
+  margin-top: 1em;
+}

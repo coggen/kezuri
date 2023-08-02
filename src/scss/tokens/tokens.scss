@@ -40,8 +40,9 @@
    * @tokens Font Weights
    * @presenter FontWeight
    */
-  --font-weight-book:  400;
-  --font-weight-bold:  700;
+  --font-weight-book:     400;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
 
   /**
    * @tokens Font Sizes
@@ -58,21 +59,22 @@
   --font-size-5xl:   4rem;
 
   /**
-   * @tokens Padding
+   * @tokens Spacing
    */
-  --padding-xsmall:  4px;
-  --padding-small:   8px;
-  --padding-medium:  16px;
-  --padding-large:   32px;
-  --padding-xlarge:  64px;
+  --spacing-xs:  4px;
+  --spacing-sm:  8px;
+  --spacing-md:  16px;
+  --spacing-lg:  32px;
+  --spacing-xl:  64px;
 
-  --grid-gutter:     var(--padding-medium);
+  --grid-gutter: var(--spacing-md);
 
   /**
    * @tokens Borders
    */
   --border-thin-solid-gray-4:     2px solid var(--color-gray-4);
   --border-thin-solid-evergreen:  2px solid var(--color-evergreen);
+  --border-thin-solid-pine:       2px solid var(--color-pine);
   --border-thin-solid-sunrise:    2px solid var(--color-sunrise);
   --border-thin-solid-dark-red:   2px solid var(--color-dark-red);
 

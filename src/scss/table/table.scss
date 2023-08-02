@@ -3,8 +3,11 @@
   border-collapse: collapse;
   font-family: var(--font-family-sans);
 
-  th, td { padding: calc(0.5 * var(--padding-large)) var(--padding-small); }
-  th { text-align: left; }
+  th, td { padding: calc(0.5 * var(--spacing-lg)) var(--spacing-sm); }
+  th {
+    font-weight: var(--font-weight-semibold);
+    text-align: left;
+  }
 
   tbody tr {
     th, td { border-top: 1px solid var(--color-gray-4); }

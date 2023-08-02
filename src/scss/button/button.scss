@@ -45,12 +45,12 @@
 
   &--small {
     // With this typeface, the vertical alignment looks more balanced if we add a bit extra on the bottom
-    padding: var(--padding-small) var(--padding-large) calc(var(--padding-small) * 1.25);
+    padding: var(--spacing-sm) var(--spacing-lg) calc(var(--spacing-sm) * 1.25);
     font-size: var(--font-size-sm);
   }
 
   &--large {
-    padding: var(--padding-small) var(--padding-xlarge) calc(var(--padding-small) * 1.25);
+    padding: var(--spacing-sm) var(--spacing-xl) calc(var(--spacing-sm) * 1.25);
     font-size: var(--font-size-lg);
   }
 
