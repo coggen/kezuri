@@ -25,14 +25,19 @@ sharpen-alert {
   .sharpen-alert--heading {
     margin: 0;
     line-height: 1.1;
+    font-weight: var(--font-weight-semibold);
   }
 
   .sharpen-alert--heading + * {
     margin-top: var(--spacing-sm);
   }
 
+  .sharpen-alert--message {
+    font-size: var(--font-size-xs);
+    margin-top: var(--spacing-xxs);
+  }
+
   .sharpen-alert--message > :last-child {
     margin-bottom: 0;
-    padding-bottom: 0;
   }
 }

@@ -1,7 +1,7 @@
 import { Component, Prop, Host, h } from '@stencil/core';
 
 export type CardPadding = 'none' | 'small' | 'medium' | 'large';
-export type CardBorder = 'none' | 'gray';
+export type CardBorder = 'none' | 'gray' | 'green';
 
 @Component({
   tag: 'sharpen-card',
@@ -16,7 +16,7 @@ export class SharpenCard {
   /**
    * Padding size
    */
-  @Prop() padding: CardPadding = 'small';
+  @Prop() padding: CardPadding = 'none';
 
   render() {
     return (

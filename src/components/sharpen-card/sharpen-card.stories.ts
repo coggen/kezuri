@@ -12,15 +12,15 @@ export default {
       table: { defaultValue: { summary: 'none' } }
     },
     padding: {
-      description: 'Padding is customizable. A complementary bottom margin will by applied based on your padding size.',
+      description: 'Padding is customizable.',
       options: ['none', 'small', 'medium', 'large'],
       control: 'radio',
-      table: { defaultValue: { summary: 'small' } }
+      table: { defaultValue: { summary: 'none' } }
     },
   },
   args: {
     border: 'gray',
-    padding: 'small'
+    padding: 'medium'
   },
   render: (args) => `<sharpen-card border="${args.border}" padding="${args.padding}">This is my card</sharpen-card>`
 };

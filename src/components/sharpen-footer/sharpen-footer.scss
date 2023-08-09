@@ -1,0 +1,26 @@
+sharpen-footer {
+  display: block;
+  background-color: var(--color-evergreen);
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  font-family: var(--font-family-sans);
+
+  img.brand {
+    max-width: 170px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .copyright, a { color: var(--color-mint); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); }
+  .trademarks { color: var(--color-mint); font-size: var(--font-size-xs); }
+
+  nav {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  nav > * {
+    display: inline-block;
+    padding: 0.5em 1em;
+    white-space: nowrap;
+  }
+}

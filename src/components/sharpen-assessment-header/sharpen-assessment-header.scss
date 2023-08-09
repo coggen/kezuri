@@ -1,0 +1,29 @@
+sharpen-assessment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-3);
+  margin-bottom: var(--spacing-lg);
+
+  .name {
+    font-family: var(--font-family-serif);
+    color: var(--color-evergreen);
+    font-size: var(--font-size-md);
+    /* TODO remove all heading margins and padding in reset */
+    margin: 0;
+  }
+
+  .meta {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+
+    .section {
+      margin: 0;
+      font-family: var(--font-family-sans);
+      font-weight: var(--font-weight-normal);
+      font-size: var(--font-size-sm);
+    }
+  }
+}

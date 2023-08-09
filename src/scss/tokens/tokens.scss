@@ -28,6 +28,7 @@
   --color-light-orange: #FFE7C3;
 
   --color-light-green:  #C8EBD7;
+  --color-green:        #50CD89;
 
   /**
    * @tokens Fonts
@@ -61,17 +62,21 @@
   /**
    * @tokens Spacing
    */
+  --spacing-xxs: 2px;
   --spacing-xs:  4px;
   --spacing-sm:  8px;
   --spacing-md:  16px;
   --spacing-lg:  32px;
   --spacing-xl:  64px;
 
-  --grid-gutter: var(--spacing-md);
+  --grid-gutter: var(--spacing-lg);
+
+  --max-width-for-reading: 40rem;
 
   /**
    * @tokens Borders
    */
+  --border-hair-solid-green:      1px solid var(--color-green);
   --border-thin-solid-gray-4:     2px solid var(--color-gray-4);
   --border-thin-solid-evergreen:  2px solid var(--color-evergreen);
   --border-thin-solid-pine:       2px solid var(--color-pine);

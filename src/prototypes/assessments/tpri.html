@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Assessments</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+  <style>
+    .container > sharpen-card + sharpen-card {
+      margin-top: var(--spacing-lg);
+    }
+
+    .placeholder-150 {
+      display: inline-block;
+      height: 150px;
+      width: 150px;
+      background-color: var(--color-gray-4);
+    }
+
+    .placeholder-75 {
+      display: inline-block;
+      height: 75px;
+      width: 75px;
+      background-color: var(--color-gray-4);
+    }
+
+    .placeholder-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: var(--color-gray-4);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .sharpen-assessment-controls {
+      margin-top: var(--spacing-lg);
+    }
+
+    .sharpen-assessment-controls.back-next {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .sharpen-assessment-controls.correct-incorrect {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .sharpen-assessment-controls.correct-incorrect .sharpen-button:nth-child(2) {
+      flex: 1;
+    }
+
+    .image-instruction {
+      font-family: var(--font-family-sans);
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .image-instruction .instruction {
+      flex: 1;
+      text-align: left;
+    }
+
+    .tpri-instructions > * + * {
+      margin-top: var(--spacing-md);
+    }
+
+    .question-content-wrapper {
+      border: 2px solid #31786c;
+      background-color: #c8ebd8;
+      height: 30vh;
+      font-family: var(--font-family-sans);
+    }
+
+    .question-content {
+      height: 100%;
+      font-size: 7.5vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container sharpen-mt-lg">
+
+  <!-- STEP 1 -->
+  <sharpen-card border="gray" padding="large">
+    <h1 class="sharpen-heading-2xl-sans">Do we have the right information?</h1>
+    <div class="sharpen-text-container">
+      <p>Based on the kindergarten start year of <strong>2020</strong> that you provided when setting up the profile, Abby is slated to take the <strong>Sharpen TPRI Reading Assessment: End of Grade 2</strong>.</p>
+      <p>If this seems wrong, please update the year of kindergarten for Abby. Otherwise, please click <strong>Start</strong> to get started.</p>
+      <sharpen-alert type="warning" icon="info">
+        After continuing, you will not be able to change the year of kindergarten because we base the schedule for all Sharpen TPRI Reading Assessments on this date. 
+      </sharpen-alert>
+    </div>
+    <div class="sharpen-assessment-controls back-next">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary">Cancel</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">Start<i class="sharpen-icon">chevron_right</i></button>
+    </div>
+  </sharpen-card>
+
+  <!-- STEP 2 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2"></sharpen-assessment-header>
+
+    <sharpen-card class="sharpen-text--center" border="none" padding="large">
+      <h1 class="sharpen-heading-2xl">What is the Sharpen TPRI Assessment?</h1>
+      
+      <span class="placeholder-150"></span>
+
+      <sharpen-card class="sharpen-text-body" border="green" padding="large">
+        Short literacy and reading assessments
+      </sharpen-card>
+
+      <sharpen-card class="sharpen-text-body" border="green" padding="large">
+        Evaluates a learner's developing reading skills
+      </sharpen-card>
+      
+    </sharpen-card>
+
+    <div class="sharpen-assessment-controls back-next">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary"><i class="sharpen-icon">chevron_left</i>Back</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">Next<i class="sharpen-icon">chevron_right</i></button>
+    </div>
+  </sharpen-card>
+
+  <!-- STEP 3 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2"></sharpen-assessment-header>
+
+    <sharpen-card class="sharpen-text--center" border="none" padding="large">
+      <h1 class="sharpen-heading-2xl">What you need to know before starting...</h1>
+
+      <div class="tpri-instructions">
+        <sharpen-card border="gray" padding="medium">
+          <div class="image-instruction">
+            <span class="placeholder-75"></span>
+            <div class="instruction">Watch the short training videos for each assessment without your learner present.</div>
+          </div>
+        </sharpen-card>
+
+        <sharpen-card border="gray" padding="medium">
+          <div class="image-instruction">
+            <span class="placeholder-75"></span>
+            <div class="instruction">After watching each training video, you can invite your learner to the computer work area to begin the assessment.</div>
+          </div>
+        </sharpen-card>
+
+        <sharpen-card border="gray" padding="medium">
+          <div class="image-instruction">
+            <span class="placeholder-75"></span>
+            <div class="instruction">Make sure your speakers are turned on so that your learner can hear the narrator's instructions.</div>
+          </div>
+        </sharpen-card>
+
+        <sharpen-card border="gray" padding="medium">
+          <div class="image-instruction">
+            <span class="placeholder-75"></span>
+            <div class="instruction">Make sure the room is quiet and free from distractions.</div>
+          </div>
+        </sharpen-card>
+      </div>
+      
+    </sharpen-card>
+
+    <div class="sharpen-assessment-controls back-next">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary"><i class="sharpen-icon">chevron_left</i>Back</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">Next<i class="sharpen-icon">chevron_right</i></button>
+    </div>
+  </sharpen-card>
+
+  <!-- STEP 4 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2"></sharpen-assessment-header>
+    
+    <div class="sharpen-text-container">
+      <p class="sharpen-text-body">This sub-assessment measures a child's ability to read individual decodable words presented one at a time.</p>
+      <sharpen-alert type="warning" icon="info">Please watch the instructional video below without your child present.</sharpen-alert>
+    </div>
+
+    <div class="placeholder-video"></div>
+
+    <div class="sharpen-text-container">
+      <sharpen-alert type="warning" icon="warning" heading="We are unable to autoplay the audio">
+        <p>This assessment plays audio for your child to hear. We detected that your browser will not play the audio automatically.</p>
+        <p>Please follow the following instructions so that we can administer the assessment correctly:</p>
+        <ol class="sharpen-list">
+          <li>To the left of the web address, click the 🔒 icon.</li>
+          <li>Change Autoplay permission to Allow Audio and Video.</li>
+          <li>Refresh this page and ensure that this warning is gone.</li>
+        </ol>
+      </sharpen-alert>
+    </div>
+
+    <div class="sharpen-assessment-controls back-next">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary"><i class="sharpen-icon">chevron_left</i>Back</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">Next<i class="sharpen-icon">chevron_right</i></button>
+    </div>
+
+  </sharpen-card>
+
+  <!-- STEP 5 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2" section="Word Reading" progress="0"></sharpen-assessment-header>
+    
+    <div class="sharpen-text-container">
+      <p>This sub-assessment measures a child's ability to read individual decodable words presented one at a time.</p>
+      <sharpen-alert type="warning" icon="info">Please watch the instructional video below without your child present.</sharpen-alert>
+    </div>
+
+    <div class="placeholder-video"></div>
+
+    <div class="sharpen-assessment-controls back-next">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary"><i class="sharpen-icon">chevron_left</i>Back</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">Next<i class="sharpen-icon">chevron_right</i></button>
+    </div>
+
+  </sharpen-card>
+
+  <!-- STEP 6 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2" section="Word Reading" progress="0"></sharpen-assessment-header>
+    
+    <div class="sharpen-text-container">
+      <sharpen-alert type="warning" icon="info">Please show this video to your child.</sharpen-alert>
+    </div>
+
+    <div class="placeholder-video"></div>
+
+    <div class="sharpen-assessment-controls back-next">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary"><i class="sharpen-icon">chevron_left</i>Back</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">Begin<i class="sharpen-icon">chevron_right</i></button>
+    </div>
+
+  </sharpen-card>
+
+  <!-- STEP 7 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2" section="Word Reading" progress="0"></sharpen-assessment-header>
+    
+    <div class="question-content-wrapper">
+      <div class="question-content">
+        told
+      </div>
+    </div>
+
+    <div class="sharpen-assessment-controls correct-incorrect">
+      <button class="sharpen-button sharpen-button--small sharpen-button--secondary">Cancel Assessment</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--link"><i class="sharpen-icon">volume_up</i>Replay Audio</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--muted">Correct (c)</button>
+      <button class="sharpen-button sharpen-button--small sharpen-button--muted">Incorrect (i)</button>
+    </div>
+
+  </sharpen-card>
+
+  <!-- STEP 8 -->
+  <sharpen-card border="none" padding="large">
+    <sharpen-assessment-header name="Sharpen TPRI Reading Assessment - End of Grade 2" section="Word Reading" progress="100"></sharpen-assessment-header>
+    
+    <div class="sharpen-text--center">
+      <span class="placeholder-150 sharpen-mb-lg"></span>
+
+      <h1 class="sharpen-heading-2xl">Wonderful! You Did It!</h1>
+      <h2 class="sharpen-heading-xl">You have successfully completed the Sharpen TPRI Reading Assessment - End of Grade 2</h1>
+
+      <div class="sharpen-form-group">
+        <button class="sharpen-button sharpen-button--primary sharpen-button--large">View Results</button>
+      </div>
+    </div>
+
+    <sharpen-alert type="warning" icon="info">
+      <p>If you feel like Abby was not able to concentrate or was in some way more distracted than usual, you may try again when Abby is ready.</p>
+      <button class="sharpen-button sharpen-button--secondary sharpen-button--small">Discard all responses and try again later</button>
+    </sharpen-alert>
+
+    <sharpen-card border="gray" padding="medium">
+    
+      <div class="sharpen-text-body sharpen-text-muted">
+        
+      </div>
+
+      
+
+    </sharpen-card>
+
+  </sharpen-card>
+
+
+</div>
+
+<sharpen-footer>
+  <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+  <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+</sharpen-footer>
+
+</body>
+</html>

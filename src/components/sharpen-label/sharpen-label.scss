@@ -1,0 +1,37 @@
+sharpen-label {
+  display: inline-block;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: var(--border-radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  white-space: nowrap;
+  background-color: white;
+
+  .sharpen-icon {
+    font-size:18px;
+    margin-right: var(--spacing-xxs);
+  }
+
+  &[type="success"] {
+    border-color: var(--color-light-green);
+    color: var(--color-evergreen);
+  }
+
+  &[type="warning"] {
+    border-color: var(--color-light-orange);
+    color: var(--color-dark-orange);
+  }
+
+  &[type="danger"] {
+    border-color: var(--color-light-red);
+    color: var(--color-dark-red);
+  }
+
+  &[type="info"] {
+    border-color: var(--color-gray-3);
+    color: var(--color-gray-1);
+  }
+}

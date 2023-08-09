@@ -13,6 +13,5 @@
 @include media-breakpoint-up(xxl) { .container, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm,  { max-width: 1320px; } }
 
 main {
-  padding-top: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
+  padding: var(--spacing-lg) 0;
 }

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Assessments</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+  <style>
+    .assessment-collection + .assessment-collection, 
+    .assessment-collection sharpen-card + sharpen-card {
+      margin-top: var(--spacing-lg);
+    }
+
+    .risk-low       { font-weight: var(--font-weight-semibold); color: var(--color-pine); }
+    .risk-elevated  { font-weight: var(--font-weight-semibold); color: var(--color-orange); }
+    .risk-high      { font-weight: var(--font-weight-semibold); color: var(--color-red); }
+  </style>
+</head>
+<body>
+
+<div class="container sharpen-mt-lg">
+
+  <sharpen-back href="#">Back to Dashboard</sharpen-back>
+
+  <h1 class="sharpen-heading-3xl--bordered">
+    <i class="sharpen-icon">list_alt</i>Early Advantage Assessment
+  </h1>
+
+  <sharpen-card class="assessment-collection" border="none" padding="large">
+    <div class="row">
+      <div class="col-md-3">
+        <sharpen-progress-dial class="sharpen-mb-lg" progress-val="50" show-description="true" status-label="Risk"></sharpen-progress-dial>
+
+        <dl class="sharpen-list sharpen-mb-lg">
+          <dt>Completed on</dt>
+          <dd><i class="sharpen-icon">calendar_today</i>July 20, 2023</dd>
+        </dl>
+      </div>
+      <div class="col-md-9">
+        <div class="sharpen-text-body sharpen-mb-lg sharpen-text-muted">
+          You have completed Sharpen's Early Advantage Assessment for Abby as of July 20, 2023. Abby has a high risk in 1 or more assessments completed to date. It is highly recommended to provide additional support for the development of Abby's literacy skills. One solution would be to enroll in Sharpen Reading to improve Abby's reading skills without delay. 
+        </div>
+        <h2 class="sharpen-heading-xl">Recommendations</h2>
+        <ul class="sharpen-list sharpen-text-body">
+          <li>Take further steps to support the development of Abby's literacy skills</li>
+          <li>Complete the next scheduled Sharpen Assessment(s) to get an updated risk analysis</li>
+          <li>Research has shown that timely intervention benefits all children. Enroll in Sharpen Reading to help Abby meet age and grade appropriate reading skills</li>
+        </ul>
+      </div>
+    </div>
+  </sharpen-card>
+
+  <sharpen-card class="assessment-collection" border="none" padding="none">
+    <sharpen-card-header>
+      Developmental Milestones Assessment
+    </sharpen-card-header>
+    <sharpen-card-content padding="large">
+
+      <sharpen-card border="gray" padding="large">
+        <div class="row">
+          <div class="col-md-7 col-lg-8 col-xl-6">
+            <h2 class="sharpen-heading-md">Early Literacy: Age 5 to 8</h2>
+            <div class="sharpen-text-body sharpen-text-muted sharpen-mb-md">
+              This assessment evaluates a child's past early literacy development, for children between 5 and 8 years of age. 
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-4 offset-xl-3 col-xl-3">
+            <dl class="sharpen-list sharpen-mb-lg">
+              <dt>Result</dt>
+              <dd>
+                <sharpen-progress-bar progress-val="50" show-description="true" status-label="Risk"></sharpen-progress-bar>
+              </dd>
+
+              <dt>Completed on</dt>
+              <dd><i class="sharpen-icon">calendar_today</i>July 20, 2023</dd>
+            </dl>
+
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary sharpen-button--full-width">View details<i class="sharpen-icon">chevron_right</i></button>
+          </div>
+        </div>
+      </sharpen-card>
+
+    </sharpen-card-content>
+  </sharpen-card>
+
+  <sharpen-card class="assessment-collection" border="none" padding="none">
+    <sharpen-card-header>
+      Sharpen TPRI Assessment
+    </sharpen-card-header>
+    <sharpen-card-content padding="large">
+
+      <sharpen-card border="gray" padding="large">
+        <div class="row">
+          <div class="col-md-7 col-lg-8 col-xl-6">
+            <h2 class="sharpen-heading-md">Sharpen TPRI Reading Assessment: End of Grade 2</h2>
+            <div class="sharpen-text-body sharpen-text-muted sharpen-mb-md">
+              This assessment evaluates a child's current reading skills between Kindergarten and Grade 2.
+            </div>
+            <sharpen-alert type="warning" icon="info">
+              After an initial introduction video to be watched just by you, this assessment requires your child be present and able to view the screen and answer questions related to reading.
+            </sharpen-alert>
+          </div>
+          <div class="col-md-5 col-lg-4 offset-xl-3 col-xl-3">
+            <button class="sharpen-button sharpen-button--small sharpen-button--primary sharpen-button--full-width">Start Assessment</button>
+          </div>
+        </div>
+      </sharpen-card>
+
+      <sharpen-card border="gray" padding="large">
+        <div class="row">
+          <div class="col-md-7 col-lg-8 col-xl-6">
+            <h2 class="sharpen-heading-md">Sharpen TPRI Reading Assessment: End of Kindergarten</h2>
+            <div class="sharpen-text-body sharpen-text-muted sharpen-mb-md">
+              This assessment evaluates a child's current reading skills between Kindergarten and Grade 2.
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-4 offset-xl-3 col-xl-3">
+            <dl class="sharpen-list sharpen-mb-lg">
+              <dt>Result</dt>
+              <dd>
+                <sharpen-progress-bar progress-val="10" show-description="true" status-label="Risk"></sharpen-progress-bar>
+              </dd>
+
+              <dt>Completed on</dt>
+              <dd><i class="sharpen-icon">calendar_today</i>September 14, 2020</dd>
+            </dl>
+
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary sharpen-button--full-width">View details<i class="sharpen-icon">chevron_right</i></button>
+          </div>
+        </div>
+      </sharpen-card>
+
+      <sharpen-card border="gray" padding="large">
+        <div class="row">
+          <div class="col-md-7 col-lg-8 col-xl-6">
+            <h2 class="sharpen-heading-md">Sharpen TPRI Reading Assessment: Beginning of Kindergarten</h2>
+            <div class="sharpen-text-body sharpen-text-muted sharpen-mb-md">
+              This assessment evaluates a child's current reading skills between Kindergarten and Grade 2.
+            </div>
+          </div>
+          <div class="col-md-5 col-lg-4 offset-xl-3 col-xl-3">
+            <dl class="sharpen-list sharpen-mb-lg">
+              <dt>Result</dt>
+              <dd>
+                <sharpen-progress-bar progress-val="100" show-description="true" status-label="Risk"></sharpen-progress-bar>
+              </dd>
+
+              <dt>Completed on</dt>
+              <dd><i class="sharpen-icon">calendar_today</i>September 14, 2020</dd>
+            </dl>
+
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary sharpen-button--full-width">View details<i class="sharpen-icon">chevron_right</i></button>
+          </div>
+        </div>
+      </sharpen-card>
+
+    </sharpen-card-content>
+  </sharpen-card>
+
+</div>
+
+<sharpen-footer>
+  <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+  <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+</sharpen-footer>
+
+</body>
+</html>

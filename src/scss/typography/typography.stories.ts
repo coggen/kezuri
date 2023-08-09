@@ -53,7 +53,7 @@ export const HeadingsWithIcons = {
  */
 export const IntroductoryText = {
   render: () => `<h1 class="sharpen-heading-2xl">Learners</h1>
-<p class="sharpen-intro">Sharpen offers your learners a selection of reading products. We invoice you monthly for any active subscriptions.</p>`
+<p class="sharpen-text-intro">Sharpen offers your learners a selection of reading products. We invoice you monthly for any active subscriptions.</p>`
 }
 
 /**
