@@ -1,6 +1,0 @@
-sharpen-card-content {
-  display: block;
-  &[padding="small"]  { padding: var(--spacing-sm); }
-  &[padding="medium"] { padding: var(--spacing-md); }
-  &[padding="large"]  { padding: var(--spacing-lg); }
-}

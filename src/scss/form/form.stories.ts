@@ -162,5 +162,23 @@ export const FormError = {
 </div>`
 };
 
-
-
+export const FormDocument = {
+  name: 'Legal documents',
+  render: () => `<div class="sharpen-form-group">
+  <label class="sharpen-form-label">Consent for Research Program</label>
+  <div class="sharpen-form-document">
+    <h5>What am I agreeing to if I consent?</h5>
+    <p>One of Sharpen's missions is to give to customers like you the opportunity to participate in relevant research and to contribute to the development of novel evidence-based solutions that will improve learning outcomes for all children. When opting in the Research Program, you are consenting to having Sharpen researchers use your self-reported information and assessment data for research intended for publication in peer-reviewed journals. <strong>Research studies are overseen by an independent ethics review board and are performed exclusively on de-identified data. Sharpen researchers and research collaborators will never have access to your personal identifiable information.</strong> These studies may be sponsored by Sharpen or other qualified entities, including research organizations that may be funded by the federal government.</p>
+    <h5>What data are used in Sharpen research?</h5>
+    <p>Self-reported information includes any information submitted to Sharpen, excluding all personal identifiable information submitted during account set setup or user profile creation such as name, user ID, password, address, email address, or credit card information. Assessment data include questionary responses, assessment results, and genetic data. Self-reported information and assessment data may be used to discover links between genetic markers, learning skills, learning traits, and/or other learning characteristics. These advances could be used to better understand the cause of learning difficulties, improve early detection, or optimize intervention programs.</p>
+  </div>
+  <div class="sharpen-form-check">
+    <input type="radio" class="sharpen-form-check-input" name="legal_radio" id="legal_radio_1" />
+    <label class="sharpen-form-label" for="legal_radio_1">Opt in to the Research Program</label>
+  </div>
+  <div class="sharpen-form-check">
+    <input type="radio" class="sharpen-form-check-input" name="legal_radio" id="legal_radio_2" />
+    <label class="sharpen-form-label" for="legal_radio_2">Opt out of the Research Program</label>
+  </div>
+</div>`
+}

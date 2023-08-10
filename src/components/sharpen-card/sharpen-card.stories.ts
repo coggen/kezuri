@@ -38,3 +38,18 @@ export const Unbordered = {
     border: 'none'
   }
 };
+
+/**
+ * A bold green header, used primarily to show major assessment names. Designed
+ * to fit within a border-none, padding-none `sharpen-card`. Pair with
+ * `sharpen-card-content` so that the content has the desired padding.
+ */
+export const CardHeader = {
+  args: { padding: 'large' },
+  render: (args) => `<sharpen-card border="none" padding="none">
+  <sharpen-card-header>Family History Assessment</sharpen-card-header>
+  <sharpen-card-content padding="${args.padding}">
+    Content here
+  </sharpen-card-content>
+</sharpen-card>`
+};

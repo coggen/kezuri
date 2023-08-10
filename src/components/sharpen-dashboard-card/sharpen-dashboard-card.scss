@@ -1,0 +1,56 @@
+sharpen-dashboard-card {
+  font-family: var(--font-family-sans);
+
+  sharpen-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+
+    > .sharpen-button {
+      margin-top: var(--spacing-lg);
+    }
+
+    > img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  .dashboard-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: var(--font-size-xs);
+
+    .subheading {
+      color: var(--color-gray-2);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .link a {
+      color: black;
+    }
+  }
+
+  h2 {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-md);
+    color: var(--color-evergreen);
+  }
+
+  hr {
+    border: none;
+    width: 34px;
+    height: 5px;
+    margin: 0;
+    background-color: var(--color-mint);
+  }
+
+  .dashboard-card-description {
+    flex: 1;
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-1);
+    line-height: 1.5;
+  }
+}

@@ -1,5 +1,5 @@
 /**
- * Used at the top of a page to give the user a way to navigate one step up
+ * Used at the top of a page to help the user navigate one step up
  * a page hierarchy.
  */
 export default {
@@ -20,5 +20,4 @@ export default {
   render: (args) => `<sharpen-back href="${args.href}">${args.linkText}</sharpen-back>`
 };
 
-/** A back button */
 export const Example = { };

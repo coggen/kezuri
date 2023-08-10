@@ -123,6 +123,7 @@
   margin-bottom: var(--spacing-md);
   overflow-y: scroll;
   height: 200px;
+  max-width: var(--max-width-for-reading);
 
   h5, p {
     color: var(--color-gray-1);

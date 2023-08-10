@@ -103,3 +103,10 @@ export const Disabled = {
     disabled: true
   }
 }
+
+/** Full width buttons extend across the available space. */
+export const FullWidth = {
+  render: () => `<sharpen-card border="gray" padding="large">
+  <button class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Full width button</button>
+</sharpen-card>`
+}

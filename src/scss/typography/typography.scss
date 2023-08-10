@@ -15,14 +15,14 @@ strong { font-weight: var(--font-weight-semibold); }
 .sharpen-text--center  { text-align: center; }
 .sharpen-text--justify { text-align: justify; }
 
-.sharpen-text-body, .sharpen-text-container {
+.sharpen-text--body, .sharpen-text-container {
   font-family: var(--font-family-sans);
   line-height: 1.5;
 }
 
 .sharpen-text-container {
   max-width: var(--max-width-for-reading);
-  ul.sharpen-list, p { margin-bottom: var(--spacing-md); }
+  dl.sharpen-list, ol.sharpen-list, ul.sharpen-list, p { margin-bottom: var(--spacing-md); }
 }
 
 [class^="sharpen-heading-"] {
@@ -81,7 +81,7 @@ strong { font-weight: var(--font-weight-semibold); }
   color: var(--color-gray-1); 
 }
 
-.sharpen-text-muted {
+.sharpen-text--muted {
   color: var(--color-gray-1);
 }
 

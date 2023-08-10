@@ -18,3 +18,13 @@
 .tokens-preview-combination + .tokens-preview-combination {
   margin-top: 1em;
 }
+
+.spacing-examples {
+  background-color: lightyellow;
+}
+
+.spacing-examples > div {
+  font-family: monospace;
+  border: 1px dashed #999;
+  background-color: #ccc;
+}

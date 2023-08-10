@@ -54,6 +54,15 @@ export namespace Components {
     }
     interface SharpenCardHeader {
     }
+    interface SharpenDashboardCard {
+        "heading": string;
+        "imgSrc": string;
+        "primaryLink": string;
+        "primaryLinkText": string;
+        "secondaryLink": string;
+        "secondaryLinkText": string;
+        "subheading": string;
+    }
     interface SharpenEmpty {
     }
     interface SharpenFooter {
@@ -147,6 +156,12 @@ declare global {
         prototype: HTMLSharpenCardHeaderElement;
         new (): HTMLSharpenCardHeaderElement;
     };
+    interface HTMLSharpenDashboardCardElement extends Components.SharpenDashboardCard, HTMLStencilElement {
+    }
+    var HTMLSharpenDashboardCardElement: {
+        prototype: HTMLSharpenDashboardCardElement;
+        new (): HTMLSharpenDashboardCardElement;
+    };
     interface HTMLSharpenEmptyElement extends Components.SharpenEmpty, HTMLStencilElement {
     }
     var HTMLSharpenEmptyElement: {
@@ -208,6 +223,7 @@ declare global {
         "sharpen-card": HTMLSharpenCardElement;
         "sharpen-card-content": HTMLSharpenCardContentElement;
         "sharpen-card-header": HTMLSharpenCardHeaderElement;
+        "sharpen-dashboard-card": HTMLSharpenDashboardCardElement;
         "sharpen-empty": HTMLSharpenEmptyElement;
         "sharpen-footer": HTMLSharpenFooterElement;
         "sharpen-label": HTMLSharpenLabelElement;
@@ -259,6 +275,15 @@ declare namespace LocalJSX {
         "padding"?: CardPadding1;
     }
     interface SharpenCardHeader {
+    }
+    interface SharpenDashboardCard {
+        "heading": string;
+        "imgSrc": string;
+        "primaryLink"?: string;
+        "primaryLinkText"?: string;
+        "secondaryLink"?: string;
+        "secondaryLinkText"?: string;
+        "subheading"?: string;
     }
     interface SharpenEmpty {
     }
@@ -322,6 +347,7 @@ declare namespace LocalJSX {
         "sharpen-card": SharpenCard;
         "sharpen-card-content": SharpenCardContent;
         "sharpen-card-header": SharpenCardHeader;
+        "sharpen-dashboard-card": SharpenDashboardCard;
         "sharpen-empty": SharpenEmpty;
         "sharpen-footer": SharpenFooter;
         "sharpen-label": SharpenLabel;
@@ -343,6 +369,7 @@ declare module "@stencil/core" {
             "sharpen-card": LocalJSX.SharpenCard & JSXBase.HTMLAttributes<HTMLSharpenCardElement>;
             "sharpen-card-content": LocalJSX.SharpenCardContent & JSXBase.HTMLAttributes<HTMLSharpenCardContentElement>;
             "sharpen-card-header": LocalJSX.SharpenCardHeader & JSXBase.HTMLAttributes<HTMLSharpenCardHeaderElement>;
+            "sharpen-dashboard-card": LocalJSX.SharpenDashboardCard & JSXBase.HTMLAttributes<HTMLSharpenDashboardCardElement>;
             "sharpen-empty": LocalJSX.SharpenEmpty & JSXBase.HTMLAttributes<HTMLSharpenEmptyElement>;
             "sharpen-footer": LocalJSX.SharpenFooter & JSXBase.HTMLAttributes<HTMLSharpenFooterElement>;
             "sharpen-label": LocalJSX.SharpenLabel & JSXBase.HTMLAttributes<HTMLSharpenLabelElement>;

@@ -2,8 +2,7 @@ import { Component, Prop, Host, h } from '@stencil/core';
 import { CardPadding } from '../sharpen-card/sharpen-card';
 
 @Component({
-  tag: 'sharpen-card-content',
-  styleUrl: 'sharpen-card-content.scss',
+  tag: 'sharpen-card-content'
 })
 export class SharpenCardContent {
 

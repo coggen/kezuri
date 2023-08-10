@@ -1,6 +1,6 @@
 /**
  * A small element to display a bit of metadata alongside or inside another
- * element.
+ * element. Sometimes also called a tag or a badge.
  */
 export default {
   title: 'Molecules/Label',
