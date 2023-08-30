@@ -28,3 +28,7 @@
   border: 1px dashed #999;
   background-color: #ccc;
 }
+
+.row + .row {
+  margin-top: 1em;
+}

@@ -81,12 +81,13 @@ export const MessageOnly = {
 export const DetailedMessage = {
   args: {
     type: 'success',
-    heading: 'Read these important details',
-    message: `<p>Choose from these flavors:</p>
-    <ul>
-      <li>Chocolate</li>
-      <li>Banana</li>
-      <li>Mint Oreo</li>
-    </ul>`
+    heading: 'Choose from these flavors',
+    message: `
+  <ul class="sharpen-list sharpen-mt-sm">
+    <li>Chocolate</li>
+    <li>Banana</li>
+    <li>Mint Oreo</li>
+  </ul>
+`
   }
 };

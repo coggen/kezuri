@@ -4,6 +4,10 @@ sharpen-card {
   background-color: var(--color-white);
 
   &[border="none"] { box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 40px 0px; }
+  &[border="thin"] {
+    border: var(--border-hair-solid-gray-4);
+    border-radius: var(--border-radius-xs);
+  }
   &[border="gray"] { border: var(--border-thin-solid-gray-4); }
   &[border="green"] {
     border: var(--border-hair-solid-green);

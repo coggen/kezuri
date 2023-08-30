@@ -14,12 +14,21 @@
       margin: var(--spacing-lg) 0;
     }
 
+    .tpri-results.narrow {
+      border-top: 4px solid var(--color-gray-3);
+      max-width: 25rem;
+    }
+
     .tpri-result-description.overall {
       background-color: var(--color-ivory);
     }
 
     .tpri-result-description {
       padding: var(--spacing-sm);
+    }
+
+    .tpri-results.narrow .tpri-result-description {
+      border-bottom: 1px solid var(--color-gray-3);
     }
 
     .tpri-results .tpri-skill {
@@ -69,57 +78,55 @@
       font-weight: var(--font-weight-semibold);
     }
 
+    .tpri-results.narrow table.tpri tbody th {
+      width: 34%;
+    }
+
     table.tpri tbody td {
       text-align: center;
+    }
+
+    .tpri-results.narrow table.tpri tbody td {
+      width: 22%;
     }
 
     table.tpri tbody tr:nth-child(odd) > * {
       background-color: var(--color-gray-5);
     }
 
-    .tpri-results .tpri-skill {
+/*    .tpri-results.wide :not(.overall) > .tpri-result-description {
+      padding-left: var(--spacing-lg);
+    }
+*/
+    .tpri-results.wide .tpri-skill {
       font-size: var(--font-size-xs);
     }
 
-    .tpri-results .tpri-result {
+    .tpri-results.wide .tpri-result {
       font-size: var(--font-size-lg);
       font-weight: var(--font-weight-book);
     }
 
-    .tpri-results table.tpri tr.overall > * {
+    .tpri-results.wide table.tpri tr.overall > * {
       border-bottom: 4px solid var(--color-gray-3);
+      background-color: var(--color-ivory);
     }
 
-    .tpri-results table.tpri thead {
+    .tpri-results.wide table.tpri thead {
       color: var(--color-gray-1);
     }
 
-    .tpri-results table.tpri tr.grades > * {
+    .tpri-results.wide table.tpri tr.grades > * {
       font-weight: var(--font-weight-semibold);
       padding-bottom: 0;
     }
 
-    .tpri-results table.tpri tbody td:nth-child(3n-1) {
+    .tpri-results.wide table.tpri tbody td {
+      width: 8%;
+    }
+
+    .tpri-results.wide table.tpri tbody td:nth-child(3n-1) {
       border-left: 1px dotted black;
-    }
-
-    .tpri-results .latest {
-      border-left: 1px dashed var(--color-gray-1);
-      border-right: 1px dashed var(--color-gray-1);
-    }
-
-    .tpri-results th.latest {
-      border-top: 1px dashed var(--color-gray-1);
-    }
-
-    .tpri-results tbody tr:last-child .latest {
-      border-bottom: 1px dashed var(--color-gray-1);
-    }
-
-    .tpri-skill-description {
-      font-weight: var(--font-weight-book);
-      color: var(--color-gray-1);
-      font-size: var(--font-size-xs);
     }
 
     .tpri-results.wide { display: none; }
@@ -128,6 +135,7 @@
       .tpri-results.wide { display: block; }
       .tpri-results.narrow { display: none; }
     }
+
   </style>
 </head>
 <body>
@@ -143,197 +151,12 @@
       not intended to be an outcome assessment, and your child does not "pass"
       or "fail" this assessment. For the overall assessment result as well as
       for each sub-assessment, a child will get one of these results:</p>
-      <table class="sharpen-table">
-        <tbody>
-          <tr>
-            <td><sharpen-label type="success">D</sharpen-label></td>
-            <td><strong>Developed</strong>: Your child was successful with the task, which means that they will likely make good progress with appropriate instruction</td>
-          </tr>
-          <tr>
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-            <td><strong>Still Developing</strong>: Your child is still working to develop this skill, and may benefit from additional reading assistance and/or assessment.</td>
-          </tr>
-          <tr>
-            <td>N/A</td>
-            <td>The skill does not get assessed at that time point</td>
-          </tr>
-          <tr>
-            <td>&mdash;</td>
-            <td>A skill assessment was missed at that time point</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tpri-results narrow">
-      <table class="tpri">
-        <thead>
-          <tr class="grades">
-            <th></th>
-            <th colspan="3">Kindergarten</th>
-          </tr>
-          <tr class="timepoints">
-            <th></th>
-            <th>Begin</th>
-            <th>Mid</th>
-            <th>End</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="overall">
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Overall result</div>
-            </th>
-
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-            <td>&mdash;</td>
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-          </tr>
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Letter Sounds</div>
-            </th>
-
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-            <td>&mdash;</td>
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-          </tr>
-
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Blending Phonemes</div>
-            </th>
-
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-            <td>&mdash;</td>
-            <td><sharpen-label type="success">D</sharpen-label></td>
-          </tr>
-
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Word Reading</div>
-            </th>
-
-            <td><span class="na">N/A</span></td>
-            <td><span class="na">N/A</span></td>
-            <td><span class="na">N/A</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tpri-results narrow">
-      <table class="tpri">
-        <thead>
-          <tr class="grades">
-            <th></th>
-            <th colspan="3">Grade 1</th>
-          </tr>
-          <tr class="timepoints">
-            <th></th>
-            <th>Begin</th>
-            <th>Mid</th>
-            <th>End</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="overall">
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Overall result</div>
-            </th>
-
-            <td>&mdash;</td>
-            <td>&mdash;</td>
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-          </tr>
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Letter Sounds</div>
-            </th>
-
-            <td>&mdash;</td>
-            <td>&mdash;</td>
-            <td><span class="na">N/A</span></td>
-          </tr>
-
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Blending Phonemes</div>
-            </th>
-
-            <td>&mdash;</td>
-            <td>&mdash;</td>
-            <td><span class="na">N/A</span></td>
-          </tr>
-
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Word Reading</div>
-            </th>
-
-            <td>&mdash;</td>
-            <td>&mdash;</td>
-            <td><sharpen-label type="danger">SD</sharpen-label></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="tpri-results narrow">
-      <table class="tpri">
-        <thead>
-          <tr class="grades">
-            <th></th>
-            <th colspan="3">Grade 2</th>
-          </tr>
-          <tr class="timepoints">
-            <th></th>
-            <th>Begin</th>
-            <th>Mid</th>
-            <th class="latest">End</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="overall">
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Overall result</div>
-            </th>
-
-            <td>&mdash;</td>
-            <td>&mdash;</td>
-            <td class="latest"><sharpen-label type="danger">SD</sharpen-label></td>
-          </tr>
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Letter Sounds</div>
-            </th>
-
-            <td><span class="na">N/A</span></td>
-            <td><span class="na">N/A</span></td>
-            <td class="latest"><span class="na">N/A</span></td>
-          </tr>
-
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Blending Phonemes</div>
-            </th>
-
-            <td><span class="na">N/A</span></td>
-            <td><span class="na">N/A</span></td>
-            <td class="latest"><span class="na">N/A</span></td>
-          </tr>
-
-          <tr>
-            <th class="tpri-result-description">
-              <div class="tpri-skill">Word Reading</div>
-            </th>
-
-            <td>&mdash;</td>
-            <td>&mdash;</td>
-            <td class="latest"><sharpen-label type="danger">SD</sharpen-label></td>
-          </tr>
-        </tbody>
-      </table>
+      <ul class="sharpen-list">
+        <li><sharpen-label type="success">D</sharpen-label> <strong>(Developed)</strong> : Your child was successful with the task, which means that they will likely make good progress with appropriate instruction; OR</li>
+        <li><sharpen-label type="danger">SD</sharpen-label> <strong>(Still developing)</strong>: Your child is still working to develop this skill, and may benefit from additional reading assistance and/or assessment.</li>
+        <li><strong>N/A</strong>: The sub-assessment is not given at that particular time point</li>
+        <li><strong>&mdash;</strong>: An expected sub-assessment was skipped</li>
+      </ul>
     </div>
 
     <div class="tpri-results wide">
@@ -355,13 +178,14 @@
             <th>End</th>
             <th>Beginning</th>
             <th>Middle</th>
-            <th class="latest">End</th>
+            <th>End</th>
           </tr>
         </thead>
         <tbody>
           <tr class="overall">
             <th class="tpri-result-description">
-              <div class="tpri-skill">Overall result</div>
+              <div class="tpri-skill">Overall result:</div>
+              <div class="tpri-result">Still Developing</div>
             </th>
 
             <td><sharpen-label type="danger">SD</sharpen-label></td>
@@ -374,13 +198,13 @@
 
             <td>&mdash;</td>
             <td>&mdash;</td>
-            <td class="latest"><sharpen-label type="danger">SD</sharpen-label></td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
           </tr>
 
           <tr>
             <th class="tpri-result-description">
-              <div class="tpri-skill">Letter Sounds</div>
-              <div class="tpri-skill-description">Your child's ability to recognize letters and letter sounds</div>
+              <div class="tpri-skill">Letter Sounds:</div>
+              <div class="tpri-result">Still Developing</div>
             </th>
 
             <td><sharpen-label type="danger">SD</sharpen-label></td>
@@ -393,13 +217,13 @@
 
             <td><span class="na">N/A</span></td>
             <td><span class="na">N/A</span></td>
-            <td class="latest"><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
           </tr>
 
           <tr>
             <th class="tpri-result-description">
-              <div class="tpri-skill">Blending Phonemes</div>
-              <div class="tpri-skill-description">Your child's ability to hear and play with the sounds or syllables in words</div>
+              <div class="tpri-skill">Blending Phonemes:</div>
+              <div class="tpri-result developed">Developed</div>
             </th>
 
             <td><sharpen-label type="danger">SD</sharpen-label></td>
@@ -412,13 +236,13 @@
 
             <td><span class="na">N/A</span></td>
             <td><span class="na">N/A</span></td>
-            <td class="latest"><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
           </tr>
 
           <tr>
             <th class="tpri-result-description">
-              <div class="tpri-skill">Word Reading</div>
-              <div class="tpri-skill-description">Your child's ability to read a list of decodable words</div>
+              <div class="tpri-skill">Word Reading:</div>
+              <div class="tpri-result">Still Developing</div>
             </th>
 
             <td><span class="na">N/A</span></td>
@@ -431,14 +255,169 @@
 
             <td>&mdash;</td>
             <td>&mdash;</td>
-            <td class="latest"><sharpen-label type="danger">SD</sharpen-label></td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tpri-results narrow">
+      <div class="tpri-result-description overall">
+        <div class="tpri-skill">Overall result:</div>
+        <div class="tpri-result">Still Developing</div>
+      </div>
+      <table class="tpri">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Begin</th>
+            <th>Mid</th>
+            <th>End</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Kindergarten</th>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+          </tr>
+          <tr>
+            <th>Grade 1</th>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+          </tr>
+          <tr>
+            <th>Grade 2</th>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tpri-results narrow">
+      <div class="tpri-result-description">
+        <div class="tpri-skill">Letter Sounds:</div>
+        <div class="tpri-result">Still Developing</div>
+      </div>
+      <table class="tpri">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Begin</th>
+            <th>Mid</th>
+            <th>End</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Kindergarten</th>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+          </tr>
+          <tr>
+            <th>Grade 1</th>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><span class="na">N/A</span></td>
+          </tr>
+          <tr>
+            <th>Grade 2</th>
+            <td><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tpri-results narrow">
+      <div class="tpri-result-description">
+        <div class="tpri-skill">Blending Phonemes:</div>
+        <div class="tpri-result developed">Developed</div>
+      </div>
+      <table class="tpri">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Begin</th>
+            <th>Mid</th>
+            <th>End</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Kindergarten</th>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="success">D</sharpen-label></td>
+          </tr>
+          <tr>
+            <th>Grade 1</th>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><span class="na">N/A</span></td>
+          </tr>
+          <tr>
+            <th>Grade 2</th>
+            <td><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tpri-results narrow">
+      <div class="tpri-result-description">
+        <div class="tpri-skill">Word Reading:</div>
+        <div class="tpri-result">Still Developing</div>
+      </div>
+      <table class="tpri">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Begin</th>
+            <th>Mid</th>
+            <th>End</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Kindergarten</th>
+            <td><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
+            <td><span class="na">N/A</span></td>
+          </tr>
+          <tr>
+            <th>Grade 1</th>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
+          </tr>
+          <tr>
+            <th>Grade 2</th>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+            <td><sharpen-label type="danger">SD</sharpen-label></td>
           </tr>
         </tbody>
       </table>
     </div>
 
     <div class="sharpen-text-container">
-      When any of these skills are undeveloped or developed late, it increases the likelihood of your child developing later reading problems.</li>
+      <ul class="sharpen-list">
+        <li><strong>Letter Sounds</strong> <span class="sharpen-text--muted">(beginning of Kindergarten to middle of Grade 1)</span><br />
+        This sub-assessment relates to your child's ability to recognize letters and letter sounds. When these skills are undeveloped or developed late, it increases the likelihood of your child developing later reading problems.</li>
+        <li><strong>Blending Phonemes</strong> <span class="sharpen-text--muted">(beginning of Kindergarten to middle of Grade 1)</span><br />
+        This sub-assessment relates to your child's ability to hear and play with the sounds or syllables in words. When these skills are undeveloped or developed late, it increases the likelihood of your child developing later reading problems.</li>
+        <li><strong>Word Reading</strong> <span class="sharpen-text--muted">(beginning of Grade 1 to end of Grade 2)</span><br />
+        This sub-assessment relates to your child's ability to read a list of decodable words. When these skills are undeveloped or developed late, it increases the likelihood of your child developing later reading problems.</li>
+      </ul>
     </div>
 
   </sharpen-card>

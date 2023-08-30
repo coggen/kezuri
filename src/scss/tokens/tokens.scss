@@ -75,8 +75,12 @@
 
   /**
    * @tokens Borders
+   * 
+   * "hair" is 1px
+   * "thin" is 2px
    */
   --border-hair-solid-green:      1px solid var(--color-green);
+  --border-hair-solid-gray-4:     1px solid var(--color-gray-4);
   --border-thin-solid-gray-4:     2px solid var(--color-gray-4);
   --border-thin-solid-evergreen:  2px solid var(--color-evergreen);
   --border-thin-solid-pine:       2px solid var(--color-pine);
@@ -88,6 +92,7 @@
    * @tokens Border Radius
    * @presenter BorderRadius
    */
+  --border-radius-xs: 4px;
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
 }
