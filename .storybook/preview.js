@@ -19,6 +19,7 @@ const preview = {
       },
     },
     docs: {
+      toc: true,
       canvas: {
         sourceState: 'shown',
       },

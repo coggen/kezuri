@@ -1,0 +1,94 @@
+table.sharpen-tpri {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family-sans);
+  margin: var(--spacing-lg) 0;
+
+  .tpri-result {
+    color: var(--color-red);
+    font-size: var(--font-size-xl);
+
+    &.developed { color: var(--color-pine); }
+  }
+
+  // Not applicable
+  .na {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-3);
+  }
+
+  tr.overall > * { border-bottom: 4px solid var(--color-gray-3); }
+  tr.grades > * {
+    font-weight: var(--font-weight-semibold);
+    padding-bottom: 0;
+  }
+
+  th, td { padding: var(--spacing-sm); }
+
+  th {
+    font-size: var(--font-size-xs);
+
+    // Skill titles
+    .tpri-skill {
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-sm);
+      text-transform: uppercase;
+    }
+
+    // Skill descriptions on the wide version
+    .tpri-skill-description {
+      font-weight: var(--font-weight-book);
+      color: var(--color-gray-1);
+      font-size: var(--font-size-xs);
+    }
+  }
+
+  // In the narrow variant, make this font a bit smaller
+  &.narrow th .tpri-skill { font-size: var(--font-size-xs); }
+
+  thead {
+    color: var(--color-gray-1);
+
+    th { font-weight: var(--font-weight-book); }
+  }
+
+  tbody {
+    tr { height: 40px; }
+
+    // Alternating row background color
+    tr:nth-child(odd) > * { background-color: var(--color-gray-5); }
+
+    th {
+      text-align: left;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    td { text-align: center; }
+
+    // Dotted border between grades (i.e. every three columns)
+    td:nth-child(3n-1) { border-left: 1px dotted black; }
+  }
+
+  // Dashed border around the the "latest" result column
+  .latest {
+    border-left: 1px dashed var(--color-gray-1);
+    border-right: 1px dashed var(--color-gray-1);
+  }
+
+  th.latest {
+    border-top: 1px dashed var(--color-gray-1);
+  }
+
+  tbody tr:last-child .latest {
+    border-bottom: 1px dashed var(--color-gray-1);
+  }
+
+}
+
+// Responsive visibility configuration
+table.sharpen-tpri.wide { display: none; }
+
+@media (min-width: 992px) {
+  table.sharpen-tpri.wide { display: block; }
+  table.sharpen-tpri.narrow { display: none; }
+}
