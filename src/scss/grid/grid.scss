@@ -13,6 +13,8 @@
   }
 }
 
+.show-sm, .show-md, .show-lg, .show-xl, .show-xxl { display: none; }
+
 .col { flex: 1 0 0%; }
 .col-1  { flex: 0 0 auto; width: 8.33333333%; }
 .col-2  { flex: 0 0 auto; width: 16.66666667%; }
@@ -49,6 +51,8 @@
 [class*='row-cols'] > .col { padding-bottom: var(--grid-gutter); }
 
 @include media-breakpoint-up(sm) {
+  .show-sm { display: block; }
+
   .col-sm { flex: 1 0 0%; }
   .col-sm-1  { flex: 0 0 auto; width: 8.33333333%; }
   .col-sm-2  { flex: 0 0 auto; width: 16.66666667%; }
@@ -85,6 +89,8 @@
 }
 
 @include media-breakpoint-up(md) {
+  .show-md { display: block; }
+
   .col-md    { flex: 1 0 0%; }
   .col-md-1  { flex: 0 0 auto; width: 8.33333333%; }
   .col-md-2  { flex: 0 0 auto; width: 16.66666667%; }
@@ -121,6 +127,8 @@
 }
 
 @include media-breakpoint-up(lg) {
+  .show-lg { display: block; }
+
   .col-lg    { flex: 1 0 0%; }
   .col-lg-1  { flex: 0 0 auto; width: 8.33333333%; }
   .col-lg-2  { flex: 0 0 auto; width: 16.66666667%; }
@@ -157,6 +165,8 @@
 }
 
 @include media-breakpoint-up(xl) {
+  .show-xl { display: block; }
+
   .col-xl    { flex: 1 0 0%; }
   .col-xl-1  { flex: 0 0 auto; width: 8.33333333%; }
   .col-xl-2  { flex: 0 0 auto; width: 16.66666667%; }
@@ -193,6 +203,8 @@
 }
 
 @include media-breakpoint-up(xxl) {
+  .show-xxl { display: block; }
+
   .col-xxl    { flex: 1 0 0%; }
   .col-xxl-1  { flex: 0 0 auto; width: 8.33333333%; }
   .col-xxl-2  { flex: 0 0 auto; width: 16.66666667%; }

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Placement Result</title>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
+    <style>
+      .level-continuum {
+        font-family: var(--font-family-sans);
+/*        width: 100%;*/
+        border-collapse: collapse;
+        border-top: 1px solid #ccc;
+        color: var(--color-evergreen);
+      }
+
+      .level-continuum td, .level-continuum th {
+        padding: var(--spacing-sm);
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+      }
+
+      .level-continuum th {
+        font-weight: var(--font-weight-semibold);
+        padding-right: var(--spacing-md);
+        white-space: nowrap;
+      }
+
+      .level-continuum .current th, .level-continuum .current td {
+        background-color: var(--color-mint);
+      }
+
+      .level-continuum .current td {
+        width: 2em;
+      }
+
+      .level-continuum .sharpen-icon {
+        vertical-align: -6px;
+      }
+
+      .level-continuum td.grade {
+        font-size: var(--font-size-xs);
+        padding-right: var(--spacing-md);
+        color: #999;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="javascript:void();"></sharpen-nav-link>
+    </sharpen-primary-navigation>
+
+    <div class="container sharpen-mt-lg">
+
+      <sharpen-back href="#">Back to Dashboard</sharpen-back>
+
+      <h1 class="sharpen-heading-3xl--bordered">
+        <i class="sharpen-icon">list_alt</i>Sharpen Reading Placement Assessment
+      </h1>
+      
+      <sharpen-card class="sharpen-mb-xl" border="none" padding="large">
+
+        <div class="row">
+          <div class="col-md-5 col-lg-4">
+            <div class="sharpen-text--body sharpen-text-sm"><strong>Jurickson placed in</strong></div>
+            <h1 class="sharpen-heading-2xl-sans sharpen-mb-sm">
+              Level A
+            </h1>
+            <p class="sharpen-text-intro sharpen-mb-lg">Level A is aligned with kindergarten and beginning Grade 1 level material</p>
+
+            <table class="level-continuum sharpen-mb-lg">
+              <tr class="current">
+                <td><i class="sharpen-icon">arrow_forward</i></td>
+                <th>A</th>
+                <td class="grade">Grades K–1</td>
+              </tr>
+              <tr>
+                <td></td>
+                <th>A Accelerated</th>
+                <td class="grade">Grades K–1</td>
+              </tr>
+              <tr>
+                <td></td>
+                <th>B1</th>
+                <td class="grade">Grade 1</td>
+              </tr>
+              <tr>
+                <td></td>
+                <th>B2</th>
+                <td class="grade">Grade 2</td>
+              </tr>
+              <tr>
+                <td></td>
+                <th>C</th>
+                <td class="grade">Grades 3–4</td>
+              </tr>
+              <tr>
+                <td></td>
+                <th>D</th>
+                <td class="grade">Grades 5–6</td>
+              </tr>
+            </table>
+
+<!--             <table class="level-continuum horizontal">
+              <tr>
+                <td><i class="sharpen-icon">arrow_downward</i></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>A</th>
+                <th>A Accelerated</th>
+                <th>B1</th>
+                <th>B2</th>
+                <th>C</th>
+                <th>D</th>
+              </tr>
+            </table> -->
+
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <div class="sharpen-text-container sharpen-mb-xl">
+              <p>Learners are placed in Level A when:</p>
+              <ul class="sharpen-list">
+                <li>they still need to learn a number of <em>letter-sound relationships</em></li>
+                <li>they need more instruction and practice to <em>blend sounds to form words</em></li>
+              </ul>
+
+              <p class="sharpen-mb-lg">(Even when a learner is able to get <em>some</em> right answers,
+              there is still a need for repetition and growth to reach mastery.)</p>
+
+              <hr class="sharpen-mb-lg">
+
+              <p>When learners have successfully completed Level A, they will be able to:</p>
+              <ul class="sharpen-list sharpen-mb-lg">
+                <li>read about 90 common words such as <em>mop</em> and <em>sat</em> automatically</li>
+                <li>sound out almost any two- or three-letter word with the letter-sounds they have studied</li>
+                <li>easily read simple texts with these words</li>  
+              </ul>
+
+
+              <p><strong>All learners will start with easier activities so they can get
+              the hang of Sharpen Reading before the activities get harder.</strong></p>
+            </div>
+
+            <button class="sharpen-button sharpen-button--primary sharpen-button--large">Start Sharpen Reading</button>
+          </div>
+        </div>
+
+      </sharpen-card>
+
+<!--       <sharpen-card class="sharpen-mb-xl" border="none" padding="large">
+
+        <h1 class="sharpen-heading-2xl-sans sharpen-mb-sm">Jurickson placed in Level A</h1>
+        <p class="sharpen-text-intro sharpen-mb-lg">Level A is aligned with kindergarten and beginning Grade 1 level material</p>
+
+        <div class="sharpen-text-container sharpen-mb-lg">
+          <p>Learners are placed in Level A when:</p>
+          <ul class="sharpen-list sharpen-mb-lg">
+            <li>they still need to learn a number of <em>letter-sound relationships</em></li>
+            <li>they need more instruction and practice to <em>blend sounds to form words</em></li>
+          </ul>
+
+          <p>When learners have successfully completed Level A, they will be able to:</p>
+          <ul class="sharpen-list">
+            <li>read about 90 common words such as mop and sat automatically</li>
+            <li>sound out almost any two- or three-letter word with the letter-sounds they have studied</li>
+            <li>easily read simple texts with these words</li>  
+          </ul>
+        </div>
+
+        <button class="sharpen-button sharpen-button--primary sharpen-button--large">Start Sharpen Reading</button>
+
+      </sharpen-card> -->
+
+<!--       <sharpen-card class="sharpen-mb-xl" border="none" padding="large">
+
+        <h1 class="sharpen-heading-2xl-sans sharpen-mb-sm">Jurickson placed in Level A</h1>
+        <p class="sharpen-text-intro sharpen-mb-lg">Level A is aligned with kindergarten and beginning Grade 1 level material</p>
+
+        <div class="row sharpen-mb-lg">
+          <div class="col-md">
+            <div class="sharpen-text-container">
+              <p>Learners are placed in Level A when:</p>
+              <ul class="sharpen-list sharpen-mb-lg">
+                <li>they still need to learn a number of <em>letter-sound relationships</em></li>
+                <li>they need more instruction and practice to <em>blend sounds to form words</em></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="sharpen-text-container">
+              <p>When learners have successfully completed Level A, they will be able to:</p>
+              <ul class="sharpen-list">
+                <li>read about 90 common words such as mop and sat automatically</li>
+                <li>sound out almost any two- or three-letter word with the letter-sounds they have studied</li>
+                <li>easily read simple texts with these words</li>  
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <button class="sharpen-button sharpen-button--primary sharpen-button--large">Start Sharpen Reading</button>
+
+      </sharpen-card> -->
+
+      <sharpen-card class="sharpen-mb-xl" border="none" padding="large">
+        <h1 class="sharpen-heading-xl">More information</h1>
+        <div class="sharpen-text-container">
+          <h2 class="sharpen-heading-md">About Level A</h2>
+          <p>Level A covers knowledge of the sounds for the one-letter consonants, the so-called "short" vowels, and the two-letter combinations ll, sh, ch, th, and ck. Students at this level learn how to break simple words into their individual sounds as well as to blend individual sounds to make a whole word, and to orally delete or substitute a single sound in a word. </p>
+
+          <h2 class="sharpen-heading-md">About the Placement Assessment</h2>
+          <p>This assessment evaluates the learner's current reading skills in order to determine the appropriate starting level in Sharpen Reading. It's important to note that the placement assessment helps identify the learner's current reading level and skills. This assessment is not a measure of the learner's current or future reading potential, but rather a tool to help create a learning plan that meets the learner's specific immediate needs.</p>
+
+          <h2 class="sharpen-heading-md">Related articles in our knowledge base</h2>
+          <ul class="sharpen-list">
+            <li><a href="#">Pacing &amp; Grade Level in Sharpen Reading</a></li>
+          </ul>
+        </div>
+      </sharpen-card>
+
+    </div>
+
+
+  </body>
+</html>
