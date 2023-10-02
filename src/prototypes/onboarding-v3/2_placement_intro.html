@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Onboarding</title>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
+    <style>
+      @media (min-width: 992px) {
+        .getting-started-step { height: 100%; }
+      } 
+
+      .getting-started-step {
+        text-align: center;
+      }
+
+      .getting-started-step .sharpen-icon {
+        font-size: 36pt;
+        color: var(--color-pine);
+      }
+
+      hr {
+        margin: 1em 0 2em;
+        background-color: var(--color-mint);
+        border: 0;
+        height: 2px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation></sharpen-primary-navigation>
+
+    <div class="container sharpen-mt-lg">
+
+      <div class="row">
+        <div class="offset-xxl-4 col-xxl-4 sharpen-mb-lg">
+          <h1 class="sharpen-heading-2xl sharpen-text--center sharpen-mb-sm">Let's get started!</h1>
+          <p class="sharpen-text-intro sharpen-text--center">In 3 easy steps, you will:</p>
+        </div>
+      </div>
+
+      <div class="row sharpen-mb-lg">
+        <div class="col-lg-4">
+          <sharpen-card class="getting-started-step sharpen-mb-md" border="none" padding="large">
+            <i class="sharpen-icon">diversity_1</i>
+            <div class="sharpen-text--body sharpen-text-lg">
+              Tell us about you &amp; your learner
+            </div>
+          </sharpen-card>
+        </div>
+        <div class="col-lg-4">
+          <sharpen-card class="getting-started-step sharpen-mb-md" border="none" padding="large">
+            <i class="sharpen-icon">school</i>
+            <div class="sharpen-text--body sharpen-text-lg">
+              Find your learner's starting level
+            </div>
+            <!--
+            <div class="sharpen-text--body">
+              <p class="sharpen-mb-md"><strong>You'll need:</strong></p>
+              <ul class="sharpen-list">
+                <li>About 15 minutes</li>
+                <li>Your child</li>
+                <li>A quiet place to listen</li>
+              </ul>
+            </div>
+            -->
+          </sharpen-card>
+        </div>
+        <div class="col-lg-4">
+          <sharpen-card class="getting-started-step sharpen-mb-md" border="none" padding="large">
+            <i class="sharpen-icon">menu_book</i>
+            <div class="sharpen-text--body sharpen-text-lg">
+              Start your first reading lesson
+            </div>
+            <!--
+            <div class="sharpen-text--body">
+              <p class="sharpen-mb-md"><strong>You'll need:</strong></p>
+              <ul class="sharpen-list">
+                <li>A device for you (e.g. laptop)</li>
+                <li>A device for your learner (e.g. tablet)</li>
+              </ul>
+            </div>
+            -->
+          </sharpen-card>
+        </div>
+      </div>
+
+      <hr class="show-lg">
+
+      <div class="row">
+        <div class="offset-xxl-1 col-xxl-10 sharpen-text--center">
+          <a href="3_user.html" class="sharpen-button sharpen-button--large sharpen-button--primary">
+            I'm ready!
+          </a>
+          <!-- <div class="sharpen-text--muted sharpen-text-xs sharpen-text--body sharpen-mt-sm">No credit card needed now</div> -->
+        </div>
+      </div>
+
+    </div>
+
+    <sharpen-footer>
+      <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+      <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+    </sharpen-footer>
+
+  </body>
+</html>
