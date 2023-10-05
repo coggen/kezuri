@@ -81,6 +81,11 @@ export namespace Components {
          */
         "type": LabelType;
     }
+    interface SharpenMenu {
+        "attachment": string;
+        "targetAttachment": string;
+        "triggerId": string;
+    }
     interface SharpenNavLink {
         "href": string;
         "icon": string;
@@ -90,9 +95,8 @@ export namespace Components {
     interface SharpenPageNavigation {
     }
     interface SharpenPrimaryNavigation {
-        /**
-          * Border style
-         */
+        "brandHref": string;
+        "currentLearner": string;
         "currentUser": string;
     }
     interface SharpenProfileCard {
@@ -180,6 +184,12 @@ declare global {
         prototype: HTMLSharpenLabelElement;
         new (): HTMLSharpenLabelElement;
     };
+    interface HTMLSharpenMenuElement extends Components.SharpenMenu, HTMLStencilElement {
+    }
+    var HTMLSharpenMenuElement: {
+        prototype: HTMLSharpenMenuElement;
+        new (): HTMLSharpenMenuElement;
+    };
     interface HTMLSharpenNavLinkElement extends Components.SharpenNavLink, HTMLStencilElement {
     }
     var HTMLSharpenNavLinkElement: {
@@ -227,6 +237,7 @@ declare global {
         "sharpen-empty": HTMLSharpenEmptyElement;
         "sharpen-footer": HTMLSharpenFooterElement;
         "sharpen-label": HTMLSharpenLabelElement;
+        "sharpen-menu": HTMLSharpenMenuElement;
         "sharpen-nav-link": HTMLSharpenNavLinkElement;
         "sharpen-page-navigation": HTMLSharpenPageNavigationElement;
         "sharpen-primary-navigation": HTMLSharpenPrimaryNavigationElement;
@@ -303,6 +314,11 @@ declare namespace LocalJSX {
          */
         "type": LabelType;
     }
+    interface SharpenMenu {
+        "attachment"?: string;
+        "targetAttachment"?: string;
+        "triggerId"?: string;
+    }
     interface SharpenNavLink {
         "href"?: string;
         "icon"?: string;
@@ -312,9 +328,8 @@ declare namespace LocalJSX {
     interface SharpenPageNavigation {
     }
     interface SharpenPrimaryNavigation {
-        /**
-          * Border style
-         */
+        "brandHref"?: string;
+        "currentLearner"?: string;
         "currentUser"?: string;
     }
     interface SharpenProfileCard {
@@ -351,6 +366,7 @@ declare namespace LocalJSX {
         "sharpen-empty": SharpenEmpty;
         "sharpen-footer": SharpenFooter;
         "sharpen-label": SharpenLabel;
+        "sharpen-menu": SharpenMenu;
         "sharpen-nav-link": SharpenNavLink;
         "sharpen-page-navigation": SharpenPageNavigation;
         "sharpen-primary-navigation": SharpenPrimaryNavigation;
@@ -373,6 +389,7 @@ declare module "@stencil/core" {
             "sharpen-empty": LocalJSX.SharpenEmpty & JSXBase.HTMLAttributes<HTMLSharpenEmptyElement>;
             "sharpen-footer": LocalJSX.SharpenFooter & JSXBase.HTMLAttributes<HTMLSharpenFooterElement>;
             "sharpen-label": LocalJSX.SharpenLabel & JSXBase.HTMLAttributes<HTMLSharpenLabelElement>;
+            "sharpen-menu": LocalJSX.SharpenMenu & JSXBase.HTMLAttributes<HTMLSharpenMenuElement>;
             "sharpen-nav-link": LocalJSX.SharpenNavLink & JSXBase.HTMLAttributes<HTMLSharpenNavLinkElement>;
             "sharpen-page-navigation": LocalJSX.SharpenPageNavigation & JSXBase.HTMLAttributes<HTMLSharpenPageNavigationElement>;
             "sharpen-primary-navigation": LocalJSX.SharpenPrimaryNavigation & JSXBase.HTMLAttributes<HTMLSharpenPrimaryNavigationElement>;

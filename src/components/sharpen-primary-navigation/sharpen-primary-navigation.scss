@@ -7,7 +7,7 @@ sharpen-primary-navigation {
     flex: 1;
     gap: var(--spacing-lg);
 
-    sharpen-nav-link {
+    > sharpen-nav-link {
       a {
         font-family: var(--font-family-sans);
         color: var(--color-ivory);
@@ -22,22 +22,40 @@ sharpen-primary-navigation {
     } 
   }
 
-  .current-user {
+  .brand {
+    img {
+      max-width: 170px;
+    }
+  }
+
+  #spn-current-learner {
+    font-family: var(--font-family-sans);
+    cursor: pointer;
+    color: var(--color-evergreen);
+    background-color: var(--color-mint);
+    padding: var(--spacing-xs) var(--spacing-lg) var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+
+    // Material Symbols "Expand More" icon
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" style="fill:%232C5652;" height="16" viewBox="0 -960 960 960" width="24"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
+    background-position: top 8px right 7px;
+    background-repeat: no-repeat;
+  }
+
+  #spn-current-user {
+    cursor: pointer;
     justify-content: right;
-  }
-
-  img.brand {
-    max-width: 170px;
-  }
-
-  .current-user {
     font-family: var(--font-family-serif);
     font-size: var(--font-size-lg);
+    padding-right: var(--spacing-lg);
 
-    .sharpen-icon { vertical-align: -4px;}
+    // Material Symbols "Expand More" icon
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" style="fill:white;" height="16" viewBox="0 -960 960 960" width="24"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
+    background-position: top 4px right 4px;
+    background-repeat: no-repeat;
   }
   
-  &, & .container-fluid, & .container-fluid nav {
+  &, & .container-fluid, & .container-fluid nav, & .container-fluid .brand {
     display: flex;
     align-items: center;
   }
