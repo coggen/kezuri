@@ -2,7 +2,7 @@
   margin-bottom: var(--spacing-md);
 }
 
-.sharpen-form-label, .sharpen-form-control, .sharpen-form-text {
+.sharpen-form-label, .sharpen-form-control, .sharpen-form-text, .sharpen-form-survey {
   font-family: var(--font-family-sans);
 }
 
@@ -132,4 +132,43 @@
 
   h5, p { margin: 0 0 0.5em 0; }
   * + h5 { margin-top: 1.5em; }
+}
+
+.sharpen-form-survey {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: var(--font-size-xs);
+    text-align: center;
+    width: 10rem;
+    height: 6rem;
+    border: var(--border-hair-solid-gray-4);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md);
+    cursor: pointer;
+
+    &:hover { background-color: var(--color-putty); }
+  }
+
+  input[type="radio"] {
+    display: flex;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+
+    &:focus-visible { outline: none; }
+    &:focus + label { border-color: var(--color-pine); }
+
+    &:checked + label {
+      background-color: var(--color-mint);
+      border-color: var(--color-pine);
+    }
+  }
 }

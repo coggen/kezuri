@@ -7,7 +7,7 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     kind: {
-      options: ['primary', 'secondary', 'muted', 'link'],
+      options: ['primary', 'secondary', 'danger', 'muted', 'link'],
       control: 'radio'
     },
     size: {
