@@ -1,24 +1,24 @@
-sharpen-progress-dial {
-  display: block;
+// sharpen-progress-dial {
+//   display: block;
 
-  .progress-description {
-    font-family: var(--font-family-sans);
-    font-size: var(--font-size-xl);
-    margin-top: var(--spacing-md);
-    font-weight: 700;
-    text-align: center;
-  }
+//   .progress-description {
+//     font-family: var(--font-family-sans);
+//     font-size: var(--font-size-xl);
+//     margin-top: var(--spacing-md);
+//     font-weight: 700;
+//     text-align: center;
+//   }
 
-  &[status="low"] {
-    .progress-description { color: var(--color-pine); }
-  }
+//   &[status="low"] {
+//     .progress-description { color: var(--color-pine); }
+//   }
 
-  &[status="elevated"] {
-    .progress-description { color: var(--color-orange); }
-  }
+//   &[status="elevated"] {
+//     .progress-description { color: var(--color-orange); }
+//   }
 
-  &[status="high"] {
-    .progress-description { color: var(--color-red); }
-  }
+//   &[status="high"] {
+//     .progress-description { color: var(--color-red); }
+//   }
 
-}
+// }

@@ -4,7 +4,14 @@
 name: 'Chromatic'
 
 # Event for the workflow
-on: push
+on:
+  push:
+    paths:
+      - '.storybook'
+      - 'assets'
+      - 'src'
+      - '!src/index.html'
+      - '!src/prototypes/**'
 
 # List of jobs
 jobs:

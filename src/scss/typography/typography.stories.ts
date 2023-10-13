@@ -40,16 +40,49 @@ export const TextAlignment = {
 }
 
 /**
- * Headings come in different sizes.
+ * Headings range in size from `md` to `5xl`, and can be either serif (default) or `sans`.
  */
 export const Headings = {
   render: () => `
-<h1 class="sharpen-heading-md">Medium heading</h1>
-<h1 class="sharpen-heading-xl">Extra large heading</h1>
-<h1 class="sharpen-heading-2xl">2XL heading</h1>
-<h1 class="sharpen-heading-2xl-sans">2XL heading, sans-serif</h1>
-<h1 class="sharpen-heading-3xl">3XL heading</h1>
-<h1 class="sharpen-heading-3xl--bordered">3XL heading with a bottom border</h1>
+<h1 class="sharpen-heading-md">Heading, medium</h1>
+<h1 class="sharpen-heading-lg">Heading, large</h1>
+<h1 class="sharpen-heading-2xl">Heading, 2xl</h1>
+<h1 class="sharpen-heading-3xl">Heading, 3xl</h1>
+<h1 class="sharpen-heading-4xl">Heading, 4xl</h1>
+<h1 class="sharpen-heading-5xl">Heading, 5xl</h1>
+
+<h1 class="sharpen-heading-md-sans">Heading, medium</h1>
+<h1 class="sharpen-heading-lg-sans">Heading, large</h1>
+<h1 class="sharpen-heading-2xl-sans">Heading, 2xl</h1>
+<h1 class="sharpen-heading-3xl-sans">Heading, 3xl</h1>
+<h1 class="sharpen-heading-4xl-sans">Heading, 4xl</h1>
+<h1 class="sharpen-heading-5xl-sans">Heading, 5xl</h1>
+`
+}
+
+
+/**
+ * Add a bottom border to your heading with `sharpen-heading--bordered`
+ */
+export const HeadingsWithBottomBorder = {
+  render: () => `
+<h1 class="sharpen-heading-md sharpen-heading--bordered">Heading, medium</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-lg sharpen-heading--bordered">Heading, large</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-2xl sharpen-heading--bordered">Heading, 2xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-3xl sharpen-heading--bordered">Heading, 3xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-4xl sharpen-heading--bordered">Heading, 4xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-5xl sharpen-heading--bordered">Heading, 5xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
 `
 }
 

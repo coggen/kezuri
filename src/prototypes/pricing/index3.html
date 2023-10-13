@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Pricing</title>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
+    <style>
+      .sharpen-pricing {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      hr {
+        margin: 1em 0 2em;
+        background-color: var(--color-mint);
+        border: 0;
+        height: 2px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation></sharpen-primary-navigation>
+
+    <div class="container sharpen-mt-lg">
+
+      <div class="row">
+        <div class="offset-xl-3 col-xl-6 sharpen-mb-lg">
+          <h1 class="sharpen-heading-3xl sharpen-text--center sharpen-mb-sm">Choose your plan</h1>
+          <p class="sharpen-text-intro sharpen-text--center">
+            Try any plan free for 14 days.
+            You will not be charged until your free trial ends.
+            Pick the number of months that's right for your child and your budget.
+          </p>
+        </div>
+      </div>
+
+      <div class="row sharpen-mb-lg">
+
+        <div class="col-lg-4">
+          <sharpen-card class="sharpen-pricing sharpen-text--body sharpen-text--center" border="none" padding="large">
+            <div>
+              <h3 class="sharpen-heading-xl sharpen-mb-0">Monthly</h3>
+              <div class="price sharpen-text-4xl">$49</div>
+            </div>
+            <sharpen-label type="info">No long-term commitment</sharpen-label>
+            <div class="description">&nbsp;</div>
+            <div class="billing sharpen-text-xs sharpen-text--muted">Billed every month</div>
+            <button class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width">Start free trial</button>
+          </sharpen-card>
+        </div>
+            
+        <div class="col-lg-4">
+          <sharpen-card class="sharpen-pricing sharpen-text--body sharpen-text--center" border="none" padding="large">
+            <div>
+              <h3 class="sharpen-heading-xl sharpen-mb-0">3 Months</h3>
+              <div class="price sharpen-text-4xl">$99</div>
+            </div>
+            <sharpen-label type="success">Advance 1 grade level*</sharpen-label>
+            <div class="description">Equivalent of $33/month, over 33% off!</div>
+            <div class="billing sharpen-text-xs sharpen-text--muted">Pre-paid &middot; Billed every 3 months</div>
+            <button class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width">Start free trial</button>
+          </sharpen-card>
+        </div>
+
+        <div class="col-lg-4">
+          <sharpen-card class="sharpen-pricing sharpen-text--body sharpen-text--center" border="none" padding="large">
+            <div>
+              <h3 class="sharpen-heading-xl sharpen-mb-0">9 Months</h3>
+              <div class="price sharpen-text-4xl">$199</div>
+            </div>
+            <sharpen-label type="success">Best value</sharpen-label>
+            <div class="description">Equivalent of $22.11/month, over 50% off!</div>
+            <div class="billing sharpen-text-xs sharpen-text--muted">Pre-paid &middot; Billed every 9 months</div>
+            <button class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width">Start free trial</button>
+          </sharpen-card>
+        </div>
+
+      </div>
+
+      <div class="sharpen-text--body sharpen-text--center sharpen-mb-lg">Prices are for 1 child. Add additional children for just $10/month per child.</div>
+      <div class="sharpen-text--body sharpen-text--center sharpen-text--muted sharpen-text-xs">*Increase your child's reading level by as much as a grade in as little as 3 months.</div>
+
+    </div>
+
+    <sharpen-footer>
+      <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+      <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+    </sharpen-footer>
+
+  </body>
+</html>

@@ -31,19 +31,20 @@
   },
   "dependencies": {
     "@stencil/core": "^4.0.0",
-    "@storybook/addon-a11y": "^7.2.0",
+    "@storybook/addon-a11y": "^7.4.6",
     "tether": "^2.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
     "@stencil/sass": "^3.0.5",
-    "@storybook/addon-essentials": "^7.1.1",
-    "@storybook/addon-interactions": "^7.1.1",
-    "@storybook/addon-links": "^7.1.1",
-    "@storybook/blocks": "^7.1.1",
-    "@storybook/html": "^7.1.1",
-    "@storybook/html-webpack5": "^7.1.1",
-    "@storybook/testing-library": "^0.0.14-next.2",
+    "@storybook/addon-essentials": "^7.4.6",
+    "@storybook/addon-interactions": "^7.4.6",
+    "@storybook/addon-links": "^7.4.6",
+    "@storybook/addon-mdx-gfm": "^7.4.6",
+    "@storybook/blocks": "^7.4.6",
+    "@storybook/html": "^7.4.6",
+    "@storybook/html-webpack5": "^7.4.6",
+    "@storybook/testing-library": "^0.2.2",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",
     "jest": "^27.5.1",
@@ -51,6 +52,6 @@
     "puppeteer": "^20.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.1.1"
+    "storybook": "^7.4.6"
   }
 }

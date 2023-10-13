@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Mobile Placement Assessment</title>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
+    <style>
+      .media-responsive {
+        padding:56.25% 0 0 0;
+        position:relative;
+        border: 1px solid var(--color-gray-3);
+      }
+
+      .sharpen-assessment-controls {
+        margin-top: var(--spacing-lg);
+      }
+
+      .sharpen-assessment-controls.back-next {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sharpen-assessment-controls.correct-incorrect {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm) var(--spacing-md);
+      }
+
+      .question-content-wrapper {
+        border: 2px solid #31786c;
+        background-color: #c8ebd8;
+        height: 30vh;
+        font-family: var(--font-family-sans);
+      }
+
+      .question-content {
+        height: 100%;
+        font-size: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .question-content.letter { padding-bottom: 3vh; }
+      .question-content.word { font-size: 12vh; }
+
+      .keyboard-hint { display: none; }
+
+      @media (min-width: 992px) {
+        .sharpen-assessment-controls.correct-incorrect { flex-direction: row; }
+        .sharpen-assessment-controls.correct-incorrect .sharpen-button:nth-child(2) { flex: 1;}
+        .keyboard-hint { display: inline; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-learner="Jurickson Profar" current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="javascript:void();"></sharpen-nav-link>
+
+      <div slot="learner-links" class="sharpen-menu-links">
+        <h5 class="sharpen-nav-link-header">Learners</h5>
+        <sharpen-nav-link icon="face" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>  
+        <sharpen-nav-link icon="face" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>  
+        <sharpen-nav-link icon="face" name="Jurickson Profar" href="javascript:void();"></sharpen-nav-link>  
+        <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+      </div>
+
+      <div slot="user-links" class="sharpen-menu-links">
+        <sharpen-nav-link icon="account_box" name="Account" href="javascript:void();"></sharpen-nav-link>
+        <hr>
+        <h5 class="sharpen-nav-link-header">Learner Settings</h5>
+        <sharpen-nav-link icon="edit" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>
+        <sharpen-nav-link icon="edit" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>
+        <sharpen-nav-link icon="edit" name="Jurickson Profar" href="javascript:void();"></sharpen-nav-link>
+        <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+        <hr>
+        <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+      </div>      
+    </sharpen-primary-navigation>
+
+    <div class="container sharpen-mt-lg">
+
+      <sharpen-card border="none" padding="large">
+        <sharpen-assessment-header name="Reading Placement Assessment"></sharpen-assessment-header>
+        
+        <div class="question-content-wrapper">
+          <div class="question-content letter">
+            h
+          </div>
+        </div>
+
+<!--         <div class="question-content-wrapper">
+          <div class="question-content word">
+            float
+          </div>
+        </div>
+ -->
+
+        <div class="sharpen-assessment-controls correct-incorrect">
+          <button class="sharpen-button sharpen-button--small sharpen-button--secondary">Cancel Assessment</button>
+          <button class="sharpen-button sharpen-button--small sharpen-button--link"><i class="sharpen-icon">volume_up</i>Replay Audio</button>
+          <button class="sharpen-button sharpen-button--small sharpen-button--muted">Letter Name Prompt <span class="keyboard-hint">(v)</span></button>
+          <button class="sharpen-button sharpen-button--small sharpen-button--muted">Correct <span class="keyboard-hint">(c)</span></button>
+          <button class="sharpen-button sharpen-button--small sharpen-button--muted">Incorrect <span class="keyboard-hint">(i)</span></button>
+        </div>
+      </sharpen-card>
+
+    </div>
+
+    <sharpen-footer>
+      <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+      <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+      <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+    </sharpen-footer>
+
+  </body>
+</html>

@@ -9,7 +9,6 @@ sharpen-primary-navigation {
 
     > sharpen-nav-link {
       a {
-        font-family: var(--font-family-sans);
         color: var(--color-ivory);
         text-decoration: none;
         padding-bottom: 5px;
@@ -29,7 +28,6 @@ sharpen-primary-navigation {
   }
 
   #spn-current-learner {
-    font-family: var(--font-family-sans);
     cursor: pointer;
     color: var(--color-evergreen);
     background-color: var(--color-mint);
