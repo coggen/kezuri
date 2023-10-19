@@ -8,52 +8,7 @@
     <script type="module" src="/build/kezuri.esm.js"></script>
     <script nomodule src="/build/kezuri.js"></script>
     <style>
-      .media-responsive {
-        padding:56.25% 0 0 0;
-        position:relative;
-        border: 1px solid var(--color-gray-3);
-      }
-
-      .sharpen-assessment-controls {
-        margin-top: var(--spacing-lg);
-      }
-
-      .sharpen-assessment-controls.back-next {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .sharpen-assessment-controls.correct-incorrect {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm) var(--spacing-md);
-      }
-
-      .question-content-wrapper {
-        border: 2px solid #31786c;
-        background-color: #c8ebd8;
-        height: 30vh;
-        font-family: var(--font-family-sans);
-      }
-
-      .question-content {
-        height: 100%;
-        font-size: 20vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .question-content.letter { padding-bottom: 3vh; }
-      .question-content.word { font-size: 12vh; }
-
-      .keyboard-hint { display: none; }
-
-      @media (min-width: 992px) {
-        .sharpen-assessment-controls.correct-incorrect { flex-direction: row; }
-        .sharpen-assessment-controls.correct-incorrect .sharpen-button:nth-child(2) { flex: 1;}
-        .keyboard-hint { display: inline; }
-      }
+      img.assessment-complete { max-width: 100%; max-height: 15rem; }
     </style>
   </head>
   <body>
@@ -86,31 +41,31 @@
 
       <sharpen-card border="none" padding="large">
         <sharpen-assessment-header name="Reading Placement Assessment"></sharpen-assessment-header>
-        
-        <div class="question-content-wrapper">
-          <div class="question-content letter">
-            h
+
+        <div class="sharpen-text--center">
+          
+          <img class="assessment-complete sharpen-mb-sm" src="assessment_complete.png" />
+
+          <h1 class="sharpen-heading-2xl sharpen-mb-xs">So far so good!</h1>
+          <h2 class="sharpen-text-xl sharpen-mb-md">Just a little more to do.</h2>
+
+          <a href="5_complete.html" class="sharpen-button sharpen-button--primary sharpen-button--small">Continue to next section</a>
+
+          <div class="sharpen-text--muted sharpen-my-lg">
+            <h3 class="sharpen-text-md sharpen-mb-sm">Having trouble?</h3>
+            <p class="sharpen-text--justify">
+              If you feel like Jurickson has not been able to concentrate fully,
+              you may cancel this assessment and try again when Jurickson is ready.
+              You will have to complete all parts of this assessment again if
+              you exit now.
+            </p>
           </div>
+
+          <a href="index.html" class="sharpen-button sharpen-button--secondary sharpen-button--small">Discard &amp; try again later</a>
+
         </div>
 
-<!--         <div class="question-content-wrapper">
-          <div class="question-content word">
-            float
-          </div>
-        </div>
- -->
-
-        <div class="sharpen-assessment-controls correct-incorrect">
-          <a href="4_next_section.html" class="sharpen-button sharpen-button--small sharpen-button--muted">Letter Name Prompt <span class="keyboard-hint">(v)</span></a>
-          <button class="sharpen-button sharpen-button--small sharpen-button--link"><i class="sharpen-icon">volume_up</i>Replay Audio</button>
-          <a href="4_next_section.html" class="sharpen-button sharpen-button--small sharpen-button--muted">Correct <span class="keyboard-hint">(c)</span></a>
-          <a href="4_next_section.html" class="sharpen-button sharpen-button--small sharpen-button--muted">Incorrect <span class="keyboard-hint">(i)</span></a>
-        </div>
       </sharpen-card>
-
-      <div class="sharpen-text--center sharpen-my-md">
-        <button class="sharpen-button sharpen-button--small sharpen-button--link">Cancel Assessment</button>
-      </div>
 
     </div>
 

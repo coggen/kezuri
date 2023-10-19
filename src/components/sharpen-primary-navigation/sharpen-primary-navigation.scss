@@ -2,6 +2,7 @@ sharpen-primary-navigation {
   height: 4.5rem;
   background-color: var(--color-evergreen);
   color: var(--color-ivory);
+  display: flex;
 
   nav {
     flex: 1;
@@ -52,10 +53,20 @@ sharpen-primary-navigation {
     background-position: top 4px right 4px;
     background-repeat: no-repeat;
   }
-  
-  &, & .container-fluid, & .container-fluid nav, & .container-fluid .brand {
-    display: flex;
-    align-items: center;
+
+
+  .container-fluid {
+    &, & nav, & .brand {
+      display: flex;
+      align-items: center;  
+    }
   }
+
+  sharpen-nav-link, .tether-target { display: none; }
 }
 
+@include media-breakpoint-up(md) {
+  sharpen-primary-navigation {
+    sharpen-nav-link, .tether-target { display: initial; }   
+  }
+}
