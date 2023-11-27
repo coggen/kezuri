@@ -4,7 +4,18 @@
 
 ## Usage
 
-TBD
+Kezuri is [deployed to npm](https://www.npmjs.com/package/@sharpen-com/kezuri)
+and [served via jsDelivr CDN](https://www.jsdelivr.com/package/npm/@sharpen-com/kezuri).
+
+In short, we include Kezuri's JS and CSS from the CDN in our application template.
+
+```
+<script src="https://cdn.jsdelivr.net/npm/@sharpen-com/kezuri@0.2/dist/kezuri/kezuri.esm.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sharpen-com/kezuri@0.2/dist/kezuri/kezuri.min.css">
+```
+
+(By only specifying the _minor_ version in the URL, Sharpen apps will
+automatically use new _patch_ versions.)
 
 ## Development
 

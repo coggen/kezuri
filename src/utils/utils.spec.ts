@@ -1,19 +1,14 @@
-// import { format } from './utils';
+import { optional } from './utils';
 
-// describe('format', () => {
-//   it('returns empty string for no names defined', () => {
-//     expect(format(undefined, undefined, undefined)).toEqual('');
-//   });
+describe('optional', () => {
+  it('returns empty string if the property value is empty', () => {
+    expect(optional('prop', null)).toBe("");
+    expect(optional('prop', "")).toBe("");
+    expect(optional('prop', undefined)).toBe("");
+    expect(optional('prop', false)).toBe("");
+  });
 
-//   it('formats just first names', () => {
-//     expect(format('Joseph', undefined, undefined)).toEqual('Joseph');
-//   });
-
-//   it('formats first and last names', () => {
-//     expect(format('Joseph', undefined, 'Publique')).toEqual('Joseph Publique');
-//   });
-
-//   it('formats first, middle and last names', () => {
-//     expect(format('Joseph', 'Quincy', 'Publique')).toEqual('Joseph Quincy Publique');
-//   });
-// });
+  it('returns an HTML attribute string, prefixed by a space, if the property value is defined', () => {
+    expect(optional('prop', 'val')).toBe(' prop="val"');
+  });
+});
