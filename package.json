@@ -31,12 +31,12 @@
   },
   "dependencies": {
     "@stencil/core": "^4.8.1",
-    "@storybook/addon-a11y": "^7.6.3",
     "tether": "^2.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.9",
     "@stencil/sass": "^3.0.5",
+    "@storybook/addon-a11y": "^7.6.3",
     "@storybook/addon-essentials": "^7.6.3",
     "@storybook/addon-interactions": "^7.6.3",
     "@storybook/addon-links": "^7.6.3",
