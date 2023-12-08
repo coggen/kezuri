@@ -1,0 +1,13 @@
+sharpen-button {
+  // For button inside form.
+  // For a, when "sharpen-button--link" class is not applied.
+  button, a {
+    outline: none;
+    background: inherit;
+    border: inherit;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
