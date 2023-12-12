@@ -5,6 +5,6 @@ import { create } from '@storybook/theming/create';
 export default create({
   base: 'light',
   brandTitle: 'Kezuri',
-  brandImage: '/assets/images/brand/kezuri.png',
+  brandImage: 'assets/images/brand/kezuri.png',
   brandTarget: '_self',
 });
