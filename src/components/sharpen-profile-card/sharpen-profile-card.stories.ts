@@ -21,7 +21,7 @@ export default {
       description: "Where we send the user when they click the primary button."
     }
   },
-  render: (args) => `<sharpen-profile-card name="${args.name}" initial="${args.initial}" buttonText="${args.buttonText}" url="${args.url}"></sharpen-profile-card>`
+  render: (args) => `<sharpen-profile-card name="${args.name}" initial="${args.initial}" button-text="${args.buttonText}" url="${args.url}"></sharpen-profile-card>`
 };
 
 export const Default = {
