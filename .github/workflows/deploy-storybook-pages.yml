@@ -1,0 +1,21 @@
+# .github/workflows/deploy-storybook-pages.yml
+
+# Workflow name
+name: 'Deploy Storybook to GitHub Pages'
+
+on:
+  push:
+    branches:
+      - "main"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - id: build-publish
+      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.0
