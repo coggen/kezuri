@@ -100,7 +100,9 @@ export namespace Components {
         "currentUser": string;
     }
     interface SharpenProfileCard {
+        "backgroundColor": string;
         "buttonText": string;
+        "color": string;
         "initial": string;
         "name": string;
         "url": string;
@@ -317,7 +319,9 @@ declare namespace LocalJSX {
         "currentUser"?: string;
     }
     interface SharpenProfileCard {
+        "backgroundColor"?: string;
         "buttonText"?: string;
+        "color"?: string;
         "initial": string;
         "name": string;
         "url": string;
