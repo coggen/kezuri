@@ -81,6 +81,8 @@ export namespace Components {
          */
         "type": LabelType;
     }
+    interface SharpenLoading {
+    }
     interface SharpenMenu {
         "attachment": string;
         "targetAttachment": string;
@@ -186,6 +188,12 @@ declare global {
         prototype: HTMLSharpenLabelElement;
         new (): HTMLSharpenLabelElement;
     };
+    interface HTMLSharpenLoadingElement extends Components.SharpenLoading, HTMLStencilElement {
+    }
+    var HTMLSharpenLoadingElement: {
+        prototype: HTMLSharpenLoadingElement;
+        new (): HTMLSharpenLoadingElement;
+    };
     interface HTMLSharpenMenuElement extends Components.SharpenMenu, HTMLStencilElement {
     }
     var HTMLSharpenMenuElement: {
@@ -239,6 +247,7 @@ declare global {
         "sharpen-empty": HTMLSharpenEmptyElement;
         "sharpen-footer": HTMLSharpenFooterElement;
         "sharpen-label": HTMLSharpenLabelElement;
+        "sharpen-loading": HTMLSharpenLoadingElement;
         "sharpen-menu": HTMLSharpenMenuElement;
         "sharpen-nav-link": HTMLSharpenNavLinkElement;
         "sharpen-page-navigation": HTMLSharpenPageNavigationElement;
@@ -316,6 +325,8 @@ declare namespace LocalJSX {
          */
         "type": LabelType;
     }
+    interface SharpenLoading {
+    }
     interface SharpenMenu {
         "attachment"?: string;
         "targetAttachment"?: string;
@@ -370,6 +381,7 @@ declare namespace LocalJSX {
         "sharpen-empty": SharpenEmpty;
         "sharpen-footer": SharpenFooter;
         "sharpen-label": SharpenLabel;
+        "sharpen-loading": SharpenLoading;
         "sharpen-menu": SharpenMenu;
         "sharpen-nav-link": SharpenNavLink;
         "sharpen-page-navigation": SharpenPageNavigation;
@@ -393,6 +405,7 @@ declare module "@stencil/core" {
             "sharpen-empty": LocalJSX.SharpenEmpty & JSXBase.HTMLAttributes<HTMLSharpenEmptyElement>;
             "sharpen-footer": LocalJSX.SharpenFooter & JSXBase.HTMLAttributes<HTMLSharpenFooterElement>;
             "sharpen-label": LocalJSX.SharpenLabel & JSXBase.HTMLAttributes<HTMLSharpenLabelElement>;
+            "sharpen-loading": LocalJSX.SharpenLoading & JSXBase.HTMLAttributes<HTMLSharpenLoadingElement>;
             "sharpen-menu": LocalJSX.SharpenMenu & JSXBase.HTMLAttributes<HTMLSharpenMenuElement>;
             "sharpen-nav-link": LocalJSX.SharpenNavLink & JSXBase.HTMLAttributes<HTMLSharpenNavLinkElement>;
             "sharpen-page-navigation": LocalJSX.SharpenPageNavigation & JSXBase.HTMLAttributes<HTMLSharpenPageNavigationElement>;
