@@ -1,6 +1,6 @@
 import { Component, Prop, Host, h } from '@stencil/core';
 
-export type CardPadding = 'none' | 'small' | 'medium' | 'large';
+export type CardPadding = 'none' | 'small' | 'medium' | 'large' | 'xl' ;
 export type CardBorder = 'none' | 'gray' | 'green' | 'thin';
 
 @Component({
