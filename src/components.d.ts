@@ -115,6 +115,15 @@ export namespace Components {
         "showDescription": boolean;
         "statusLabel": string;
     }
+    interface SharpenProgressDial {
+        "elevatedThreshold": number;
+        "highThreshold": number;
+        "lowThreshold": number;
+        "progressVal": number;
+        "showDescription": boolean;
+        "showValue": boolean;
+        "statusLabel": string;
+    }
 }
 declare global {
     interface HTMLSharpenAlertElement extends Components.SharpenAlert, HTMLStencilElement {
@@ -213,6 +222,12 @@ declare global {
         prototype: HTMLSharpenProgressBarElement;
         new (): HTMLSharpenProgressBarElement;
     };
+    interface HTMLSharpenProgressDialElement extends Components.SharpenProgressDial, HTMLStencilElement {
+    }
+    var HTMLSharpenProgressDialElement: {
+        prototype: HTMLSharpenProgressDialElement;
+        new (): HTMLSharpenProgressDialElement;
+    };
     interface HTMLElementTagNameMap {
         "sharpen-alert": HTMLSharpenAlertElement;
         "sharpen-assessment-header": HTMLSharpenAssessmentHeaderElement;
@@ -230,6 +245,7 @@ declare global {
         "sharpen-primary-navigation": HTMLSharpenPrimaryNavigationElement;
         "sharpen-profile-card": HTMLSharpenProfileCardElement;
         "sharpen-progress-bar": HTMLSharpenProgressBarElement;
+        "sharpen-progress-dial": HTMLSharpenProgressDialElement;
     }
 }
 declare namespace LocalJSX {
@@ -334,6 +350,15 @@ declare namespace LocalJSX {
         "showDescription"?: boolean;
         "statusLabel"?: string;
     }
+    interface SharpenProgressDial {
+        "elevatedThreshold"?: number;
+        "highThreshold"?: number;
+        "lowThreshold"?: number;
+        "progressVal"?: number;
+        "showDescription"?: boolean;
+        "showValue"?: boolean;
+        "statusLabel"?: string;
+    }
     interface IntrinsicElements {
         "sharpen-alert": SharpenAlert;
         "sharpen-assessment-header": SharpenAssessmentHeader;
@@ -351,6 +376,7 @@ declare namespace LocalJSX {
         "sharpen-primary-navigation": SharpenPrimaryNavigation;
         "sharpen-profile-card": SharpenProfileCard;
         "sharpen-progress-bar": SharpenProgressBar;
+        "sharpen-progress-dial": SharpenProgressDial;
     }
 }
 export { LocalJSX as JSX };
@@ -373,6 +399,7 @@ declare module "@stencil/core" {
             "sharpen-primary-navigation": LocalJSX.SharpenPrimaryNavigation & JSXBase.HTMLAttributes<HTMLSharpenPrimaryNavigationElement>;
             "sharpen-profile-card": LocalJSX.SharpenProfileCard & JSXBase.HTMLAttributes<HTMLSharpenProfileCardElement>;
             "sharpen-progress-bar": LocalJSX.SharpenProgressBar & JSXBase.HTMLAttributes<HTMLSharpenProgressBarElement>;
+            "sharpen-progress-dial": LocalJSX.SharpenProgressDial & JSXBase.HTMLAttributes<HTMLSharpenProgressDialElement>;
         }
     }
 }
