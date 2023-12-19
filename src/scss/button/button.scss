@@ -50,6 +50,18 @@
     font-size: var(--font-size-sm);
   }
 
+  &--xsmall {
+    padding: var(--spacing-xs) var(--spacing-md) calc(var(--spacing-xs));
+    font-size: var(--font-size-xs);
+  }
+
+  &--variant {
+    border-color: var(--color-mint);
+    background-color: var(--color-mint);
+    font-family: var(--font-family-mono);
+    color: black;
+  }
+
   &--large {
     padding: var(--spacing-sm) var(--spacing-xl) calc(var(--spacing-sm) * 1.25);
     font-size: var(--font-size-lg);

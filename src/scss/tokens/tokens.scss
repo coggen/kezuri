@@ -37,6 +37,10 @@
    */
   --font-family-serif: 'Sharpen Serif', serif;      /* i.e P22 Mackinac Pro */
   --font-family-sans:  'Sharpen Sans', sans-serif;  /* i.e. Sohne */
+  --font-family-mono: ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Mono',
+      'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
+      'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New',
+      monospace;
 
   /**
    * @tokens Font Weights
