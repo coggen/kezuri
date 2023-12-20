@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Dashboard Card Variations</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+</head>
+<body>
+
+  <main class="container">
+
+    <h1 class="sharpen-heading-3xl sharpen-heading--bordered">
+      <i class="sharpen-icon">dashboard</i>
+      Next steps for Abby
+    </h1>
+
+    <div class="row row-cols-lg-2 row-cols-xl-3">
+      <div class="col">
+        <sharpen-dashboard-card
+            heading="Placement: Level A"
+            subheading="Sharpen Reading"
+            primary-link="#"
+            primary-link-text="Start Sharpen Reading"
+            secondary-link="#"
+            secondary-link-text="View Details"
+            img-src="/build/assets/images/placement-level-a@2x.png">
+          Congrats on completing the placement assessment for Abby! Abby's
+          reading journey is just beginning. Dive into our exclusive
+          reading program below!
+        </sharpen-dashboard-card>
+      </div>
+      <div class="col">
+        <sharpen-dashboard-card
+            heading="Result: High Risk"
+            subheading="Early Advantage Assessment"
+            primary-link="#"
+            primary-link-text="Start Sharpen Reading"
+            secondary-link="#"
+            secondary-link-text="View Details"
+            img-src="/build/assets/images/progress_dial_high.png">
+          You have completed Sharpen's Early Advantage Assessment for Abby as
+          of August 4, 2023. Abby has a high risk in 1 or more completed
+          assessments. It is highly recommended to provide additional support
+          for the development of Abby's literacy skills. One solution would be
+          to enroll in Sharpen Reading to improve Abby's reading skills without
+          delay. 
+        </sharpen-dashboard-card>
+      </div>
+      <div class="col">
+        <sharpen-dashboard-card
+            heading="Take the reading assessment"
+            subheading="Sharpen Reading"
+            primary-link="#"
+            primary-link-text="Start Assessment"
+            img-src="/build/assets/images/reading.png">
+          Your free trial has started, don't miss a day: take the reading
+          placement assessment now!
+        </sharpen-dashboard-card>
+      </div>
+    </div>
+
+    <div class="row row-cols-lg-2 row-cols-xl-3">
+      <div class="col">
+        <sharpen-dashboard-card
+            heading="Start Spelling"
+            subheading="Sharpen Spelling"
+            primary-link="#"
+            primary-link-text="Start Sharpen Spelling"
+            img-src="/build/assets/images/spelling@2x.png">
+          Abby can become a stronger reader by developing more spelling skills
+          &mdash; recommended after Reading Level B1
+        </sharpen-dashboard-card>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>
