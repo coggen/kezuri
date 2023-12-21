@@ -2,7 +2,7 @@
   "name": "@sharpen-com/kezuri",
   "description": "The Sharpen Design System",
   "license": "MIT",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "stencil build",
     "watch": "stencil build --watch",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch --serve --port 3000",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
