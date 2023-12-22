@@ -118,13 +118,11 @@ export namespace Components {
         "statusLabel": string;
     }
     interface SharpenProgressDial {
+        "description": string;
         "elevatedThreshold": number;
         "highThreshold": number;
         "lowThreshold": number;
         "progressVal": number;
-        "showDescription": boolean;
-        "showValue": boolean;
-        "statusLabel": string;
     }
 }
 declare global {
@@ -362,13 +360,11 @@ declare namespace LocalJSX {
         "statusLabel"?: string;
     }
     interface SharpenProgressDial {
+        "description"?: string;
         "elevatedThreshold"?: number;
         "highThreshold"?: number;
         "lowThreshold"?: number;
         "progressVal"?: number;
-        "showDescription"?: boolean;
-        "showValue"?: boolean;
-        "statusLabel"?: string;
     }
     interface IntrinsicElements {
         "sharpen-alert": SharpenAlert;

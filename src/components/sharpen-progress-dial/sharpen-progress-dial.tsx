@@ -1,10 +1,10 @@
 import { Component, Prop, State, Watch, Host, h, getAssetPath } from '@stencil/core';
 
 enum ProgressDialStatus {
-  unknown = "Unknown",
-  low = "Low",
-  elevated = "Elevated",
-  high = "High"
+  unknown = "unknown",
+  low = "low",
+  elevated = "elevated",
+  high = "high"
 }
 
 @Component({
@@ -17,9 +17,7 @@ export class SharpenProgressDial {
   @Prop() lowThreshold = 0.33 * this.highThreshold;
   @Prop() elevatedThreshold = 0.66 * this.highThreshold;
   @Prop() progressVal = 0;
-  @Prop() showValue: boolean = false;
-  @Prop() showDescription: boolean = false;
-  @Prop() statusLabel: string;
+  @Prop() description: string;
 
   @State() status: ProgressDialStatus = this.getStatus();
 
@@ -29,8 +27,8 @@ export class SharpenProgressDial {
   }
 
   render() {
-    const description = (this.showDescription ? <div class="progress-description">{this.status} {this.statusLabel}</div> : '');
-    const image = getAssetPath('assets/images/progress_dial_' + this.status.toLowerCase() + '.png');
+    const description = (this.description ? <div class="progress-description">{this.description}</div> : '');
+    const image = getAssetPath('assets/images/progress_dial_' + this.status + '.png');
 
     return (
       <Host status={this.status.toLowerCase()}>
@@ -52,8 +50,6 @@ export class SharpenProgressDial {
     } else if (this.progressVal > this.elevatedThreshold) {
       status = ProgressDialStatus.high;
     }
-
-    console.log(status);
 
     return status;
   }
