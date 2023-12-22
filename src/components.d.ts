@@ -36,6 +36,13 @@ export namespace Components {
     interface SharpenBack {
         "href": string;
     }
+    interface SharpenButton {
+        "authToken": string;
+        "destination": string;
+        "method": string;
+        "path": string;
+        "text": string;
+    }
     interface SharpenCard {
         /**
           * Border style
@@ -146,6 +153,12 @@ declare global {
         prototype: HTMLSharpenBackElement;
         new (): HTMLSharpenBackElement;
     };
+    interface HTMLSharpenButtonElement extends Components.SharpenButton, HTMLStencilElement {
+    }
+    var HTMLSharpenButtonElement: {
+        prototype: HTMLSharpenButtonElement;
+        new (): HTMLSharpenButtonElement;
+    };
     interface HTMLSharpenCardElement extends Components.SharpenCard, HTMLStencilElement {
     }
     var HTMLSharpenCardElement: {
@@ -240,6 +253,7 @@ declare global {
         "sharpen-alert": HTMLSharpenAlertElement;
         "sharpen-assessment-header": HTMLSharpenAssessmentHeaderElement;
         "sharpen-back": HTMLSharpenBackElement;
+        "sharpen-button": HTMLSharpenButtonElement;
         "sharpen-card": HTMLSharpenCardElement;
         "sharpen-card-content": HTMLSharpenCardContentElement;
         "sharpen-card-header": HTMLSharpenCardHeaderElement;
@@ -279,6 +293,13 @@ declare namespace LocalJSX {
     }
     interface SharpenBack {
         "href"?: string;
+    }
+    interface SharpenButton {
+        "authToken"?: string;
+        "destination"?: string;
+        "method"?: string;
+        "path"?: string;
+        "text"?: string;
     }
     interface SharpenCard {
         /**
@@ -374,6 +395,7 @@ declare namespace LocalJSX {
         "sharpen-alert": SharpenAlert;
         "sharpen-assessment-header": SharpenAssessmentHeader;
         "sharpen-back": SharpenBack;
+        "sharpen-button": SharpenButton;
         "sharpen-card": SharpenCard;
         "sharpen-card-content": SharpenCardContent;
         "sharpen-card-header": SharpenCardHeader;
@@ -398,6 +420,7 @@ declare module "@stencil/core" {
             "sharpen-alert": LocalJSX.SharpenAlert & JSXBase.HTMLAttributes<HTMLSharpenAlertElement>;
             "sharpen-assessment-header": LocalJSX.SharpenAssessmentHeader & JSXBase.HTMLAttributes<HTMLSharpenAssessmentHeaderElement>;
             "sharpen-back": LocalJSX.SharpenBack & JSXBase.HTMLAttributes<HTMLSharpenBackElement>;
+            "sharpen-button": LocalJSX.SharpenButton & JSXBase.HTMLAttributes<HTMLSharpenButtonElement>;
             "sharpen-card": LocalJSX.SharpenCard & JSXBase.HTMLAttributes<HTMLSharpenCardElement>;
             "sharpen-card-content": LocalJSX.SharpenCardContent & JSXBase.HTMLAttributes<HTMLSharpenCardContentElement>;
             "sharpen-card-header": LocalJSX.SharpenCardHeader & JSXBase.HTMLAttributes<HTMLSharpenCardHeaderElement>;
