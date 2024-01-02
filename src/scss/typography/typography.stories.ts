@@ -27,6 +27,34 @@ export const TextSizes = {
 </div>`
 }
 
+export const TextColors = {
+  render: () => `
+<div class="sharpen-text--color-evergreen">sharpen-text--color-evergreen</div>
+<div class="sharpen-text--color-pine">sharpen-text--color-pine</div>
+<div class="sharpen-text--color-mint">sharpen-text--color-mint</div>
+<div class="sharpen-text--color-sky">sharpen-text--color-sky</div>
+<div class="sharpen-text--color-sunrise">sharpen-text--color-sunrise</div>
+<div class="sharpen-text--color-ivory">sharpen-text--color-ivory</div>
+<div class="sharpen-text--color-putty">sharpen-text--color-putty</div>
+<div class="sharpen-text--color-black">sharpen-text--color-black</div>
+<div class="sharpen-text--color-gray-1">sharpen-text--color-gray-1</div>
+<div class="sharpen-text--color-gray-2">sharpen-text--color-gray-2</div>
+<div class="sharpen-text--color-gray-3">sharpen-text--color-gray-3</div>
+<div class="sharpen-text--color-gray-4">sharpen-text--color-gray-4</div>
+<div class="sharpen-text--color-gray-5">sharpen-text--color-gray-5</div>
+<div class="sharpen-text--color-white">sharpen-text--color-white</div>
+<div class="sharpen-text--color-red">sharpen-text--color-red</div>
+<div class="sharpen-text--color-dark-red">sharpen-text--color-dark-red</div>
+<div class="sharpen-text--color-light-red">sharpen-text--color-light-red</div>
+<div class="sharpen-text--color-orange">sharpen-text--color-orange</div>
+<div class="sharpen-text--color-dark-orange">sharpen-text--color-dark-orange</div>
+<div class="sharpen-text--color-light-orange">sharpen-text--color-light-orange</div>
+<div class="sharpen-text--color-green">sharpen-text--color-green</div>
+<div class="sharpen-text--color-dark-green">sharpen-text--color-dark-green</div>
+<div class="sharpen-text--color-light-green">sharpen-text--color-light-green</div>
+`
+}
+
 /**
  * Utility classes for left, right, center, and left-justified text alignment.
  */
@@ -40,16 +68,54 @@ export const TextAlignment = {
 }
 
 /**
- * Headings come in different sizes.
+ * Headings range in size from `md` to `5xl`, and can be either serif (default) or `sans`.
  */
 export const Headings = {
   render: () => `
-<h1 class="sharpen-heading-md">Medium heading</h1>
-<h1 class="sharpen-heading-xl">Extra large heading</h1>
-<h1 class="sharpen-heading-2xl">2XL heading</h1>
-<h1 class="sharpen-heading-2xl-sans">2XL heading, sans-serif</h1>
-<h1 class="sharpen-heading-3xl">3XL heading</h1>
-<h1 class="sharpen-heading-3xl--bordered">3XL heading with a bottom border</h1>
+<h1 class="sharpen-heading-sm">Heading, small</h1>
+<h1 class="sharpen-heading-md">Heading, medium</h1>
+<h1 class="sharpen-heading-lg">Heading, large</h1>
+<h1 class="sharpen-heading-2xl">Heading, 2xl</h1>
+<h1 class="sharpen-heading-3xl">Heading, 3xl</h1>
+<h1 class="sharpen-heading-4xl">Heading, 4xl</h1>
+<h1 class="sharpen-heading-5xl">Heading, 5xl</h1>
+
+<h1 class="sharpen-heading-sm-sans">Heading, sans-serif, small</h1>
+<h1 class="sharpen-heading-md-sans">Heading, sans-serif, medium</h1>
+<h1 class="sharpen-heading-lg-sans">Heading, sans-serif, large</h1>
+<h1 class="sharpen-heading-2xl-sans">Heading, sans-serif, 2xl</h1>
+<h1 class="sharpen-heading-3xl-sans">Heading, sans-serif, 3xl</h1>
+<h1 class="sharpen-heading-4xl-sans">Heading, sans-serif, 4xl</h1>
+<h1 class="sharpen-heading-5xl-sans">Heading, sans-serif, 5xl</h1>
+`
+}
+
+
+/**
+ * Add a bottom border to your heading with `sharpen-heading--bordered`
+ */
+export const HeadingsWithBottomBorder = {
+  render: () => `
+<h1 class="sharpen-heading-sm sharpen-heading--bordered">Heading, small</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-md sharpen-heading--bordered">Heading, medium</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-lg sharpen-heading--bordered">Heading, large</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-2xl sharpen-heading--bordered">Heading, 2xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-3xl sharpen-heading--bordered">Heading, 3xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-4xl sharpen-heading--bordered">Heading, 4xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
+
+<h1 class="sharpen-heading-5xl sharpen-heading--bordered">Heading, 5xl</h1>
+<p class="sharpen-text--body sharpen-mb-lg">Lorem ipsum dolor</p>
 `
 }
 
@@ -120,6 +186,44 @@ export const Lists = {
     <li>Three bulleted items</li>
   </ul>
 </div>`
+}
+
+/**
+ * Icon lists use `sharpen-icon` elements or images as bullet points. Use text
+ * color utility classes to change the color of an icon. Images are sized at
+ * 24px square to ensure proper alignment with each other and proper
+ * line-height alignment with the text.
+ * 
+ * Given the image size, list items have more generous spacing.
+ */
+export const IconLists = {
+  render:() => `<div class="sharpen-text-container">
+  <ul class="sharpen-icon-list sharpen-mb-xl">
+    <li><i class="sharpen-icon sharpen-text--color-pine">check_circle</i> This item is ok! Donec pulvinar libero sed sollicitudin ultricies. Proin accumsan lectus augue (<i class="sharpen-icon">pets</i>) at maximus neque elementum quis. Suspendisse metus risus, luctus egestas odio a, imperdiet ultrices ipsum. Nulla purus massa, aliquet et mi quis, tempus tempor erat. In feugiat sollicitudin placerat.</li>
+    <li><i class="sharpen-icon sharpen-text--color-dark-red">cancel</i> This item is not ok! Nulla purus massa, aliquet et mi quis, tempus tempor erat. In feugiat sollicitudin placerat.</li>
+    <li><i class="sharpen-icon">help</i> This item is uncertain.</li>
+  </ul>
+
+  <p>Suspendisse metus risus, luctus egestas odio a, imperdiet ultrices ipsum. Nulla purus massa, aliquet et mi quis, tempus tempor erat. In feugiat sollicitudin placerat.</p>
+  <ul class="sharpen-icon-list">
+    <li>
+      <img src="/assets/images/icon-decoding@2x.png">
+      <h4 class="sharpen-heading-sm-sans">Phonological Awareness</h4>
+      <p class="sharpen-text--muted">Assessment based on past reading history during parent's school-aged reading experiences.</p>
+    </li>
+    <li>
+      <img src="/assets/images/icon-memory@2x.png">
+      <h4 class="sharpen-heading-sm-sans">Phonological Memory</h4>
+      <p class="sharpen-text--muted">Assessment based on past reading history during parent's school-aged reading experiences.</p>
+    </li>
+    <li>
+      <img src="/assets/images/icon-decoding@2x.png">
+      <h4 class="sharpen-heading-sm-sans">Rapid Naming</h4>
+      <p class="sharpen-text--muted">Assessment based on past reading history during parent's school-aged reading experiences.</p>
+    </li>
+  </ul>
+</div>
+`
 }
 
 

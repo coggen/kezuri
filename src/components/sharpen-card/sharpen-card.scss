@@ -18,13 +18,13 @@ sharpen-card {
   &[padding="small"]  { padding: var(--spacing-sm); }
   &[padding="medium"] { padding: var(--spacing-md); }
   &[padding="large"]  { padding: var(--spacing-lg); }
+  &[padding="xl"]     { padding: var(--spacing-xl); }
 }
 
 sharpen-card-header {
   display: block;
   background-color: var(--color-evergreen);
   color: var(--color-white);
-  font-family: var(--font-family-sans);
   font-size: var(--font-size-lg);
   padding: var(--spacing-md);
   border-top-left-radius: var(--border-radius-md);
@@ -36,4 +36,5 @@ sharpen-card-content {
   &[padding="small"]  { padding: var(--spacing-sm); }
   &[padding="medium"] { padding: var(--spacing-md); }
   &[padding="large"]  { padding: var(--spacing-lg); }
+  &[padding="xl"]     { padding: var(--spacing-xl); }
 }

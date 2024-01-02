@@ -5,7 +5,6 @@ import { create } from '@storybook/theming/create';
 export default create({
   base: 'light',
   brandTitle: 'Kezuri',
-  // brandUrl: 'https://sharpen.com',
-  // brandImage: 'https://storybook.js.org/images/placeholders/350x150.png',
+  brandImage: 'assets/images/brand/kezuri.png',
   brandTarget: '_self',
 });

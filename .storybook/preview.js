@@ -1,3 +1,5 @@
+import { INITIAL_VIEWPORTS, MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
+
 // Load our Kezuri CSS
 import '../dist/kezuri/kezuri.css';
 
@@ -28,6 +30,11 @@ const preview = {
       storySort: {
         method: 'alphabetical',
         order: ['Design Tokens', 'Utilities', 'Atoms', 'Molecules', 'Organisms']
+      }
+    },
+    viewport: {
+      viewports: {
+        ...INITIAL_VIEWPORTS
       }
     }
   },

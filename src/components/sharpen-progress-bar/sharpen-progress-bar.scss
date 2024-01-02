@@ -1,6 +1,5 @@
 sharpen-progress-bar {
   display: block;
-  font-family: var(--font-family-sans);
 
   & + & {
     margin-top: var(--spacing-md);

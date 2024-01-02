@@ -1,22 +1,13 @@
 sharpen-alert {
   display: block;
-  font-family: var(--font-family-sans);
   border-radius: var(--border-radius-md);
   padding: var(--spacing-md);
   display: flex;
   margin-bottom: var(--spacing-md);
 
-  &[type="success"] {
-    background-color: var(--color-light-green);
-  }
-
-  &[type="warning"] {
-    background-color: var(--color-light-orange);
-  }
-
-  &[type="danger"] {
-    background-color: var(--color-light-red);
-  }
+  &[type="success"] { background-color: var(--color-light-green); }
+  &[type="warning"] { background-color: var(--color-light-orange); }
+  &[type="danger"]  { background-color: var(--color-light-red); }
 
   .sharpen-alert--icon {
     padding-right: var(--spacing-md);
@@ -26,18 +17,18 @@ sharpen-alert {
     margin: 0;
     line-height: 1.1;
     font-weight: var(--font-weight-semibold);
-  }
 
-  .sharpen-alert--heading + * {
-    margin-top: var(--spacing-sm);
+    & + * {
+      margin-top: var(--spacing-sm);
+    }
   }
 
   .sharpen-alert--message {
     font-size: var(--font-size-xs);
     margin-top: var(--spacing-xxs);
-  }
 
-  .sharpen-alert--message > :last-child {
-    margin-bottom: 0;
+    & > :last-child {
+      margin-bottom: 0;
+    }
   }
 }

@@ -46,7 +46,7 @@ export const Unbordered = {
  */
 export const CardHeader = {
   args: { padding: 'large' },
-  render: (args) => `<sharpen-card border="none" padding="none">
+  render: (args) => `<sharpen-card border="none">
   <sharpen-card-header>Family History Assessment</sharpen-card-header>
   <sharpen-card-content padding="${args.padding}">
     Content here

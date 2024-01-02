@@ -27,8 +27,9 @@
   --color-dark-orange:  #C2862B;
   --color-light-orange: #FFE7C3;
 
-  --color-light-green:  #C8EBD7;
   --color-green:        #50CD89;
+  --color-dark-green:   #31776C;
+  --color-light-green:  #C8EBD7;
 
   /**
    * @tokens Fonts
@@ -36,6 +37,10 @@
    */
   --font-family-serif: 'Sharpen Serif', serif;      /* i.e P22 Mackinac Pro */
   --font-family-sans:  'Sharpen Sans', sans-serif;  /* i.e. Sohne */
+  --font-family-mono: ui-monospace, 'SF Mono', Menlo, Monaco, 'Cascadia Mono',
+      'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
+      'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New',
+      monospace;
 
   /**
    * @tokens Font Weights
@@ -49,15 +54,15 @@
    * @tokens Font Sizes
    * @presenter FontSize
    */
-  --font-size-xs:    0.875rem;
-  --font-size-sm:    1rem;
-  --font-size-md:    1.125rem;
-  --font-size-lg:    1.25rem;
-  --font-size-xl:    1.375rem;
-  --font-size-2xl:   1.625rem;
-  --font-size-3xl:   2.125rem;
-  --font-size-4xl:   2.75rem;
-  --font-size-5xl:   4rem;
+  --font-size-xs:    0.875rem;  // 14px
+  --font-size-sm:    1rem;      // 16px
+  --font-size-md:    1.125rem;  // 18px
+  --font-size-lg:    1.25rem;   // 20px
+  --font-size-xl:    1.375rem;  // 22px
+  --font-size-2xl:   1.625rem;  // 26px
+  --font-size-3xl:   2.125rem;  // 34px
+  --font-size-4xl:   2.75rem;   // 44px
+  --font-size-5xl:   4rem;      // 64px
 
   /**
    * @tokens Spacing

@@ -1,6 +1,10 @@
 sharpen-progress-dial {
   display: block;
 
+  img { max-width: 100%; }
+
+  .progress-container { text-align: center; }
+
   .progress-description {
     font-family: var(--font-family-sans);
     font-size: var(--font-size-xl);
