@@ -32,3 +32,23 @@
 .row + .row {
   margin-top: 1em;
 }
+
+[id^="story--utilities-flex"] .d-flex, [id^="story--utilities-flex"] .d-inline-flex {
+  background-color: var(--color-ivory);
+  border: 1px dotted var(--color-pine);
+  margin-bottom: var(--spacing-md);
+}
+
+[id^="story--utilities-flex"] .d-flex > div, [id^="story--utilities-flex"] .d-inline-flex > div {
+  background-color: var(--color-mint);
+  border: 1px solid var(--color-pine);
+  padding: var(--spacing-sm);
+}
+
+[id^="story--utilities-flex"] [class^="d-flex align-items"] {
+  height: 6rem;
+}
+
+[id^="story--utilities-flex"] [class^="d-flex align-content"] {
+  height: 10rem;
+}

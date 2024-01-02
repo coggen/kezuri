@@ -18,6 +18,7 @@ sharpen-card {
   &[padding="small"]  { padding: var(--spacing-sm); }
   &[padding="medium"] { padding: var(--spacing-md); }
   &[padding="large"]  { padding: var(--spacing-lg); }
+  &[padding="xl"]     { padding: var(--spacing-xl); }
 }
 
 sharpen-card-header {
@@ -35,4 +36,5 @@ sharpen-card-content {
   &[padding="small"]  { padding: var(--spacing-sm); }
   &[padding="medium"] { padding: var(--spacing-md); }
   &[padding="large"]  { padding: var(--spacing-lg); }
+  &[padding="xl"]     { padding: var(--spacing-xl); }
 }

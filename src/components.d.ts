@@ -81,6 +81,8 @@ export namespace Components {
          */
         "type": LabelType;
     }
+    interface SharpenLoading {
+    }
     interface SharpenMenu {
         "attachment": string;
         "targetAttachment": string;
@@ -100,7 +102,9 @@ export namespace Components {
         "currentUser": string;
     }
     interface SharpenProfileCard {
+        "backgroundColor": string;
         "buttonText": string;
+        "color": string;
         "initial": string;
         "name": string;
         "url": string;
@@ -112,6 +116,13 @@ export namespace Components {
         "progressVal": number;
         "showDescription": boolean;
         "statusLabel": string;
+    }
+    interface SharpenProgressDial {
+        "description": string;
+        "elevatedThreshold": number;
+        "highThreshold": number;
+        "lowThreshold": number;
+        "progressVal": number;
     }
 }
 declare global {
@@ -175,6 +186,12 @@ declare global {
         prototype: HTMLSharpenLabelElement;
         new (): HTMLSharpenLabelElement;
     };
+    interface HTMLSharpenLoadingElement extends Components.SharpenLoading, HTMLStencilElement {
+    }
+    var HTMLSharpenLoadingElement: {
+        prototype: HTMLSharpenLoadingElement;
+        new (): HTMLSharpenLoadingElement;
+    };
     interface HTMLSharpenMenuElement extends Components.SharpenMenu, HTMLStencilElement {
     }
     var HTMLSharpenMenuElement: {
@@ -211,6 +228,12 @@ declare global {
         prototype: HTMLSharpenProgressBarElement;
         new (): HTMLSharpenProgressBarElement;
     };
+    interface HTMLSharpenProgressDialElement extends Components.SharpenProgressDial, HTMLStencilElement {
+    }
+    var HTMLSharpenProgressDialElement: {
+        prototype: HTMLSharpenProgressDialElement;
+        new (): HTMLSharpenProgressDialElement;
+    };
     interface HTMLElementTagNameMap {
         "sharpen-alert": HTMLSharpenAlertElement;
         "sharpen-assessment-header": HTMLSharpenAssessmentHeaderElement;
@@ -222,12 +245,14 @@ declare global {
         "sharpen-empty": HTMLSharpenEmptyElement;
         "sharpen-footer": HTMLSharpenFooterElement;
         "sharpen-label": HTMLSharpenLabelElement;
+        "sharpen-loading": HTMLSharpenLoadingElement;
         "sharpen-menu": HTMLSharpenMenuElement;
         "sharpen-nav-link": HTMLSharpenNavLinkElement;
         "sharpen-page-navigation": HTMLSharpenPageNavigationElement;
         "sharpen-primary-navigation": HTMLSharpenPrimaryNavigationElement;
         "sharpen-profile-card": HTMLSharpenProfileCardElement;
         "sharpen-progress-bar": HTMLSharpenProgressBarElement;
+        "sharpen-progress-dial": HTMLSharpenProgressDialElement;
     }
 }
 declare namespace LocalJSX {
@@ -298,6 +323,8 @@ declare namespace LocalJSX {
          */
         "type": LabelType;
     }
+    interface SharpenLoading {
+    }
     interface SharpenMenu {
         "attachment"?: string;
         "targetAttachment"?: string;
@@ -317,7 +344,9 @@ declare namespace LocalJSX {
         "currentUser"?: string;
     }
     interface SharpenProfileCard {
+        "backgroundColor"?: string;
         "buttonText"?: string;
+        "color"?: string;
         "initial": string;
         "name": string;
         "url": string;
@@ -330,6 +359,13 @@ declare namespace LocalJSX {
         "showDescription"?: boolean;
         "statusLabel"?: string;
     }
+    interface SharpenProgressDial {
+        "description"?: string;
+        "elevatedThreshold"?: number;
+        "highThreshold"?: number;
+        "lowThreshold"?: number;
+        "progressVal"?: number;
+    }
     interface IntrinsicElements {
         "sharpen-alert": SharpenAlert;
         "sharpen-assessment-header": SharpenAssessmentHeader;
@@ -341,12 +377,14 @@ declare namespace LocalJSX {
         "sharpen-empty": SharpenEmpty;
         "sharpen-footer": SharpenFooter;
         "sharpen-label": SharpenLabel;
+        "sharpen-loading": SharpenLoading;
         "sharpen-menu": SharpenMenu;
         "sharpen-nav-link": SharpenNavLink;
         "sharpen-page-navigation": SharpenPageNavigation;
         "sharpen-primary-navigation": SharpenPrimaryNavigation;
         "sharpen-profile-card": SharpenProfileCard;
         "sharpen-progress-bar": SharpenProgressBar;
+        "sharpen-progress-dial": SharpenProgressDial;
     }
 }
 export { LocalJSX as JSX };
@@ -363,12 +401,14 @@ declare module "@stencil/core" {
             "sharpen-empty": LocalJSX.SharpenEmpty & JSXBase.HTMLAttributes<HTMLSharpenEmptyElement>;
             "sharpen-footer": LocalJSX.SharpenFooter & JSXBase.HTMLAttributes<HTMLSharpenFooterElement>;
             "sharpen-label": LocalJSX.SharpenLabel & JSXBase.HTMLAttributes<HTMLSharpenLabelElement>;
+            "sharpen-loading": LocalJSX.SharpenLoading & JSXBase.HTMLAttributes<HTMLSharpenLoadingElement>;
             "sharpen-menu": LocalJSX.SharpenMenu & JSXBase.HTMLAttributes<HTMLSharpenMenuElement>;
             "sharpen-nav-link": LocalJSX.SharpenNavLink & JSXBase.HTMLAttributes<HTMLSharpenNavLinkElement>;
             "sharpen-page-navigation": LocalJSX.SharpenPageNavigation & JSXBase.HTMLAttributes<HTMLSharpenPageNavigationElement>;
             "sharpen-primary-navigation": LocalJSX.SharpenPrimaryNavigation & JSXBase.HTMLAttributes<HTMLSharpenPrimaryNavigationElement>;
             "sharpen-profile-card": LocalJSX.SharpenProfileCard & JSXBase.HTMLAttributes<HTMLSharpenProfileCardElement>;
             "sharpen-progress-bar": LocalJSX.SharpenProgressBar & JSXBase.HTMLAttributes<HTMLSharpenProgressBarElement>;
+            "sharpen-progress-dial": LocalJSX.SharpenProgressDial & JSXBase.HTMLAttributes<HTMLSharpenProgressDialElement>;
         }
     }
 }

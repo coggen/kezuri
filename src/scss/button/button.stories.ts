@@ -7,11 +7,11 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     kind: {
-      options: ['primary', 'secondary', 'danger', 'muted', 'link'],
+      options: ['primary', 'secondary', 'danger', 'muted', 'link', 'variant'],
       control: 'radio'
     },
     size: {
-      options: ['small', 'large'],
+      options: ['xsmall', 'small', 'large'],
       control: 'radio'
     },
     disabled: {
@@ -109,4 +109,13 @@ export const FullWidth = {
   render: () => `<sharpen-card border="gray" padding="large">
   <button class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Full width button</button>
 </sharpen-card>`
+}
+
+/** A button type that showcases a genetic variant. */
+export const Variant = {
+  render: () => `
+<a href="#" class="sharpen-button sharpen-button--xsmall sharpen-button--variant">RU1-1</a>
+<a href="#" class="sharpen-button sharpen-button--xsmall sharpen-button--variant">rs1277190</a>
+<a href="#" class="sharpen-button sharpen-button--xsmall sharpen-button--variant">rs1555839</a>
+`
 }
