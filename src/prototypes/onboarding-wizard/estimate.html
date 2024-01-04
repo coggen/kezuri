@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Onboarding</title>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+      .question-content { font-size: var(--font-size-md); }
+      hr { margin: 4em 0; color: #eee; }
+    </style>
+  </head>
+  <body class="sharpen-background--green">
+
+    <div class="sharpen-wizard-container">
+
+      <div class="sharpen-text--center">
+        <div class="sharpen-heading-sm sharpen-mb-0">We estimate your child will<br />
+        improve by 1 grade level by</div>
+        <h1 class="sharpen-heading-2xl-sans">February 28</h1>
+        <canvas id="viz-estimate" class="sharpen-mt-md sharpen-mb-lg"></canvas>
+      </div>
+
+      <div class="sharpen-text-container">
+        <p><strong>Great news!</strong> Based on Sharpen families like yours who do 3 lessons per week, we estimate your child will improve a full grade level by February 28.</p>
+        <p>Next, answers some questions about your child’s skills so we can start Sharpen Reading at just the right level.</p>
+      </div>
+
+      <a href="course.html" class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large sharpen-mt-lg">Next</a>
+
+    </div>
+
+
+    <script>
+      const ctx = document.getElementById('viz-estimate');
+
+      const MONTHS = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+      ];
+
+      function months(config) {
+        var cfg = config || {};
+        var count = cfg.count || 12;
+        var section = cfg.section;
+        var values = [];
+        var i, value;
+
+        for (i = 0; i < count; ++i) {
+          value = MONTHS[Math.ceil(i) % 12];
+          values.push(value.substring(0, section));
+        }
+
+        return values;
+      }
+
+      Chart.defaults.font.family = "Arial";
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: months({ count: 4 }),
+          datasets: [
+            {
+              label: 'Grade Level',
+              data: [0,0.125,0.75,1],
+              borderColor: '#31776C',
+              backgroundColor: 'rgba(49, 119, 108, 0.2)',
+              fill: 'start'
+            }
+          ]
+        },
+        options: {
+          elements: {
+            line: {
+              tension: 0.4
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              display: false
+            }
+          }
+        }
+      })
+    </script>
+
+  </body>
+</html>

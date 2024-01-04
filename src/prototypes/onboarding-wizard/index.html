@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Onboarding</title>
+    <link rel="stylesheet" href="/build/kezuri.css" />
+    <script type="module" src="/build/kezuri.esm.js"></script>
+    <script nomodule src="/build/kezuri.js"></script>
+    <style>
+      .question-content { font-size: var(--font-size-md); }
+      hr { margin: 4em 0; color: #eee; }
+    </style>
+  </head>
+  <body class="sharpen-background--white">
+
+    <div class="sharpen-wizard-container">
+
+      <sharpen-wizard-header section="Learning Profile" current-step="1" total-steps="20"></sharpen-wizard-header>
+
+      <form>
+
+        <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+          <p>What is your child’s current grade in school?</p>
+        </div>
+        
+        <div class="sharpen-form-survey sharpen-form-survey-column">
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_1" />
+            <label for="radio1_1">Younger than Kindergarten</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_2" />
+            <label for="radio1_2">Kindergarten</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_3" />
+            <label for="radio1_3">Grade 1</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_4" />
+            <label for="radio1_4">Grade 2</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_5" />
+            <label for="radio1_5">Grade 3</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_6" />
+            <label for="radio1_6">Grade 4</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_7" />
+            <label for="radio1_7">Grade 5</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_8" />
+            <label for="radio1_8">Grade 6 or older</label>
+          </div>
+        </div>
+
+      </form>
+
+      <hr>
+
+      <sharpen-wizard-header section="Learning Profile" current-step="5" total-steps="20" back-href="foo.html"></sharpen-wizard-header>
+
+      <form>
+
+        <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+          <p>What aspect of reading does your child struggle with the most?</p>
+        </div>
+        
+        <div class="sharpen-form-survey sharpen-form-survey-column">
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_1" />
+            <label for="radio1_1">Understanding and remembering what they read</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_2" />
+            <label for="radio1_2">Staying focused during reading time</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_3" />
+            <label for="radio1_3">Showing interest in reading activities</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="radio" name="radio1" id="radio1_4" />
+            <label for="radio1_4">Reading at an appropriate speed for their age</label>
+          </div>
+        </div>
+
+      </form>
+
+      <hr>
+
+      <form>
+
+        <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+          <p>Has your child ever been formally diagnosed with a learning disability?</p>
+          <p>Check all that apply.</p>
+        </div>
+        
+        <div class="sharpen-form-survey sharpen-form-survey-column">
+          <div class="sharpen-form-survey-option">
+            <input type="checkbox" name="checkbox1" id="checkbox1_1" />
+            <label for="checkbox1_1">Dyslexia</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="checkbox" name="checkbox1" id="checkbox1_2" />
+            <label for="checkbox1_2">Dyscalculia</label>
+          </div>
+          <div class="sharpen-form-survey-option">
+            <input type="checkbox" name="checkbox1" id="checkbox1_3" />
+            <label for="checkbox1_3">Auditory disorder</label>
+          </div>
+        </div>
+
+        <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large sharpen-mt-lg">Next</button>
+      </form>
+
+      <hr>
+
+      <form>
+
+        <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+          <p>Enter your email address to see when Sharpen Reading can get your child to achieve grade-level reading.</p>
+        </div>
+
+        <div class="sharpen-form-group">
+          <input type="email" class="sharpen-form-control" placeholder="Email" />
+        </div>
+
+        <a href="estimate.html" class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large sharpen-mt-lg">See my result</a>
+
+        <div class="sharpen-text-container sharpen-text-xs sharpen-text--muted sharpen-mt-lg">
+          <p>Sharpen ensures the confidentiality of all information you provide. We will e-mail you a copy of your result.</p>
+          <p>By clicking "See my result," you acknowledge that you have read, understood, and accepted the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+        </div>
+        
+      </form>
+
+    </div>
+
+    
+
+  </body>
+</html>

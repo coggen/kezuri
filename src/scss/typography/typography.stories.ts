@@ -168,6 +168,19 @@ export const MutedText = {
 }
 
 /**
+ * Use inverse text to put white text on a pine background, like in this example
+ * from the end of our onboarding wizard.
+ */
+export const InverseText = {
+  render: () => `<div class="sharpen-text--inverse sharpen-text-lg">
+  <div class="sharpen-wizard-container">
+    Jurickson's<br />
+    3-month personalized course
+  </div>
+</div>`
+}
+
+/**
  * Add the `sharpen-list` class to an `ol` or `ul` to get appropriate list-item
  * spacing. Margins between lists is your responsibility, unless you lists are
  * within a `sharpen-text-container`.

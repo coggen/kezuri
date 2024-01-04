@@ -14,6 +14,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sharpen-background--green { background-color: var(--color-mint); }
+.sharpen-background--white { background-color: white; }
+
 a {
   color: var(--color-pine);
 }

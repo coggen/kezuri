@@ -21,3 +21,21 @@
 .sharpen-table-hover {
   tbody tr:hover { background-color: var(--color-gray-5); }
 }
+
+//
+// Pricing Table
+//
+
+.sharpen-table--pricing {
+  tr > :first-child { padding-left: 0; }
+  tr > :last-child { padding-right: 0; }
+
+  thead {
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+  }
+
+  tbody td:last-child {
+    text-align: right;
+  }
+}

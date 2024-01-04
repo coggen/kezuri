@@ -1,0 +1,53 @@
+import { Canvas, Meta } from '@storybook/blocks';
+import * as WizardStories from './wizard.stories';
+
+<Meta of={WizardStories} />
+
+# Onboarding Wizard
+
+## Radio Question
+
+* Note that, in this example, the wizard header is not configured with a
+  `back-href` attribute since it is the first question and thus no back button
+  should be displayed.
+* Radio questions, unless specified otherwise, should be built to save the
+  user's answer and advance to the next question automatically when an option
+  is clicked.
+
+<Canvas of={WizardStories.RadioQuestion} sourceState="hidden" />
+
+## Checkbox Question
+
+* Because checkbox questions allow the user to select 0, 1, or more options,
+  we display a submit button at the bottom and only advance to the next 
+  question when the user clicks it.
+
+<Canvas of={WizardStories.CheckboxQuestion} sourceState="hidden" />
+
+## Email Question
+
+* Even though the Wizard flow has a distinct style, it is still built on top of 
+  Kezuri; therefore, we can use text input fields and show field-level
+  validations as usual.
+* Because the we intend to keep the user focused on one goal during this wizard,
+  we try to avoid including links that might take the user elsewhere. We must,
+  however, provide access to the Terms and Privacy Policy. These links should
+  open in a new browser tab (i.e. `target="_blank"`), so that the wizard flow
+  does not get fully interrupted.
+
+<Canvas of={WizardStories.EmailQuestion} sourceState="hidden" />
+
+## Estimate
+
+* Apply `sharpen-background--green` to the `body` tag so that the entire page
+  appears with the green background color. (Due to the limitations of
+  Storybook, the background class in the story below has been applied to the
+  container element.)
+* This example uses chart.js to render a simple visualization of how the child
+  might progress over three months.
+
+<Canvas of={WizardStories.Estimate} sourceState="hidden" />
+
+## Personalized Course (i.e. Shopping Cart)
+
+<Canvas of={WizardStories.PersonalizedCourse} sourceState="hidden" />
