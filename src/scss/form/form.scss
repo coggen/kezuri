@@ -155,6 +155,36 @@
     &:hover { background-color: var(--color-putty); }
   }
 
+  &.sharpen-form-survey-column {
+    display: block;
+
+    label {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: none;
+      background-color: var(--color-ivory);
+      font-size: var(--font-size-sm);
+
+      &:hover { background-color: var(--color-mint); }
+    }
+
+    .sharpen-form-survey-option + .sharpen-form-survey-option {
+      margin-top: 0.75em;
+    }
+
+    input[type="checkbox"] {
+      float: left;
+      width: 2em;
+      height: 2em;
+      margin: 1em;
+    }
+
+    input[type="checkbox"] + label {
+      text-align: left;
+    }
+  }
+
   input[type="radio"] {
     display: flex;
     appearance: none;

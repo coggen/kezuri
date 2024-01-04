@@ -55,3 +55,23 @@ export default {
 export const Example = {
   args: { }
 }
+
+export const PricingTable = {
+  render: () => `<table class="sharpen-table sharpen-table--pricing">
+  <thead>
+    <tr>
+      <th>Price After Trial</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        3-month plan
+        <div class="sharpen-text-xs sharpen-text--muted">$19.99/month</div>
+      </td>
+      <td>$59.97</td>
+    </tr>
+  </tbody>
+</table>`
+}

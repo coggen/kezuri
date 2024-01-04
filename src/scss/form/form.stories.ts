@@ -182,3 +182,93 @@ export const FormDocument = {
   </div>
 </div>`
 }
+
+export const SurveyHorizontal = {
+  name: 'Survey Style: Horizontal',
+  render: () => `<div class="sharpen-form-survey">
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_1" />
+    <label for="reason_radio1_1">I don’t have enough time</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_2" />
+    <label for="reason_radio1_2">Price</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_3" />
+    <label for="reason_radio1_3">Prefer to teach offline</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_4" />
+    <label for="reason_radio1_4">Requires 2 devices</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_5" />
+    <label for="reason_radio1_5">Difficult to use</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_6" />
+    <label for="reason_radio1_6">Child not making enough progress</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_7" />
+    <label for="reason_radio1_7">Content does not fit child's needs</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="reason_radio1_8" />
+    <label for="reason_radio1_8">Other</label>
+  </div>
+</div>`
+}
+
+export const SurveyVerticalRadio = {
+  name: 'Survey Style: Vertical Radio',
+  render: () => `<div class="sharpen-form-survey sharpen-form-survey-column">
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_2" />
+    <label for="survey_radio1_2">Kindergarten</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_3" />
+    <label for="survey_radio1_3">Grade 1</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_4" />
+    <label for="survey_radio1_4">Grade 2</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_5" />
+    <label for="survey_radio1_5">Grade 3</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_6" />
+    <label for="survey_radio1_6">Grade 4</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_7" />
+    <label for="survey_radio1_7">Grade 5</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="radio" name="radio1" id="survey_radio1_8" />
+    <label for="survey_radio1_8">Grade 6 or older</label>
+  </div>
+</div>`
+}
+
+export const SurveyVerticalCheckbox = {
+  name: 'Survey Style: Vertical Checkbox',
+  render: () => `        <div class="sharpen-form-survey sharpen-form-survey-column">
+  <div class="sharpen-form-survey-option">
+    <input type="checkbox" name="checkbox1" id="survey_checkbox1_1" />
+    <label for="survey_checkbox1_1">Dyslexia</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="checkbox" name="checkbox1" id="survey_checkbox1_2" />
+    <label for="survey_checkbox1_2">Dyscalculia</label>
+  </div>
+  <div class="sharpen-form-survey-option">
+    <input type="checkbox" name="checkbox1" id="survey_checkbox1_3" />
+    <label for="survey_checkbox1_3">Auditory disorder</label>
+  </div>
+</div>`
+}

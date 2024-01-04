@@ -1,0 +1,12 @@
+sharpen-wizard-header {
+  nav {
+    display: flex;
+
+    .sharpen-icon {
+      font-size: 14pt;
+      vertical-align: 4px;
+    }
+
+    h1 { flex: 1; text-align: center; padding-right: 14pt; }
+  }
+}
