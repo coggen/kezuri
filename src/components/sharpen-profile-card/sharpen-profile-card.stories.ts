@@ -44,3 +44,30 @@ export const Default = {
     url: 'https://sharpen.com'
   }
 };
+
+/**
+ * When profile cards appear in a grid, the cards should all render with the
+ * same height, allowing for the display of names of varying length. The name
+ * portion of the card will stretch so that the profile initials and the buttons
+ * remained aligned with each other from card to card.
+ */
+export const GridOfCards = {
+  render: () => `
+<div class="row row-cols-lg-4 row-cols-xl-6">
+  <div class="col">
+    <sharpen-profile-card name="Bob Smith" initial="J" button-text="Select" url="https://sharpen.com"></sharpen-profile-card>
+  </div>
+  <div class="col">
+    <sharpen-profile-card name="Lord Baron Andrew Lloyd Webber" initial="A" button-text="Select" url="https://sharpen.com"></sharpen-profile-card>
+  </div>
+  <div class="col">
+    <sharpen-profile-card name="Joseph Gordon-Levitt" initial="J" button-text="Select" url="https://sharpen.com"></sharpen-profile-card>
+  </div>
+  <div class="col">
+    <sharpen-profile-card name="Josh Bob" initial="C" button-text="Select" url="https://sharpen.com"></sharpen-profile-card>
+  </div>
+  <div class="col">
+    <sharpen-profile-card name="Thomas Terry Hoar-Stevens" initial="T" button-text="Select" url="https://sharpen.com"></sharpen-profile-card>
+  </div>
+</div>`
+}
