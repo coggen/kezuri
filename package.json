@@ -29,7 +29,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@stencil/core": "^4.8.1",
+    "@stencil/core": "4.11",
     "tether": "^2.0.0"
   },
   "devDependencies": {
