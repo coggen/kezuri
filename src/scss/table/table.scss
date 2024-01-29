@@ -39,3 +39,43 @@
     text-align: right;
   }
 }
+
+//
+// Practice-Progress Table
+//
+
+.sharpen-table-practice {
+  background-color: var(--color-ivory);
+
+  th, td {
+    padding: var(--spacing-md);
+    vertical-align: top;
+  }
+
+  th {
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    width: 50%;
+  }
+
+  tbody tr { th, td { border-top: 2px solid var(--color-white); } }
+
+  .icon-set {
+    margin-left: -4px;
+    margin-top: var(--spacing-xs);
+
+    .sharpen-icon {
+      font-size: 32px;
+      letter-spacing: -2pt;
+    }
+  }
+
+  .lessons-4 { color: var(--color-orange); }
+  .lessons-3 { color: var(--color-dark-orange); }
+  .lessons-2 { color: var(--color-gray-2); }
+  .months { color: var(--color-gray-2); }
+}
+
+.sharpen-table--headless {
+  tbody tr:first-child { th, td { border-top: 0; } }
+}

@@ -1,4 +1,10 @@
+//
+// Base HTML tweaking
+//
+
 strong { font-weight: var(--font-weight-semibold); }
+a { color: var(--color-pine); }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 //
 // Text sizes
@@ -63,13 +69,21 @@ strong { font-weight: var(--font-weight-semibold); }
 
 .sharpen-text--body, .sharpen-text-container {
   font-family: var(--font-family-sans);
-  line-height: 1.5;
+  line-height: var(--line-height--generous);
+  .sharpen-list, p { margin-bottom: var(--spacing-md); }
 }
 
 .sharpen-text-container {
   max-width: var(--max-width-for-reading);
-  .sharpen-list, p { margin-bottom: var(--spacing-md); }
 }
+
+//
+// Line heights
+//
+
+.sharpen-text-height--compressed { line-height: var(--line-height--compressed) }
+.sharpen-text-height--normal { line-height: var(--line-height--normal) }
+.sharpen-text-height--generous { line-height: var(--line-height--generous) }
 
 //
 // Headings
@@ -108,6 +122,10 @@ strong { font-weight: var(--font-weight-semibold); }
   border-bottom: 1px solid var(--color-mint);
 }
 
+.sharpen-heading--caps {
+  text-transform: uppercase;
+}
+
 //
 // Text variations
 //
@@ -127,6 +145,8 @@ strong { font-weight: var(--font-weight-semibold); }
   color: white;
 }
 
+.sharpen-text--stronger { font-weight: var(--font-weight-semibold); }
+.sharpen-text--strongest { font-weight: var(--font-weight-bold); }
 
 //
 // List styles
@@ -135,7 +155,7 @@ strong { font-weight: var(--font-weight-semibold); }
 ol.sharpen-list, ul.sharpen-list, ul.sharpen-icon-list {
   margin: 0;
   padding: 0 0 0 var(--spacing-md);
-  line-height: 1.5;
+  line-height: var(--line-height--generous);
 
   li + li { margin-top: var(--spacing-sm); }
 }

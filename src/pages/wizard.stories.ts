@@ -10,7 +10,7 @@ export const RadioQuestion = {
 
   <form>
 
-    <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+    <div class="question-content sharpen-text--body sharpen-mt-lg sharpen-mb-md">
       <p>What is your child’s current grade in school?</p>
     </div>
     
@@ -63,7 +63,7 @@ export const CheckboxQuestion = {
 
   <form>
 
-    <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+    <div class="question-content sharpen-text--body sharpen-mt-lg sharpen-mb-md">
       <p>Has your child ever been formally diagnosed with a learning disability?</p>
       <p>Check all that apply.</p>
     </div>
@@ -91,6 +91,141 @@ export const CheckboxQuestion = {
 `
 }
 
+export const TestimonialMessage = {
+  render: () => `
+<div class="sharpen-wizard-container">
+  <sharpen-wizard-header section="Learning Profile" current-step="5" total-steps="100" back-href="foo.html"></sharpen-wizard-header>
+  <div class="sharpen-my-lg">
+    <h1 class="sharpen-heading-md-sans">You are not alone</h1>
+    <div class="row sharpen-my-md">
+      <div class="col-7 sharpen-text--color-pine">
+        "Seeing my son struggle with reading worried me. Sharpen really worked for us. He is now reading several years above grade level.” &mdash;Maggie
+      </div>
+      <div class="col-5">
+        <img src="https://placehold.co/307x389" class="sharpen-img-responsive">
+      </div>
+    </div>
+    <div class="sharpen-text--muted sharpen-text-xs sharpen-text--center">
+      Sharpen families that adopt the right learning schedule improve 1 grade level in about 3 months. 
+    </div>
+  </div>
+  <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
+</div>
+`
+}
+
+export const ResearchEvidence = {
+  render: () => `
+<div class="sharpen-wizard-container">
+  <sharpen-wizard-header section="Learning Profile" current-step="15" total-steps="100" back-href="foo.html"></sharpen-wizard-header>
+  <div class="sharpen-my-lg">
+    <div class="sharpen-text--body">
+      <p>Sharpen Reading is effective with all kinds of kids, including those with <strong>reading problems or dyslexia</strong>.</p>
+      <p>We incorporate research from many disciplines:</p>
+    </div>
+
+    <table class="sharpen-table sharpen-table--headless sharpen-text-xs sharpen-text-height--compressed">
+      <tbody>
+        <tr>
+          <td><img src="https://placehold.co/400x450" class="sharpen-img-responsive"></td>
+          <td>
+            Kids learn new words faster when they learn about the sounds that make up words.
+            <span class="sharpen-text--color-gray-3">&mdash;Kilpatrick 2015, 2016; Ehri 2005, 2014; Scammaca et al 2007</span>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="https://placehold.co/400x450" class="sharpen-img-responsive"></td>
+          <td>
+            High-quality, intense, one-on-one reading tutoring was more than twice as likely to catch a kid up to classmates by the next year.
+        <span class="sharpen-text--color-gray-3">&mdash;Vellutino et al 1996</span>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="https://placehold.co/400x450" class="sharpen-img-responsive"></td>
+          <td>
+            Sharpen improves how well kids identify and manipulate speech sounds in words, essential for quick and smooth reading.
+        <span class="sharpen-text--color-gray-3">&mdash;Adams, 1990; Griffith & Olson 1992; Savage & Carless 2005</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
+</div>
+`
+}
+
+export const PracticeAndProgress = {
+  render: () => `
+<div class="sharpen-wizard-container">
+  <sharpen-wizard-header section="Learning Profile" current-step="15" total-steps="100" back-href="foo.html"></sharpen-wizard-header>
+  <div class="sharpen-my-lg">
+    <h1 class="sharpen-heading-md-sans sharpen-mb-md">The more you practice,<br />
+    the faster the progress</h1>
+    <p>Sharpen Reading creates real results for your child that work within your schedule.</p>
+
+    <table class="sharpen-table sharpen-table-practice sharpen-my-md">
+      <thead>
+        <tr>
+          <th>Lessons<br />Per Week</th>
+          <th>Grade-Level<br />Improvement In...</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            4 lessons
+            <div class="icon-set lessons-4">
+              <i class="sharpen-icon filled">book_3</i><i class="sharpen-icon filled">book_3</i><i class="sharpen-icon filled">book_3</i><i class="sharpen-icon filled">book_3</i>
+            </div>
+          </td>
+          <td>
+            <i class="sharpen-icon filled">star</i> 3 months
+            <div class="icon-set months">
+              <i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            3 lessons
+            <div class="icon-set lessons-3">
+              <i class="sharpen-icon filled">book_3</i><i class="sharpen-icon filled">book_3</i><i class="sharpen-icon filled">book_3</i>
+            </div>
+          </td>
+          <td>
+            4 months
+            <div class="icon-set months">
+              <i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            2 lessons
+            <div class="icon-set lessons-2">
+              <i class="sharpen-icon filled">book_3</i><i class="sharpen-icon filled">book_3</i>
+            </div>
+          </td>
+          <td>
+            6 months
+            <div class="icon-set months">
+              <i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i><i class="sharpen-icon">calendar_today</i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="sharpen-text--muted sharpen-text--center sharpen-text-xs sharpen-mb-lg">
+      Based on 48 lessons, 30 minutes per lesson
+    </div>
+    <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
+  </div>
+</div>
+`
+}
+
 export const EmailQuestion = {
   render: () => `
 <div class="sharpen-wizard-container">
@@ -99,7 +234,7 @@ export const EmailQuestion = {
 
   <form>
 
-    <div class="question-content sharpen-text-container sharpen-mt-lg sharpen-mb-md">
+    <div class="question-content sharpen-text--body sharpen-mt-lg sharpen-mb-md">
       <p>Enter your email address to see when Sharpen Reading can get your child to achieve grade-level reading.</p>
     </div>
 
@@ -110,7 +245,7 @@ export const EmailQuestion = {
 
     <a href="estimate.html" class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large sharpen-mt-lg">See my result</a>
 
-    <div class="sharpen-text-container sharpen-text-xs sharpen-text--muted sharpen-mt-lg">
+    <div class="sharpen-text--body sharpen-text-xs sharpen-text--muted sharpen-mt-lg">
       <p>Sharpen ensures the confidentiality of all information you provide. We will e-mail you a copy of your result.</p>
       <p>By clicking "See my result," you acknowledge that you have read, understood, and accepted the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>.</p>
     </div>
@@ -134,7 +269,7 @@ export const Estimate = {
     <canvas id="viz-estimate" class="sharpen-mt-md sharpen-mb-lg"></canvas>
   </div>
 
-  <div class="sharpen-text-container">
+  <div class="sharpen-text--body">
     <p><strong>Great news!</strong> Based on Sharpen families like yours who do 3 lessons per week, we estimate your child will improve a full grade level by February 28.</p>
     <p>Next, answers some questions about your child’s skills so we can start Sharpen Reading at just the right level.</p>
   </div>
@@ -213,6 +348,72 @@ export const Estimate = {
 </script>
 `
 }
+
+/**
+ * The image uses the `sharpen-img-responsive` class so that it can scale down
+ * automatically to smaller screens.
+ */
+export const PlacementIntro = {
+  render: () => `
+<div class="sharpen-wizard-container">
+  <sharpen-wizard-header section="Learning Profile" current-step="15" total-steps="100" back-href="foo.html"></sharpen-wizard-header>
+  <div class="sharpen-my-lg sharpen-text--body">
+    <div class="sharpen-text--center">
+      <h1 class="sharpen-heading-md-sans sharpen-mb-md">Let's find your child's starting level</h1>
+      <img src="https://placehold.co/350x200" class="sharpen-img-responsive sharpen-mb-md">
+    </div>
+    <p>Sharpen Reading includes over 30 kinds of live activities to make reading fun and effective, based on 20 years of experience.</p>
+    <p>We select the best activities for your child based on their starting reading level: A, AA, B1, B2, C or D.</p>
+  </div>
+  <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
+</div>
+`
+}
+
+export const PlacementResult = {
+  render: () => `
+<div class="sharpen-wizard-container sharpen-background--green">
+
+  <div class="sharpen-text--body sharpen-mb-lg">
+    <div class="sharpen-text--center sharpen-mb-lg">
+      <div class="sharpen-heading-sm-sans sharpen-heading--caps sharpen-text--color-evergreen sharpen-mb-sm">Jurickson has placed in</div>
+      <img src="https://placehold.co/200x200" class="sharpen-img-responsive">
+    </div>
+  
+    <p class="sharpen-text-md">Sharpen Reading's <strong>Level A Accelerated</strong> is aligned with kindergarten and beginning Grade 1 level material. </p>
+  </div>
+
+  <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">See Jurickson's "AA" plan</button>
+
+  <div class="sharpen-text--stronger sharpen-text--color-pine sharpen-mt-lg sharpen-text--center">"Sharpen brought me up in reading, and it feels really awesome to be beyond grade level now. I like reading a lot." &mdash;Jack, Sharpen Student</div>
+
+</div>
+`
+}
+
+/**
+ * - For best icon spacing in the heading, omit whitespace between icon & text.
+ */
+export const SuccessGuarantee = {
+  render: () => `
+<div class="sharpen-wizard-container">
+
+  <h1 class="sharpen-heading-xl-sans sharpen-text--color-pine">
+    <i class="sharpen-icon sharpen-text--color-orange">workspace_premium</i>Reading Success Guarantee
+  </h1>
+
+  <div class="sharpen-text--body sharpen-my-lg">
+    <p>We believe Jurickson can learn to read at grade level or beyond &mdash; <em>and so should you!</em></p>
+    <p>We are confident that Sharpen Reading can make that happen and offer a reading success guarantee:</p>
+    <p><strong>If you complete a full level in X months and do not achieve your reading goal, contact us for a full refund.</strong></p>
+  </div>
+
+  <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">View Course</button>
+
+</div>
+`
+}
+
 
 export const PersonalizedCourse = {
   render: () => `

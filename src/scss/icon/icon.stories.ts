@@ -20,6 +20,17 @@ export const Example = {
 };
 
 /**
+ * Sharpen Icons have an outline style by default. Use the `filled` class to
+ * display the icon in the filled variant.
+ */
+export const FilledIcons = {
+  render: () => `
+<i class="sharpen-icon">bookmark</i>
+<i class="sharpen-icon filled">bookmark</i>
+`
+}
+
+/**
  * An icon will automatically adopt the color of its container's text.
  */
 export const IconColors = {

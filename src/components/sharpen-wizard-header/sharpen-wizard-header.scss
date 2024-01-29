@@ -7,6 +7,10 @@ sharpen-wizard-header {
       vertical-align: 4px;
     }
 
-    h1 { flex: 1; text-align: center; padding-right: 14pt; }
+    h1 { flex: 1; text-align: center; }
+    
+    // When the header has a back button, ensure the title stays centered by
+    // applying some padding on the opposite side.
+    a + h1 { padding-right: 14pt; }
   }
 }

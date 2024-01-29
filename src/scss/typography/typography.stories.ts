@@ -68,6 +68,18 @@ export const TextAlignment = {
 }
 
 /**
+ * Text strength in Kezuri corresponds with boldness. Stronger is semi-bold,
+ * strongest is bold.
+ */
+export const TextStrength = {
+  render: () => `
+<div>Normal text</div>
+<div class="sharpen-text--stronger">Text with stronger emphasis</div>
+<div class="sharpen-text--strongest">Text with strongest emphasis</div>
+`
+}
+
+/**
  * Headings range in size from `md` to `5xl`, and can be either serif (default) or `sans`.
  */
 export const Headings = {
@@ -126,6 +138,18 @@ export const HeadingsWithIcons = {
   render: () => `
 <h1 class="sharpen-heading-xl"><i class="sharpen-icon">agriculture</i>Holy cow!</h1>
 <h1 class="sharpen-heading-2xl"><i class="sharpen-icon">agriculture</i>Holy cow!</h1>
+`
+}
+
+/**
+ * Give your headings a bit more impact by displaying them in all-caps.
+ */
+export const HeadingsInCaps = {
+  render: () => `
+<div class="sharpen-text--center">
+  <div class="sharpen-heading-sm-sans sharpen-heading--caps sharpen-mb-sm">Jurickson has placed in</div>
+  <img src="https://placehold.co/100x100">
+</div>
 `
 }
 

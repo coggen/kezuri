@@ -17,6 +17,8 @@ sharpen-progress-bar {
     height: 100%;
     width: 0;
     border-radius: 10px;
+    // Anything smaller than this and the left-side radius looks wrong
+    min-width: 2.5%;
   }
 
   .progress-description {

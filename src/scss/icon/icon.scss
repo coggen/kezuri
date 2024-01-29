@@ -11,4 +11,10 @@
   white-space: nowrap;
   direction: ltr;
   vertical-align: text-bottom;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+
+  &.filled {
+    font-variation-settings: 'FILL' 1;
+  }
 }
