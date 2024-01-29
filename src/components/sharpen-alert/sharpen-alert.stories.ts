@@ -22,7 +22,7 @@ export default {
 };
 
 /** An success alert */
-export const Success = {
+export const Example = {
   args: {
     type: 'success',
     icon: 'done',
@@ -31,63 +31,45 @@ export const Success = {
   }
 };
 
-/** An warning alert */
-export const Warning = {
-  args: {
-    type: 'warning',
-    icon: 'warning',
-    heading: 'A warning alert',
-    message: 'In which we warn the user about something risky.',
-  }
+/**
+ * Alerts support three colors, represented by three types: `warning`
+ * (yellow), `success` (green), and `danger` (red).
+ */
+export const Colors = {
+  render: () => `
+<sharpen-alert type="warning" icon="info">Warning appears in yellow</sharpen-alert>
+<sharpen-alert type="success" icon="info">Success appears in green</sharpen-alert>
+<sharpen-alert type="danger" icon="info">Danger appears in red</sharpen-alert>
+`
 };
 
-/** An warning alert */
-export const Danger = {
-  args: {
-    type: 'danger',
-    icon: 'error',
-    heading: 'A danger alert',
-    message: 'In which we describe something bad that happened.',
-  }
-};
+/**
+ * An alert can be displayed with any icon from our icon set, or none at all.
+ */
+export const Icons = {
+  render: () => `
+<sharpen-alert type="warning" icon="local_pizza">You're low on pizza</sharpen-alert>
+<sharpen-alert type="warning" icon="lunch_dining">You're low on burgers</sharpen-alert>
+<sharpen-alert type="warning" icon="icecream">You're low on ice cream</sharpen-alert>
+<sharpen-alert type="warning">Maybe time for a walk?</sharpen-alert>
+`
+}
 
-/** A heading-only alert */
-export const HeadingOnly = {
-  args: {
-    type: 'success',
-    icon: 'error',
-    heading: 'This alert is just a one-liner'
-  }
-};
-
-/** An alert with only a heading and message */
-export const NoIcon = {
-  args: {
-    type: 'success',
-    heading: 'Yikes, no icon!',
-    message: 'But this renders just fine.',
-  }
-};
-
-/** An alert with only a heading and message */
-export const MessageOnly = {
-  args: {
-    type: 'success',
-    message: 'Just a simple alert with a message.',
-  }
-};
-
-/** The message block can contain any kind of HTML. */
-export const DetailedMessage = {
-  args: {
-    type: 'success',
-    heading: 'Choose from these flavors',
-    message: `
+/**
+ * Alerts can be displayed with only a heading, only a message, or both. The
+ * message can contain HTML (within reason).
+ */
+export const HeadingsAndMessages = {
+  render: () => `
+<sharpen-alert type="success" heading="You purchased ice cream!">Fun times ahead.</sharpen-alert>
+<sharpen-alert type="success" heading="Ice cream purchase successful"></sharpen-alert>
+<sharpen-alert type="success">Congrats, your ice cream is delicious.</sharpen-alert>
+<sharpen-alert type="success" heading="Choose from these flavors">
   <ul class="sharpen-list sharpen-mt-sm">
     <li>Chocolate</li>
     <li>Banana</li>
     <li>Mint Oreo</li>
   </ul>
+</sharpen-alert>
 `
-  }
 };
