@@ -75,6 +75,18 @@ export const Large = {
   }
 }
 
+/**
+ * You can use these classes on buttons, links, and inputs, and they should all
+ * render the same way.
+ */
+export const HTMLElements = {
+  render: () => `<button class="sharpen-button sharpen-button--primary sharpen-button--small">Button element</button>
+<a href="#" class="sharpen-button sharpen-button--primary sharpen-button--small">Anchor element</a>
+<input type="submit" value="Input (submit) element" class="sharpen-button sharpen-button--primary sharpen-button--small" />
+<input type="button" value="Input (button) element" class="sharpen-button sharpen-button--primary sharpen-button--small" />
+`
+}
+
 /** Icons will be positioned appropriately alongside button text. */
 export const Icons = {
   args: {
