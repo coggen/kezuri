@@ -186,10 +186,10 @@
   }
 
   input[type="radio"] {
-    display: flex;
+    position: absolute;
     appearance: none;
     /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
+    background-color: transparent;
     /* Not removed via appearance */
     margin: 0;
 
