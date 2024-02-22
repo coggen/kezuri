@@ -14,5 +14,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+hr {
+  border: none;
+  border-bottom: 1px dotted var(--color-gray-3);
+  margin: var(--spacing-lg) auto;
+}
+
 .sharpen-background--green { background-color: var(--color-mint); }
 .sharpen-background--white { background-color: white; }

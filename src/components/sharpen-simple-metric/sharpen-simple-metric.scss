@@ -1,0 +1,8 @@
+sharpen-simple-metric {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+
+  .metric { width: 80px; }
+  .content { flex: 1; }
+}

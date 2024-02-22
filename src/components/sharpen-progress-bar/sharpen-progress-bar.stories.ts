@@ -27,21 +27,26 @@ export default {
     },
     statusLabel: {
       description: 'An optional label to append after the computed threshold name'
+    },
+    size: {
+      description: 'How wide the progress bar should be. Default is narrow.',
+      options: ['', 'wide'],
+      control: 'select',
     }
   },
   render: (args) => `
-<sharpen-progress-bar progress-val="${args.progressVal}"${optional('show-description', args.showDescription)}${optional('status-label', args.statusLabel)}${optional('high-threshold', args.highThreshold)}${optional('low-threshold', args.lowThreshold)}${optional('elevated-threshold', args.elevatedThreshold)}></sharpen-progress-bar>`
+<sharpen-progress-bar progress-val="${args.progressVal}"${optional('size', args.size)}${optional('show-description', args.showDescription)}${optional('status-label', args.statusLabel)}${optional('high-threshold', args.highThreshold)}${optional('low-threshold', args.lowThreshold)}${optional('elevated-threshold', args.elevatedThreshold)}></sharpen-progress-bar>`
 };
 
-/** Including custom thresholds. */
-export const AllOptions = {
+export const CustomThresholds = {
   args: {
     progressVal: 170,
     showDescription: true,
     statusLabel: 'Risk',
     highThreshold: 200,
     lowThreshold: 75,
-    elevatedThreshold: 180
+    elevatedThreshold: 180,
+    size: null
   },
 };
 
@@ -70,6 +75,13 @@ export const WithDescription = {
 
 export const OnlyBar = {
   args: {
+    progressVal: 50
+  }
+};
+
+export const WideVariant = {
+  args: {
+    size: 'wide',
     progressVal: 50
   }
 };

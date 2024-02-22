@@ -123,12 +123,18 @@ export namespace Components {
         "showDescription": boolean;
         "statusLabel": string;
     }
+    interface SharpenProgressCircle {
+        "progressLabel": any;
+        "progressVal": any;
+    }
     interface SharpenProgressDial {
         "description": string;
         "elevatedThreshold": number;
         "highThreshold": number;
         "lowThreshold": number;
         "progressVal": number;
+    }
+    interface SharpenSimpleMetric {
     }
     interface SharpenWizardHeader {
         "backHref": string;
@@ -246,11 +252,23 @@ declare global {
         prototype: HTMLSharpenProgressBarElement;
         new (): HTMLSharpenProgressBarElement;
     };
+    interface HTMLSharpenProgressCircleElement extends Components.SharpenProgressCircle, HTMLStencilElement {
+    }
+    var HTMLSharpenProgressCircleElement: {
+        prototype: HTMLSharpenProgressCircleElement;
+        new (): HTMLSharpenProgressCircleElement;
+    };
     interface HTMLSharpenProgressDialElement extends Components.SharpenProgressDial, HTMLStencilElement {
     }
     var HTMLSharpenProgressDialElement: {
         prototype: HTMLSharpenProgressDialElement;
         new (): HTMLSharpenProgressDialElement;
+    };
+    interface HTMLSharpenSimpleMetricElement extends Components.SharpenSimpleMetric, HTMLStencilElement {
+    }
+    var HTMLSharpenSimpleMetricElement: {
+        prototype: HTMLSharpenSimpleMetricElement;
+        new (): HTMLSharpenSimpleMetricElement;
     };
     interface HTMLSharpenWizardHeaderElement extends Components.SharpenWizardHeader, HTMLStencilElement {
     }
@@ -277,7 +295,9 @@ declare global {
         "sharpen-primary-navigation": HTMLSharpenPrimaryNavigationElement;
         "sharpen-profile-card": HTMLSharpenProfileCardElement;
         "sharpen-progress-bar": HTMLSharpenProgressBarElement;
+        "sharpen-progress-circle": HTMLSharpenProgressCircleElement;
         "sharpen-progress-dial": HTMLSharpenProgressDialElement;
+        "sharpen-simple-metric": HTMLSharpenSimpleMetricElement;
         "sharpen-wizard-header": HTMLSharpenWizardHeaderElement;
     }
 }
@@ -391,12 +411,18 @@ declare namespace LocalJSX {
         "showDescription"?: boolean;
         "statusLabel"?: string;
     }
+    interface SharpenProgressCircle {
+        "progressLabel"?: any;
+        "progressVal"?: any;
+    }
     interface SharpenProgressDial {
         "description"?: string;
         "elevatedThreshold"?: number;
         "highThreshold"?: number;
         "lowThreshold"?: number;
         "progressVal"?: number;
+    }
+    interface SharpenSimpleMetric {
     }
     interface SharpenWizardHeader {
         "backHref"?: string;
@@ -423,7 +449,9 @@ declare namespace LocalJSX {
         "sharpen-primary-navigation": SharpenPrimaryNavigation;
         "sharpen-profile-card": SharpenProfileCard;
         "sharpen-progress-bar": SharpenProgressBar;
+        "sharpen-progress-circle": SharpenProgressCircle;
         "sharpen-progress-dial": SharpenProgressDial;
+        "sharpen-simple-metric": SharpenSimpleMetric;
         "sharpen-wizard-header": SharpenWizardHeader;
     }
 }
@@ -449,7 +477,9 @@ declare module "@stencil/core" {
             "sharpen-primary-navigation": LocalJSX.SharpenPrimaryNavigation & JSXBase.HTMLAttributes<HTMLSharpenPrimaryNavigationElement>;
             "sharpen-profile-card": LocalJSX.SharpenProfileCard & JSXBase.HTMLAttributes<HTMLSharpenProfileCardElement>;
             "sharpen-progress-bar": LocalJSX.SharpenProgressBar & JSXBase.HTMLAttributes<HTMLSharpenProgressBarElement>;
+            "sharpen-progress-circle": LocalJSX.SharpenProgressCircle & JSXBase.HTMLAttributes<HTMLSharpenProgressCircleElement>;
             "sharpen-progress-dial": LocalJSX.SharpenProgressDial & JSXBase.HTMLAttributes<HTMLSharpenProgressDialElement>;
+            "sharpen-simple-metric": LocalJSX.SharpenSimpleMetric & JSXBase.HTMLAttributes<HTMLSharpenSimpleMetricElement>;
             "sharpen-wizard-header": LocalJSX.SharpenWizardHeader & JSXBase.HTMLAttributes<HTMLSharpenWizardHeaderElement>;
         }
     }
