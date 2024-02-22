@@ -13,7 +13,7 @@ export class SharpenFooter {
 
   render() {
 
-    const logoSrc = getAssetPath('assets/images/brand/sharpen_logo_ivory.png');
+    const logoSrc = getAssetPath('assets/images/brand/sharpen_logo.svg');
 
     return (
       <Host>
@@ -24,7 +24,7 @@ export class SharpenFooter {
           </nav>
           <div class="trademarks">
             Sharpen, Sharpen.com, and the Sharpen logo are trademarks of Sharpen.com, Inc.
-          </div>  
+          </div>
         </div>
       </Host>
     );
