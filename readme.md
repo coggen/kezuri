@@ -27,30 +27,16 @@ First, clone the repository and install dependencies with `npm install`.
 ### Run Storybook
 
 ```
-$ bin/storybook
+$ npm run storybook
 ```
 
-This will start three processes:
-
-1. The Stencil builder in watch mode
-2. An SCSS watcher
-3. Storybook in dev mode
-
 The Kezuri Storybook site will appear in your browser at `http://localhost:6006/`.
-
-You can shut down all three processes at once with a simple `Ctrl-c`.
-
 
 ### Run a local dev server
 
 ```
-$ bin/dev
+$ npm run start
 ```
-
-This will start two processes:
-
-1. The Stencil builder in watch mode
-2. An SCSS watcher
 
 The web page at `src/index.html` will appear in your browser at `http://localhost:3333/`.
 
