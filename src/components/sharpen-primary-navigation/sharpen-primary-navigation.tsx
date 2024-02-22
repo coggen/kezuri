@@ -22,22 +22,22 @@ export class SharpenPrimaryNavigation {
   render() {
 
     // The full-size logo
-    const logoSrc = getAssetPath('assets/images/brand/sharpen_logo_ivory.png');
+    const logoSrc = getAssetPath('assets/images/brand/sharpen_logo.svg');
     // Logo mark without the text
     const markSrc = getAssetPath('assets/images/brand/sharpen_mark_ivory.png');
 
     return (
       <Host>
         <div class="navbar container-fluid">
-          
+
           <a class="brand d-none d-lg-flex" href={this.brandHref}><img src={logoSrc} /></a>
           <a class="brand d-lg-none" href={this.brandHref}><img src={markSrc} /></a>
-          
+
           {this.getCurrentLearnerButton()}
           {this.getAppMenuButton()}
-          
+
           <nav id="spn-app-nav"></nav>
-          
+
           {this.getCurrentUserButton()}
         </div>
 
@@ -140,6 +140,6 @@ export class SharpenPrimaryNavigation {
     if (this.currentLearner) {
       return ( <sharpen-menu trigger-id="spn-current-learner"><slot name="learner-links"></slot></sharpen-menu> );
     }
-  }  
+  }
 
 }
