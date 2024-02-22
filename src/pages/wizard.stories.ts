@@ -391,6 +391,29 @@ export const PlacementResult = {
 `
 }
 
+export const PlacementExplainer = {
+  render: () => `
+<div class="sharpen-background--ivory sharpen-text-lg">
+  <div class="sharpen-wizard-container sharpen-py-md">
+    <a href="#"><i class="sharpen-icon">arrow_back</i></a>
+  </div>
+</div>
+<div class="sharpen-background--green sharpen-text--color-pine sharpen-text-lg">
+  <div class="sharpen-wizard-container">
+    Level AA plan for Jurickson
+  </div>
+</div>
+<div class="sharpen-wizard-container">
+  <div class="sharpen-text--body">
+    <img class="sharpen-img-responsive sharpen-mb-md" src="https://placehold.co/500x300" />
+    <p>In Level AA, Jurickson will master letter-sound relationships: one-letter consonants, the so-called "short" vowels, and the two-letter combinations ll, sh, ch, th, and ck.</p>
+  </div>
+
+  <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
+</div>
+`
+}
+
 /**
  * - For best icon spacing in the heading, omit whitespace between icon & text.
  */

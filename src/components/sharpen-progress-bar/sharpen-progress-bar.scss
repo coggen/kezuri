@@ -26,6 +26,11 @@ sharpen-progress-bar {
     font-weight: var(--font-weight-semibold);
   }
 
+  &[size="wide"] {
+    .progress-container { height: 20px; }
+    .progress-container, .progress-amount { border-radius: 7px; }
+  }
+
   &[status="low"] {
     .progress-amount { background-color: var(--color-pine); }
     .progress-description { color: var(--color-pine); }

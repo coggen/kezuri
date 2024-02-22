@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Parent Portal</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+</head>
+<body>
+
+<sharpen-primary-navigation current-learner="Abby Normal" current-user="Belinda Normal" class="sharpen-mb-md">
+  <div slot="learner-links" class="sharpen-menu-links">
+    <h5 class="sharpen-nav-link-header">Learners</h5>
+    <sharpen-nav-link icon="face" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="face" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="face" name="Jurickson Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+  </div>
+
+  <div slot="user-links" class="sharpen-menu-links">
+    <sharpen-nav-link icon="account_box" name="Account" href="javascript:void();"></sharpen-nav-link>
+    <hr>
+    <h5 class="sharpen-nav-link-header">Learner Settings</h5>
+    <sharpen-nav-link icon="edit" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Jurickson Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+    <hr>
+    <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+  </div>      
+</sharpen-primary-navigation>
+
+<main class="container">
+
+  <h1 class="sharpen-heading-3xl sharpen-heading--bordered sharpen-mb-lg">
+    <i class="sharpen-icon">monitoring</i>
+    Abby's Tutoring Progress
+  </h1>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Your tutor</dt>
+          <dd>
+            <i class="sharpen-icon">account_circle</i> Maureen L.
+          </dd>
+        </dl>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Your schedule</dt>
+          <dd>
+            Mondays, 3PM<br />
+            Wednesdays, 3PM</dd>
+        </dl>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-sm">
+          <dt>Purchase more sessions</dt>
+        </dl>
+        <div class="sharpen-text-xs sharpen-mb-md">Keep the progress going and maintain your current timeslots with your tutor. See your most recent tutoring update e-mail for your remaining session count.</div>
+        <a href="#" class="sharpen-button sharpen-button--small sharpen-button--full-width sharpen-button--primary sharpen-mb-sm">Buy 4 more sessions</a>
+        <a href="#" class="sharpen-button sharpen-button--small sharpen-button--full-width sharpen-button--primary sharpen-mb-sm">Buy 8 more sessions</a>
+        <a href="#" class="sharpen-button sharpen-button--small sharpen-button--full-width sharpen-button--primary sharpen-mb-sm">Buy 12 more sessions</a>
+      </sharpen-card>
+
+      <hr class="d-md-none" />
+    </div>
+    <div class="col-md-6 col-lg-4 col-xl-5">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Current Level</dt>
+          <dd><span class="sharpen-text-2xl">Level A</span></dd>
+        </dl>
+
+        <sharpen-progress-bar class="sharpen-mt-md sharpen-mb-sm" size="wide" progress-val="65" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+        <div class="sharpen-mb-md">
+          <i class="sharpen-icon">check</i> <strong>65% complete (11 of 17 lessons)</strong>
+        </div>
+        
+        <div class="level-description sharpen-text-xs sharpen-text--muted">
+          In Level A, Learners master the one-letter consonants, the so-called "short vowels," and the two-letter consonant spellings ll, sh, ch, th, and ck. Most of the words explored at this level consist of just three sounds (consonant-vowel-consonant).
+        </div>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+
+        <sharpen-simple-metric>
+          <sharpen-progress-circle slot="metric" progress-val="33" progress-label="33%"></sharpen-progress-circle>
+          <div slot="content">
+            <div class="sharpen-text-lg">Level A &rsaquo; Unit 2</div>
+            <div>3 / 10 lessons completed</div>
+          </div>
+        </sharpen-simple-metric>
+
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Next Lesson</dt>
+          <dd><span class="sharpen-text-lg">Level A &rsaquo; Unit 2 &rsaquo; Lesson 4</span></dd>
+        </dl>
+
+        <div class="level-description sharpen-text-xs sharpen-text--muted sharpen-text--body">
+          <p>In this lesson, Learners will:</p>
+          <ul class="sharpen-list">
+            <li>Play a Sound Game</li>
+            <li>Do a Word Puzzle for "will", "zip", "ship", "fish", "shop", and "went"</li>
+            <li>Learn to write "w" and "zip"</li>
+            <li>Do Letter-Sound Practice (sound to symbol)</li>
+            <li>Do Letter-Sound Practice (symbol to sound)</li>
+            <li>Say-and-Write "will", "zip", "ship", "fish", "shop", and "went"</li>
+            <li>Read Sentences with target words</li>
+          </ul>
+        </div>
+      </sharpen-card>
+
+      <hr class="d-md-none" />
+
+    </div>
+    <div class="col-lg-4 col-xl-4">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <sharpen-simple-metric>
+          <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">2.2</div>
+          <div slot="content">
+            <strong>Average weekly lessons completed</strong>
+          </div>
+        </sharpen-simple-metric>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Recent lesson history</dt>
+        </dl>
+        <table class="sharpen-table">
+          <tbody>
+            <tr>
+              <th>Mon, Jan 29</th>
+              <td>Level A &rsaquo; Unit 2 &rsaquo; Lesson 4</td>
+            </tr>
+            <tr>
+              <th>Mon, Jan 29</th>
+              <td>Level A &rsaquo; Unit 2 &rsaquo; Lesson 4</td>
+            </tr>
+            <tr>
+              <th>Mon, Jan 29</th>
+              <td>Level A &rsaquo; Unit 2 &rsaquo; Lesson 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </sharpen-card>
+
+
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

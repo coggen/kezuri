@@ -1,0 +1,32 @@
+sharpen-progress-circle {
+  .circle-chart {
+    display: block;
+  }
+
+  .circle-bg {
+    fill: none;
+    stroke: var(--color-mint);
+    stroke-width: 2;
+  }
+
+  .circle {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: square;
+    animation: s-progress 1s ease-out forwards;
+    stroke: var(--color-pine);
+  }
+
+  @keyframes s-progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+
+  .label {
+    fill: var(--color-pine);
+    font-size: 0.5em;
+    font-weight: bold;
+    text-anchor: middle;
+  }
+}
