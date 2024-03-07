@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Onboarding</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+  <style>
+    .navbar {
+      height: 4.5rem;
+      background-color: var(--color-mint);
+      color: var(--color-evergreen);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .navbar .brand img { height: 31px;  }
+
+    .story-instruction {
+      font-size: var(--font-size-xl);
+    }
+
+    .story-choices {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(2, 1fr);
+      font-weight: bold;
+      font-size: 18pt;
+    }
+
+    .story-choices img {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body class="sharpen-background--white">
+
+  <div class="navbar container-fluid">
+    <a class="brand" href="#"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
+  </div>
+
+  <div class="sharpen-wizard-container">
+
+    <div class="story-instruction sharpen-mb-lg">
+      Let’s make a story! Pick a character.
+    </div>
+
+    <div class="story-choices">
+      <div class="choice">
+        <img src="https://placehold.co/300x400" />
+        <div class="title">
+          jaguar
+        </div>
+      </div>
+      <div class="choice">
+        <img src="https://placehold.co/300x400" />
+        <div class="title">
+          junebug
+        </div>
+      </div>
+      <div class="choice">
+        <img src="https://placehold.co/300x400" />
+        <div class="title">
+          juice
+        </div>
+      </div>
+      <div class="choice">
+        <img src="https://placehold.co/300x400" />
+        <div class="title">
+          jaffa cake
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+
+</body>
+</html>

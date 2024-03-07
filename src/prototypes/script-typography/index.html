@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Sharpen Prototype: Onboarding</title>
+  <title>Sharpen Prototype: Reading Script</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -11,65 +11,6 @@
   <link rel="stylesheet" href="/build/kezuri.css" />
   <script type="module" src="/build/kezuri.esm.js"></script>
   <script nomodule src="/build/kezuri.js"></script>
-  <style>
-    .hide {
-      display: none; 
-    }
-
-    .script-section.complete sharpen-card {
-      opacity: 0.5;
-    }
-
-    .script-section.complete sharpen-card:hover {
-      opacity: 1;
-    }
-
-    .script-step {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .script-section + .script-section {
-      margin-top: var(--spacing-lg);
-    }
-
-    .script-step + .script-step {
-      margin-top: var(--spacing-md);
-    }
-
-    [class^="script-step-command"] {
-      width: 5rem;
-      color: white;
-      aspect-ratio: 1 / 1;
-      display: flex;
-      align-items: center;
-      border-radius: 100%;
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    [class^="script-step-command"] > * {
-      flex: 1;
-      text-align: center;
-    }
-
-    .script-step-command--say     { background-color: var(--color-evergreen); }
-    .script-step-command--hear    { background-color: rgb(221, 173, 99) }
-    .script-step-command--repeat  { background-color: rgb(29, 61, 131); }
-
-    [class^="script-step-content"] {
-      flex: 1;
-    }
-
-    .script-step-content--say {
-      font-size: var(--font-size-lg);
-      font-weight: bolder;
-    }
-
-    .script-step-content--hear { color: var(--color-gray-1); }
-
-  </style>
 </head>
 
 <body>
@@ -78,106 +19,21 @@
   
   <div class="row">
     
-    <div class="col-8 offset-2">
+    <div class="col-sm-4">
+      <sharpen-card border="none" padding="medium"><a href="option1.html">Option 1</a></sharpen-card>
+    </div>
 
-      <div id="script_section_1" class="script-section">
-        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
-          <div class="script-step">
-            <div class="script-step-command--say">
-              <div>You<br />Say</div>
-            </div>
-            <div class="script-step-content--say">
-              Please tap the word ‘pat’
-            </div>
-            <div class="script-step-controls">
-              <button class="script-button-say sharpen-button sharpen-button--secondary sharpen-button--small">
-                <i class="sharpen-icon">volume_up</i> Say
-              </button>
-            </div>
-          </div>
-        </sharpen-card>
-        <button id="step_1_button" class="script-section-advance sharpen-button sharpen-button--small sharpen-button--primary sharpen-button--full-width">
-          <i class="sharpen-icon">keyboard_double_arrow_down</i> My learner tapped the word
-        </button>
-      </div>
+    <div class="col-sm-4">
+      <sharpen-card border="none" padding="medium"><a href="option2.html">Option 2</a></sharpen-card>
+    </div>
 
-      <div id="script_section_2" class="script-section hide">
-        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
-          <div class="script-step">
-            <div class="script-step-command--say">
-              <div>You<br />Say</div>
-            </div>
-            <div class="script-step-content--say">
-              Please tap-and-say the word ‘pat’
-            </div>
-            <div class="script-step-controls">
-              <button class="sharpen-button sharpen-button--secondary sharpen-button--small">
-                <i class="sharpen-icon">volume_up</i> Say
-              </button>
-            </div>
-          </div>
-          <div class="script-step">
-            <div class="script-step-command--hear">
-              <div>You<br />Hear</div>
-            </div>
-            <div class="script-step-content--hear">
-              /p/ ... /a/ ... /t/ ... pat
-            </div>
-            <div class="script-step-controls">
-              <button class="sharpen-button sharpen-button--secondary sharpen-button--small">
-                <i class="sharpen-icon">smart_display</i> Example
-              </button>
-            </div>
-          </div>
-          <div class="script-step">
-            <div class="script-step-command--repeat">
-              <div>Repeat</div>
-            </div>
-            <div class="script-step-content--repeat">
-              Repeat until your Learner can tap-and-say the word easily. Provide help as necessary.
-            </div>
-          </div>
-        </sharpen-card>
-        <button class="script-section-advance sharpen-button sharpen-button--small sharpen-button--primary sharpen-button--full-width">
-          <i class="sharpen-icon">keyboard_double_arrow_down</i> My learner can tap-and-say ‘pat’ easily
-        </button>
-      </div>
+    <div class="col-sm-4">
+      <sharpen-card border="none" padding="medium"><a href="option3.html">Option 3</a></sharpen-card>
     </div>
 
   </div>
 
 </div>
-
-
-<script>
-
-$("button.script-section-advance").click(function() {
-  var $button = $(this),
-      $section = $button.closest(".script-section"),
-      $iconCheck = $("<i class='sharpen-icon animate__animated animate__jackInTheBox'>check</i>");
-
-  $section.addClass("complete");
-  // $button.addClass("animate__animated animate__rubberBand");
-  // $button.on('animationend', function() {
-    $button.html($iconCheck).attr("disabled", true);
-    $section.next(".script-section")
-      .removeClass("hide")
-      // .addClass("animate__animated animate__slideInUp");
-      .addClass("animate__animated animate__jackInTheBox");
-  // });
-});
-
-$("button.script-button-say").click(function() {
-  var $button = $(this),
-      $icon = $(this).find(".sharpen-icon");
-
-  $icon.addClass("animate__animated animate__heartBeat");
-  $icon.on('animationend', function() {
-    $icon.removeClass("animate__animated animate__heartBeat");
-  })
-});
-
-</script>
 
 </body>
 
