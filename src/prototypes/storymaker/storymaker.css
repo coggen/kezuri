@@ -1,0 +1,176 @@
+.navbar {
+  height: 4.5rem;
+  background-color: var(--color-mint);
+  color: var(--color-evergreen);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  --mask: 
+    linear-gradient(to top,#0000 10px,#000 0),
+    radial-gradient(10px,#000 98%,#0000) bottom/18.5px 20px;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.navbar .brand img { height: 31px;  }
+
+.navbar--parent {
+  background-color: var(--color-sunrise);
+}
+
+.hide { display: none !important; }
+
+.storymaker, .storymaker .sharpen-button, .storymaker .sharpen-form-label {
+  font-family: Lexend, sans-serif;
+}
+
+.story-instruction {
+  font-size: var(--font-size-xl);
+  text-align: center;
+}
+
+.storymaker h1 {
+  line-height: 1;
+}
+
+.storymaker p {
+  line-height: 1.5;
+}
+
+.storymaker .form-group .sharpen-button--full-width {
+  margin-top: 0.5em;
+}
+
+/** SETUP EXPERIENCE **/
+
+.story-choices {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+.story-choices a.choice {
+  --animate-duration: 1.5s;
+  text-decoration: none;
+}
+
+.story-choices img {
+  max-width: 100%;
+}
+
+.choice.highlight sharpen-card, .story-choices a.choice:hover sharpen-card {
+  background-color: var(--color-sky);
+}
+
+/** GENERATE EXPERIENCE **/
+
+.progress {
+  padding: 6px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.progress-bar { 
+  height: 18px;
+  background-color: #ee303c;  
+  border-radius: 4px; 
+  transition: 0.4s linear;  
+  transition-property: width, background-color;    
+}
+
+.progress-striped .progress-bar {   
+  background-color: var(--color-mint); 
+  width: 100%; 
+  background-image: linear-gradient(
+        45deg, var(--color-pine) 25%, 
+        transparent 25%, transparent 50%, 
+        var(--color-pine) 50%, var(--color-pine) 75%,
+        transparent 75%, transparent); 
+  animation: progressAnimationStrike 12s;
+}
+
+@keyframes progressAnimationStrike {
+     from { width: 0 }
+     to   { width: 100% }
+}
+
+/** READING EXPERIENCE **/
+
+.story-character-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.story-character-header img {
+  height: 6rem;
+}
+
+.story-read-sentence, .story-option {
+  font-size: 32pt;
+}
+
+.story-read-sentence {
+  background-color: var(--color-gray-5);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  color: var(--color-pine);
+}
+
+.story-option {
+  display: block;
+  text-decoration: none;
+}
+
+.story-question-header, .story-read-controls {
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.story-question-header {
+  padding-top: 0;
+}
+
+.story-question-header .sharpen-icon, .story-read-controls .sharpen-icon {
+  font-size: 64pt;
+}
+
+.story-question-header .sharpen-icon { color: var(--color-red); }
+.story-read-controls .sharpen-icon { color: var(--color-green); }
+
+.story-option.highlight sharpen-card, a.story-option:hover sharpen-card {
+  background-color: var(--color-sky);
+}
+
+
+/** REACTIONS **/
+
+.storymaker .story-reactions {
+  display: flex;
+}
+
+.storymaker .story-reactions a {
+  flex: 1;
+  text-align: center;
+}
+
+.storymaker .story-reactions .sharpen-icon {
+  font-size: 96pt;
+}
+
+.storymaker .story-reactions img {
+  width: 96pt;
+}
+
+/** UPGRADE **/
+
+.storymaker .product-option {
+  background-color: var(--color-pine);
+  color: white;
+}
+
+.storymaker .product-option h2 {
+/*  color: var(--color-sunrise);*/
+text-decoration: underline;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Onboarding</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="storymaker.css" />
+</head>
+<body class="sharpen-background--white">
+
+  <div class="navbar container-fluid">
+    <a class="brand" href="upgrade.html"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
+  </div>
+
+  <div class="sharpen-wizard-container storymaker">
+
+    <div class="story-question-header">
+      <i class="sharpen-icon">question_mark</i>
+    </div>
+
+    <div class="story-options">
+      <a href="end.html" class="story-option hide">
+        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
+          Sam ran to get the hen
+        </sharpen-card>
+      </a>
+
+      <a href="end.html" class="story-option hide">
+        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
+          Sam sat on the hen
+        </sharpen-card>
+      </a>
+
+      <a href="end.html" class="story-option hide">
+        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
+          Sam sat on the mat
+        </sharpen-card>
+      </a>
+    </div>
+    
+  </div>
+  
+<script>
+
+const synth = window.speechSynthesis;
+
+function showChoice($el) {
+  
+  var animationClasses = "highlight animate__animated animate__slideInRight";
+  let utterThis = new SpeechSynthesisUtterance($el.text());
+  utterThis.rate = 0.85;
+  utterThis.onend = function() {
+    $el.removeClass(animationClasses);
+    showChoice($el.next());
+  }
+  synth.speak(utterThis);
+
+  $el.removeClass("hide")
+      .addClass(animationClasses);
+}
+
+$(document).ready(function() {
+  var $options = $(".story-option");
+  $options.addClass("hide");
+
+  let ourText = "Now choose what happens next";
+  let utterThis = new SpeechSynthesisUtterance(ourText);
+  utterThis.rate = 0.85;
+  utterThis.onend = function() {
+    showChoice($options.first());
+  }
+  synth.speak(utterThis);
+});
+
+</script>
+
+</body>
+</html>

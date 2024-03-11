@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Onboarding</title>
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="storymaker.css" />
+</head>
+<body class="sharpen-background--white">
+
+  <div class="navbar container-fluid">
+    <a class="brand" href="upgrade.html"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
+  </div>
+
+  <div class="sharpen-wizard-container storymaker">
+
+    <div class="story-instruction sharpen-mb-lg">
+      Good job reading! Did you like that story?
+      Tap the smile or the frown.
+    </div>
+
+    <div class="story-reactions">
+      <a id="reaction-1" class="hide" href="restart.html"><i class="sharpen-icon">sentiment_satisfied</i></a>
+      <a id="reaction-2" class="hide" href="restart.html"><i class="sharpen-icon">sentiment_dissatisfied</i></a>
+    </div>
+    
+  </div>
+  
+
+<script>
+
+const synth = window.speechSynthesis;
+
+// const confettiDefaults = {
+//   spread: 90,
+//   ticks: 50,
+//   gravity: 0.5,
+//   decay: 0.94,
+//   startVelocity: 30,
+//   shapes: ["star"],
+//   colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
+// };
+
+// function shoot() {
+//   confetti({
+//     ...confettiDefaults,
+//     particleCount: 40,
+//     scalar: 1.2,
+//     shapes: ["star"],
+//   });
+
+//   confetti({
+//     ...defaults,
+//     particleCount: 10,
+//     scalar: 0.75,
+//     shapes: ["circle"],
+//   });
+// }
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function shoot() {
+  confetti({
+    shapes: ["star"],
+    angle: randomInRange(55, 125),
+    spread: randomInRange(50, 70),
+    particleCount: randomInRange(50, 100),
+    origin: { y: 0.6 },
+  });
+}
+
+$(document).ready(function() {
+  setTimeout(shoot, 0);
+  setTimeout(shoot, 1500);
+  setTimeout(shoot, 3000);
+
+  let ourText = "Good job with your reading! Did you like that story?";
+  let utterThis = new SpeechSynthesisUtterance(ourText);
+  utterThis.rate = 0.85;
+  utterThis.onend = function() {
+    $("#reaction-1").removeClass("hide").addClass("animate__animated animate__bounceInLeft");
+    $("#reaction-2").removeClass("hide").addClass("animate__animated animate__bounceInRight animate__delay-1s");
+    let utterThisNext = new SpeechSynthesisUtterance("Tap the smile or the frown.");
+    utterThisNext.rate = 0.85;
+    synth.speak(utterThisNext);
+  }
+  synth.speak(utterThis);
+});
+
+</script>
+
+</body>
+</html>
