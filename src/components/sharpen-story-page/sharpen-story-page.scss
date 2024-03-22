@@ -1,0 +1,27 @@
+sharpen-story-page {
+  display: block;
+  padding: 0 0 1em 0;
+  box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
+
+  .content {
+    padding: var(--spacing-lg);
+    color: var(--color-pine);
+  }
+
+  &[content-mode="sentence"] .content { font-size: 28pt; }
+  &[content-mode="paragraph"] .content { font-size: 14pt; line-height: 1.5; }
+  &[content-mode="paragraph"] .story-footer { height: 12rem; }
+
+  .story-footer {
+    height: 18rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    img {
+      height: 12rem;
+      margin-top: 5rem;
+    }
+  }
+
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Onboarding</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+  <style>
+
+    /* From Sharpen Reading */
+    .card .card-header {
+      display: flex;
+    }
+
+    .card .card-header h2 {
+      font-size: 20px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .script-group:first-of-type {
+      margin-top: 20px;
+    }
+
+    .script-group:not(:first-of-type) {
+      margin-top: 25px;
+    }
+
+    .script-group h3 {
+      margin-bottom: 0px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .script-group h3 img {
+      margin-right: 8px;
+      vertical-align: middle;
+      width: 40px;
+      height: 40px;
+    }
+
+    .script-group.say .text, .script-group.greeting .text {
+      background-color: #e6f5f2;
+      padding: 20px;
+      border-radius: 15px;
+      border-top-left-radius: 15px;
+      border-top-left-radius: 0px;
+    }
+
+    .script-group .text {
+      margin-left: 50px;
+    }
+
+    .rich-text :not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .script-controls {
+      justify-content: space-between;
+      display: flex;
+      margin-top: 30px;
+    }
+
+    .script-controls button {
+      border: none;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      font-size: 1rem;
+      font-family: var(--font-family-sans);
+      line-height: 21px;
+      position: relative;
+      text-align: center;
+
+      align-items: center;
+      color: #2b5652;
+      display: flex;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .script-controls button:nth-child(1) img {
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+
+    .script-controls button:nth-child(2) img {
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+
+
+    /* New in this prototype */
+
+
+    /*.hide {
+      display: none; 
+    }
+
+    .script-section.complete sharpen-card {
+      opacity: 0.5;
+    }
+
+    .script-section.complete sharpen-card:hover {
+      opacity: 1;
+    }
+
+    .script-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .script-section + .script-section {
+      margin-top: var(--spacing-lg);
+    }
+
+    .script-step + .script-step {
+      margin-top: var(--spacing-md);
+    }
+
+    [class^="script-step-command"] {
+      width: 5rem;
+      color: white;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      border-radius: 100%;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    [class^="script-step-command"] > * {
+      flex: 1;
+      text-align: center;
+    }
+
+    .script-step-command--say     { background-color: var(--color-evergreen); }
+    .script-step-command--hear    { background-color: rgb(221, 173, 99) }
+    .script-step-command--repeat  { background-color: rgb(29, 61, 131); }
+
+    [class^="script-step-content"] {
+      flex: 1;
+    }
+
+    .script-step-content--say {
+      font-size: var(--font-size-lg);
+      font-weight: bolder;
+    }
+
+    .script-step-content--hear { color: var(--color-gray-1); }*/
+
+  </style>
+</head>
+
+<body>
+
+<div class="container sharpen-my-lg">
+  
+  <div class="row">
+    
+    <div class="col-9 offset-1">
+
+      <sharpen-card border="none" padding="large" class="card carousel" data-controller="carousel" aria-roledescription="carousel">
+        <div class="slides" aria-atomic="false" aria-live="polite">
+          <div class="script-page slide active" role="group" aria-roledescription="slide" aria-label="Page 1 of 1" data-carousel-target="slide" data-instructor-controls-target="stepSlide">
+            <header class="card-header">
+              <h2>Activity Instructions</h2>
+              <sharpen-label type="warning">1/1 Steps</sharpen-label>
+            </header>
+
+            <section class="script-group say">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/say-2a761e46b21d7fe18ce743f9746c2fef87e0b0108e02f64acbe8d3fb45d63e18.svg">
+                Say
+              </h3>
+              <div class="text rich-text">
+                <p>Here's how you write /s/.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/do-02cb461bf4329fda06b71074ce1edd8443ebd17e8c297c0bc90cc75b5c08ef41.svg">
+                Do
+              </h3>
+              <div class="text rich-text">
+                <p>You are referring to the letter SOUND.</p>
+                <p>Press the "Animate" button and then recite the instructions for forming the letter in sync with the animation.</p>
+              </div>
+            </section>
+            
+            <section class="script-group say">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/say-2a761e46b21d7fe18ce743f9746c2fef87e0b0108e02f64acbe8d3fb45d63e18.svg">
+                Say
+              </h3>
+              <div class="text rich-text">
+                <p>Start at the dot. Curl back like a rainbow.<br><br> Slide across.<br><br> Swing around.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/do-02cb461bf4329fda06b71074ce1edd8443ebd17e8c297c0bc90cc75b5c08ef41.svg">
+                Do
+              </h3>
+              <div class="text rich-text">
+                <p>Repeat the animation while reciting the instructions for forming the letter.</p>
+              </div>
+            </section>
+            
+            <section class="script-group say">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/say-2a761e46b21d7fe18ce743f9746c2fef87e0b0108e02f64acbe8d3fb45d63e18.svg">
+                Say
+              </h3>
+              <div class="text rich-text">
+                <p>Now it's your turn to write /s/.</p>
+                <p>Put your finger or cursor on the dot.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/do-02cb461bf4329fda06b71074ce1edd8443ebd17e8c297c0bc90cc75b5c08ef41.svg">
+                Do
+              </h3>
+              <div class="text rich-text">
+                <p>Help your Learner put her finger on the dot on the model in the handwriting box.</p>
+                <p>Repeat the directions for forming the letter.</p>
+              </div>
+            </section>
+            
+            <section class="script-group wait">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/wait-d64454201c694d18f64149d261573e82fef9bde9f73bf31ebadfc7865b19b66d.svg">
+                Wait
+              </h3>
+              <div class="text rich-text">
+                <p>Your Learner should perform each step as you say it.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/do-02cb461bf4329fda06b71074ce1edd8443ebd17e8c297c0bc90cc75b5c08ef41.svg">
+                Do
+              </h3>
+              <div class="text rich-text">
+                <p>After your Learner has formed the entire letter, have her say its sound.</p>
+                <p>Repeat these steps until your Learner has written the letter a total of 4 times.</p>
+              </div>
+            </section>
+            
+            <section class="script-group say">
+              <h3>
+                <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/script-icons/say-2a761e46b21d7fe18ce743f9746c2fef87e0b0108e02f64acbe8d3fb45d63e18.svg">
+                Say
+              </h3>
+              <div class="text rich-text">
+                <p>Nice job!</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="script-controls">
+            <button data-action="click->carousel#previousSlide" data-carousel-target="previousButton" aria-label="Previous Slide" type="button" aria-disabled="true" class="is-disabled">
+              <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/icons/caret-left-4653db4a788af072599489b830cd7a8227f99f078fa57378a7ddb1561390909e.svg">Previous Step
+            </button>
+            <button data-action="click->carousel#nextSlide click->instructor-controls#nextScriptStep" data-carousel-target="nextButton" aria-label="Next Slide" type="button" aria-disabled="true" class="is-disabled">
+              Next Step
+              <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/icons/caret-right-4a75050cdfe3201853794780b11d486446fea15cfca1b71251b06478c459e82b.svg">
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>

@@ -27,7 +27,7 @@ export const config: Config = {
       baseUrl: 'http://prototypes.sharpen.com/',
       copy: [
         { src: '../assets', dest: 'build/assets' },
-        { src: 'prototypes' }
+        { src: 'prototypes', dest: '.' }
       ],
     },
   ],

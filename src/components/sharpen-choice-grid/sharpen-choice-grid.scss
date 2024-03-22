@@ -1,0 +1,29 @@
+sharpen-choice-grid {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  font-weight: bold;
+  font-size: 18pt;
+  text-align: center;
+
+  &[layout="column"] {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: normal;
+    font-size: 24pt;
+  }
+
+  a {
+    --animate-duration: 1.5s;
+    text-decoration: none;
+  }
+
+  a img {
+    max-width: 100%;
+  }
+
+  a.highlight sharpen-card, a:hover sharpen-card {
+    background-color: var(--color-sky);
+  }
+}

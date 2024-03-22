@@ -111,7 +111,7 @@
               Please tap-and-say the word ‘pat’
             </div>
             <div class="script-step-controls">
-              <button class="script-button-say sharpen-button sharpen-button--secondary sharpen-button--small">
+              <button class="sharpen-button sharpen-button--secondary sharpen-button--small">
                 <i class="sharpen-icon">volume_up</i> Say
               </button>
             </div>
@@ -147,48 +147,6 @@
   </div>
 
 </div>
-
-
-<script>
-
-$("button.script-section-advance").click(function() {
-  var $button = $(this),
-      $section = $button.closest(".script-section"),
-      $iconCheck = $("<i class='sharpen-icon animate__animated animate__jackInTheBox'>check</i>");
-
-  $section.addClass("complete");
-  // $button.addClass("animate__animated animate__rubberBand");
-  // $button.on('animationend', function() {
-    $button.html($iconCheck).attr("disabled", true);
-    $section.next(".script-section")
-      .removeClass("hide")
-      // .addClass("animate__animated animate__slideInUp");
-      .addClass("animate__animated animate__jackInTheBox");
-  // });
-});
-
-$("button.script-button-say").click(function() {
-  var $button = $(this),
-      $icon = $(this).find(".sharpen-icon");
-
-  $icon.addClass("animate__animated animate__heartBeat");
-  $icon.on('animationend', function() {
-    $icon.removeClass("animate__animated animate__heartBeat");
-  })
-});
-
-const synth = window.speechSynthesis;
-
-$(".script-button-say").click(function() {
-  let $scriptStep = $(this).closest(".script-step"),
-    ourText = $scriptStep.find(".script-step-content--say").text();
-
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  synth.speak(utterThis);
-});
-
-</script>
 
 </body>
 

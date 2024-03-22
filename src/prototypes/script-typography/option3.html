@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Reading Activity Instructions (3)</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+  <style>
+
+    /* From Sharpen Reading */
+    .card .card-header {
+      display: flex;
+    }
+
+    .card .card-header h2 {
+      font-size: 20px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .script-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .script-group:first-of-type {
+      margin-top: 20px;
+    }
+
+    .script-group:not(:first-of-type) {
+      margin-top: 25px;
+    }
+
+    .script-group h3 {
+      width: 4rem;
+      height: 4rem;
+      color: white;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      border-radius: 100%;
+      line-height: 1;
+      background-color: #999;
+    }
+
+    .script-group.do h3 {
+      height: 0;
+    }
+
+    .script-group h3 > * {
+      flex: 1;
+      text-align: center;
+    }
+
+    .script-group.say h3     { background-color: var(--color-evergreen); }
+    .script-group.do h3      { background-color: white; }
+    .script-group.wait h3    { background-color: #e6ab54; }
+
+    .script-group.say .text, .script-group.greeting .text {
+      background-color: #e6f5f2;
+      padding: 20px;
+      border-radius: 15px;
+      border-top-left-radius: 15px;
+      border-top-left-radius: 0px;
+      color: var(--color-evergreen);;
+      font-weight: 600;
+    }
+    
+    .script-group .text {
+      flex: 1;
+      color: #555;
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .script-group.wait .text {
+      background-color: #fdf8ef;
+      padding: 20px;
+      border-radius: 15px;
+      color: black;
+      border: none;
+    }
+
+    .rich-text :not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    .script-group .text p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .script-group.say .text p, .script-group.greeting .text p {
+      font-size: 20px;
+    }
+
+    .script-controls {
+      justify-content: space-between;
+      display: flex;
+      margin-top: 30px;
+    }
+
+    .script-controls button {
+      border: none;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      font-size: 1rem;
+      font-family: var(--font-family-sans);
+      line-height: 21px;
+      position: relative;
+      text-align: center;
+
+      align-items: center;
+      color: #2b5652;
+      display: flex;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .script-controls button:nth-child(1) img {
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+
+    .script-controls button:nth-child(2) img {
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container sharpen-my-lg">
+  
+  <div class="row">
+    
+    <div class="col-9 offset-1">
+
+      <sharpen-card border="none" padding="large" class="card carousel" data-controller="carousel" aria-roledescription="carousel">
+        <div class="slides" aria-atomic="false" aria-live="polite">
+          <div class="script-page slide active" role="group" aria-roledescription="slide" aria-label="Page 1 of 1" data-carousel-target="slide" data-instructor-controls-target="stepSlide">
+            <header class="card-header">
+              <h2>Activity Instructions</h2>
+              <sharpen-label type="warning">1/1 Steps</sharpen-label>
+            </header>
+
+            <section class="script-group say">
+              <h3>
+                <div>Say</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Here's how you write /s/.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                
+              </h3>
+              <div class="text rich-text">
+                <p>You are referring to the letter SOUND.</p>
+                <p>Press the "Animate" button and then recite the instructions for forming the letter in sync with the animation.</p>
+              </div>
+            </section>
+            
+            <section class="script-group say">
+              <h3>
+                <div>Say</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Start at the dot. Curl back like a rainbow.</p>
+                <p>Slide across.</p>
+                <p>Swing around.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                
+              </h3>
+              <div class="text rich-text">
+                <p>Repeat the animation while reciting the instructions for forming the letter.</p>
+              </div>
+            </section>
+            
+            <section class="script-group say">
+              <h3>
+                <div>Say</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Now it's your turn to write /s/.</p>
+                <p>Put your finger or cursor on the dot.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                
+              </h3>
+              <div class="text rich-text">
+                <p>Help your Learner put her finger on the dot on the model in the handwriting box.</p>
+                <p>Repeat the directions for forming the letter.</p>
+              </div>
+            </section>
+            
+            <section class="script-group wait">
+              <h3>
+                <div>Note</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Your Learner should perform each step as you say it.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                
+              </h3>
+              <div class="text rich-text">
+                <p>After your Learner has formed the entire letter, have her say its sound.</p>
+                <p>Repeat these steps until your Learner has written the letter a total of 4 times.</p>
+              </div>
+            </section>
+            
+            <section class="script-group say">
+              <h3>
+                <div>Say</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Nice job!</p>
+              </div>
+            </section>
+          </div>
+
+          <div class="script-controls">
+            <button data-action="click->carousel#previousSlide" data-carousel-target="previousButton" aria-label="Previous Slide" type="button" aria-disabled="true" class="is-disabled">
+              <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/icons/caret-left-4653db4a788af072599489b830cd7a8227f99f078fa57378a7ddb1561390909e.svg">Previous Step
+            </button>
+            <button data-action="click->carousel#nextSlide click->instructor-controls#nextScriptStep" data-carousel-target="nextButton" aria-label="Next Slide" type="button" aria-disabled="true" class="is-disabled">
+              Next Step
+              <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/icons/caret-right-4a75050cdfe3201853794780b11d486446fea15cfca1b71251b06478c459e82b.svg">
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>
