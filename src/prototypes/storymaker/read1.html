@@ -19,20 +19,26 @@
 </head>
 <body class="sharpen-background--white">
 
-  <sharpen-simple-navigation brand-href="upgrade.html"></sharpen-simple-navigation>
+  <div class="navbar container-fluid">
+    <a class="brand" href="upgrade.html"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
+  </div>
 
   <div class="sharpen-wizard-container storymaker">
 
-    <sharpen-story-page content-mode="sentence" background-src="images/background_forest.png" character-src="images/fox.png">
+    <div class="story-character-header">
+      <img src="images/fox.png" />
+    </div>
+
+    <div class="story-read-sentence">
       Sam the fox sat on a log.
-    </sharpen-story-page>
+    </div>
 
-    <a id="story-advance" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width sharpen-mt-lg" href="choice.html">
-      <i class="sharpen-icon sharpen-text-4xl">arrow_forward</i>
-    </a>
-
+    <div class="story-read-controls">
+      <a href="choice.html"><i class="sharpen-icon">arrow_forward</i></a>
+    </div>
+    
   </div>
-
+  
 
 <script>
 
@@ -43,12 +49,12 @@ $(document).ready(function() {
   let utterThis = new SpeechSynthesisUtterance(ourText);
   utterThis.rate = 0.85;
   utterThis.onend = function() {
-    $("#story-advance").addClass("animate__animated animate__shakeX");
-    let utterThisNext = new SpeechSynthesisUtterance("Tap the arrow button to move to the next page.");
+    $(".story-read-controls").addClass("animate__animated animate__shakeX");
+    let utterThisNext = new SpeechSynthesisUtterance("Tap the green arrow to move to the next page.");
     utterThisNext.rate = 0.85;
     synth.speak(utterThisNext);
   }
-  $("sharpen-story-page").addClass("animate__animated animate__jello");
+  $(".story-read-sentence").addClass("animate__animated animate__jello");
   synth.speak(utterThis);
 });
 

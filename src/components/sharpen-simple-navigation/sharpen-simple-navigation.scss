@@ -1,0 +1,21 @@
+sharpen-simple-navigation {
+  .navbar {
+    height: 4.5rem;
+    background-color: var(--color-mint);
+    color: var(--color-evergreen);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    --mask: 
+      linear-gradient(to top,#0000 10px,#000 0),
+      radial-gradient(10px,#000 98%,#0000) bottom/18.5px 20px;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
+
+  .navbar .brand img { height: 31px;  }
+
+  &[background="sunrise"] .navbar {
+    background-color: var(--color-sunrise);
+  }
+}

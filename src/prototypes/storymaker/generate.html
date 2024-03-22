@@ -15,16 +15,20 @@
 </head>
 <body class="sharpen-background--white">
 
-  <div class="navbar container-fluid">
-    <a class="brand" href="upgrade.html"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
-  </div>
+  <sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
 
   <div class="sharpen-wizard-container storymaker">
 
-    <div class="story-instruction sharpen-mb-lg">
-      OK! Let me build a story about a fox.
+    <sharpen-story-header>
+      <img src="images/fox.png" alt="Fox">
+    </sharpen-story-header>
+
+    <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
+      OK! Let me build a story about a fox in a forest.
     </div>
 
+    <sharpen-waiting-bar></sharpen-waiting-bar>
+    
     <div class="progress progress-striped">
       <div class="progress-bar">
       </div>                       
@@ -38,14 +42,14 @@
 const synth = window.speechSynthesis;
 
 $(document).ready(function() {
-  let ourText = $(".story-instruction").text();
+  let ourText = $("#page-instruction").text();
   let utterThis = new SpeechSynthesisUtterance(ourText);
   utterThis.rate = 0.85;
   synth.speak(utterThis);
 
-  window.setTimeout(function() {
-    window.location.href = "read.html";
-  }, 8000);
+  // window.setTimeout(function() {
+  //   window.location.href = "read.html";
+  // }, 8000);
 });
 
 </script>

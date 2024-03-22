@@ -10,15 +10,15 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 // Text sizes
 //
 
-.sharpen-text-xs  { font-size: var(--font-size-xs); }
-.sharpen-text-sm  { font-size: var(--font-size-sm); }
-.sharpen-text-md  { font-size: var(--font-size-md); }
-.sharpen-text-lg  { font-size: var(--font-size-lg); }
-.sharpen-text-xl  { font-size: var(--font-size-xl); }
-.sharpen-text-2xl { font-size: var(--font-size-2xl); }
-.sharpen-text-3xl { font-size: var(--font-size-3xl); }
-.sharpen-text-4xl { font-size: var(--font-size-4xl); }
-.sharpen-text-5xl { font-size: var(--font-size-5xl); }
+.sharpen-text-xs  { font-size: var(--font-size-xs) !important; }
+.sharpen-text-sm  { font-size: var(--font-size-sm) !important; }
+.sharpen-text-md  { font-size: var(--font-size-md) !important; }
+.sharpen-text-lg  { font-size: var(--font-size-lg) !important; }
+.sharpen-text-xl  { font-size: var(--font-size-xl) !important; }
+.sharpen-text-2xl { font-size: var(--font-size-2xl) !important; }
+.sharpen-text-3xl { font-size: var(--font-size-3xl) !important; }
+.sharpen-text-4xl { font-size: var(--font-size-4xl) !important; }
+.sharpen-text-5xl { font-size: var(--font-size-5xl) !important; }
 
 .sharpen-text-2xl, .sharpen-text-3xl, .sharpen-text-4xl, .sharpen-text-5xl { line-height: 1.2; }
 

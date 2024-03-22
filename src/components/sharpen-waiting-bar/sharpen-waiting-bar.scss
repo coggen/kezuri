@@ -1,0 +1,27 @@
+sharpen-waiting-bar {
+  display: block;
+  padding: 6px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+
+  .bar { 
+    height: 18px;
+    border-radius: 4px; 
+    transition: 0.4s linear;  
+    transition-property: width, background-color;    
+    background-color: var(--color-mint); 
+    width: 100%; 
+    background-image: linear-gradient(
+      45deg, var(--color-pine) 25%, 
+      transparent 25%, transparent 50%, 
+      var(--color-pine) 50%, var(--color-pine) 75%,
+      transparent 75%, transparent); 
+    animation: progressAnimationStrike 12s;
+  }
+
+  @keyframes progressAnimationStrike {
+    from { width: 0 }
+    to   { width: 100% }
+  }
+}

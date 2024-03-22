@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Reading Activity Instructions (3, with evaluation)</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="/build/kezuri.css" />
+  <script type="module" src="/build/kezuri.esm.js"></script>
+  <script nomodule src="/build/kezuri.js"></script>
+  <style>
+
+    /* From Sharpen Reading */
+    .card .card-header {
+      display: flex;
+    }
+
+    .card .card-header h2 {
+      font-size: 20px;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .script-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .script-group:first-of-type {
+      margin-top: 20px;
+    }
+
+    .script-group:not(:first-of-type) {
+      margin-top: 25px;
+    }
+
+    .script-group h3 {
+      width: 4rem;
+      height: 4rem;
+      color: white;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      border-radius: 100%;
+      line-height: 1;
+      background-color: #999;
+    }
+
+    .script-group.do h3 {
+      height: 0;
+    }
+
+    .script-group h3 > * {
+      flex: 1;
+      text-align: center;
+    }
+
+    .script-group.say h3     { background-color: var(--color-evergreen); }
+    .script-group.do h3      { background-color: white; }
+    .script-group.wait h3    { background-color: #e6ab54; }
+    .script-group.check h3     { background-color: var(--color-dark-red); }
+
+    .script-group.say .text,
+    .script-group.greeting .text {
+      background-color: #e6f5f2;
+      padding: 20px;
+      border-radius: 15px;
+      border-top-left-radius: 15px;
+      border-top-left-radius: 0px;
+      color: var(--color-evergreen);;
+      font-weight: 600;
+    }
+    
+    .script-group .text {
+      flex: 1;
+      color: #555;
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .script-group.wait .text {
+      background-color: #fdf8ef;
+      padding: 20px;
+      border-radius: 15px;
+      color: black;
+      border: none;
+    }
+
+    .script-group.check .text {
+      color: black;
+    }
+
+    .script-group.check .text button {
+      /*border-color: #ccc;
+      padding: 0.75em 3em;*/
+    }
+
+    .script-group.check .text button .sharpen-icon {
+      margin-right: 0.25em;
+    }
+
+    .rich-text :not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    .script-group .text p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .script-group.say .text p, .script-group.greeting .text p {
+      font-size: 20px;
+    }
+
+    .script-controls {
+      justify-content: space-between;
+      display: flex;
+      margin-top: 30px;
+    }
+
+    .script-controls button {
+      border: none;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      font-size: 1rem;
+      font-family: var(--font-family-sans);
+      line-height: 21px;
+      position: relative;
+      text-align: center;
+
+      align-items: center;
+      color: #2b5652;
+      display: flex;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .script-controls button.is-disabled {
+      opacity: 0.4;
+    }
+
+    .script-controls button:nth-child(1) img {
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+
+    .script-controls button:nth-child(2) img {
+      margin-left: 10px;
+      margin-top: 3px;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+<div class="container sharpen-my-lg">
+  
+  <div class="row">
+    
+    <div class="col-9 offset-1">
+
+      <sharpen-card border="none" padding="large" class="card carousel" data-controller="carousel" aria-roledescription="carousel">
+        <div class="slides" aria-atomic="false" aria-live="polite">
+          <div class="script-page slide active" role="group" aria-roledescription="slide" aria-label="Page 1 of 1" data-carousel-target="slide" data-instructor-controls-target="stepSlide">
+            <header class="card-header">
+              <h2>Activity Instructions</h2>
+              <sharpen-label type="warning">1/1 Steps</sharpen-label>
+            </header>
+
+            <section class="script-group do">
+              <h3>
+                
+              </h3>
+              <div class="text rich-text">
+                <p>In this activity you will evaluate the Learner's performance.</p>
+              </div>
+            </section>
+
+            <section class="script-group say">
+              <h3>
+                <div>Say</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Please say "bat."</p>
+              </div>
+            </section>
+
+            <section class="script-group say">
+              <h3>
+                <div>Say</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Now say "bat," but don't say /b/.</p>
+              </div>
+            </section>
+
+            <section class="script-group wait">
+              <h3>
+                <div>Note</div>
+              </h3>
+              <div class="text rich-text">
+                <p>Your Learner says /at/.</p>
+              </div>
+            </section>
+            
+            <section class="script-group do">
+              <h3>
+                
+              </h3>
+              <div class="text rich-text">
+                <p>Use this response as a model:</p>
+                <p>"'Sat' without /s/ is /a/ /t/ at. sat-at."</p>
+              </div>
+            </section>
+
+            <section class="script-group check">
+              <h3>
+                <div>Mark</div>
+              </h3>
+              <div class="text rich-text">
+                <!-- <p>Evaluate the learner's understanding of the activity.</p> -->
+                <p>On the learner's first attempt, was the learner...</p>
+                <div>
+                  <button class="sharpen-button sharpen-button--secondary sharpen-button--small" style="margin-bottom: 0;">
+                    <i class="sharpen-icon">check_circle</i>
+                    Correct
+                  </button>
+                  <button class="sharpen-button sharpen-button--danger sharpen-button--small">
+                    <i class="sharpen-icon">cancel</i>
+                    Incorrect
+                  </button>
+                </div>
+              </div>
+            </section>
+
+          </div>
+
+          <div class="script-controls">
+            <button data-action="click->carousel#previousSlide" data-carousel-target="previousButton" aria-label="Previous Slide" type="button" aria-disabled="true" class="is-disabled">
+              <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/icons/caret-left-4653db4a788af072599489b830cd7a8227f99f078fa57378a7ddb1561390909e.svg">Previous Step
+            </button>
+            <button data-action="click->carousel#nextSlide click->instructor-controls#nextScriptStep" data-carousel-target="nextButton" aria-label="Next Slide" type="button" aria-disabled="true" class="is-disabled">
+              Next Step
+              <img alt="" src="https://sharpen-reading-app-dev.herokuapp.com/assets/icons/caret-right-4a75050cdfe3201853794780b11d486446fea15cfca1b71251b06478c459e82b.svg">
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>

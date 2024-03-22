@@ -17,14 +17,12 @@
 </head>
 <body class="sharpen-background--white">
 
-  <div class="navbar container-fluid">
-    <a class="brand" href="upgrade.html"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
-  </div>
+  <sharpen-simple-navigation brand-href="upgrade.html"></sharpen-simple-navigation>
 
   <div class="sharpen-wizard-container storymaker">
 
-    <div class="story-instruction sharpen-mb-lg">
-      Good job reading! Did you like that story?
+    <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
+      Good job with your reading! Did you like that story?
       Tap the smile or the frown.
     </div>
 
@@ -34,37 +32,10 @@
     </div>
     
   </div>
-  
 
 <script>
 
 const synth = window.speechSynthesis;
-
-// const confettiDefaults = {
-//   spread: 90,
-//   ticks: 50,
-//   gravity: 0.5,
-//   decay: 0.94,
-//   startVelocity: 30,
-//   shapes: ["star"],
-//   colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
-// };
-
-// function shoot() {
-//   confetti({
-//     ...confettiDefaults,
-//     particleCount: 40,
-//     scalar: 1.2,
-//     shapes: ["star"],
-//   });
-
-//   confetti({
-//     ...defaults,
-//     particleCount: 10,
-//     scalar: 0.75,
-//     shapes: ["circle"],
-//   });
-// }
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;

@@ -111,7 +111,7 @@
               Please tap-and-say the word ‘pat’
             </div>
             <div class="script-step-controls">
-              <button class="sharpen-button sharpen-button--secondary sharpen-button--small">
+              <button class="script-button-say sharpen-button sharpen-button--secondary sharpen-button--small">
                 <i class="sharpen-icon">volume_up</i> Say
               </button>
             </div>
@@ -175,6 +175,17 @@ $("button.script-button-say").click(function() {
   $icon.on('animationend', function() {
     $icon.removeClass("animate__animated animate__heartBeat");
   })
+});
+
+const synth = window.speechSynthesis;
+
+$(".script-button-say").click(function() {
+  let $scriptStep = $(this).closest(".script-step"),
+    ourText = $scriptStep.find(".script-step-content--say").text();
+
+  let utterThis = new SpeechSynthesisUtterance(ourText);
+  utterThis.rate = 0.85;
+  synth.speak(utterThis);
 });
 
 </script>

@@ -23,16 +23,18 @@
 
   <div class="sharpen-wizard-container storymaker">
 
-    <sharpen-story-page content-mode="sentence" background-src="images/background_forest.png" character-src="images/fox.png">
-      Sam the fox sat on a log.
+    <sharpen-story-page content-mode="paragraph" background-src="images/background_forest.png">
+      I get stuck with Ricky the morning after the big storm. A tree branch
+      the size of the Loch Ness Monster blew in through his bedroom window,
+      so his parents need him out of the way while they get everything fixed
+      up.
     </sharpen-story-page>
 
-    <a id="story-advance" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width sharpen-mt-lg" href="choice.html">
+    <a class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width sharpen-mt-lg" href="choice.html">
       <i class="sharpen-icon sharpen-text-4xl">arrow_forward</i>
     </a>
 
   </div>
-
 
 <script>
 
@@ -43,13 +45,13 @@ $(document).ready(function() {
   let utterThis = new SpeechSynthesisUtterance(ourText);
   utterThis.rate = 0.85;
   utterThis.onend = function() {
-    $("#story-advance").addClass("animate__animated animate__shakeX");
+    $(".story-read-controls").addClass("animate__animated animate__shakeX");
     let utterThisNext = new SpeechSynthesisUtterance("Tap the arrow button to move to the next page.");
     utterThisNext.rate = 0.85;
     synth.speak(utterThisNext);
   }
-  $("sharpen-story-page").addClass("animate__animated animate__jello");
-  synth.speak(utterThis);
+  $(".story-read-sentence").addClass("animate__animated animate__jello");
+  // synth.speak(utterThis);
 });
 
 </script>

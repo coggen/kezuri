@@ -19,35 +19,33 @@
 </head>
 <body class="sharpen-background--white">
 
-  <div class="navbar container-fluid">
-    <a class="brand" href="upgrade.html"><img src="/build/assets/images/brand/sharpen_mark_evergreen.png" /></a>
-  </div>
+  <sharpen-simple-navigation brand-href="upgrade.html"></sharpen-simple-navigation>
 
   <div class="sharpen-wizard-container storymaker">
 
-    <div class="story-question-header">
+    <sharpen-story-header>
       <i class="sharpen-icon">question_mark</i>
-    </div>
+    </sharpen-story-header>
 
-    <div class="story-options">
-      <a href="end.html" class="story-option hide">
-        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
+    <sharpen-choice-grid layout="column">
+      <a href="end.html" class="hide">
+        <sharpen-card border="none" padding="large">
           Sam ran to get the hen
         </sharpen-card>
       </a>
 
-      <a href="end.html" class="story-option hide">
-        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
+      <a href="end.html" class="hide">
+        <sharpen-card border="none" padding="large">
           Sam sat on the hen
         </sharpen-card>
       </a>
 
-      <a href="end.html" class="story-option hide">
-        <sharpen-card border="none" padding="large" class="sharpen-mb-md">
+      <a href="end.html" class="hide">
+        <sharpen-card border="none" padding="large">
           Sam sat on the mat
         </sharpen-card>
       </a>
-    </div>
+    </sharpen-choice-grid>
     
   </div>
   
@@ -71,7 +69,7 @@ function showChoice($el) {
 }
 
 $(document).ready(function() {
-  var $options = $(".story-option");
+  var $options = $("sharpen-choice-grid a");
   $options.addClass("hide");
 
   let ourText = "Now choose what happens next";
