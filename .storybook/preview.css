@@ -52,3 +52,39 @@
 [id^="story--utilities-flex"] [class^="d-flex align-content"] {
   height: 10rem;
 }
+
+/** STORYMAKER PROTOTYPE PAGES **/
+
+.storymaker, .storymaker .sharpen-button, .storymaker .sharpen-form-label {
+  font-family: Lexend, sans-serif;
+}
+
+.storymaker p {
+  line-height: var(--line-height--generous);
+}
+
+.storymaker .story-reactions {
+  display: flex;
+}
+
+.storymaker .story-reactions a {
+  flex: 1;
+  text-align: center;
+}
+
+.storymaker .story-reactions .sharpen-icon {
+  font-size: 96pt;
+}
+
+.storymaker .story-reactions img {
+  width: 96pt;
+}
+
+.storymaker .product-option {
+  background-color: var(--color-pine);
+  color: white;
+}
+
+.storymaker .product-option h2 {
+  text-decoration: underline;
+}
