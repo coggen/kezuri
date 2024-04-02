@@ -38,3 +38,23 @@
 .storymaker .product-option h2 {
   text-decoration: underline;
 }
+
+
+
+/** DIFFERENT DEVICE LINK **/
+
+.storymaker-link input {
+  font-family: monospace;
+  text-align: center;
+  font-size: 16pt;
+}
+
+.sharpen-table-stories td:first-child { width: 5rem; }
+.sharpen-table-stories img { max-width: 100%; }
+
+.sharpen-table-storymaker-invites td:first-child { text-align: center; font-size: var(--font-size-lg) }
+.sharpen-table-storymaker-invites td:last-child { width: 5rem; }
+.sharpen-table-storymaker-invites td:last-child button {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md) calc(var(--spacing-sm) * 1.25);
+}

@@ -32,7 +32,7 @@
       <a href="location.html" class="hide">
         <sharpen-card border="none" padding="medium">
           <img src="images/bunny.png" />
-          <div class="title">bunny</div>
+          <div class="title">dog</div>
         </sharpen-card>
       </a>
       <a href="location.html" class="hide">
@@ -44,32 +44,36 @@
       <a href="location.html" class="hide">
         <sharpen-card border="none" padding="medium">
           <img src="images/lion.png" />
-          <div class="title">lion</div>
+          <div class="title">cat</div>
         </sharpen-card>
       </a>
       <a href="location.html" class="hide">
         <sharpen-card border="none" padding="medium">
           <img src="images/truck.png" />
-          <div class="title">truck</div>
+          <div class="title">pig</div>
         </sharpen-card>
       </a>
     </sharpen-choice-grid>
 
   </div>
   
+  <audio id="prompt" src="audio/character_choice/prompt.mp3"></audio>
+  <audio id="dog" src="audio/character_choice/dog.mp3"></audio>
+  <audio id="cat" src="audio/character_choice/cat.mp3"></audio>
+  <audio id="fox" src="audio/character_choice/fox.mp3"></audio>
+  <audio id="pig" src="audio/character_choice/pig.mp3"></audio>
 
 <script>
-
-const synth = window.speechSynthesis;
 
 function showChoice($el) {
 
   console.log("showing choice...");
   
-  var animationClasses = "highlight animate__animated animate__bounceIn";
-  let utterThis = new SpeechSynthesisUtterance($el.text());
-  utterThis.rate = 0.85;
-  synth.speak(utterThis);
+  var choiceText = $el.find(".title").text(),
+    $audio = $("audio#" + choiceText),
+    animationClasses = "highlight animate__animated animate__bounceIn";
+
+  $audio[0].play();
 
   $el.removeClass("hide")
       .addClass(animationClasses)
@@ -82,16 +86,16 @@ function showChoice($el) {
 $(document).ready(function() {
   console.log("starting sequence...");
 
-  var $choices = $("sharpen-choice-grid a");
+  var $audio = $("#prompt"),
+    $choices = $("sharpen-choice-grid a");
+  
   $choices.addClass("hide");
 
-  let ourText = $("#page-instruction").text();
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
+  $audio.on("ended", function() {
     showChoice($choices.first());
-  }
-  synth.speak(utterThis);
+  });
+
+  $audio[0].play();
 });
 
 </script>

@@ -48,7 +48,9 @@
     </sharpen-choice-grid>
     
   </div>
-  
+
+<audio id="prompt" src="audio/plot_choice/prompt.mp3"></audio>
+
 <script>
 
 const synth = window.speechSynthesis;
@@ -69,16 +71,17 @@ function showChoice($el) {
 }
 
 $(document).ready(function() {
-  var $options = $("sharpen-choice-grid a");
-  $options.addClass("hide");
 
-  let ourText = "Now choose what happens next";
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
+  var $audioPrompt = $("audio#prompt"),
+    $options = $("sharpen-choice-grid a");
+  
+  $options.addClass("hide");
+  
+  $audioPrompt.on("ended", function() {
     showChoice($options.first());
-  }
-  synth.speak(utterThis);
+  });
+
+  $audioPrompt[0].play();
 });
 
 </script>

@@ -34,22 +34,23 @@
   </div>
 
 
+<audio id="prompt" src="audio/read/prompt.mp3"></audio>
+<audio id="hint" src="audio/read/hint.mp3"></audio>
+
 <script>
 
-const synth = window.speechSynthesis;
-
 $(document).ready(function() {
-  let ourText = "Start reading when you are ready.";
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
+
+  var $audioPrompt = $("audio#prompt"),
+    $audioHint = $("audio#hint");
+  
+  $audioPrompt.on("ended", function() {
     $("#story-advance").addClass("animate__animated animate__shakeX");
-    let utterThisNext = new SpeechSynthesisUtterance("Tap the arrow button to move to the next page.");
-    utterThisNext.rate = 0.85;
-    synth.speak(utterThisNext);
-  }
+    $audioHint[0].play();
+  });
+
   $("sharpen-story-page").addClass("animate__animated animate__jello");
-  synth.speak(utterThis);
+  $audioPrompt[0].play();
 });
 
 </script>

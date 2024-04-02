@@ -27,15 +27,16 @@
     </div>
 
     <div class="story-reactions">
-      <a id="reaction-1" class="hide" href="restart.html"><i class="sharpen-icon">sentiment_satisfied</i></a>
-      <a id="reaction-2" class="hide" href="restart.html"><i class="sharpen-icon">sentiment_dissatisfied</i></a>
+      <a id="reaction-1" class="hide" href="character.html"><i class="sharpen-icon">sentiment_satisfied</i></a>
+      <a id="reaction-2" class="hide" href="character.html"><i class="sharpen-icon">sentiment_dissatisfied</i></a>
     </div>
     
   </div>
 
-<script>
+<audio id="prompt" src="audio/feedback/prompt.mp3"></audio>
+<audio id="hint" src="audio/feedback/hint.mp3"></audio>
 
-const synth = window.speechSynthesis;
+<script>
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
@@ -52,24 +53,25 @@ function shoot() {
 }
 
 $(document).ready(function() {
+
   setTimeout(shoot, 0);
   setTimeout(shoot, 1500);
   setTimeout(shoot, 3000);
 
-  let ourText = "Good job with your reading! Did you like that story?";
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
+  var $audioPrompt = $("audio#prompt"),
+    $audioHint = $("audio#hint");
+  
+  $audioPrompt.on("ended", function() {
     $("#reaction-1").removeClass("hide").addClass("animate__animated animate__bounceInLeft");
     $("#reaction-2").removeClass("hide").addClass("animate__animated animate__bounceInRight animate__delay-1s");
-    let utterThisNext = new SpeechSynthesisUtterance("Tap the smile or the frown.");
-    utterThisNext.rate = 0.85;
-    synth.speak(utterThisNext);
-  }
-  synth.speak(utterThis);
+
+    $audioHint[0].play();
+  });
+
+  $audioPrompt[0].play();
 });
 
-</script>
+</script>  
 
 </body>
 </html>
