@@ -10,17 +10,24 @@ export class SharpenSimpleNavigation {
   @Prop() brandHref: string;
 
   render() {
-
-    // Logo mark without the text
-    const markSrc = getAssetPath('assets/images/brand/sharpen_mark_evergreen.png');
-
     return (
       <Host>
         <div class="navbar container-fluid">
-          <a class="brand" href={this.brandHref}><img src={markSrc} /></a>
+          <slot>{this.getBrand()}</slot>
         </div>
       </Host>
     );
+  }
+
+  getBrand() {
+    if (this.brandHref) {
+      // Logo mark without the text
+      const markSrc = getAssetPath('assets/images/brand/sharpen_mark_evergreen.png');
+
+      return (
+        <a class="brand" href={this.brandHref}><img src={markSrc} /></a>
+      )
+    }
   }
 
 }

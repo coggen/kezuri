@@ -1,19 +1,19 @@
 sharpen-simple-navigation {
   .navbar {
-    height: 4.5rem;
+    padding: 1em 0 1.5em;
     background-color: var(--color-mint);
     color: var(--color-evergreen);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    text-align: center;
     --mask: 
-      linear-gradient(to top,#0000 10px,#000 0),
-      radial-gradient(10px,#000 98%,#0000) bottom/18.5px 20px;
+      linear-gradient(to top,#0000 15px,#000 0),
+      radial-gradient(15px,#000 98%,#0000) bottom/30px 30px;
     -webkit-mask: var(--mask);
             mask: var(--mask);
+    font-family: var(--font-family-serif);     
+    letter-spacing: 8pt;
   }
 
-  .navbar .brand img { height: 31px;  }
+  .navbar .brand img { height: 31px; vertical-align: -6px;  }
 
   &[background="sunrise"] .navbar {
     background-color: var(--color-sunrise);

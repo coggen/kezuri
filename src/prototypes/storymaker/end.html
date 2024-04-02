@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Sharpen Prototype: Onboarding</title>
-  <link rel="stylesheet" href="/build/kezuri.css" />
-  <script type="module" src="/build/kezuri.esm.js"></script>
-  <script nomodule src="/build/kezuri.js"></script>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -27,15 +27,16 @@
     </div>
 
     <div class="story-reactions">
-      <a id="reaction-1" class="hide" href="restart.html"><i class="sharpen-icon">sentiment_satisfied</i></a>
-      <a id="reaction-2" class="hide" href="restart.html"><i class="sharpen-icon">sentiment_dissatisfied</i></a>
+      <a id="reaction-1" class="hide" href="character.html"><i class="sharpen-icon">sentiment_satisfied</i></a>
+      <a id="reaction-2" class="hide" href="character.html"><i class="sharpen-icon">sentiment_dissatisfied</i></a>
     </div>
     
   </div>
 
-<script>
+<audio id="prompt" src="audio/feedback/prompt.mp3"></audio>
+<audio id="hint" src="audio/feedback/hint.mp3"></audio>
 
-const synth = window.speechSynthesis;
+<script>
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
@@ -52,24 +53,25 @@ function shoot() {
 }
 
 $(document).ready(function() {
+
   setTimeout(shoot, 0);
   setTimeout(shoot, 1500);
   setTimeout(shoot, 3000);
 
-  let ourText = "Good job with your reading! Did you like that story?";
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
+  var $audioPrompt = $("audio#prompt"),
+    $audioHint = $("audio#hint");
+  
+  $audioPrompt.on("ended", function() {
     $("#reaction-1").removeClass("hide").addClass("animate__animated animate__bounceInLeft");
     $("#reaction-2").removeClass("hide").addClass("animate__animated animate__bounceInRight animate__delay-1s");
-    let utterThisNext = new SpeechSynthesisUtterance("Tap the smile or the frown.");
-    utterThisNext.rate = 0.85;
-    synth.speak(utterThisNext);
-  }
-  synth.speak(utterThis);
+
+    $audioHint[0].play();
+  });
+
+  $audioPrompt[0].play();
 });
 
-</script>
+</script>  
 
 </body>
 </html>

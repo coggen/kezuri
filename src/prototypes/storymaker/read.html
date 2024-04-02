@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Sharpen Prototype: Onboarding</title>
-  <link rel="stylesheet" href="/build/kezuri.css" />
-  <script type="module" src="/build/kezuri.esm.js"></script>
-  <script nomodule src="/build/kezuri.js"></script>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -34,22 +34,23 @@
   </div>
 
 
+<audio id="prompt" src="audio/read/prompt.mp3"></audio>
+<audio id="hint" src="audio/read/hint.mp3"></audio>
+
 <script>
 
-const synth = window.speechSynthesis;
-
 $(document).ready(function() {
-  let ourText = "Start reading when you are ready.";
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
+
+  var $audioPrompt = $("audio#prompt"),
+    $audioHint = $("audio#hint");
+  
+  $audioPrompt.on("ended", function() {
     $("#story-advance").addClass("animate__animated animate__shakeX");
-    let utterThisNext = new SpeechSynthesisUtterance("Tap the arrow button to move to the next page.");
-    utterThisNext.rate = 0.85;
-    synth.speak(utterThisNext);
-  }
+    $audioHint[0].play();
+  });
+
   $("sharpen-story-page").addClass("animate__animated animate__jello");
-  synth.speak(utterThis);
+  $audioPrompt[0].play();
 });
 
 </script>

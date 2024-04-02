@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Sharpen Prototype: Onboarding</title>
-  <link rel="stylesheet" href="/build/kezuri.css" />
-  <script type="module" src="/build/kezuri.esm.js"></script>
-  <script nomodule src="/build/kezuri.js"></script>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -31,21 +31,63 @@
       <a href="generate.html" class="hide">
         <sharpen-card border="none" padding="medium">
           <img src="images/background_forest.png" />
-          <div class="title">forest</div>
+          <div class="title">log</div>
         </sharpen-card>
       </a>
       <a href="generate.html" class="hide">
         <sharpen-card border="none" padding="medium">
           <img src="images/background_town.png" />
-          <div class="title">village</div>
+          <div class="title">box</div>
         </sharpen-card>
       </a>
     </sharpen-choice-grid>
 
   </div>
-  
+
+<audio id="prompt" src="audio/settings_choice/prompt.mp3"></audio>
+<audio id="log" src="audio/settings_choice/log.mp3"></audio>
+<audio id="box" src="audio/settings_choice/box.mp3"></audio>
 
 <script>
+
+function showChoice($el) {
+
+  console.log("showing choice...");
+  
+  var choiceText = $el.find(".title").text(),
+    $audio = $("audio#" + choiceText),
+    animationClasses = "highlight animate__animated animate__bounceIn"
+    $nextEl = $el.next();
+
+  $audio[0].play();
+
+  $el.removeClass("hide")
+      .addClass(animationClasses)
+      .on('animationend', function() {
+        $el.removeClass(animationClasses);
+        if ($nextEl.length) {
+          showChoice($nextEl);  
+        }
+    });
+}
+
+$(document).ready(function() {
+
+  var $audio = $("#prompt"),
+    $choices = $("sharpen-choice-grid a");
+  
+  $choices.addClass("hide");
+
+  $audio.on("ended", function() {
+    showChoice($choices.first());
+  });
+
+  $audio[0].play();
+});
+
+</script>
+
+<!-- <script>
 
 const synth = window.speechSynthesis;
 
@@ -82,6 +124,6 @@ $(document).ready(function() {
 });
 
 </script>
-
+ -->
 </body>
 </html>

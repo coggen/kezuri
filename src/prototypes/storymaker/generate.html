@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
   <title>Sharpen Prototype: Onboarding</title>
-  <link rel="stylesheet" href="/build/kezuri.css" />
-  <script type="module" src="/build/kezuri.esm.js"></script>
-  <script nomodule src="/build/kezuri.js"></script>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -24,7 +24,7 @@
     </sharpen-story-header>
 
     <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
-      OK! Let me build a story about a fox in a forest.
+      OK! Let me build a story about a fox and a log.
     </div>
 
     <sharpen-waiting-bar></sharpen-waiting-bar>
@@ -35,24 +35,41 @@
     </div>
     
   </div>
-  
+
+<audio id="prompt" src="audio/story_generation/prompt.mp3"></audio>
+<audio id="character" src="audio/character_choice/fox.mp3"></audio>
+<audio id="conjunction" src="audio/story_generation/and_a.mp3"></audio>
+<audio id="setting" src="audio/settings_choice/log.mp3"></audio>
 
 <script>
 
-const synth = window.speechSynthesis;
-
 $(document).ready(function() {
-  let ourText = $("#page-instruction").text();
-  let utterThis = new SpeechSynthesisUtterance(ourText);
-  utterThis.rate = 0.85;
-  synth.speak(utterThis);
 
-  // window.setTimeout(function() {
-  //   window.location.href = "read.html";
-  // }, 8000);
+  var $audioPrompt = $("audio#prompt"),
+    $audioCharacter = $("audio#character"),
+    $audioConjunction = $("audio#conjunction"),
+    $audioSetting = $("audio#setting");
+  
+  $audioPrompt.on("ended", function() {
+    $audioCharacter[0].play();
+  });
+
+  $audioCharacter.on("ended", function() {
+    $audioConjunction[0].play();
+  });
+
+  $audioConjunction.on("ended", function() {
+    $audioSetting[0].play();
+  });
+
+  $audioPrompt[0].play();
+
+  window.setTimeout(function() {
+    window.location.href = "read.html";
+  }, 8000);
 });
 
-</script>
+</script>  
 
 </body>
 </html>
