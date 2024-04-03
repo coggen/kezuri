@@ -13,7 +13,6 @@ import './preview.css';
 /** @type { import('@storybook/html').Preview } */
 const preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -29,7 +28,7 @@ const preview = {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Design Tokens', 'Utilities', 'Atoms', 'Molecules', 'Organisms']
+        order: ['Welcome', 'Design Tokens', 'Utilities', 'Atoms', 'Molecules', 'Organisms']
       }
     },
     viewport: {

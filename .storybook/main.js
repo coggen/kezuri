@@ -1,6 +1,7 @@
 /** @type { import('@storybook/html-webpack5').StorybookConfig } */
 const config = {
   stories: [
+    '../src/welcome.mdx',
     '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
@@ -9,10 +10,13 @@ const config = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
+    '@storybook/addon-webpack5-compiler-swc'
   ],
   framework: {
     name: '@storybook/html-webpack5',
-    options: {},
+    options: {
+      title: 'Kezuri'
+    },
   },
   docs: {
     autodocs: 'tag',

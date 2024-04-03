@@ -18,7 +18,7 @@ export default {
   <div slot="content">
     <strong>Average weekly lessons completed</strong>
   </div>
-</sharpen-simple-metric>`
+</sharpen-simple-metric>`,
 };
 
 export const Example = {};

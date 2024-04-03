@@ -4,8 +4,7 @@
 export default {
   title: 'Atoms/Loading',
   tags: ['autodocs'],
-  render: () => `<sharpen-loading></sharpen-loading>`
+  render: () => `<sharpen-loading></sharpen-loading>`,
 };
 
-export const Example = {
-};
+export const Example = {};

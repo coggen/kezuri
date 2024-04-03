@@ -9,16 +9,17 @@ export default {
       description: 'Each type of alert has a unique color.',
       options: ['success', 'warning', 'danger'],
       control: 'radio',
-      table: { defaultValue: { summary: 'none' } }
+      table: { defaultValue: { summary: 'none' } },
     },
     icon: {
-      description: 'Optional icon to display.'
+      description: 'Optional icon to display.',
     },
     heading: {
-      description: 'Optional heading text.'
+      description: 'Optional heading text.',
     },
   },
-  render: (args) => `<sharpen-alert type="${args.type}"${args.icon ? ' icon="' + args.icon + '"' : ''}${args.heading ? ' heading="' + args.heading + '"' : ''}>${args.message ?? ''}</sharpen-alert>`
+  render: args =>
+    `<sharpen-alert type="${args.type}"${args.icon ? ' icon="' + args.icon + '"' : ''}${args.heading ? ' heading="' + args.heading + '"' : ''}>${args.message ?? ''}</sharpen-alert>`,
 };
 
 /** An success alert */
@@ -28,7 +29,7 @@ export const Example = {
     icon: 'done',
     heading: 'A success alert',
     message: 'In which we describe something good that happened.',
-  }
+  },
 };
 
 /**
@@ -40,7 +41,7 @@ export const Colors = {
 <sharpen-alert type="warning" icon="info">Warning appears in yellow</sharpen-alert>
 <sharpen-alert type="success" icon="info">Success appears in green</sharpen-alert>
 <sharpen-alert type="danger" icon="info">Danger appears in red</sharpen-alert>
-`
+`,
 };
 
 /**
@@ -52,8 +53,8 @@ export const Icons = {
 <sharpen-alert type="warning" icon="lunch_dining">You're low on burgers</sharpen-alert>
 <sharpen-alert type="warning" icon="icecream">You're low on ice cream</sharpen-alert>
 <sharpen-alert type="warning">Maybe time for a walk?</sharpen-alert>
-`
-}
+`,
+};
 
 /**
  * Alerts can be displayed with only a heading, only a message, or both. The
@@ -71,5 +72,5 @@ export const HeadingsAndMessages = {
     <li>Mint Oreo</li>
   </ul>
 </sharpen-alert>
-`
+`,
 };

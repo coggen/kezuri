@@ -6,18 +6,18 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     name: {
-      description: 'The name of the assessment'
+      description: 'The name of the assessment',
     },
     section: {
-      description: 'Optional assessment section name'
+      description: 'Optional assessment section name',
     },
     progress: {
-      description: 'Optional progress percentage (0-100)'
-    }
+      description: 'Optional progress percentage (0-100)',
+    },
   },
-  render: (args) => `<sharpen-card border="none" padding="large">
+  render: args => `<sharpen-card border="none" padding="large">
   <sharpen-assessment-header name="${args.name}"${args.section ? ' section="' + args.section + '"' : ''}${args.progress ? ' progress="' + args.progress + '"' : ''}></sharpen-assessment-header>
-</sharpen-card>`
+</sharpen-card>`,
 };
 
 /**
@@ -28,9 +28,9 @@ export const WithSectionAndProgress = {
   args: {
     name: 'Family History',
     section: 'Biological Parent',
-    progress: 12
-  }
-}
+    progress: 12,
+  },
+};
 
 /**
  * Before the question-asking begins, on introductory pages, we only show
@@ -38,7 +38,6 @@ export const WithSectionAndProgress = {
  */
 export const NameOnly = {
   args: {
-    name: 'Family History'
-  }
+    name: 'Family History',
+  },
 };
-

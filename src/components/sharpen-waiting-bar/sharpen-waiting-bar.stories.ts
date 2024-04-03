@@ -5,8 +5,7 @@
 export default {
   title: 'Atoms/Waiting Bar',
   tags: ['autodocs'],
-  render: () => `<sharpen-waiting-bar></sharpen-waiting-bar>`
+  render: () => `<sharpen-waiting-bar></sharpen-waiting-bar>`,
 };
 
-export const Example = {
-};
+export const Example = {};

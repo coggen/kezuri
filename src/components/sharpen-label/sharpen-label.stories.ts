@@ -7,31 +7,31 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     type: {
-      description: "The type of label",
+      description: 'The type of label',
       options: ['success', 'warning', 'danger', 'info'],
-      control: 'radio'
+      control: 'radio',
     },
     icon: {
-      description: 'Optional icon name'
-    }
+      description: 'Optional icon name',
+    },
   },
   args: {
     type: 'success',
-    label: 'Complete'
+    label: 'Complete',
   },
-  render: (args) => `<sharpen-label type="${args.type}"${args.icon ? ' icon="' + args.icon + '"' : ''}>${args.label}</sharpen-label>`
+  render: args => `<sharpen-label type="${args.type}"${args.icon ? ' icon="' + args.icon + '"' : ''}>${args.label}</sharpen-label>`,
 };
 
 /** Include any Material Design icon name to have it appear in the label. */
 export const LabelWithIcon = {
   args: {
-    icon: 'check'
-  }
+    icon: 'check',
+  },
 };
 
 /** Labels, of course, can be used without icons. */
 export const LabelWithoutIcon = {
-  args: { }
+  args: {},
 };
 
 /** The four label types have unique coloration. */
@@ -41,5 +41,5 @@ export const LabelTypes = {
 <sharpen-label type="danger">Danger</sharpen-label>
 <sharpen-label type="warning">Warning</sharpen-label>
 <sharpen-label type="success">Success</sharpen-label>
-`
-}
+`,
+};

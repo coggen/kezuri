@@ -20,9 +20,9 @@ export default {
     brandHref: 'https://sharpen.com',
   },
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
-  render: (args) => `<sharpen-simple-navigation background="${args.background}" brand-href="${args.brandHref}"></sharpen-simple-navigation>`
+  render: args => `<sharpen-simple-navigation background="${args.background}" brand-href="${args.brandHref}"></sharpen-simple-navigation>`,
 };
 
 /**
@@ -31,9 +31,9 @@ export default {
  */
 export const Sunrise = {
   args: {
-    background: 'sunrise'
-  }
-}
+    background: 'sunrise',
+  },
+};
 
 /**
  * In the storymaker interface, the mint (green) bar is used for child/reading
@@ -41,6 +41,6 @@ export const Sunrise = {
  */
 export const Mint = {
   args: {
-    background: 'mint'
-  }
-}
+    background: 'mint',
+  },
+};

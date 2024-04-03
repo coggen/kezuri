@@ -6,17 +6,17 @@ export default {
   title: 'Utilities/Icon',
   argTypes: {
     icon: {
-      control: 'text'
+      control: 'text',
     },
   },
-  render: (args) => `<i class="sharpen-icon">${args.icon}</i>`,
+  render: args => `<i class="sharpen-icon">${args.icon}</i>`,
 };
 
 /** By deafult, icons are 24px square. */
 export const Example = {
   args: {
-    icon: 'arrow_right_alt' 
-  }
+    icon: 'arrow_right_alt',
+  },
 };
 
 /**
@@ -27,17 +27,17 @@ export const FilledIcons = {
   render: () => `
 <i class="sharpen-icon">bookmark</i>
 <i class="sharpen-icon filled">bookmark</i>
-`
-}
+`,
+};
 
 /**
  * An icon will automatically adopt the color of its container's text.
  */
 export const IconColors = {
   args: {
-    icon: 'arrow_left_alt' 
+    icon: 'arrow_left_alt',
   },
-  render: (args) => `
+  render: args => `
     <button class="sharpen-button sharpen-button--primary sharpen-button--small">
   <i class="sharpen-icon">${args.icon}</i> Go left
 </button>
@@ -47,5 +47,5 @@ export const IconColors = {
 <button class="sharpen-button sharpen-button--muted sharpen-button--small">
   <i class="sharpen-icon">${args.icon}</i> Go left
 </button>
-  `
+  `,
 };

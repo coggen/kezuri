@@ -2,7 +2,7 @@
  * Quickly manage the layout, alignment, and sizing of grid columns,
  * navigation, components, and more with Bootstrap's full suite of responsive
  * flexbox utilities.
- * 
+ *
  * Note: All utility classes have responsive variations, following the first
  * example below.
  */
@@ -15,7 +15,7 @@ export default {
  * Apply display utilities to create a flexbox container and transform direct
  * children elements into flex items. Flex containers and items are able to be
  * modified further with additional flex properties.
- * 
+ *
  * Responsive variations also exist for `.d-flex` and `.d-inline-flex`.
  *
  * * `.d-flex`
@@ -34,7 +34,7 @@ export default {
  */
 export const EnableFlexBehaviors = {
   render: () => `<div class="d-flex sharpen-p-sm">I'm a flexbox container!</div>
-<div class="d-inline-flex sharpen-p-sm">I'm an inline flexbox container!</div>`
+<div class="d-inline-flex sharpen-p-sm">I'm an inline flexbox container!</div>`,
 };
 
 /**
@@ -48,7 +48,7 @@ export const EnableFlexBehaviors = {
  * side.
  */
 export const DirectionRow = {
-  name: "Direction: Row",
+  name: 'Direction: Row',
   render: () => `<div class="d-flex flex-row">
   <div>Flex item 1</div>
   <div>Flex item 2</div>
@@ -58,15 +58,15 @@ export const DirectionRow = {
   <div>Flex item 1</div>
   <div>Flex item 2</div>
   <div>Flex item 3</div>
-</div>`
-}
+</div>`,
+};
 
 /**
  * Use `.flex-column` to set a vertical direction, or `.flex-column-reverse`
  * to start the vertical direction from the opposite side.
  */
 export const DirectionColumn = {
-  name: "Direction: Column",
+  name: 'Direction: Column',
   render: () => `<div class="d-flex flex-column">
   <div>Flex item 1</div>
   <div>Flex item 2</div>
@@ -76,8 +76,8 @@ export const DirectionColumn = {
   <div>Flex item 1</div>
   <div>Flex item 2</div>
   <div>Flex item 3</div>
-</div>`
-}
+</div>`,
+};
 
 /**
  * Use `justify-content` utilities on flexbox containers to change the alignment
@@ -91,12 +91,12 @@ export const JustifyContent = {
 <div class="d-flex justify-content-center"><div>justify</div><div>content</div><div>center</div></div>
 <div class="d-flex justify-content-between"><div>justify</div><div>content</div><div>between</div></div>
 <div class="d-flex justify-content-around"><div>justify</div><div>content</div><div>around</div></div>
-<div class="d-flex justify-content-evenly"><div>justify</div><div>content</div><div>evenly</div></div>`
-}
+<div class="d-flex justify-content-evenly"><div>justify</div><div>content</div><div>evenly</div></div>`,
+};
 
 /**
  * Use `align-items` utilities on flexbox containers to change the alignment of
- * flex items on the cross axis (the y-axis to start, x-axis if 
+ * flex items on the cross axis (the y-axis to start, x-axis if
  * `flex-direction: column`). Choose from `start`, `end`, `center`, `baseline`,
  * or `stretch` (browser default).
  */
@@ -105,12 +105,12 @@ export const AlignItems = {
 <div class="d-flex align-items-end"><div>item</div><div>item</div><div>item</div></div>
 <div class="d-flex align-items-center"><div>item</div><div>item</div><div>item</div></div>
 <div class="d-flex align-items-baseline"><div>item</div><div>item</div><div>item</div></div>
-<div class="d-flex align-items-stretch"><div>item</div><div>item</div><div>item</div></div>`
-}
+<div class="d-flex align-items-stretch"><div>item</div><div>item</div><div>item</div></div>`,
+};
 
 /**
  * Use `align-self` utilities on flexbox items to individually change their
- * alignment on the cross axis (the y-axis to start, x-axis if 
+ * alignment on the cross axis (the y-axis to start, x-axis if
  * `flex-direction: column`). Choose from the same options as `align-items`:
  * `start`, `end`, `center`, `baseline`, or `stretch` (browser default).
  */
@@ -139,8 +139,8 @@ export const AlignSelf = {
   <div style="height:6rem;">item</div>
   <div class="align-self-stretch">item</div>
   <div style="height:6rem;">item</div>
-</div>`
-}
+</div>`,
+};
 
 /**
  * Use the `.flex-fill` class on a series of sibling elements to force them
@@ -153,8 +153,8 @@ export const Fill = {
   <div class="flex-fill">Flex item with a lot of content</div>
   <div class="flex-fill">Flex item</div>
   <div class="flex-fill">Flex item</div>
-</div>`
-}
+</div>`,
+};
 
 /**
  * Use .`flex-grow-*` utilities to toggle a flex item’s ability to grow to
@@ -167,8 +167,8 @@ export const Grow = {
   <div class="flex-grow-1">Flex item</div>
   <div>Flex item</div>
   <div>Third flex item</div>
-</div>` 
-}
+</div>`,
+};
 
 /**
  * Use `.flex-shrink-*` utilities to toggle a flex item’s ability to shrink
@@ -180,8 +180,8 @@ export const Shrink = {
   render: () => `<div class="d-flex">
   <div style="width:100%;">Flex item</div>
   <div class="flex-shrink-1">Flex item</div>
-</div>` 
-}
+</div>`,
+};
 
 /**
  * Change how flex items wrap in a flex container. Choose from no wrapping at
@@ -191,8 +191,8 @@ export const Shrink = {
 export const Wrap = {
   render: () => `<div class="d-flex flex-nowrap" style="width: 5rem;"><div>Flex item</div><div>Flex item</div><div>Flex item</div></div>
 <div class="d-flex flex-wrap"><div>Flex item 0</div><div>Flex item 1</div><div>Flex item 2</div><div>Flex item 3</div><div>Flex item 4</div><div>Flex item 5</div><div>Flex item 6</div><div>Flex item 7</div><div>Flex item 8</div><div>Flex item 9</div><div>Flex item 10</div><div>Flex item 11</div><div>Flex item 12</div><div>Flex item1 13</div><div>Flex item 14</div></div>
-<div class="d-flex flex-wrap-reverse"><div>Flex item 0</div><div>Flex item 1</div><div>Flex item 2</div><div>Flex item 3</div><div>Flex item 4</div><div>Flex item 5</div><div>Flex item 6</div><div>Flex item 7</div><div>Flex item 8</div><div>Flex item 9</div><div>Flex item 10</div><div>Flex item 11</div><div>Flex item 12</div><div>Flex item1 13</div><div>Flex item 14</div></div>`
-}
+<div class="d-flex flex-wrap-reverse"><div>Flex item 0</div><div>Flex item 1</div><div>Flex item 2</div><div>Flex item 3</div><div>Flex item 4</div><div>Flex item 5</div><div>Flex item 6</div><div>Flex item 7</div><div>Flex item 8</div><div>Flex item 9</div><div>Flex item 10</div><div>Flex item 11</div><div>Flex item 12</div><div>Flex item1 13</div><div>Flex item 14</div></div>`,
+};
 
 /**
  * Use `align-content` utilities on flexbox containers to align flex items
@@ -200,15 +200,15 @@ export const Wrap = {
  * `center`, `between`, `around`, or `stretch`. To demonstrate these
  * utilities, we’ve enforced `flex-wrap: wrap` and increased the number of
  * flex items.
- * 
+ *
  * Note: This property has no effect on single rows of flex items.
  */
 export const AlignContent = {
-  render: () => `<div class="d-flex align-content-start flex-wrap"><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div></div>
+  render:
+    () => `<div class="d-flex align-content-start flex-wrap"><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div><div>align-content-start</div></div>
 <div class="d-flex align-content-end flex-wrap"><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div><div>align-content-end</div></div>
 <div class="d-flex align-content-center flex-wrap"><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div><div>align-content-center</div></div>
 <div class="d-flex align-content-between flex-wrap"><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div><div>align-content-between</div></div>
 <div class="d-flex align-content-around flex-wrap"><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div><div>align-content-around</div></div>
-<div class="d-flex align-content-stretch flex-wrap"><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div></div>`
-}
-
+<div class="d-flex align-content-stretch flex-wrap"><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div><div>align-content-stretch</div></div>`,
+};

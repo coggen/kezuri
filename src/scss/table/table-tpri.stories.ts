@@ -3,7 +3,7 @@
  * show it in a format that's easy for parents to understand. In particular,
  * we want parents to see that effective use of the TPRI involves regular
  * assessment: 3 times a year in Kindergarten, Grade 1, and Grade 2. We also
- * want the table to make clear that only certain skills are assessed at 
+ * want the table to make clear that only certain skills are assessed at
  * certain timepoints.
  */
 export default {
@@ -16,7 +16,7 @@ export default {
  * that will appear within.
  */
 export const Legend = {
-  render:() => `<table class="sharpen-table">
+  render: () => `<table class="sharpen-table">
   <tbody>
     <tr>
       <td><sharpen-label type="success">D</sharpen-label></td>
@@ -35,8 +35,8 @@ export const Legend = {
       <td>A skill assessment was missed at that time point</td>
     </tr>
   </tbody>
-</table>`
-}
+</table>`,
+};
 
 export const WideScreenExample = {
   render: () => `<table class="sharpen-tpri wide">
@@ -136,8 +136,8 @@ export const WideScreenExample = {
       <td class="latest"><sharpen-label type="danger">SD</sharpen-label></td>
     </tr>
   </tbody>
-</table>`
-}
+</table>`,
+};
 
 export const NarrowScreenExample = {
   parameters: {
@@ -308,5 +308,5 @@ export const NarrowScreenExample = {
       <td class="latest"><sharpen-label type="danger">SD</sharpen-label></td>
     </tr>
   </tbody>
-</table>`
-}
+</table>`,
+};

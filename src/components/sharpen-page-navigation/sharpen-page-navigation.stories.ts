@@ -12,9 +12,9 @@ export default {
   <sharpen-nav-link name="Payment Method" icon="credit_card" href="#"></sharpen-nav-link>
   <sharpen-nav-link name="Learners" icon="school" href="#" selected="true"></sharpen-nav-link>
   <sharpen-nav-link name="Invoices" icon="receipt" href="#"></sharpen-nav-link>
-</sharpen-page-navigation>`
+</sharpen-page-navigation>`,
 };
 
 export const Example = {
-  args: { }
+  args: {},
 };

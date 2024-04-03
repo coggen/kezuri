@@ -9,31 +9,31 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     heading: {
-      description: "Main heading, appears larger, in green, below the image."
+      description: 'Main heading, appears larger, in green, below the image.',
     },
     subheading: {
-      description: "Smaller, appears in gray atop the card. Typically a specific product name."
+      description: 'Smaller, appears in gray atop the card. Typically a specific product name.',
     },
     primaryLink: {
-      description: "A link that the primary button should direct to."
+      description: 'A link that the primary button should direct to.',
     },
     primaryLinkText: {
-      description: "Text to be displayed within the primary button."
+      description: 'Text to be displayed within the primary button.',
     },
     secondaryLink: {
-      description: "A link to additional information that appears in the upper right. Use sparingly."
+      description: 'A link to additional information that appears in the upper right. Use sparingly.',
     },
     secondaryLinkText: {
-      description: "The text to display for the secondary link."
+      description: 'The text to display for the secondary link.',
     },
     imgSrc: {
-      description: "URL to the image that should be featured in this card."
+      description: 'URL to the image that should be featured in this card.',
     },
     description: {
-      description: "Explanatory content to display beneath the heading."
-    }
+      description: 'Explanatory content to display beneath the heading.',
+    },
   },
-  render: (args) => `<sharpen-dashboard-card
+  render: args => `<sharpen-dashboard-card
     heading="${args.heading}"
     subheading="${args.subheading}"
    ${optional('primary-link', args.primaryLink)}
@@ -42,20 +42,20 @@ export default {
     secondary-link-text="${args.secondaryLinkText}"
     img-src="${args.imgSrc}">
   ${args.description}
-</sharpen-dashboard-card>`
+</sharpen-dashboard-card>`,
 };
 
 export const BasicExample = {
   args: {
-    heading: "Placement: Level A",
-    subheading: "Sharpen Reading",
-    primaryLink: "#",
-    primaryLinkText: "Start Sharpen Reading",
-    secondaryLink: "#",
-    secondaryLinkText: "View Details",
-    imgSrc: "/assets/images/placement-level-a@2x.png",
-    description: "Congrats on completing the placement assessment for Abby! Abby's reading journey is just beginning. Dive into our exclusive reading program below!"
-  }
+    heading: 'Placement: Level A',
+    subheading: 'Sharpen Reading',
+    primaryLink: '#',
+    primaryLinkText: 'Start Sharpen Reading',
+    secondaryLink: '#',
+    secondaryLinkText: 'View Details',
+    imgSrc: '/assets/images/placement-level-a@2x.png',
+    description: "Congrats on completing the placement assessment for Abby! Abby's reading journey is just beginning. Dive into our exclusive reading program below!",
+  },
 };
 
 /** When your primary button is not a link, you can pass your button code in
@@ -75,8 +75,8 @@ export const PrimaryButton = {
   <form slot="primary-button" method="post">
     <input type="submit" value="Submit" class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width" />
   </form>
-</sharpen-dashboard-card>`
-}
+</sharpen-dashboard-card>`,
+};
 
 /**
  * The dashboard card is a 100%-height flex item, so placing several cards
@@ -115,5 +115,5 @@ export const CardsInAGrid = {
       delay. 
     </sharpen-dashboard-card>
   </div>
-</div>`
+</div>`,
 };

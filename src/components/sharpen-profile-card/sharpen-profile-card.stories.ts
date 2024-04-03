@@ -17,23 +17,24 @@ export default {
     },
     buttonText: {
       description: "The text to display on the card's primary button.",
-      table: { defaultValue: { summary: 'Select' } }
+      table: { defaultValue: { summary: 'Select' } },
     },
     url: {
-      description: "Where we send the user when they click the primary button."
+      description: 'Where we send the user when they click the primary button.',
     },
     color: {
-      description: "The color of the initial.",
+      description: 'The color of the initial.',
       control: { type: 'color' },
-      table: { defaultValue: { summary: 'var(--color-sky)' } }
+      table: { defaultValue: { summary: 'var(--color-sky)' } },
     },
     backgroundColor: {
-      description: "The background color of the circle.",
+      description: 'The background color of the circle.',
       control: { type: 'color' },
-      table: { defaultValue: { summary: '#0f3e88' } }
+      table: { defaultValue: { summary: '#0f3e88' } },
     },
   },
-  render: (args) => `<sharpen-profile-card name="${args.name}" initial="${args.initial}" button-text="${args.buttonText}" url="${args.url}"${optional('color', args.color)}${optional('background-color', args.backgroundColor)}></sharpen-profile-card>`
+  render: args =>
+    `<sharpen-profile-card name="${args.name}" initial="${args.initial}" button-text="${args.buttonText}" url="${args.url}"${optional('color', args.color)}${optional('background-color', args.backgroundColor)}></sharpen-profile-card>`,
 };
 
 export const Default = {
@@ -41,8 +42,8 @@ export const Default = {
     name: 'Jurickson Profar',
     initial: 'J',
     buttonText: 'Select',
-    url: 'https://sharpen.com'
-  }
+    url: 'https://sharpen.com',
+  },
 };
 
 /**
@@ -69,5 +70,5 @@ export const GridOfCards = {
   <div class="col">
     <sharpen-profile-card name="Thomas Terry Hoar-Stevens" initial="T" button-text="Select" url="https://sharpen.com"></sharpen-profile-card>
   </div>
-</div>`
-}
+</div>`,
+};

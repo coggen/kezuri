@@ -4,7 +4,7 @@
  */
 export default {
   title: 'Molecules/Story Header',
-  tags: ['autodocs']
+  tags: ['autodocs'],
 };
 
 export const HeaderWithImage = {
@@ -14,7 +14,7 @@ export const HeaderWithImage = {
 <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
   OK! Let me build a story about a fox in a forest.
 </div>
-`
+`,
 };
 
 export const HeaderWithIcon = {
@@ -37,5 +37,5 @@ export const HeaderWithIcon = {
       Sam sat on the mat
     </sharpen-card>
   </a>
-</sharpen-choice-grid>`
-}
+</sharpen-choice-grid>`,
+};

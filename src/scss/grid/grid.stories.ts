@@ -21,7 +21,7 @@ export const ResponsiveColumns = {
   <div class="col-sm-4">
     <div class="example">col-sm-4</div>
   </div>
-</div>`
+</div>`,
 };
 
 /**
@@ -44,7 +44,7 @@ export const AutomaticResponsiveColumns = {
   <div class="col-sm">
     <div class="example">col-sm</div>
   </div>
-</div>`
+</div>`,
 };
 
 /**
@@ -74,15 +74,15 @@ export const ColumnOffsets = {
   <div class="offset-sm-2 col-sm-4">
     <div class="example">offset-sm-2 col-sm-4</div>
   </div>
-</div>`
-}
+</div>`,
+};
 
 /**
  * Use the responsive `.row-cols-*` classes to quickly set the number of
  * columns that best render your content and layout. Whereas normal `.col-*`
- * classes apply to the individual columns (e.g., `.col-md-4`), the row columns 
+ * classes apply to the individual columns (e.g., `.col-md-4`), the row columns
  * classes are set on the parent `.row` as a shortcut.
- * 
+ *
  * Use these row columns classes to quickly create basic grid layouts or to
  * control card layouts.
  */
@@ -121,5 +121,5 @@ export const RowColumns = {
   <div class="col">
     <sharpen-card border="gray" padding="medium">Card</sharpen-card>
   </div>
-</div>`
-}
+</div>`,
+};

@@ -10,13 +10,13 @@ export default {
       description: 'Should the choices appear in a grid, or a single column?',
       options: ['grid', 'column'],
       control: 'radio',
-      table: { defaultValue: { summary: 'grid' } }
+      table: { defaultValue: { summary: 'grid' } },
     },
   },
   args: {
-    layout: 'grid'
+    layout: 'grid',
   },
-  render: (args) => `<sharpen-choice-grid layout="${args.layout}">
+  render: args => `<sharpen-choice-grid layout="${args.layout}">
   <a href="#">
       <sharpen-card border="none" padding="medium">
         <img src="https://placehold.co/200" />
@@ -41,22 +41,22 @@ export default {
         <div class="title">truck</div>
       </sharpen-card>
     </a>
-</sharpen-choice-grid>`
+</sharpen-choice-grid>`,
 };
 
 /** A grid of options, for showing image-label pairs. */
 export const Grid = {
   args: {
-    layout: 'grid'
-  }
+    layout: 'grid',
+  },
 };
 
 /** Options in a single column, for showing short sentences in a large font. */
 export const Column = {
   args: {
-    layout: 'column'
+    layout: 'column',
   },
-  render: (args) => `<sharpen-choice-grid layout="${args.layout}">
+  render: args => `<sharpen-choice-grid layout="${args.layout}">
 <a href="#">
   <sharpen-card border="none" padding="large">
     Sam ran to get the hen
@@ -73,5 +73,5 @@ export const Column = {
   </sharpen-card>
 </a>
 </sharpen-choice-grid>
-`
+`,
 };
