@@ -1,5 +1,5 @@
 export default {
-  title: 'Utilities/Form'
+  title: 'Utilities/Form',
 };
 
 export const Example = {
@@ -23,19 +23,19 @@ export const Example = {
     <input type="submit" class="sharpen-button sharpen-button--primary sharpen-button--small" value="Submit" />
   </div>
 </sharpen-card>
-`
-}
+`,
+};
 
 export const Text = {
   name: 'Input: Text',
   render: () => `<label class="sharpen-form-label" for="input1">Text input with placeholder text</label>
-<input type="text" class="sharpen-form-control" id="input1" laceholder="Enter your value..." />`
+<input type="text" class="sharpen-form-control" id="input1" laceholder="Enter your value..." />`,
 };
 
 export const Textarea = {
   name: 'Input: Textarea',
   render: () => `<label class="sharpen-form-label" for="input2">Book excerpt</label>
-<textarea class="sharpen-form-control" id="input2">Once more. Say you are in the country; in some high land of lakes. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream. There is magic in it.</textarea>`
+<textarea class="sharpen-form-control" id="input2">Once more. Say you are in the country; in some high land of lakes. Take almost any path you please, and ten to one it carries you down in a dale, and leaves you there by a pool in the stream. There is magic in it.</textarea>`,
 };
 
 export const Select = {
@@ -46,7 +46,7 @@ export const Select = {
   <option>Tahini</option>
   <option>Amba</option>
   <option>Toum</option>
-</select>`
+</select>`,
 };
 
 export const Radio = {
@@ -65,7 +65,7 @@ export const Radio = {
     Other
     <div class="sharpen-text-xs">E-mail us with the flavor you desire.</div>
   </label>
-</div>`
+</div>`,
 };
 
 export const Checkbox = {
@@ -84,7 +84,7 @@ export const Checkbox = {
     Other
     <div class="sharpen-text-xs">E-mail us with the flavor you desire.</div>
   </label>
-</div>`
+</div>`,
 };
 
 export const Disabled = {
@@ -124,21 +124,20 @@ export const Disabled = {
     <input disabled type="checkbox" class="sharpen-form-check-input" name="checkbox" id="checkbox2_2" />
     <label class="sharpen-form-label" for="checkbox2_2">Strawberry</label>
   </div>
-</div>`
+</div>`,
 };
 
 export const Readonly = {
   name: 'Read-only Fields',
   render: () => `<div class="sharpen-form-group">
   <input readonly type="text" class="sharpen-form-control" value="Read-only input field content" />
-</div>`
-}
-
+</div>`,
+};
 
 export const FieldInstructions = {
   render: () => `<label class="sharpen-form-label" for="input3">Field label</label>
 <input type="text" class="sharpen-form-control" id="input3" />
-<div class="sharpen-form-text">Special instructions for this field</div>`
+<div class="sharpen-form-text">Special instructions for this field</div>`,
 };
 
 export const FormGroups = {
@@ -150,7 +149,7 @@ export const FormGroups = {
 <div class="sharpen-form-group">
   <label class="sharpen-form-label" for="input5">Input label</label>
   <input type="text" class="sharpen-form-control" id="input5" placeholder="Enter your value..." />
-</div>`
+</div>`,
 };
 
 export const FormError = {
@@ -159,7 +158,7 @@ export const FormError = {
   <label class="sharpen-form-label" for="input6">Input label</label>
   <input type="text" class="sharpen-form-control" id="input6" />
   <div class="sharpen-form-text sharpen-form-text--error">This field is required</div>
-</div>`
+</div>`,
 };
 
 export const FormDocument = {
@@ -180,8 +179,8 @@ export const FormDocument = {
     <input type="radio" class="sharpen-form-check-input" name="legal_radio" id="legal_radio_2" />
     <label class="sharpen-form-label" for="legal_radio_2">Opt out of the Research Program</label>
   </div>
-</div>`
-}
+</div>`,
+};
 
 export const SurveyHorizontal = {
   name: 'Survey Style: Horizontal',
@@ -218,8 +217,8 @@ export const SurveyHorizontal = {
     <input type="radio" name="radio1" id="reason_radio1_8" />
     <label for="reason_radio1_8">Other</label>
   </div>
-</div>`
-}
+</div>`,
+};
 
 export const SurveyVerticalRadio = {
   name: 'Survey Style: Vertical Radio',
@@ -252,8 +251,8 @@ export const SurveyVerticalRadio = {
     <input type="radio" name="radio1" id="survey_radio1_8" />
     <label for="survey_radio1_8">Grade 6 or older</label>
   </div>
-</div>`
-}
+</div>`,
+};
 
 export const SurveyVerticalCheckbox = {
   name: 'Survey Style: Vertical Checkbox',
@@ -270,5 +269,5 @@ export const SurveyVerticalCheckbox = {
     <input type="checkbox" name="checkbox1" id="survey_checkbox1_3" />
     <label for="survey_checkbox1_3">Auditory disorder</label>
   </div>
-</div>`
-}
+</div>`,
+};

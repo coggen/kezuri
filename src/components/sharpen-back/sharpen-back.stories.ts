@@ -7,17 +7,17 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     href: {
-      description: 'URL destination'
+      description: 'URL destination',
     },
     linkText: {
-      description: 'Text to display'
-    }
+      description: 'Text to display',
+    },
   },
   args: {
     href: 'https://sharpen.com',
-    linkText: 'Back to Dashboard'
+    linkText: 'Back to Dashboard',
   },
-  render: (args) => `<sharpen-back href="${args.href}">${args.linkText}</sharpen-back>`
+  render: args => `<sharpen-back href="${args.href}">${args.linkText}</sharpen-back>`,
 };
 
-export const Example = { };
+export const Example = {};

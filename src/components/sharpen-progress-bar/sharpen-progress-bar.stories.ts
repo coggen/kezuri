@@ -10,7 +10,7 @@ export default {
   argTypes: {
     highThreshold: {
       description: 'The maximum possible value of the progress bar',
-      table: { defaultValue: { summary: 100 } }
+      table: { defaultValue: { summary: 100 } },
     },
     lowThreshold: {
       description: 'The value under which the progress bar will display "low" styling. Default is computed to be 33% of the highThreshold.',
@@ -20,22 +20,22 @@ export default {
     },
     progressVal: {
       description: 'The current progress value',
-      table: { defaultValue: { summary: 0 } }
+      table: { defaultValue: { summary: 0 } },
     },
     showDescription: {
-      description: 'Whether or not to display the status description'
+      description: 'Whether or not to display the status description',
     },
     statusLabel: {
-      description: 'An optional label to append after the computed threshold name'
+      description: 'An optional label to append after the computed threshold name',
     },
     size: {
       description: 'How wide the progress bar should be. Default is narrow.',
       options: ['', 'wide'],
       control: 'select',
-    }
+    },
   },
-  render: (args) => `
-<sharpen-progress-bar progress-val="${args.progressVal}"${optional('size', args.size)}${optional('show-description', args.showDescription)}${optional('status-label', args.statusLabel)}${optional('high-threshold', args.highThreshold)}${optional('low-threshold', args.lowThreshold)}${optional('elevated-threshold', args.elevatedThreshold)}></sharpen-progress-bar>`
+  render: args => `
+<sharpen-progress-bar progress-val="${args.progressVal}"${optional('size', args.size)}${optional('show-description', args.showDescription)}${optional('status-label', args.statusLabel)}${optional('high-threshold', args.highThreshold)}${optional('low-threshold', args.lowThreshold)}${optional('elevated-threshold', args.elevatedThreshold)}></sharpen-progress-bar>`,
 };
 
 export const CustomThresholds = {
@@ -46,7 +46,7 @@ export const CustomThresholds = {
     highThreshold: 200,
     lowThreshold: 75,
     elevatedThreshold: 180,
-    size: null
+    size: null,
   },
 };
 
@@ -55,33 +55,33 @@ export const ThresholdColors = {
 <sharpen-progress-bar progress-val="10" show-description="true"></sharpen-progress-bar>
 <sharpen-progress-bar progress-val="50" show-description="true"></sharpen-progress-bar>
 <sharpen-progress-bar progress-val="90" show-description="true"></sharpen-progress-bar>
-`
+`,
 };
 
 export const WithDescriptionAndLabel = {
   args: {
     showDescription: true,
     statusLabel: 'Risk',
-    progressVal: 50
-  }
+    progressVal: 50,
+  },
 };
 
 export const WithDescription = {
   args: {
     showDescription: true,
-    progressVal: 50
-  }
+    progressVal: 50,
+  },
 };
 
 export const OnlyBar = {
   args: {
-    progressVal: 50
-  }
+    progressVal: 50,
+  },
 };
 
 export const WideVariant = {
   args: {
     size: 'wide',
-    progressVal: 50
-  }
+    progressVal: 50,
+  },
 };

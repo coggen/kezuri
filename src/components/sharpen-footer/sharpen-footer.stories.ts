@@ -6,8 +6,8 @@ export default {
   title: 'Organisms/Page Footer',
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen'
-  }
+    layout: 'fullscreen',
+  },
 };
 
 export const Example = {
@@ -17,5 +17,5 @@ export const Example = {
   <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
   <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
   <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
-</sharpen-footer>`
+</sharpen-footer>`,
 };

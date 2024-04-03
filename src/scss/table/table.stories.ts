@@ -7,14 +7,14 @@ export default {
       options: ['Last Column Controls', 'Hover'],
       mapping: {
         'Last Column Controls': 'sharpen-table-controls-end',
-        'Hover': 'sharpen-table-hover'
-      }
+        'Hover': 'sharpen-table-hover',
+      },
     },
   },
   args: {
-    styleClasses: []
+    styleClasses: [],
   },
-  render: (args) => `<table class="sharpen-table ${args.styleClasses.join(' ')}">
+  render: args => `<table class="sharpen-table ${args.styleClasses.join(' ')}">
   <thead>
     <tr>
       <th>Date</th>
@@ -49,12 +49,12 @@ export default {
       <td><a href="https://sharpen.com">View</a></td>
     </tr>
   </tbody>
-</table>`
+</table>`,
 };
 
 export const Example = {
-  args: { }
-}
+  args: {},
+};
 
 /**
  * When a table lacks a header and you do not want the first row to have a top
@@ -80,8 +80,8 @@ export const HeadlessTable = {
     </tr>
   </tbody>
 </table>
-`
-}
+`,
+};
 
 export const PricingTable = {
   render: () => `<table class="sharpen-table sharpen-table--pricing">
@@ -100,8 +100,8 @@ export const PricingTable = {
       <td>$59.97</td>
     </tr>
   </tbody>
-</table>`
-}
+</table>`,
+};
 
 export const PracticeProgressTable = {
   render: () => `
@@ -157,5 +157,5 @@ export const PracticeProgressTable = {
     </tr>
   </tbody>
 </table>
-`
-}
+`,
+};

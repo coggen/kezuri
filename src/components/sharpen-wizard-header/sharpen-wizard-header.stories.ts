@@ -8,19 +8,20 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     section: {
-      description: 'The current section.'
+      description: 'The current section.',
     },
     currentStep: {
-      description: 'The number of the current step.'
+      description: 'The number of the current step.',
     },
     totalSteps: {
-      description: 'The total number of steps in the wizard.'
+      description: 'The total number of steps in the wizard.',
     },
     backHref: {
-      description: 'Optional back button link.'
-    }
+      description: 'Optional back button link.',
+    },
   },
-  render: (args) => `<sharpen-wizard-header section="${args.section}" current-step="${args.currentStep}" total-steps="${args.totalSteps}"${optional('back-href', args.backHref)}></sharpen-wizard-header>`
+  render: args =>
+    `<sharpen-wizard-header section="${args.section}" current-step="${args.currentStep}" total-steps="${args.totalSteps}"${optional('back-href', args.backHref)}></sharpen-wizard-header>`,
 };
 
 export const WithBackButton = {
@@ -28,16 +29,15 @@ export const WithBackButton = {
     section: 'Learning Profile',
     currentStep: 3,
     totalSteps: 65,
-    backHref: 'foo.html'
-  }
-}
+    backHref: 'foo.html',
+  },
+};
 
 /** On the first page of a wizard, we may not want to display a back button. */
 export const WithoutBackButton = {
   args: {
     section: 'Learning Profile',
     currentStep: 3,
-    totalSteps: 65
-  }
+    totalSteps: 65,
+  },
 };
-

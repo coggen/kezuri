@@ -17,5 +17,5 @@ export const ResponsiveImages = {
     Some content next to it
   </div>
 </div>
-`
+`,
 };

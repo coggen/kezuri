@@ -16,7 +16,7 @@ export const SmallSpacing = {
   <sharpen-card padding="small" border="gray">Card in a small collection</sharpen-card>
   <sharpen-card padding="small" border="gray">Card in a small collection</sharpen-card>
 </div>
-`
+`,
 };
 
 export const MediumSpacing = {
@@ -26,7 +26,7 @@ export const MediumSpacing = {
   <sharpen-card padding="small" border="gray">Card in a medium collection</sharpen-card>
   <sharpen-card padding="small" border="gray">Card in a medium collection</sharpen-card>
 </div>
-`
+`,
 };
 
 export const LargeSpacing = {
@@ -36,5 +36,5 @@ export const LargeSpacing = {
   <sharpen-card padding="small" border="gray">Card in a large collection</sharpen-card>
   <sharpen-card padding="small" border="gray">Card in a large collection</sharpen-card>
 </div>
-`
+`,
 };

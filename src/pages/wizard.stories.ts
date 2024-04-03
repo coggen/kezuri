@@ -1,5 +1,5 @@
 export default {
-  title: 'Pages/Onboarding Wizard'
+  title: 'Pages/Onboarding Wizard',
 };
 
 export const RadioQuestion = {
@@ -52,8 +52,8 @@ export const RadioQuestion = {
   </form>
 
 </div>
-`
-}
+`,
+};
 
 export const CheckboxQuestion = {
   render: () => `
@@ -88,8 +88,8 @@ export const CheckboxQuestion = {
   </form>
 
 </div>
-`
-}
+`,
+};
 
 export const TestimonialMessage = {
   render: () => `
@@ -111,8 +111,8 @@ export const TestimonialMessage = {
   </div>
   <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
 </div>
-`
-}
+`,
+};
 
 export const ResearchEvidence = {
   render: () => `
@@ -153,8 +153,8 @@ export const ResearchEvidence = {
   </div>
   <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
 </div>
-`
-}
+`,
+};
 
 export const PracticeAndProgress = {
   render: () => `
@@ -223,8 +223,8 @@ export const PracticeAndProgress = {
     <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
   </div>
 </div>
-`
-}
+`,
+};
 
 export const EmailQuestion = {
   render: () => `
@@ -253,8 +253,8 @@ export const EmailQuestion = {
   </form>
 
 </div>
-`
-}
+`,
+};
 
 export const Estimate = {
   render: () => `
@@ -346,8 +346,8 @@ export const Estimate = {
     }
   })
 </script>
-`
-}
+`,
+};
 
 /**
  * The image uses the `sharpen-img-responsive` class so that it can scale down
@@ -367,8 +367,8 @@ export const PlacementIntro = {
   </div>
   <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
 </div>
-`
-}
+`,
+};
 
 export const PlacementResult = {
   render: () => `
@@ -388,8 +388,8 @@ export const PlacementResult = {
   <div class="sharpen-text--stronger sharpen-text--color-pine sharpen-mt-lg sharpen-text--center">"Sharpen brought me up in reading, and it feels really awesome to be beyond grade level now. I like reading a lot." &mdash;Jack, Sharpen Student</div>
 
 </div>
-`
-}
+`,
+};
 
 export const PlacementExplainer = {
   render: () => `
@@ -411,8 +411,8 @@ export const PlacementExplainer = {
 
   <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Continue</button>
 </div>
-`
-}
+`,
+};
 
 /**
  * - For best icon spacing in the heading, omit whitespace between icon & text.
@@ -434,9 +434,8 @@ export const SuccessGuarantee = {
   <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">View Course</button>
 
 </div>
-`
-}
-
+`,
+};
 
 export const PersonalizedCourse = {
   render: () => `
@@ -501,5 +500,5 @@ export const PersonalizedCourse = {
   <button class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large sharpen-mt-lg">Continue</button>
 
 </div>
-`
-}
+`,
+};

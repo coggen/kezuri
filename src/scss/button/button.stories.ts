@@ -8,34 +8,34 @@ export default {
   argTypes: {
     kind: {
       options: ['primary', 'secondary', 'danger', 'muted', 'link', 'variant'],
-      control: 'radio'
+      control: 'radio',
     },
     size: {
       options: ['xsmall', 'small', 'large'],
-      control: 'radio'
+      control: 'radio',
     },
     disabled: {
-      control: 'boolean'
-    }
+      control: 'boolean',
+    },
   },
-  render: (args) => `<button${args.disabled ? ' disabled' : ''} class="sharpen-button sharpen-button--${args.kind} sharpen-button--${args.size}">Click me</button>`
+  render: args => `<button${args.disabled ? ' disabled' : ''} class="sharpen-button sharpen-button--${args.kind} sharpen-button--${args.size}">Click me</button>`,
 };
 
 /** A small primary button */
 export const Primary = {
   args: {
     kind: 'primary',
-    size: 'small'
-  }
-}
+    size: 'small',
+  },
+};
 
 /** A small secondary button */
 export const Secondary = {
   args: {
     kind: 'secondary',
-    size: 'small'
-  }
-}
+    size: 'small',
+  },
+};
 
 /**
  * A button to perform a potentially dangerous action, like deleting or
@@ -44,17 +44,17 @@ export const Secondary = {
 export const Danger = {
   args: {
     kind: 'danger',
-    size: 'small'
-  }
-}
-  
+    size: 'small',
+  },
+};
+
 /** A small secondary button */
 export const Muted = {
   args: {
     kind: 'muted',
-    size: 'small'
-  }
-}
+    size: 'small',
+  },
+};
 
 /**
  * A small link-style button. This renders as a link, but with appropriate
@@ -64,16 +64,16 @@ export const Link = {
   args: {
     kind: 'link',
     size: 'small',
-  }
-}
+  },
+};
 
 /** Buttons can be either large or small */
 export const Large = {
   args: {
     kind: 'primary',
     size: 'large',
-  }
-}
+  },
+};
 
 /**
  * You can use these classes on buttons, links, and inputs, and they should all
@@ -84,8 +84,8 @@ export const HTMLElements = {
 <a href="#" class="sharpen-button sharpen-button--primary sharpen-button--small">Anchor element</a>
 <input type="submit" value="Input (submit) element" class="sharpen-button sharpen-button--primary sharpen-button--small" />
 <input type="button" value="Input (button) element" class="sharpen-button sharpen-button--primary sharpen-button--small" />
-`
-}
+`,
+};
 
 /** Icons will be positioned appropriately alongside button text. */
 export const Icons = {
@@ -93,7 +93,7 @@ export const Icons = {
     kind: 'primary',
     size: 'small',
   },
-  render: (args) => `
+  render: args => `
     <button class="sharpen-button sharpen-button--${args.kind} sharpen-button--${args.size}">
   <i class="sharpen-icon">arrow_left_alt</i>
   Go left
@@ -105,23 +105,23 @@ export const Icons = {
 <button class="sharpen-button sharpen-button--${args.kind} sharpen-button--${args.size}">
   No icon
 </button>
-  `
-}
+  `,
+};
 
 export const Disabled = {
   args: {
     kind: 'primary',
     size: 'small',
-    disabled: true
-  }
-}
+    disabled: true,
+  },
+};
 
 /** Full width buttons extend across the available space. */
 export const FullWidth = {
   render: () => `<sharpen-card border="gray" padding="large">
   <button class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Full width button</button>
-</sharpen-card>`
-}
+</sharpen-card>`,
+};
 
 /** A button type that showcases a genetic variant. */
 export const Variant = {
@@ -129,5 +129,5 @@ export const Variant = {
 <a href="#" class="sharpen-button sharpen-button--xsmall sharpen-button--variant">RU1-1</a>
 <a href="#" class="sharpen-button sharpen-button--xsmall sharpen-button--variant">rs1277190</a>
 <a href="#" class="sharpen-button sharpen-button--xsmall sharpen-button--variant">rs1555839</a>
-`
-}
+`,
+};

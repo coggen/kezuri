@@ -1,6 +1,5 @@
 sharpen-story-page {
   display: block;
-  padding: 0 0 1em 0;
   background-color: white;
   box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
 
@@ -14,14 +13,16 @@ sharpen-story-page {
   &[content-mode="paragraph"] .story-footer { height: 12rem; }
 
   .story-footer {
+    margin-top: 3em;
     height: 18rem;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
+    text-align: center;
 
     img {
-      height: 12rem;
-      margin-top: 5rem;
+      height: 10rem;
+      margin-top: 7rem;
     }
   }
 

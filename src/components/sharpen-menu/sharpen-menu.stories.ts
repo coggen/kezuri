@@ -21,7 +21,7 @@ export default {
     <hr>
     <sharpen-nav-link icon="logout" name="Log Out" href="#"></sharpen-nav-link>  
   </div>
-</sharpen-menu>`
+</sharpen-menu>`,
 };
 
 /**
@@ -40,7 +40,7 @@ export const LiveExample = {
     <sharpen-nav-link icon="face" name="Jurickson Profar" href="#"></sharpen-nav-link>
     <sharpen-nav-link icon="add" name="Add new..." href="#"></sharpen-nav-link>  
   </div>
-</sharpen-menu>`
+</sharpen-menu>`,
 };
 
 /**
@@ -54,5 +54,5 @@ export const AttachmentSettings = {
   <div class="sharpen-menu-links">
     <sharpen-nav-link icon="face" name="Jurickson Profar" href="#"></sharpen-nav-link>
   </div>
-</sharpen-menu>`
+</sharpen-menu>`,
 };

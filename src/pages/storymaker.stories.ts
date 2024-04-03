@@ -1,7 +1,7 @@
 export default {
   title: 'Pages/Storymaker',
   parameters: {
-    layout: 'fullscreen'
+    layout: 'fullscreen',
   },
 };
 
@@ -24,8 +24,8 @@ export const Welcome = {
     </div>
   </sharpen-card>
 
-</div>`
-}
+</div>`,
+};
 
 export const SecondaryQuestion = {
   render: () => `<sharpen-simple-navigation background="sunrise" brand-href="#"></sharpen-simple-navigation>
@@ -38,8 +38,8 @@ export const SecondaryQuestion = {
     <a href="#" class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width sharpen-mt-sm">Does not struggle</a>
   </div>
 
-</div>`
-}
+</div>`,
+};
 
 export const Instructions = {
   render: () => `<sharpen-simple-navigation background="sunrise" brand-href="#"></sharpen-simple-navigation>
@@ -61,8 +61,8 @@ export const Instructions = {
 
   <a href="character.html" class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Start making stories!</a>
 
-  </div>`
-}
+  </div>`,
+};
 
 export const CharacterChoice = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -101,8 +101,8 @@ export const CharacterChoice = {
       </a>
     </sharpen-choice-grid>
 
-  </div>`
-}
+  </div>`,
+};
 
 export const SettingChoice = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -128,8 +128,8 @@ export const SettingChoice = {
     </a>
   </sharpen-choice-grid>
 
-</div>`
-}
+</div>`,
+};
 
 export const StoryGeneration = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -151,8 +151,8 @@ export const StoryGeneration = {
     </div>                       
   </div>
   
-</div>`
-}
+</div>`,
+};
 
 export const ReadSentence = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -167,8 +167,8 @@ export const ReadSentence = {
     <i class="sharpen-icon sharpen-text-4xl">arrow_forward</i>
   </a>
 
-</div>`
-}
+</div>`,
+};
 
 export const ReadParagraph = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -183,8 +183,8 @@ export const ReadParagraph = {
     <i class="sharpen-icon sharpen-text-4xl">arrow_forward</i>
   </a>
 
-</div>`
-}
+</div>`,
+};
 
 export const PlotChoice = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -215,8 +215,8 @@ export const PlotChoice = {
       </a>
     </sharpen-choice-grid>
     
-  </div>`
-}
+  </div>`,
+};
 
 export const Celebration = {
   render: () => `<sharpen-simple-navigation brand-href="#"></sharpen-simple-navigation>
@@ -233,8 +233,8 @@ export const Celebration = {
     <a id="reaction-2" class="hide" href="#"><i class="sharpen-icon">sentiment_dissatisfied</i></a>
   </div>
   
-</div>`
-}
+</div>`,
+};
 
 export const ParentsLearnMore = {
   render: () => `<sharpen-simple-navigation background="sunrise" brand-href="#"></sharpen-simple-navigation>
@@ -266,5 +266,5 @@ export const ParentsLearnMore = {
     <a href="character.html">or make more stories</a>
   </div>
 
-</div>`
-}
+</div>`,
+};
