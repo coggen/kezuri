@@ -6,6 +6,8 @@ sharpen-choice-grid {
   font-size: 18pt;
   text-align: center;
 
+  input { display: none; }
+
   &[layout="column"] {
     display: flex;
     flex-direction: column;
@@ -14,16 +16,18 @@ sharpen-choice-grid {
     font-size: 24pt;
   }
 
-  a {
+  a, label { 
+    color: var(--color-pine);
+    cursor: pointer;
     --animate-duration: 1.5s;
     text-decoration: none;
-  }
 
-  a img {
-    max-width: 100%;
-  }
+    img {
+      max-width: 100%;
+    }
 
-  a.highlight sharpen-card, a:hover sharpen-card {
-    background-color: var(--color-sky);
+    &.highlight sharpen-card, &:hover sharpen-card {
+      background-color: var(--color-sky);
+    }
   }
 }

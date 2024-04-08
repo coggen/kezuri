@@ -20,7 +20,7 @@ export default {
   <a href="#">
       <sharpen-card border="none" padding="medium">
         <img src="https://placehold.co/200" />
-        <div class="title">bunny</div>
+        <div class="title">a little bunny in the forest</div>
       </sharpen-card>
     </a>
     <a href="#">
