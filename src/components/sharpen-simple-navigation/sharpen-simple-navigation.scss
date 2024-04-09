@@ -1,16 +1,21 @@
 sharpen-simple-navigation {
   .navbar {
-    padding: 1em 0 1.5em;
+    display: flex;
+    padding: var(--spacing-lg);
     background-color: var(--color-mint);
+    align-items: center;
+    justify-content: space-between;
     color: var(--color-evergreen);
-    text-align: center;
     --mask: 
       linear-gradient(to top,#0000 15px,#000 0),
       radial-gradient(15px,#000 98%,#0000) bottom/30px 30px;
     -webkit-mask: var(--mask);
             mask: var(--mask);
-    font-family: var(--font-family-serif);     
-    letter-spacing: 8pt;
+    font-family: var(--font-family-serif);
+
+    &:empty {
+      padding: var(--spacing-md);
+    }
   }
 
   .navbar .brand img { height: 31px; vertical-align: -6px;  }

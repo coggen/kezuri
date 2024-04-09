@@ -141,6 +141,8 @@ export namespace Components {
     interface SharpenSimpleNavigation {
         "background": string;
         "brandHref": string;
+        "linkHref": string;
+        "linkText": string;
     }
     interface SharpenStoryHeader {
     }
@@ -479,6 +481,8 @@ declare namespace LocalJSX {
     interface SharpenSimpleNavigation {
         "background"?: string;
         "brandHref"?: string;
+        "linkHref"?: string;
+        "linkText"?: string;
     }
     interface SharpenStoryHeader {
     }

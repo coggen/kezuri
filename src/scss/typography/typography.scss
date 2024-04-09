@@ -172,6 +172,15 @@ ul.sharpen-icon-list {
   }
 
   li + li { margin-top: 1.5rem; }
+
+  &--small {
+    font-size: var(--font-size-xs);
+    padding-left: 2rem;
+
+    li > :first-child { margin: -1px 0 0 -2rem; }
+
+    li + li { margin-top: 0.25rem; }
+  }
 }
 
 dl.sharpen-list {

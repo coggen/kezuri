@@ -1,7 +1,10 @@
 .hide { display: none !important; }
 
 /** Storymaker uses a typeface that's design for learning readers. */
-.storymaker, .storymaker .sharpen-button, .storymaker .sharpen-form-label {
+sharpen-simple-navigation .sharpen-button,
+.storymaker,
+.storymaker .sharpen-button,
+.storymaker .sharpen-form-label {
   font-family: Lexend, sans-serif;
 }
 
@@ -40,7 +43,6 @@
 }
 
 
-
 /** DIFFERENT DEVICE LINK **/
 
 .storymaker-link input {
@@ -57,4 +59,10 @@
 .sharpen-table-storymaker-invites td:last-child button {
   width: 100%;
   padding: var(--spacing-sm) var(--spacing-md) calc(var(--spacing-sm) * 1.25);
+}
+
+/** Create a profile **/
+
+.stories-so-far td:first-child {
+  width: 3rem;
 }

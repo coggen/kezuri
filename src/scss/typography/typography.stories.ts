@@ -232,6 +232,8 @@ export const Lists = {
  * line-height alignment with the text.
  *
  * Given the image size, list items have more generous spacing.
+ * 
+ * Add `sharpen-icon-list--small` for a more compact version.
  */
 export const IconLists = {
   render: () => `<div class="sharpen-text-container">
@@ -239,6 +241,13 @@ export const IconLists = {
     <li><i class="sharpen-icon sharpen-text--color-pine">check_circle</i> This item is ok! Donec pulvinar libero sed sollicitudin ultricies. Proin accumsan lectus augue (<i class="sharpen-icon">pets</i>) at maximus neque elementum quis. Suspendisse metus risus, luctus egestas odio a, imperdiet ultrices ipsum. Nulla purus massa, aliquet et mi quis, tempus tempor erat. In feugiat sollicitudin placerat.</li>
     <li><i class="sharpen-icon sharpen-text--color-dark-red">cancel</i> This item is not ok! Nulla purus massa, aliquet et mi quis, tempus tempor erat. In feugiat sollicitudin placerat.</li>
     <li><i class="sharpen-icon">help</i> This item is uncertain.</li>
+  </ul>
+
+  <ul class="sharpen-icon-list sharpen-icon-list--small sharpen-mb-xl">
+    <li><i class="sharpen-icon sharpen-text--color-pine">check_circle</i> Unlimited stories</li>
+    <li class="sharpen-mt-xs"><i class="sharpen-icon sharpen-text--color-pine">check_circle</i> Build a library</li>
+    <li class="sharpen-mt-xs"><i class="sharpen-icon sharpen-text--color-pine">check_circle</i> Add multiple children</li>
+    <li class="sharpen-mt-xs"><i class="sharpen-icon sharpen-text--color-pine">check_circle</i> Share with family &amp; friends</li>
   </ul>
 
   <p>Suspendisse metus risus, luctus egestas odio a, imperdiet ultrices ipsum. Nulla purus massa, aliquet et mi quis, tempus tempor erat. In feugiat sollicitudin placerat.</p>
