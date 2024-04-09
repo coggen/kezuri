@@ -87,6 +87,21 @@ export const Checkbox = {
 </div>`,
 };
 
+export const Small = {
+  name: 'Input: Small Variants',
+  render: () => `<div class="sharpen-form-group">
+  <label class="sharpen-form-label">Input</label>
+  <input type="text" class="sharpen-form-control sharpen-form-control--small" value="Pack my box" />
+</div>
+<div class="sharpen-form-group">
+  <label class="sharpen-form-label">Select</label>
+  <select class="sharpen-form-control sharpen-form-control--small">
+    <option>With five dozen liquor jugs</option>
+  </select>
+</div>
+`
+}
+
 export const Disabled = {
   name: 'Disabled Fields',
   render: () => `<div class="sharpen-form-group">
