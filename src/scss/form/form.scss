@@ -25,6 +25,10 @@
   line-height: 140%;
   color: var(--color-black);
 
+  &--small {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
   &:focus {
     outline: none !important;
     border: var(--border-thin-solid-pine);

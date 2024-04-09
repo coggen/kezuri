@@ -8,12 +8,14 @@ export class SharpenSimpleNavigation {
 
   @Prop() background: string;
   @Prop() brandHref: string;
+  @Prop() linkHref: string;
+  @Prop() linkText: string;
 
   render() {
     return (
       <Host>
         <div class="navbar container-fluid">
-          <slot>{this.getBrand()}</slot>
+          <slot>{this.getBrand()}{this.getLink()}</slot>
         </div>
       </Host>
     );
@@ -26,6 +28,14 @@ export class SharpenSimpleNavigation {
 
       return (
         <a class="brand" href={this.brandHref}><img src={markSrc} /></a>
+      )
+    }
+  }
+
+  getLink() {
+    if (this.linkHref) {
+      return (
+        <a href={this.linkHref}>{this.linkText}</a>
       )
     }
   }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Storymaker</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../storymaker/storymaker.css" />
+</head>
+<body class="sharpen-background--white">
+
+  <sharpen-primary-navigation brand-href="index.html" current-user="Belinda Profar" class="sharpen-mb-md">
+
+    <div slot="user-links" class="sharpen-menu-links">
+      <sharpen-nav-link icon="account_box" name="Account" href="javascript:void();"></sharpen-nav-link>
+      <hr>
+      <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+    </div>      
+  </sharpen-primary-navigation>
+
+  <sharpen-simple-navigation background="sunrise"></sharpen-simple-navigation>
+
+  <div class="container sharpen-my-lg">
+
+    <div class="offset-md-2 col-md-8 offset-lg-3 col-lg-6 offset-xl-4 col-xl-4">
+      <h1 class="sharpen-heading-lg-sans sharpen-text--center sharpen-mb-lg">Welcome to Storymaker!</h1>
+
+      <sharpen-card border="gray" padding="large">
+        <h2 class="sharpen-heading-md-sans sharpen-mb-md">Complete your child's profile</h2>
+
+        <div class="sharpen-form-group">
+          <label class="sharpen-form-label">Grade in school</label>
+          <select class="sharpen-form-control">
+            <option value="1">Grade 1</option>
+          </select>
+        </div>
+
+        <div class="sharpen-form-group">
+          <label class="sharpen-form-label">Stories created so far</label>
+          <table class="sharpen-table stories-so-far">
+            <tbody>
+              <tr>
+                <td><img class="sharpen-img-responsive" src="../storymaker/images/dog.png" alt="Dog"></td>
+                <td>Dog &amp; forest</td>
+              </tr>
+              <tr>
+                <td><img class="sharpen-img-responsive" src="../storymaker/images/bug.png" alt="Bug"></td>
+                <td>Bug &amp; circus</td>
+              </tr>
+              <tr>
+                <td><img class="sharpen-img-responsive" src="../storymaker/images/cat.png" alt="Cat"></td>
+                <td>Cat &amp; farm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sharpen-form-group">
+          <label class="sharpen-form-label">Child's first name</label>
+          <input type="text" class="sharpen-form-control" />
+        </div>
+
+        <div class="sharpen-form-group">
+          <label class="sharpen-form-label">Child's last name</label>
+          <input type="text" class="sharpen-form-control" />
+        </div>
+
+        <div class="sharpen-form-group">
+          <a href="home.html" class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Submit</a>
+        </div>
+
+      </sharpen-card>
+    </div>
+
+  </div>
+
+</body>
+</html>
