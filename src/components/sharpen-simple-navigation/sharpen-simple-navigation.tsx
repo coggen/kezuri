@@ -10,6 +10,7 @@ export class SharpenSimpleNavigation {
   @Prop() brandHref: string;
   @Prop() linkHref: string;
   @Prop() linkText: string;
+  @Prop() linkIcon: string;
 
   render() {
     return (
@@ -34,9 +35,16 @@ export class SharpenSimpleNavigation {
 
   getLink() {
     if (this.linkHref) {
-      return (
-        <a href={this.linkHref}>{this.linkText}</a>
-      )
+      if (this.linkIcon) {
+        return (
+          <a href={this.linkHref} title={this.linkText}><i class="sharpen-icon">{this.linkIcon}</i></a>
+        )
+      } else {
+        return (
+          <a href={this.linkHref}>{this.linkText}</a>
+        )  
+      }
+      
     }
   }
 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: One-Device Reading Lesson</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="one-device.css" />
+</head>
+<body class="sharpen-lesson">
+
+  
+  <div class="primary">
+    <section class="instruction">
+      <div class="text"></div>
+      <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--small sharpen-button--muted disable-on-audio"><i class="sharpen-icon">replay</i></button></div>
+    </section>
+    <section class="activity">
+      <img src="activity_word_puzzle.png" />
+
+      <!-- Single-Finger Tap Icon -->
+      <div class="gesture hide">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <circle class="tap-1" cx="89.43" cy="64.48" r="19.46"/>
+          <path class="hand-tap" d="M139.93,102.68,98.81,95.75V65.2A9.25,9.25,0,0,0,89.56,56h0a9.25,9.25,0,0,0-9.25,9.25v57.36L71,111.77c-3.61-3.61-8.44-3.89-13.08,0,0,0-7.24,5.84-3.83,9.25l34,34h42.63a9.25,9.25,0,0,0,9.07-7.43l6.82-34.09A9.28,9.28,0,0,0,139.93,102.68Z"/>
+        </svg>
+      </div>
+    </section>
+  </div>
+  <nav>
+    <div class="movement">
+      <button class="sharpen-button sharpen-button--small sharpen-button--muted"><i class="sharpen-icon">close</i></button>
+      <div class="lesson-info">
+        <strong>Lesson A1</strong><br />
+        Activity 1
+      </div>
+      <button class="sharpen-button sharpen-button--small sharpen-button--muted disable-on-audio"><i class="sharpen-icon">arrow_upward</i></button>
+      <sharpen-progress-circle progress-val="0" progress-label=""></sharpen-progress-circle>
+      <button id="next" class="sharpen-button sharpen-button--small sharpen-button--muted disable-on-audio"><i class="sharpen-icon">arrow_downward</i></button>  
+    </div>
+    <div class="actions">
+      <button class="sharpen-button sharpen-button--small sharpen-button--muted disable-on-audio">Clear</button>
+    </div>
+    <div class="help">
+      <button id="help" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">question_mark</i></button>
+    </div>
+  </nav>
+
+  <div class="help-content hide">
+    <p>You are saying a SOUND here, not the letter name.</p>
+    <p>Say the word slowly while dragging your finger under the lines.</p>
+  </div>
+
+<audio id="a_1" src="audio/today_i_have_a_word_puzzle.mp3"></audio>
+<audio id="a_2" src="audio/here_are_the_letters.mp3"></audio>
+<audio id="a_3" src="audio/lets_put_them.mp3"></audio>
+<audio id="a_4" src="audio/please_say_tap.mp3"></audio>
+<audio id="a_5" src="audio/good_job.mp3"></audio>
+<audio id="a_6" src="audio/first_sound_in_tap.mp3"></audio>
+<audio id="a_7" src="audio/say_t.mp3"></audio>
+<audio id="a_8" src="audio/point_to_t.mp3"></audio>
+<audio id="a_9" src="audio/this_is_t.mp3"></audio>
+<audio id="a_10" src="audio/drag_this_letter.mp3"></audio>
+<audio id="a_11" src="audio/now_im_going.mp3"></audio>
+<audio id="a_12" src="audio/t.mp3"></audio>
+<audio id="a_13" src="audio/a.mp3"></audio>
+<audio id="a_14" src="audio/p.mp3"></audio>
+<audio id="a_15" src="audio/your_turn_to_tap.mp3"></audio>
+
+<script>
+
+function enableButtons() {
+  $(".disable-on-audio").removeAttr("disabled");
+}
+
+function disableButtons() {
+  $(".disable-on-audio").attr("disabled", "disabled");
+}
+
+function playStep(step) {
+
+  var totalSteps = 19,
+      $audio1 = $("audio#a_1"),
+      $audio2 = $("audio#a_2"),
+      $audio3 = $("audio#a_3"),
+      $audio4 = $("audio#a_4"),
+      $audio5 = $("audio#a_5"),
+      $audio6 = $("audio#a_6"),
+      $audio7 = $("audio#a_7"),
+      $audio8 = $("audio#a_8"),
+      $audio9 = $("audio#a_9"),
+      $audio10 = $("audio#a_10"),
+      $audio11 = $("audio#a_11"),
+      $audio12 = $("audio#a_12"),
+      $audio13 = $("audio#a_13"),
+      $audio14 = $("audio#a_14"),
+      $audio15 = $("audio#a_15"),
+      $instructionText = $(".instruction .text"),
+      $btnNext = $("#next"),
+      $listenHtml = $('<i class="sharpen-icon">hearing</i> <span class="listen">Listen</span>'),
+      $progress = $("sharpen-progress-circle")
+      $gesture = $(".gesture");
+
+  $progress.attr("progress-val", (step / totalSteps) * 100);
+  $progress.attr("progress-label", step);
+
+  switch (step) {
+    case 1:
+      disableButtons();
+      $instructionText.html($listenHtml);
+      $audio1[0].play();
+      $audio1.on("ended", function() { $audio2[0].play(); });
+      $audio2.on("ended", function() { $audio3[0].play(); });
+      $audio3.on("ended", function() {
+        $instructionText.html("Please say 'tap'");
+        enableButtons();
+        $btnNext.addClass("pulse");
+        $audio4[0].play();
+      });
+      break;
+    case 2:
+      disableButtons();
+      $btnNext.removeClass("pulse");
+      $instructionText.html($listenHtml);
+      $audio5[0].play();
+      $audio5.on("ended", function() { $audio6[0].play(); })
+      $audio6.on("ended", function() {
+        $audio7[0].play();
+        enableButtons();
+        $instructionText.html("Please say /t/");
+        $btnNext.addClass("pulse");
+      });
+      break;
+    case 3:
+      disableButtons();
+      $btnNext.removeClass("pulse");
+      $audio8[0].play();
+      $instructionText.html("Point to the letter /t/");
+      $audio8.on("ended", function() {
+        enableButtons();
+        $btnNext.addClass("pulse");
+      });
+      break;
+    case 4:
+      disableButtons();
+      $btnNext.removeClass("pulse");
+      $instructionText.html($listenHtml);
+      $audio9[0].play();
+      $audio9.on("ended", function() {
+        $audio10[0].play();
+        enableButtons();
+        $instructionText.html("Please drag this letter to the first line.");
+      });
+      break;
+    case 5:
+      // "Now I'm going to Tap-and-Say ""{word_text}.""  
+      // Listen. {word_phoneme_list} ""{word_text}."""
+      disableButtons();
+      $btnNext.removeClass("pulse");
+      $instructionText.html($listenHtml);
+      $audio11[0].play();
+      $gesture.css({ top: 272, left: 231 })
+      $audio11.on("ended", function() {
+
+        $audio12[0].play();
+        $gesture.removeClass("hide").addClass("animate");
+        $gesture.one("animationend", () => {
+          $gesture.removeClass("animate");
+          $gesture.css({ left: 332 });
+          $gesture.one("transitionend", () => {
+            $audio13[0].play();
+            $gesture.addClass("animate");
+            $gesture.one("animationend", () => {
+              $gesture.removeClass("animate");
+              $gesture.css({ left: 421 });
+              $gesture.one("transitionend", () => {
+                $audio14[0].play();
+                $gesture.addClass("animate");
+                $gesture.one("animationend", () => {
+                  $gesture.addClass("hide");
+                  $audio15[0].play();
+                  enableButtons();
+                  $instructionText.html("Tap-and-say 'tap'");
+                });
+              });    
+            });
+          });
+        });
+
+      });
+      break;
+  }
+}
+
+$(document).ready(function() {
+
+  var activityStep = 1,
+      $btnNext = $("#next")
+      $btnRepeat = $("#repeat"),
+      $btnHelp = $("#help"),
+      $helpContent = $(".help-content");
+  
+  // playStep(activityStep);
+
+  $btnNext.on("click", function() {
+    activityStep++;
+    playStep(activityStep);
+  });
+
+  $btnRepeat.on("click", function() {
+    playStep(activityStep);
+  });
+
+  $btnHelp.on("click", function() {
+    if ($helpContent.hasClass("hide")) {
+      $helpContent.toggleClass("hide animate__animated animate__faster animate__slideInUp");  
+      $btnHelp.html('<i class="sharpen-icon">keyboard_arrow_down</i>');
+    } else {
+      $btnHelp.html('<i class="sharpen-icon">question_mark</i>');
+      $helpContent.addClass("animate__slideOutDown");  
+    }
+  });
+
+});
+
+</script>
+
+</body>
+</html>
