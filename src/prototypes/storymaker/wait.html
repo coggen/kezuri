@@ -27,64 +27,15 @@
       <i class="sharpen-icon">question_mark</i>
     </sharpen-story-header>
 
-    <sharpen-choice-grid layout="column">
-      <a href="wait.html" class="hide">
-        <sharpen-card border="none" padding="large">
-          Sam ran to get the hen
-        </sharpen-card>
-      </a>
-
-      <label class="hide">
-        <input type="radio" name="choice" id="choice1" />
-        <sharpen-card border="none" padding="large">
-          Sam sat on the hen
-        </sharpen-card>
-      </label>
-
-      <label class="hide">
-        <input type="radio" name="choice" id="choice1" />
-        <sharpen-card border="none" padding="large">
-          Sam sat on the mat
-        </sharpen-card>
-      </label>
-    </sharpen-choice-grid>
+    <sharpen-loading></sharpen-loading>
     
   </div>
 
-<audio id="prompt" src="audio/plot_choice/prompt.mp3"></audio>
-
 <script>
 
-const synth = window.speechSynthesis;
-
-function showChoice($el) {
-  
-  var animationClasses = "highlight animate__animated animate__slideInRight";
-  let utterThis = new SpeechSynthesisUtterance($el.text());
-  utterThis.rate = 0.85;
-  utterThis.onend = function() {
-    $el.removeClass(animationClasses);
-    showChoice($el.next());
-  }
-  synth.speak(utterThis);
-
-  $el.removeClass("hide")
-      .addClass(animationClasses);
-}
-
-$(document).ready(function() {
-
-  var $audioPrompt = $("audio#prompt"),
-    $options = $("sharpen-choice-grid a");
-  
-  $options.addClass("hide");
-  
-  $audioPrompt.on("ended", function() {
-    showChoice($options.first());
-  });
-
-  $audioPrompt[0].play();
-});
+window.setTimeout(function() {
+    window.location.href = "end.html";
+  }, 1500);
 
 </script>
 

@@ -1,0 +1,213 @@
+.hide {
+  display: none !important;
+}
+
+html, .sharpen-lesson { height: 100%; overflow: hidden; }
+
+body {
+  background-color: white;
+}
+
+.sharpen-lesson {
+  display: flex;
+}
+
+.sharpen-lesson .primary {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sharpen-lesson nav, .sharpen-lesson .instruction {
+  padding: var(--spacing-lg);
+  background-color: white;
+}
+
+.sharpen-lesson nav {
+  width: 10rem;
+  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.sharpen-lesson .sharpen-button--small {
+  padding: var(--spacing-md) var(--spacing-sm);
+  width: 100%;
+}
+
+.sharpen-lesson nav .movement {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.sharpen-lesson nav .lesson-info {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-1);
+}
+
+.sharpen-lesson .instruction {
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.sharpen-lesson .instruction .sharpen-button--small {
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.sharpen-lesson .instruction .text {
+  flex: 1;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-1);
+}
+
+.sharpen-lesson .activity {
+  text-align: center;
+  border-top: 6px double var(--color-pine);
+  border-right: 6px double var(--color-pine);
+  flex: 1;
+  border-top-right-radius: 2em;
+  background-color: var(--color-putty);
+}
+
+.sharpen-lesson .activity img {
+  margin-top: 130px;
+}
+
+.sharpen-lesson .help-content {
+  position: absolute;
+  bottom: 0px;
+  right: 10rem;
+  padding: var(--spacing-lg);
+  background-color: white;
+  padding-right: 0;
+  height: 7rem;
+  width: calc(100% - 10rem);
+  color: var(--color-gray-1);
+  font-family: "Sharpen Serif", serif;
+  border-top: 1px solid var(--color-pine);
+}
+
+/** HAND GESTURE **/
+
+.sharpen-lesson .activity .gesture {
+  text-align: center;
+  display: block;
+  position: absolute;
+  transition: left 0.5s;
+}
+
+.sharpen-lesson .activity .gesture * {
+  transform-origin: 50% 50%;
+  perspective: 100px;
+}
+
+
+.sharpen-lesson .activity svg {
+  display: inline-block;
+  width: 250px;
+}
+
+@keyframes tap {
+  0% {
+    transform: rotateX(0deg);
+  }
+  10% {
+    transform: rotateX(12.5deg);
+  }
+  25% {
+    transform: rotateX(25deg);
+  }
+}
+
+@keyframes tap-circle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.05);
+    opacity: .6;
+  }
+  80% {
+    transform: scale(1);
+    opacity: .5;
+  }
+}
+
+.hand-tap {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gesture.animate .hand-tap {
+  animation: tap 1.25s ease-out backwards;
+  animation-iteration-count: 1;
+}
+
+.tap-1 {
+  opacity: .5;
+  fill: transparent;
+  stroke: var(--color-pine);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gesture.animate .tap-1 {
+  animation: tap-circle 1.25s ease-out backwards;
+  animation-iteration-count: 1;
+}
+
+
+/** PULSE **/
+
+.pulse {
+  box-shadow: 0 0 0 rgba(49, 119, 108, 0.6);
+  animation: pulse 1.5s infinite;
+  background-color: var(--color-mint);
+  border-color: var(--color-pine);
+}
+
+.pulse:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(49, 119, 108, 0.6);
+    box-shadow: 0 0 0 0 rgba(49, 119, 108, 0.6);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(49, 119, 108, 0);
+    box-shadow: 0 0 0 10px rgba(49, 119, 108, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(49, 119, 108, 0);
+    box-shadow: 0 0 0 0 rgba(49, 119, 108, 0);
+  }
+}
+
+/** LISTEN **/
+
+.listen:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  animation: ellipsis steps(4,end) 1.5s infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 0.75em;    
+  }
+}

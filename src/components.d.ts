@@ -142,6 +142,7 @@ export namespace Components {
         "background": string;
         "brandHref": string;
         "linkHref": string;
+        "linkIcon": string;
         "linkText": string;
     }
     interface SharpenStoryHeader {
@@ -482,6 +483,7 @@ declare namespace LocalJSX {
         "background"?: string;
         "brandHref"?: string;
         "linkHref"?: string;
+        "linkIcon"?: string;
         "linkText"?: string;
     }
     interface SharpenStoryHeader {

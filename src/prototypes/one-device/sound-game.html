@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: One-Device Reading Lesson</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="one-device.css" />
+</head>
+<body class="sharpen-lesson">
+
+  <div class="interface">
+    <div class="primary">
+      <section class="instruction">
+        <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--circle sharpen-button--muted disable-on-audio"><i class="sharpen-icon">play_arrow</i></button></div>
+        <div class="text"></div>
+        <div class="brand"><img src="../build/assets/images/brand/sharpen_mark_evergreen.png" alt="Sharpen" /></div>
+      </section>
+      <section class="activity">
+        <img class="hide" src="activity_sound_game.png" />
+      </section>
+      <div class="help-content hide">
+        <p>Use this response as a model:</p>
+        <p>"Sat" without /s/ is /a/ /t/ "at". "sat"-"at".</p>
+      </div>
+    </div>
+    <nav>
+      <div class="movement">
+        
+        <div class="metadata">
+          <div class="lesson">
+            <strong>Lesson B1</strong><br />
+            Activity 3
+          </div>
+          <!-- <button class="lesson-close"><i class="sharpen-icon">close</i></button> -->
+          <a href="index.html" class="lesson-close"><i class="sharpen-icon">close</i></a>
+        </div>
+
+        <button class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_upward</i></button>
+        <div class="activity-step">
+          Step <span class="step-number">1</span>
+        </div>
+        <button id="next" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_downward</i></button>  
+
+      </div>
+      <div class="actions">
+
+        <button id="correct" class="sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio" disabled="disabled">Correct</button>
+        <button id="incorrect" class="sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio" disabled="disabled">Incorrect</button>
+
+      </div>
+      <div class="help">
+
+        <button id="help" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">question_mark</i></button>
+
+      </div>
+    </nav>
+  </div>
+
+
+<audio id="a_1" src="audio/sound-game/i_have_a_sound_game.mp3"></audio>
+<audio id="a_2" src="audio/sound-game/read_this_word.mp3"></audio>
+<audio id="a_3" src="audio/sound-game/this_word_is_pat.mp3"></audio>
+<audio id="a_4" src="audio/sound-game/now_say_without.mp3"></audio>
+<audio id="a_5" src="audio/sound-game/pat_without_p.mp3"></audio>
+<audio id="a_6" src="audio/sound-game/thats_right.mp3"></audio>
+
+<script>
+
+function enableButtons() {
+  $(".disable-on-audio").removeAttr("disabled");
+}
+
+function disableButtons() {
+  $(".disable-on-audio").attr("disabled", "disabled");
+  $(".pulse").removeClass("pulse");
+}
+
+function playStep(step) {
+
+  var totalSteps = 19,
+      $audio1 = $("audio#a_1"),
+      $audio2 = $("audio#a_2"),
+      $audio3 = $("audio#a_3"),
+      $audio4 = $("audio#a_4"),
+      $audio5 = $("audio#a_5"),
+      $audio6 = $("audio#a_6"),
+      $instructionText = $(".instruction .text"),
+      $btnNext = $("#next"),
+      $btnCorrect = $("#correct"),
+      $btnIncorrect = $("#incorrect"),
+      $listenHtml = $('<i class="sharpen-icon">hearing</i> <span class="listen">Listen</span>'),
+      $img = $(".activity img"),
+      $stepNumber = $(".step-number");
+
+  $stepNumber.text(step);
+
+  switch (step) {
+    case 1:
+      disableButtons();
+      $instructionText.html($listenHtml);
+      $audio1[0].play();
+      $audio1.on("ended", function() {
+        $instructionText.html("Please read this word");
+        $img.removeClass("hide");
+        enableButtons();
+        $btnNext.attr("disabled", "disabled");
+        $audio2[0].play();
+
+        // Correct "don't" response
+        $btnCorrect.addClass("pulse").one("click", function() {
+          $instructionText.html($listenHtml);
+          disableButtons();
+          $audio4[0].play();
+          $audio4.on("ended", function() {
+            $instructionText.html("Now say 'pat' but don't say /p/");
+            enableButtons();
+            $btnNext.attr("disabled", "disabled");
+
+            $btnCorrect.addClass("pulse").one("click", function() {
+              disableButtons();
+              $instructionText.html($listenHtml);
+              $audio6[0].play();
+
+            confetti({
+              spread: 360,
+              ticks: 200,
+              gravity: 1,
+              decay: 0.94,
+              startVelocity: 30,
+              particleCount: 100,
+              scalar: 3,
+              shapes: ["image"],
+              shapeOptions: {
+                image: [{
+                    src: "../build/assets/images/brand/sharpen_mark_evergreen.png",
+                    width: 32,
+                    height: 32,
+                  }]
+                }
+              });
+
+
+              $audio6.on("ended", function() {
+                enableButtons();
+                $btnCorrect.attr("disabled", "disabled");
+                $btnIncorrect.attr("disabled", "disabled");
+                $btnNext.addClass("pulse");
+              });
+            });
+
+            $btnIncorrect.off("click").addClass("pulse").one("click", function() {
+              disableButtons();
+              $instructionText.html($listenHtml);
+              $audio5[0].play();
+              $audio5.on("ended", function() {
+                enableButtons();
+                $btnCorrect.attr("disabled", "disabled");
+                $btnIncorrect.attr("disabled", "disabled");
+                $btnNext.addClass("pulse");
+              });
+            });
+          });
+        });
+
+        // Incorrect "don't" response
+        $btnIncorrect.addClass("pulse").one("click", function() {
+          disableButtons();
+          $audio3[0].play();
+          $audio3.on("ended", function() {
+            enableButtons();
+            $btnCorrect.attr("disabled", "disabled");
+            $btnIncorrect.attr("disabled", "disabled");
+            $btnNext.addClass("pulse");
+          });
+        });
+      });
+      break;
+  }
+}
+
+$(document).ready(function() {
+
+  var activityStep = 1,
+      $btnNext = $("#next")
+      $btnRepeat = $("#repeat"),
+      $btnHelp = $("#help"),
+      $helpContent = $(".help-content"),
+      $brand = $(".brand img"),
+      brandAnimationClasses = "animate__animated animate__rubberBand";
+  
+  // playStep(activityStep);
+
+  $btnNext.on("click", function() {
+    activityStep++;
+    playStep(activityStep);
+
+    $brand.addClass(brandAnimationClasses).one("animationend", () => {
+      $brand.removeClass(brandAnimationClasses);
+    });
+  });
+
+  $btnRepeat.on("click", function() {
+    playStep(activityStep);
+  });
+
+  $btnHelp.on("click", function() {
+    if ($helpContent.hasClass("hide")) {
+      $helpContent.removeClass("hide");
+      $helpContent.addClass("animate__animated animate__faster animate__fadeIn");
+      $btnHelp.html('<i class="sharpen-icon">keyboard_arrow_down</i>');
+    } else {
+      $btnHelp.html('<i class="sharpen-icon">question_mark</i>');
+      $helpContent.removeClass("animate__fadeIn");
+      $helpContent.addClass("animate__fadeOut");
+      $helpContent.one("animationend", function() {
+        $helpContent.addClass("hide");
+        $helpContent.removeClass("animate__animated animate__faster animate__fadeOut");
+      });
+    }
+  });
+
+});
+
+</script>
+
+</body>
+</html>
