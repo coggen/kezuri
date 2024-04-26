@@ -19,11 +19,11 @@ sharpen-simple-navigation {
   }
 
   .navbar .brand img { height: 31px; vertical-align: -6px;  }
-  .navbar .sharpen-icon {
-    font-size: 40px;
-    margin-top: -25px;
-    margin-bottom: -10px;
-  }
+  // .navbar .sharpen-icon {
+  //   font-size: 40px;
+  //   margin-top: -25px;
+  //   margin-bottom: -10px;
+  // }
 
   &[background="sunrise"] .navbar {
     background-color: var(--color-sunrise);

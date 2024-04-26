@@ -204,6 +204,16 @@ export const InverseText = {
 </div>`,
 };
 
+/** Sometimes, due to Rails constraints, we need to use POST actions with HTML
+ * buttons, even though the user feels as if they're simply navigating
+ * somewhere, e.g. clicking through to the Auth0 login page. We can apply link
+ * styling to buttons using `sharpen-link`. Despite being a button, it should
+ * look, feel, and act like linked text.
+ */
+export const ButtonLinks = {
+  render: () => `This is how you <button class="sharpen-link">Log In</button>, if you'd like.`
+}
+
 /**
  * Add the `sharpen-list` class to an `ol` or `ul` to get appropriate list-item
  * spacing. Margins between lists is your responsibility, unless you lists are

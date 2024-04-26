@@ -19,7 +19,11 @@
 </head>
 <body class="sharpen-background--white">
 
-  <sharpen-simple-navigation background="sunrise" brand-href="#" link-text="Log in" link-href="#"></sharpen-simple-navigation>
+  <sharpen-simple-navigation background="sunrise" brand-href="#">
+    <div slot="custom-nav">
+      <button class="sharpen-link">Log In</button>
+    </div>
+  </sharpen-simple-navigation>
 
   <div class="sharpen-wizard-container storymaker sharpen-text--center">
 
