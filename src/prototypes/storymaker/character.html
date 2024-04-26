@@ -79,7 +79,9 @@ function showChoice($el) {
       .addClass(animationClasses)
       .on('animationend', function() {
         $el.removeClass(animationClasses);
-        showChoice($el.next());
+        setTimeout(function() {
+          showChoice($el.next());
+        }, 200);
     });
 }
 

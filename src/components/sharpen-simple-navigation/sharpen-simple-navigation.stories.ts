@@ -30,6 +30,7 @@ export default {
  * parent/configuration screens.
  */
 export const Sunrise = {
+  name: "Color: Sunrise",
   args: {
     background: 'sunrise',
   },
@@ -40,7 +41,28 @@ export const Sunrise = {
  * screens.
  */
 export const Mint = {
+  name: "Color: Mint",
   args: {
     background: 'mint',
   },
+};
+
+/**
+ * If we need to display a basic link or button, we can use the `custom-nav`
+ * slot.
+ */
+export const CustomNavigation = {
+  render: args => `<sharpen-simple-navigation background="${args.background}" brand-href="${args.brandHref}">
+  <div slot="custom-nav">
+    <button class="sharpen-link">Log In</button>
+  </div>
+</sharpen-simple-navigation>`
+};
+
+/**
+ * When no `brand-href` attribute is set, and the `custom-nav` slot is empty, the
+ * component renders as a compact decoration.
+ */
+export const Empty = {
+  render: args => `<sharpen-simple-navigation background="${args.background}"></sharpen-simple-navigation>`
 };

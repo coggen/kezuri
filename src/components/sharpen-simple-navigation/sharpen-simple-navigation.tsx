@@ -16,7 +16,8 @@ export class SharpenSimpleNavigation {
     return (
       <Host>
         <div class="navbar container-fluid">
-          <slot>{this.getBrand()}{this.getLink()}</slot>
+          {this.getBrand()}
+          <slot name="custom-nav"></slot>
         </div>
       </Host>
     );
@@ -30,21 +31,6 @@ export class SharpenSimpleNavigation {
       return (
         <a class="brand" href={this.brandHref}><img src={markSrc} /></a>
       )
-    }
-  }
-
-  getLink() {
-    if (this.linkHref) {
-      if (this.linkIcon) {
-        return (
-          <a href={this.linkHref} title={this.linkText}><i class="sharpen-icon">{this.linkIcon}</i></a>
-        )
-      } else {
-        return (
-          <a href={this.linkHref}>{this.linkText}</a>
-        )  
-      }
-      
     }
   }
 

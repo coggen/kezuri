@@ -26,10 +26,7 @@
       <section class="activity">
         <img class="hide" src="activity_sound_game.png" />
       </section>
-      <div class="help-content hide">
-        <p>Use this response as a model:</p>
-        <p>"Sat" without /s/ is /a/ /t/ "at". "sat"-"at".</p>
-      </div>
+      <div class="help-content hide"></div>
     </div>
     <nav>
       <div class="movement">
@@ -43,7 +40,7 @@
           <a href="index.html" class="lesson-close"><i class="sharpen-icon">close</i></a>
         </div>
 
-        <button class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_upward</i></button>
+        <button id="previous" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_upward</i></button>
         <div class="activity-step">
           Step <span class="step-number">1</span>
         </div>
@@ -94,17 +91,28 @@ function playStep(step) {
       $audio6 = $("audio#a_6"),
       $instructionText = $(".instruction .text"),
       $btnNext = $("#next"),
+      $btnPrevious = $("#previous"),
       $btnCorrect = $("#correct"),
       $btnIncorrect = $("#incorrect"),
       $listenHtml = $('<i class="sharpen-icon">hearing</i> <span class="listen">Listen</span>'),
       $img = $(".activity img"),
-      $stepNumber = $(".step-number");
+      $stepNumber = $(".step-number"),
+      $helpContent = $(".help-content"),
+      helpContent_word = '<p>If your learner doesn\'t know the word or makes a mistake, tap the "Incorrect" button.</p>',
+      helpContent_model = '<p>Use this response as a model:</p><p>"Sat" without /s/ is /a/ /t/ "at". "sat"-"at".</p>';
 
   $stepNumber.text(step);
 
+  // Reset the UI
+  disableButtons();
+  $btnCorrect.off("click");
+  $btnIncorrect.off("click");
+
   switch (step) {
+    // Opening step
     case 1:
       disableButtons();
+      $helpContent.html(helpContent_word);
       $instructionText.html($listenHtml);
       $audio1[0].play();
       $audio1.on("ended", function() {
@@ -113,74 +121,80 @@ function playStep(step) {
         enableButtons();
         $btnNext.attr("disabled", "disabled");
         $audio2[0].play();
+        $btnCorrect.addClass("pulse").one("click", function() { playStep(2); });
+        $btnIncorrect.addClass("pulse").one("click", function() { playStep(3); });
+      });
+      break;
 
-        // Correct "don't" response
-        $btnCorrect.addClass("pulse").one("click", function() {
-          $instructionText.html($listenHtml);
-          disableButtons();
-          $audio4[0].play();
-          $audio4.on("ended", function() {
-            $instructionText.html("Now say 'pat' but don't say /p/");
-            enableButtons();
-            $btnNext.attr("disabled", "disabled");
+    // Correctly pronounced 'pat'
+    case 2:
+      $instructionText.html($listenHtml);
+      disableButtons();
+      // $helpContent.html(helpContent_model);
+      $audio4[0].play();
+      $audio4.on("ended", function() {
+        $instructionText.html("Now say 'pat' but don't say /p/");
+        enableButtons();
+        $btnNext.attr("disabled", "disabled");
+        $btnPrevious.one("click", function() { playStep(1); });
+        $btnCorrect.addClass("pulse").one("click", function() { playStep(4); });
+        $btnIncorrect.addClass("pulse").one("click", function() { playStep(5); });
+      });
+      break;
 
-            $btnCorrect.addClass("pulse").one("click", function() {
-              disableButtons();
-              $instructionText.html($listenHtml);
-              $audio6[0].play();
+    // Incorrectly pronounced 'pat'
+    case 3:
+      $audio3[0].play();
+      $audio3.on("ended", function() {
+        enableButtons();
+        $btnCorrect.attr("disabled", "disabled");
+        $btnIncorrect.attr("disabled", "disabled");
+        $btnNext.addClass("pulse").one("click", function() { playStep(4); });
+      });
+      break;
 
-            confetti({
-              spread: 360,
-              ticks: 200,
-              gravity: 1,
-              decay: 0.94,
-              startVelocity: 30,
-              particleCount: 100,
-              scalar: 3,
-              shapes: ["image"],
-              shapeOptions: {
-                image: [{
-                    src: "../build/assets/images/brand/sharpen_mark_evergreen.png",
-                    width: 32,
-                    height: 32,
-                  }]
-                }
-              });
+    // Correctly pronounced 'at'
+    case 4:
+      $instructionText.html($listenHtml);
+      $audio6[0].play();
 
+      confetti({
+        spread: 360,
+        ticks: 200,
+        gravity: 1,
+        decay: 0.94,
+        startVelocity: 30,
+        particleCount: 100,
+        scalar: 3,
+        shapes: ["image"],
+        shapeOptions: {
+          image: [{
+            src: "../build/assets/images/brand/sharpen_mark_evergreen.png",
+            width: 32,
+            height: 32,
+          }]
+        }
+      });
 
-              $audio6.on("ended", function() {
-                enableButtons();
-                $btnCorrect.attr("disabled", "disabled");
-                $btnIncorrect.attr("disabled", "disabled");
-                $btnNext.addClass("pulse");
-              });
-            });
+      $audio6.on("ended", function() {
+        enableButtons();
+        $instructionText.html('');
+        $btnCorrect.attr("disabled", "disabled");
+        $btnIncorrect.attr("disabled", "disabled");
+        $btnNext.addClass("pulse");
+      });
+      break;
 
-            $btnIncorrect.off("click").addClass("pulse").one("click", function() {
-              disableButtons();
-              $instructionText.html($listenHtml);
-              $audio5[0].play();
-              $audio5.on("ended", function() {
-                enableButtons();
-                $btnCorrect.attr("disabled", "disabled");
-                $btnIncorrect.attr("disabled", "disabled");
-                $btnNext.addClass("pulse");
-              });
-            });
-          });
-        });
-
-        // Incorrect "don't" response
-        $btnIncorrect.addClass("pulse").one("click", function() {
-          disableButtons();
-          $audio3[0].play();
-          $audio3.on("ended", function() {
-            enableButtons();
-            $btnCorrect.attr("disabled", "disabled");
-            $btnIncorrect.attr("disabled", "disabled");
-            $btnNext.addClass("pulse");
-          });
-        });
+    // Incorrectly pronounced 'at'
+    case 5:
+      disableButtons();
+      $instructionText.html($listenHtml);
+      $audio5[0].play();
+      $audio5.on("ended", function() {
+        enableButtons();
+        $btnCorrect.attr("disabled", "disabled");
+        $btnIncorrect.attr("disabled", "disabled");
+        $btnNext.addClass("pulse");
       });
       break;
   }
@@ -196,16 +210,19 @@ $(document).ready(function() {
       $brand = $(".brand img"),
       brandAnimationClasses = "animate__animated animate__rubberBand";
   
+  disableButtons();
+  $btnRepeat.removeAttr("disabled");
+
   // playStep(activityStep);
 
-  $btnNext.on("click", function() {
-    activityStep++;
-    playStep(activityStep);
+  // $btnNext.on("click", function() {
+  //   activityStep++;
+  //   playStep(activityStep);
 
-    $brand.addClass(brandAnimationClasses).one("animationend", () => {
-      $brand.removeClass(brandAnimationClasses);
-    });
-  });
+  //   $brand.addClass(brandAnimationClasses).one("animationend", () => {
+  //     $brand.removeClass(brandAnimationClasses);
+  //   });
+  // });
 
   $btnRepeat.on("click", function() {
     playStep(activityStep);
