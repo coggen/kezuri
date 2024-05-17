@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Roster View</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+  <style>
+    .sharpen-heading-2xl sharpen-label {
+      vertical-align: 4px;
+    }
+
+    .sharpen-table--learners .learner-name {
+      font-size: var(--font-size-lg);
+    }
+
+    .sharpen-table--learners code {
+      font-size: var(--font-size-md);
+    }
+  </style>
+</head>
+<body>
+
+  <sharpen-primary-navigation brand-href="index.html" current-user="Belinda Profar" class="sharpen-mb-md">
+    <div slot="user-links" class="sharpen-menu-links">
+      <sharpen-nav-link icon="account_box" name="Account" href="account.html"></sharpen-nav-link>
+      <sharpen-nav-link icon="face" name="Learners" href="index.html"></sharpen-nav-link>
+      <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+    </div>  
+  </sharpen-primary-navigation>
+
+  <div class="container sharpen-py-lg">
+    
+    <!-- <h2 class="sharpen-heading-md--sans sharpen-heading--bordered">Experts School</h2> -->
+    <h1 class="sharpen-heading-2xl sharpen-heading--bordered">
+      Learners <sharpen-label type="info" class="sharpen-ml-sm">29</sharpen-label>
+    </h1>
+
+    <div class="sharpen-mb-lg">
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary">
+        <i class="sharpen-icon">add</i>
+        Add learner
+      </button>
+    </div>
+
+    <table class="sharpen-table sharpen-table--icon-start sharpen-table--learners sharpen-table--enclosed sharpen-table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name <!--<i class="sharpen-icon">arrow_drop_down</i>--></th>
+          <th>Grade</th>
+          <th>Sharpen Level</th>
+          <th>User ID / Passcode</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Abelli, Onni</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Houk , Ranko</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Khachaturian, Ruf</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Königsmann, Kumsal</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Lenz, Trefor</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Martinelli, Adalbern</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Osborne, Demetra</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Teke, Ladislao</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Tomàs, Shem</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td class="learner-name"><a href="#">Yegorova, Sofia</a></td>
+          <td>1</td>
+          <td>A</td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">visibility</i>
+            </button>
+          </td>
+          <td>
+            <button class="sharpen-button sharpen-button--small sharpen-button--secondary">
+              <i class="sharpen-icon">edit</i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav class="sharpen-mt-lg">
+      <ul class="sharpen-pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_left</i></span>
+          </a>
+        </li>
+        <li class="page-item disabled">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_left</i></span>
+          </a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_right</i></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+</body>
+</html>

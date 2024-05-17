@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Onboarding</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../storymaker/storymaker.css" />
+  <link rel="stylesheet" href="story-pages.css" />
+</head>
+<body class="sharpen-background--white">
+
+  <sharpen-simple-navigation brand-href="javascript:void(0);"></sharpen-simple-navigation>
+
+  <div class="sharpen-wizard-container storymaker">
+
+    <sharpen-story-page content-mode="sentence" background-src="../storymaker/images/forest.png" character-src="../storymaker/images/frog.png">
+      <span class="text"></span>
+    </sharpen-story-page>
+
+    <div class="reading-controls">
+      <button id="story-prev" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-mt-lg" disabled>
+        <i class="sharpen-icon sharpen-text-4xl">arrow_back</i>
+      </button>
+      <button id="story-next" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-mt-lg" disabled>
+        <i class="sharpen-icon sharpen-text-4xl">arrow_forward</i>
+      </button>  
+    </div>
+
+  </div>
+
+
+<audio id="prompt" src="audio/read/prompt.mp3"></audio>
+<audio id="hint" src="audio/read/hint.mp3"></audio>
+<audio id="advance" src="audio/page-turn.mp3"></audio>
+<audio id="back" src="audio/page-turn-back.mp3"></audio>
+
+<script>
+
+var currentPage = 0;
+
+var pages = [
+    "A green frog sat on a log.",
+    "The frog's name was Hop.",
+    "Hop lived in a small town."
+  ];
+
+function loadPage(pageNumber, direction) {
+  var $audioAdvance = $("audio#advance"),
+    $audioBack = $("audio#back"),
+    $characterImg = $(".story-footer img"),
+    $storyFooter = $(".story-footer"),
+    $pageText = $("sharpen-story-page .text"),
+    $btnNext = $("#story-next"),
+    $btnPrev = $("#story-prev");
+
+  // Disable the buttons
+  $btnNext.attr("disabled", true);
+  $btnPrev.attr("disabled", true);
+
+  if (direction == "forward") {
+    setTimeout(function() { $audioAdvance[0].play(); }, 400);  
+  } else {
+    setTimeout(function() { $audioBack[0].play(); }, 400);
+  }
+  
+  $characterImg.addClass("animate__animated animate__slideOutDown animate__faster");
+  $storyFooter.addClass("animate__animated animate__fadeOut animate__fast");
+  $pageText.addClass("animate__animated animate__fadeOut animate__fast");
+
+  $pageText.on("animationend", function () {
+    $storyFooter
+      .removeClass("animate__fadeOut")
+      .addClass("animate__fadeIn");
+
+    $characterImg
+      .removeClass("animate__slideOutDown")
+      .addClass("animate__zoomIn");
+
+    $pageText
+      .removeClass("animate__fadeOut")
+      .text(pages[pageNumber])
+      .addClass("animate__fadeIn");
+
+      setTimeout(function() {
+        if (currentPage < 2) { $btnNext.removeAttr("disabled"); }
+        if (currentPage > 0) { $btnPrev.removeAttr("disabled"); }
+      }, 1000);
+  });
+}
+
+$(document).ready(function() {
+
+  var $audioPrompt = $("audio#prompt"),
+    $audioHint = $("audio#hint"),
+    $pageText = $("sharpen-story-page .text"),
+    $btnNext = $("#story-next"),
+    $btnPrev = $("#story-prev");
+
+  $pageText.text(pages[0]);
+
+  $audioPrompt.on("ended", function() {
+    $btnNext.removeAttr("disabled");
+    $btnNext.addClass("animate__animated animate__shakeX");
+    $audioHint[0].play();
+
+    $audioHint.on("ended", function() {
+      $pageText.addClass("animate__animated animate__fadeIn");
+    });
+  });
+
+  $("sharpen-story-page").addClass("animate__animated animate__jello");
+  $audioPrompt[0].play();
+
+  $btnNext.click(function() {
+    currentPage++;
+    loadPage(currentPage, "forward");
+  });
+
+  $btnPrev.click(function() {
+    currentPage--;
+    loadPage(currentPage, "backward");
+  });
+});
+
+</script>
+
+</body>
+</html>
