@@ -1,0 +1,21 @@
+.sharpen-pagination {
+  border: 1px solid var(--color-mint);
+  border-radius: var(--border-radius-sm);
+  display: inline-flex;
+  background-color: white;
+
+  .page-item {
+    list-style-type: none;
+    font-size: var(--font-size-md);
+
+    & + .page-item { border-left: 1px solid var(--color-mint); }
+    &.active { background-color: var(--color-mint); }
+    &.disabled .page-link { opacity: 0.5; }
+  }
+
+  .page-link {
+    display: block;
+    padding: var(--spacing-md);
+    text-decoration: none;
+  }
+}

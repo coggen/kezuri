@@ -4,10 +4,11 @@ export default {
   argTypes: {
     styleClasses: {
       control: 'check',
-      options: ['Last Column Controls', 'Hover'],
+      options: ['Last Column Controls', 'Hover', 'Enclosed'],
       mapping: {
         'Last Column Controls': 'sharpen-table-controls-end',
         'Hover': 'sharpen-table-hover',
+        'Enclosed': 'sharpen-table--enclosed'
       },
     },
   },
@@ -57,6 +58,15 @@ export const Example = {
 };
 
 /**
+ * For larger content tables surrounded by a border
+ */
+export const EnclosedTable = {
+  args: {
+    styleClasses: ['Enclosed'],
+  },
+};
+
+/**
  * When a table lacks a header and you do not want the first row to have a top
  * border, apply the `sharpen-table--headless` class.
  */
@@ -82,6 +92,22 @@ export const HeadlessTable = {
 </table>
 `,
 };
+
+/**
+ * When you want to prefix every row with a representative icon, using
+ * `sharpen-table--icon-start`
+ */
+export const IconStartTable = {
+  render: () => `<table class="sharpen-table sharpen-table--icon-start">
+  <thead>
+    <tr><th></th><th>Name</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><i class="sharpen-icon">face</i></td><td>Jurickson Profar</td></tr>
+    <tr><td><i class="sharpen-icon">face</i></td><td>Juremy Profar</td></tr>
+  </tbody>
+</table>`
+}
 
 export const PricingTable = {
   render: () => `<table class="sharpen-table sharpen-table--pricing">
