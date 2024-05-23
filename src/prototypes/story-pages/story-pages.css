@@ -11,10 +11,6 @@
   flex: 1;
 }
 
-sharpen-story-page {
-  overflow-y: hidden;
-}
-
-sharpen-story-page .text {
-  opacity: 0;
+.sharpen-wizard-container.storymaker {
+  max-width: 50rem;
 }

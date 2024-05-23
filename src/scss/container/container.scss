@@ -20,4 +20,7 @@ main {
   padding: var(--spacing-lg);
   max-width: 30rem;
   margin: 0 auto;
+
+  // Storymaker variation should be a bit wider
+  &.storymaker { max-width: 50rem; }
 }
