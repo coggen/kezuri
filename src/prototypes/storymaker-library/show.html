@@ -1,0 +1,123 @@
+  <!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Storymaker</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../storymaker/storymaker.css" />
+  <style>
+    sharpen-story-page { 
+      font-family: Lexend, sans-serif;
+    }
+    sharpen-story-page p + p {
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body class="sharpen-background--white">
+
+  <sharpen-primary-navigation brand-href="index.html" current-learner="Jurickson Profar" current-user="Belinda Profar" class="sharpen-mb-md">
+    <nav slot="app-links">
+      <sharpen-nav-link name="Assessments &amp; Summary" href="javascript:void();"></sharpen-nav-link>
+      <sharpen-nav-link name="Sharpen Reading" href="javascript:void();"></sharpen-nav-link>
+      <sharpen-nav-link name="Sharpen Spelling" href="javascript:void();"></sharpen-nav-link>
+      <sharpen-nav-link name="Storymaker" selected="true" href="home.html"></sharpen-nav-link>
+    </nav>
+
+    <div slot="learner-links" class="sharpen-menu-links">
+      <h5 class="sharpen-nav-link-header">Learners</h5>
+      <sharpen-nav-link icon="face" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>  
+      <sharpen-nav-link icon="face" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>  
+      <sharpen-nav-link icon="face" name="Jurickson Profar" href="javascript:void();"></sharpen-nav-link>  
+      <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+    </div>
+
+    <div slot="user-links" class="sharpen-menu-links">
+      <sharpen-nav-link icon="account_box" name="Account" href="javascript:void();"></sharpen-nav-link>
+      <hr>
+      <h5 class="sharpen-nav-link-header">Learner Settings</h5>
+      <sharpen-nav-link icon="edit" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>
+      <sharpen-nav-link icon="edit" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>
+      <sharpen-nav-link icon="edit" name="Jurickson Profar" href="javascript:void();"></sharpen-nav-link>
+      <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+      <hr>
+      <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+    </div>      
+  </sharpen-primary-navigation>
+
+  <sharpen-simple-navigation background="sunrise"></sharpen-simple-navigation>
+
+  <div class="container">
+    <div class="row sharpen-mt-lg">
+      <div class="col-md-4 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1">
+
+        <sharpen-page-navigation>
+          <sharpen-nav-link name="Welcome" icon="home" href="javascript:void(0);"></sharpen-nav-link>
+          <sharpen-nav-link name="Library" icon="book" href="index.html" selected="true"></sharpen-nav-link>
+          <sharpen-nav-link name="Upgrade" icon="thumb_up" href="javascript:void(0);"></sharpen-nav-link>
+        </sharpen-page-navigation>
+
+      </div>
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        
+        <div class="sharpen-text--center sharpen-mb-lg">
+          <h1 class="sharpen-text-3xl sharpen-mb-0">Frog &amp; Log</h1>
+          <hr class="sharpen-my-sm">
+          <h2 class="sharpen-text-xl">by Jurickson Profar</h2>
+
+          <div class="sharpen-mt-md">
+            <button id="btn-share" class="sharpen-button sharpen-button--primary sharpen-button--small">Share</button>
+            <a id="btn-mail" href="#" class="sharpen-button sharpen-button--primary sharpen-button--small"><i class="sharpen-icon">mail</i></a>
+          </div>
+        </div>
+        
+        <sharpen-story-page class="sharpen-mb-xl" content-mode="sentence" background-src="../storymaker/images/forest.png" character-src="../storymaker/images/frog.png">
+          <p>A green frog sat on a log. The frog's name was Hop. Hop lived in a small town near a pond.</p>
+          <p>One day Hop met a red frog. The red frog said, 'Hi, I'm Ribbit.' Hop and Ribbit sat on the log. </p>
+          <p>Hop and Ribbit had fun all day. They jumped and played in the pond. Hop said, 'You are my best friend.'</p>
+        </sharpen-story-page>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+
+  const shareData = {
+    title: "Frog & Log by Jurickson",
+    text: "Read Jurickson's story created with Sharpen Story Maker",
+    url: "https://sharpen.com",
+  };
+
+  $(document).ready(function() {
+    if (!("share" in navigator)) {
+      $("#btn-share").remove();
+    }
+
+    $("#btn-mail").attr("href", "mailto:?subject=" + encodeURIComponent("Read: 'Frog & Log' by Jurickson") + "&body=" + encodeURIComponent("Jurickson's created this story with Sharpen Story Maker:\nhttps://app.sharpen.com/storymaker/read/1234"));
+
+    $("#btn-share").click(function() {
+      console.log("sharing...");
+      try {
+        navigator.share(shareData);
+      } catch (err) {
+        console.log(`Error: ${err}`);
+      }
+    });
+  });
+
+</script>
+
+</body>
+</html>

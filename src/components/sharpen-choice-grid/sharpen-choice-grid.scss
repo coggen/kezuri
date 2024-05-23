@@ -31,3 +31,9 @@ sharpen-choice-grid {
     }
   }
 }
+
+// In the Storymaker case, we don't want the choice images to be too high
+// that the options need to scroll
+.storymaker sharpen-choice-grid a img {
+  max-height: 10rem;
+}
