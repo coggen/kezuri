@@ -1,0 +1,26 @@
+.link-library .sharpen-icon {
+  font-size: 40px;
+  margin-top: -11px;
+  vertical-align: -5px;
+}
+
+.library-choices {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.library-choices a {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.library-choices sharpen-card {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  font-size: 18pt;
+}
+
+.library-choices sharpen-card img {
+  width: 5rem;
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Sharpen Prototype: Storymaker</title>
+  <title>Sharpen Prototype: Storymaker Library</title>
   <link rel="stylesheet" href="../build/kezuri.css" />
   <script type="module" src="../build/kezuri.esm.js"></script>
   <script nomodule src="../build/kezuri.js"></script>
@@ -74,7 +74,7 @@
         <div class="sharpen-text--center sharpen-mb-lg">
           <h1 class="sharpen-text-3xl sharpen-mb-0">Frog &amp; Log</h1>
           <hr class="sharpen-my-sm">
-          <h2 class="sharpen-text-xl">by Jurickson Profar</h2>
+          <h2 class="sharpen-text-xl">Built by Jurickson</h2>
 
           <div class="sharpen-mt-md">
             <button id="btn-share" class="sharpen-button sharpen-button--primary sharpen-button--small">Share</button>
@@ -94,21 +94,24 @@
 
 <script>
 
-  const shareData = {
-    title: "Frog & Log by Jurickson",
-    text: "Read Jurickson's story created with Sharpen Story Maker",
-    url: "https://sharpen.com",
-  };
-
   $(document).ready(function() {
     if (!("share" in navigator)) {
       $("#btn-share").remove();
     }
 
-    $("#btn-mail").attr("href", "mailto:?subject=" + encodeURIComponent("Read: 'Frog & Log' by Jurickson") + "&body=" + encodeURIComponent("Jurickson's created this story with Sharpen Story Maker:\nhttps://app.sharpen.com/storymaker/read/1234"));
+    $("#btn-mail").attr("href",
+      "mailto:?subject=" + encodeURIComponent("Read: 'Frog & Log' by Jurickson")
+      + "&body=" + encodeURIComponent("Jurickson's created this story with Sharpen Story Maker:\nhttps://app.sharpen.com/storymaker/read/1234"));
 
     $("#btn-share").click(function() {
       console.log("sharing...");
+
+      const shareData = {
+        title: "Frog & Log by Jurickson",
+        text: "Read Jurickson's story created with Sharpen Story Maker",
+        url: "https://sharpen.com",
+      };
+
       try {
         navigator.share(shareData);
       } catch (err) {

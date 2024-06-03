@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Onboarding</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../storymaker/storymaker.css" />
+  <link rel="stylesheet" href="../story-pages/story-pages.css" />
+  <link rel="stylesheet" href="storymaker-library.css" />
+</head>
+<body class="sharpen-background--white">
+
+  <sharpen-simple-navigation brand-href="https://www.sharpen.com/storymaker"></sharpen-simple-navigation>
+
+  <div class="sharpen-wizard-container storymaker">
+
+    <div class="sharpen-text--center sharpen-text-xl sharpen-mb-md">
+      <strong>Dog and Log</strong><br />
+      Built by Jurickson
+    </div>
+
+    <div class="sharpen-text--center sharpen-text-md sharpen-mb-lg sharpen-text--muted">
+      Built with <a href="https://www.sharpen.com/storymaker">Sharpen Story Maker</a>
+    </div>
+
+    <sharpen-story-page content-mode="sentence" background-src="../storymaker/images/forest.png" character-src="../storymaker/images/frog.png">
+      <p>
+        A green frog sat on a log. The frog's name was Hop. Hop lived in a small town near a pond.
+      </p>
+      <p>
+        One day Hop met a red frog. The red frog said, 'Hi, I'm Ribbit.' Hop and Ribbit sat on the log.
+      </p>
+      <p>
+        Hop and Ribbit had fun all day. They jumped and played in the pond. Hop said, 'You are my best friend.'
+      </p>
+    </sharpen-story-page>
+
+    <div class="reading-controls">
+      <button id="story-next" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-mt-lg">
+        Make your own story
+      </button>  
+    </div>
+
+  </div>
+
+
+<audio id="prompt" src="audio/read/complete.mp3"></audio>
+
+<script>
+
+$(document).ready(function() {
+  var $audioComplete = $("audio#complete");
+  $audioComplete[0].play();
+});
+
+</script>
+
+</body>
+</html>

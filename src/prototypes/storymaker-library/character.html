@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Storymaker Library</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../storymaker/storymaker.css" />
+  <style>
+    .link-library .sharpen-icon {
+      font-size: 40px;
+      margin-top: -11px;
+      vertical-align: -5px;
+    }
+  </style>
+</head>
+<body class="sharpen-background--white">
+
+  <sharpen-simple-navigation brand-href="upgrade.html">
+    <div slot="custom-nav">
+      <a href="library.html" class="link-library"><i class="sharpen-icon">import_contacts</i></a>
+    </div>
+  </sharpen-simple-navigation>
+
+  <div class="sharpen-wizard-container storymaker">
+
+    <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
+      Let’s make a story!<br />
+      Pick a character.
+    </div>
+
+    <sharpen-choice-grid>
+      <a href="location.html" class="hide">
+        <sharpen-card border="none" padding="medium">
+          <img src="../storymaker/images/dog.png" />
+          <div class="title">dog</div>
+        </sharpen-card>
+      </a>
+      <a href="location.html" class="hide">
+        <sharpen-card border="none" padding="medium">
+          <img src="../storymaker/images/bug.png" />
+          <div class="title">bug</div>
+        </sharpen-card>
+      </a>
+      <a href="location.html" class="hide">
+        <sharpen-card border="none" padding="medium">
+          <img src="../storymaker/images/cat.png" />
+          <div class="title">cat</div>
+        </sharpen-card>
+      </a>
+      <a href="location.html" class="hide">
+        <sharpen-card border="none" padding="medium">
+          <img src="../storymaker/images/pig.png" />
+          <div class="title">pig</div>
+        </sharpen-card>
+      </a>
+    </sharpen-choice-grid>
+
+  </div>
+  
+  <audio id="prompt" src="../storymaker/audio/character_choice/prompt.mp3"></audio>
+  <audio id="dog" src="../storymaker/audio/character_choice/dog.mp3"></audio>
+  <audio id="cat" src="../storymaker/audio/character_choice/cat.mp3"></audio>
+  <audio id="bug" src="../storymaker/audio/character_choice/bug.mp3"></audio>
+  <audio id="pig" src="../storymaker/audio/character_choice/pig.mp3"></audio>
+
+<script>
+
+function showChoice($el) {
+
+  console.log("showing choice...");
+  
+  var choiceText = $el.find(".title").text(),
+    $audio = $("audio#" + choiceText),
+    animationClasses = "highlight animate__animated animate__bounceIn";
+
+  $audio[0].play();
+
+  $el.removeClass("hide")
+      .addClass(animationClasses)
+      .on('animationend', function() {
+        $el.removeClass(animationClasses);
+        setTimeout(function() {
+          showChoice($el.next());
+        }, 200);
+    });
+}
+
+$(document).ready(function() {
+  console.log("starting sequence...");
+
+  var $audio = $("#prompt"),
+    $choices = $("sharpen-choice-grid a");
+  
+  $choices.addClass("hide");
+
+  $audio.on("ended", function() {
+    showChoice($choices.first());
+  });
+
+  $audio[0].play();
+});
+
+</script>
+
+</body>
+</html>
