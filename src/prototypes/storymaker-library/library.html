@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Storymaker Library</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../storymaker/storymaker.css" />
+  <link rel="stylesheet" href="storymaker-library.css" />
+</head>
+<body class="sharpen-background--white">
+
+  <sharpen-simple-navigation brand-href="upgrade.html">
+    <div slot="custom-nav">
+      <a href="library.html" class="link-library"><i class="sharpen-icon">import_contacts</i></a>
+    </div>
+  </sharpen-simple-navigation>
+
+  <div class="sharpen-wizard-container storymaker">
+
+    <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
+      This is your library. Touch a story name to read it again or touch the green button to make a new one.
+    </div>
+
+    <div class="library-choices">
+      <a href="character.html" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width sharpen-mb-lg">
+        New story
+      </a>  
+
+      <a href="read.html">
+        <sharpen-card border="gray" padding="medium">
+          <img src="../storymaker/images/dog.png" />
+          Dog and Log
+        </sharpen-card>
+      </a>
+      <a href="read.html">
+        <sharpen-card border="gray" padding="medium">
+          <img src="../storymaker/images/monkey.png" />
+          Monkey and Log
+        </sharpen-card>
+      </a>
+      <a href="read.html">
+        <sharpen-card border="gray" padding="medium">
+          <img src="../storymaker/images/robot.png" />
+          Robot and Log
+        </sharpen-card>
+      </a>
+      <a href="read.html">
+        <sharpen-card border="gray" padding="medium">
+          <img src="../storymaker/images/unicorn.png" />
+          Unicorn and Log
+        </sharpen-card>
+      </a>
+    </div>
+
+  </div>
+  
+  <audio id="prompt" src="audio/library.mp3"></audio>
+
+<script>
+
+$(document).ready(function() {
+  var $audio = $("#prompt");  
+  $audio[0].play();
+});
+
+</script>
+
+</body>
+</html>
