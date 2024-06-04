@@ -16,52 +16,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../storymaker/storymaker.css" />
-  <link rel="stylesheet" href="../story-pages/story-pages.css" />
-  <link rel="stylesheet" href="storymaker-library.css" />
+  <link rel="stylesheet" href="../storymaker-library/storymaker-library.css" />
+  <link rel="stylesheet" href="story-pages.css" />
 </head>
 <body class="sharpen-background--white">
 
-  <sharpen-simple-navigation brand-href="upgrade.html">
+  <sharpen-simple-navigation brand-href="#">
     <div slot="custom-nav">
-      <a href="library.html" class="link-library"><i class="sharpen-icon">newsstand</i></a>
+      <a href="../storymaker-library/library.html" class="link-library"><i class="sharpen-icon">newsstand</i></a>
     </div>
   </sharpen-simple-navigation>
 
   <div class="sharpen-wizard-container storymaker">
 
-    <div class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
-      <strong>Dog and Log</strong><br />
-      by Jurickson
-    </div>
-
-    <sharpen-story-page content-mode="sentence" background-src="../storymaker/images/forest.png" character-src="../storymaker/images/frog.png">
-      <p>
-        A green frog sat on a log. The frog's name was Hop. Hop lived in a small town near a pond.
-      </p>
-      <p>
-        One day Hop met a red frog. The red frog said, 'Hi, I'm Ribbit.' Hop and Ribbit sat on the log.
-      </p>
-      <p>
-        Hop and Ribbit had fun all day. They jumped and played in the pond. Hop said, 'You are my best friend.'
-      </p>
-    </sharpen-story-page>
-
-    <div class="reading-controls">
-      <button id="story-next" class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-mt-lg">
-        <i class="sharpen-icon sharpen-text-4xl">check</i>
-      </button>  
+    <div id="page-instruction" class="sharpen-text--center sharpen-text-xl sharpen-mb-lg">
+      Great! That story is now in your library.<br />
+      Touch the bookshelf at the top to find it.
     </div>
 
   </div>
 
 
-<audio id="prompt" src="audio/read/complete.mp3"></audio>
+<audio id="added" src="audio/added.mp3"></audio>
+<audio id="touch" src="audio/touch.mp3"></audio>
 
 <script>
 
 $(document).ready(function() {
-  var $audioComplete = $("audio#complete");
-  $audioComplete[0].play();
+  var $audioAdded = $("audio#added"),
+      $audioTouch = $("audio#touch"),
+      $simpleNav = $("sharpen-simple-navigation .navbar"),
+      $linkLibrary = $(".link-library");
+
+  $audioAdded[0].play();
+
+  $audioAdded.on("ended", function() {
+    $audioTouch[0].play();
+
+    $simpleNav.on('animationend', function() {
+      $linkLibrary.addClass("animate__animated animate__heartBeat animate__repeat-2");  
+    });
+
+    $simpleNav.addClass("animate__animated animate__flipInX");
+
+    $audioTouch.on("ended", function() {
+      // redirect
+    });
+  });
+
 });
 
 </script>
