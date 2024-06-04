@@ -1,3 +1,7 @@
+.link-library {
+  display: inline-block;
+}
+
 .link-library .sharpen-icon {
   font-size: 40px;
   margin-top: -11px;
