@@ -17,8 +17,9 @@ sharpen-story-page {
     aspect-ratio: 10 / 6.5;
     margin-top: 0;
     display: flex;
+    flex-wrap: wrap;
     align-content: end;
-    padding-bottom: 2%;
+    padding-bottom: 1em;
     justify-content: center;
 
     background-size: 100%;
