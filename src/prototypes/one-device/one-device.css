@@ -130,6 +130,7 @@ body.sharpen-lesson {
 .sharpen-lesson nav .metadata {
   display: flex;
   margin-bottom: var(--spacing-lg);
+  align-items: center;
 }
 
 .sharpen-lesson nav .metadata .lesson, .sharpen-lesson nav .activity-step {

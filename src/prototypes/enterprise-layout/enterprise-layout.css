@@ -1,0 +1,75 @@
+html, body, .sharpen-enterprise-container {
+  height: 100%;
+}
+
+.sharpen-enterprise-container {
+  display: flex;
+  max-width: 1360px;
+}
+
+.sharpen-enterprise-container > main {
+  flex: 1;
+  background-color: white;
+  padding: var(--spacing-lg);
+}
+
+.sharpen-enterprise-navigation {
+  width: 15rem;
+  padding: var(--spacing-lg);
+  background-color: var(--color-evergreen);
+  color: white;
+}
+
+.sharpen-enterprise-navigation .district {
+  color: white;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px dotted white;
+}
+
+.sharpen-enterprise-navigation .brand {
+  display: block;
+  margin-bottom: var(--spacing-md);
+}
+
+.sharpen-enterprise-navigation .brand img {
+  max-width: 8rem;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link {
+  display: block;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link + sharpen-nav-link {
+  margin-top: 0.5rem;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link a {
+  color: var(--color-sunrise);
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link .sharpen-icon {
+  margin-right: 0.25em;
+  vertical-align: -4pt;
+}
+
+.sharpen-enterprise-navigation .support-links {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px dotted white;
+
+}
+
+
+.sharpen-enterprise-navigation .support-links sharpen-nav-link a {
+  color: var(--color-mint);
+}
+
+.sharpen-button-bar {
+  display: flex;
+  gap: 1em;
+}
+
+.sharpen-button-bar form {
+  flex: 1;
+}
