@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Learner Profile</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+  </head>
+  <body>
+
+    <sharpen-primary-navigation current-user="Belinda Profar">
+      <sharpen-nav-link name="Dashboard" href="javascript:void();"></sharpen-nav-link>
+    </sharpen-primary-navigation>
+
+    <main class="container">
+
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          
+          <sharpen-card border="gray" padding="large" class="sharpen-mb-lg">
+            <h1 class="sharpen-heading-2xl">Update Child Profile</h1>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">First Name</label>
+                  <input type="text" class="sharpen-form-control" />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">Last Name</label>
+                  <input type="text" class="sharpen-form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="sharpen-form-group">
+              <label class="sharpen-form-label">Sex</label>
+              <select class="sharpen-form-control">
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+              <div class="sharpen-form-text">The biological sex of the child</div>
+            </div>
+            
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">Date of Birth</label>
+                  <input type="text" class="sharpen-form-control" placeholder="mm/dd/yyyy" />
+                  <div class="sharpen-form-text">The schedule for developmental milestone assessments is based on the age of the child.</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">Kindergarten Start Year</label>
+                  <select class="sharpen-form-control">
+                    <option></option>
+                    <option>2023</option>
+                    <option>2024</option>
+                  </select>
+                  <div class="sharpen-form-text">We use the year the child entered, or will enter, kindergarten to personalize your child's assessment schedule.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">Grade in 2023&ndash;24 school year</label>
+                  <select class="sharpen-form-control">
+                    <option>Grade 5</option>
+                    <option>Grade 6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">Struggles with reading?</label>
+                  <select class="sharpen-form-control">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="sharpen-form-group sharpen-mt-md">
+              <button class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Update</button>
+            </div>
+          </sharpen-card>
+
+          <sharpen-card border="gray" padding="large">
+            <h1 class="sharpen-heading-2xl">Child Login Details</h1>
+            <p class="sharpen-text-intro">Your child can use the username and password below to <a href="https://reading.sharpen.com/students/login" target="_blank">join a lesson in Sharpen Reading</a>.</p>
+            
+            <div class="row sharpen-mt-lg">
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">User ID</label>
+                  <input type="text" class="sharpen-form-control" value="321321" />
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="sharpen-form-group">
+                  <label class="sharpen-form-label">Set New Passcode</label>
+                  <input type="text" class="sharpen-form-control" value="688130" />
+                </div>
+              </div>
+            </div>
+
+            <div class="sharpen-form-group sharpen-mt-md">
+              <button class="sharpen-button sharpen-button--primary sharpen-button--small sharpen-button--full-width">Update</button>
+            </div>
+
+          </sharpen-card>
+        </div>
+      </div>
+    </main>
+
+
+  </body>
+</html>

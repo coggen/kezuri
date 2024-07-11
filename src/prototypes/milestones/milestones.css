@@ -1,0 +1,83 @@
+/** MILESTONE **/
+
+.sharpen-lesson .milestone, .sharpen-lesson .up-next {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sharpen-lesson .milestone .sharpen-icon {
+  font-size: 6em;
+  margin-bottom: var(--spacing-lg);
+}
+
+.sharpen-lesson .milestone.unit .sharpen-icon,
+.sharpen-lesson .milestone.level .sharpen-icon {
+  font-size: 10em;
+}
+
+.sharpen-lesson .milestone h2 {
+  font-size: var(--font-size-xl);
+}
+
+.sharpen-lesson .milestone h1 {
+  font-size: var(--font-size-4xl);
+}
+
+
+/** UP NEXT **/
+
+.sharpen-lesson .up-next h2 {
+  font-size: var(--font-size-xl);
+}
+
+.sharpen-lesson .up-next h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+
+.sharpen-lesson .up-next .lessons {
+  margin: 2em;
+  display: flex;
+  gap: 1em;
+  font-style: italic;
+}
+
+.sharpen-lesson .up-next .lessons > * {
+  flex: 1;
+}
+
+.sharpen-lesson .up-next .lessons img {
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.milestone .unit-keywords, .milestone .level-books {
+  margin-top: var(--spacing-xl);
+  visibility: hidden;
+}
+
+.milestone .unit-keywords.visible, .milestone .level-books.visible {
+  visibility: visible;
+}
+
+.milestone .unit-keywords div {
+  display: inline-block;
+  font-size: var(--font-size-5xl);
+}
+
+.milestone .unit-keywords div + div {
+  margin-left: 1em;
+}
+
+.milestone .level-books img {
+  margin-top: 0;
+  height: 15rem;
+  vertical-align: top;
+}
+
+.milestone .level-books img + img {
+  margin-left: 1em;
+}
