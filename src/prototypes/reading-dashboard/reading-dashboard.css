@@ -1,0 +1,124 @@
+.center-flex {
+  display: flex;
+  align-content: center;
+}
+
+.center-flex > :first-child {
+  flex: 1;
+}
+
+.next-lesson {
+  background-color: var(--color-mint);
+}
+
+.level-description > :last-child {
+  margin-bottom: 0;
+}
+
+ul.file-list li + li {
+  margin-top: var(--spacing-sm);
+}
+
+sharpen-learning-map {
+  display: block;
+  font-size: 16pt;
+}
+
+sharpen-learning-map .map-container {
+  position: relative;
+}
+
+sharpen-learning-map .map-container:before {
+  content: "";
+  background-color: var(--color-mint);
+  position: absolute;
+  width: 4px;
+  left: 14px;
+  top: 0;
+  bottom: 30px;
+}
+
+sharpen-learning-map .map-container > ul {
+  position: relative;
+  z-index: 1;
+}
+
+sharpen-learning-map ul {
+  list-style-type: none;
+}
+
+sharpen-learning-map .map-container > ul > li {
+  margin: 6pt 0;
+}
+
+sharpen-learning-map .map-container > ul > li > .sharpen-icon {
+  font-size: 24pt;
+  margin-right: 0.25em;
+  vertical-align: -8px;
+  background-color: white;
+}
+
+sharpen-learning-map ul ul {
+  margin: 0 0 0.5em 1.75em;
+  display: flex;
+}
+
+sharpen-learning-map ul ul .sharpen-icon {
+  font-size: 16pt;
+}
+
+sharpen-learning-map .sharpen-icon { color: var(--color-gray-4); }
+sharpen-learning-map .complete > .sharpen-icon { color: var(--color-evergreen); }
+sharpen-learning-map .current > .sharpen-icon { color: var(--color-pine); }
+
+sharpen-learning-map .map-level-content {
+  margin-left: 2.6rem;
+}
+
+sharpen-learning-map .level-description {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-1);
+}
+
+sharpen-learning-map .sharpen-level-progress {
+  font-size: var(--font-size-sm);
+}
+
+.images img { width: 80px;  }
+
+.goals-book-covers {
+  display: flex;
+  gap: 1em;
+}
+
+.goals-book-covers .cover {
+  width: 50%;
+}
+
+.goals-book-covers img {
+  width: 100%;
+}
+
+sharpen-learning-map .level-unit-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-2);
+  margin-left: var(--spacing-sm);
+}
+
+
+.unit-progress-blocks {
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-gray-4);
+  letter-spacing: -1px;
+  line-height: 90%;
+  margin-bottom: 0px;
+}
+
+.unit-progress-blocks .unit {
+  margin-right: 2px;
+}
+
+.unit-progress-blocks .complete {
+  color: var(--color-pine);
+}
