@@ -2,7 +2,7 @@
   "name": "@sharpen-com/kezuri",
   "description": "The Sharpen Design System",
   "license": "MIT",
-  "version": "0.13.4",
+  "version": "0.13.5",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
