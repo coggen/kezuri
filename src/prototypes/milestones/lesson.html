@@ -24,20 +24,10 @@
         <div class="text"></div>
         <div class="brand"><img src="../build/assets/images/brand/sharpen_mark_evergreen.png" alt="Sharpen" /></div>
       </section>
-      <section class="activity milestone unit">
-        <i class="sharpen-icon filled animate__animated animate__wobble">sports_score</i>
-        <h2>You finished Level A</h2>
-        <h1>Unit 1</h1>
-
-        <div class="unit-keywords sharpen-text--color-orange sharpen-text--stronger">
-          <div>cat</div>
-          <div>pot</div>
-          <div>tap</div>
-          <div>at</div>
-          <div>mop</div>
-          <div>sat</div>
-        </div>
-        
+      <section class="activity milestone">
+        <i class="sharpen-icon sharpen-text--color-pine filled animate__animated animate__rubberBand">check_circle</i>
+        <h2>You finished Level A, Unit 1</h2>
+        <h1>Lesson 1</h1>
       </section>
       <div class="help-content hide">
       </div>
@@ -49,7 +39,7 @@
           <div class="lesson">
             Level A<br />
             Unit 1<br />
-            Lesson 7
+            Lesson 1
           </div>
           <a href="index.html" class="lesson-close"><i class="sharpen-icon">close</i></a>
         </div>
@@ -58,7 +48,7 @@
         <div class="activity-step">
           &hellip;
         </div>
-        <a href="level.html" id="next" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio pulse">Next <i class="sharpen-icon">arrow_forward</i></a>  
+        <a href="up-next.html" id="next" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio pulse">Next <i class="sharpen-icon">arrow_forward</i></a>  
 
       </div>
       <div class="actions">
@@ -72,36 +62,9 @@
     </nav>
   </div>
 
-  <audio id="completed" src="audio/unit_completed.mp3"></audio>
-  <audio id="look" src="audio/look_at.mp3"></audio>
+<audio id="completed" src="audio/lesson_completed.mp3"></audio>
 
 <script>
-
-const confettiDefaults = {
-  spread: 360,
-  ticks: 50,
-  gravity: 0,
-  decay: 0.94,
-  startVelocity: 30,
-  shapes: ["star"],
-  colors: ["FFE400", "FFBD00", "E89400", "FFCA6C", "FDFFB8"],
-};
-
-function shoot() {
-  confetti({
-    ...confettiDefaults,
-    particleCount: 40,
-    scalar: 1.2,
-    shapes: ["star"],
-  });
-
-  confetti({
-    ...confettiDefaults,
-    particleCount: 10,
-    scalar: 0.75,
-    shapes: ["circle"],
-  });
-}
 
 function enableButtons() {
   $(".disable-on-audio").removeAttr("disabled");
@@ -113,27 +76,26 @@ function disableButtons() {
 }
 
 $(document).ready(function() {
-
-  var $audioCompleted = $("audio#completed"),
-      $audioLook = $("audio#look"),
-      $keywordList = $(".unit-keywords"),
-      $keywords = $(".unit-keywords div");
-  
-  $audioCompleted.on("ended", function() {
-    $keywordList.addClass("visible");
-    $keywords.each(function(index) {
-      $(this).addClass("animate__animated animate__bounceInRight animate__delay-"+index+"s");
-    });
-    // $keywords.addClass("animate__animated animate__lightSpeedInLeft");
-    $audioLook[0].play();
-  });
-
+  var $audioCompleted = $("audio#completed");
   $audioCompleted[0].play();
 
-  setTimeout(shoot, 0);
-  setTimeout(shoot, 100);
-  setTimeout(shoot, 200);
-
+  confetti({
+    spread: 360,
+    ticks: 200,
+    gravity: 1,
+    decay: 0.94,
+    startVelocity: 30,
+    particleCount: 100,
+    scalar: 3,
+    shapes: ["image"],
+    shapeOptions: {
+      image: [{
+        src: "../build/assets/images/brand/sharpen_mark_evergreen.png",
+        width: 32,
+        height: 32,
+      }]
+    }
+  });
 });
 
 </script>

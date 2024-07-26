@@ -3,83 +3,73 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Sharpen Prototype: One-Device Reading Lesson</title>
+  <title>Sharpen Prototype: One-Device Milestones</title>
   <link rel="stylesheet" href="../build/kezuri.css" />
   <script type="module" src="../build/kezuri.esm.js"></script>
   <script nomodule src="../build/kezuri.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <link rel="stylesheet" href="../one-device/one-device.css" />
-  <link rel="stylesheet" href="milestones.css" />
+  <style>
+    td { vertical-align: top; }
+    td a { font-size: var(--font-size-lg); }
+    td p { margin-top: var(--spacing-xs); }
+    td .sharpen-icon { margin-top: 2px; }
+    footer {
+      margin-top: var(--spacing-lg);
+      color: var(--color-gray-1);
+    }
+  </style>
 </head>
-<body class="sharpen-lesson">
+<body>
 
-  <div class="interface">
-    <div class="primary">
-      <section class="instruction">
-        <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--circle sharpen-button--muted disable-on-audio"><i class="sharpen-icon">play_arrow</i></button></div>
-        <div class="text"></div>
-        <div class="brand"><img src="../build/assets/images/brand/sharpen_mark_evergreen.png" alt="Sharpen" /></div>
-      </section>
-      <section class="activity milestone">
-        <i class="sharpen-icon sharpen-text--color-pine filled animate__animated animate__rubberBand">check_circle</i>
-        <h2>You finished Level A, Unit 1</h2>
-        <h1>Lesson 1</h1>
-      </section>
-      <div class="help-content hide">
-      </div>
-    </div>
-    <nav>
-      <div class="movement">
-        
-        <div class="metadata">
-          <div class="lesson">
-            Level A<br />
-            Unit 1<br />
-            Lesson 1
-          </div>
-          <a href="index.html" class="lesson-close"><i class="sharpen-icon">close</i></a>
-        </div>
+  <div class="container sharpen-my-lg">
 
-        <button class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_back</i> Back</button>
-        <div class="activity-step">
-          &hellip;
-        </div>
-        <a href="up-next.html" id="next" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio pulse">Next <i class="sharpen-icon">arrow_forward</i></a>  
+    <sharpen-back href="../">Sharpen User Experience Prototypes Library</sharpen-back>
 
-      </div>
-      <div class="actions">
+    <sharpen-card border="none" padding="large">
 
-      </div>
-      <div class="help">
+    <h2 class="sharpen-heading-md-sans">PROTOTYPE</h2>
+    <h1 class="sharpen-heading-3xl">One-Device Milestons</h1>
 
-        <button id="help" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">question_mark</i></button>
+    <table class="sharpen-table sharpen-mt-lg sharpen-table--icon-start">
+      <tbody>
+        <tr>
+          <td><i class="sharpen-icon">web</i></td>
+          <td>
+            <a href="lesson.html">End of Lesson</a>
+            <p>Simple message with basic confetti</p>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">web</i></td>
+          <td>
+            <a href="up-next.html">Up Next</a>
+            <p>Preview of upcoming lesson</p>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">web</i></td>
+          <td>
+            <a href="unit.html">End of Unit</a>
+            <p>Celebration with key words and enhanced confetti</p>
+          </td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">web</i></td>
+          <td>
+            <a href="level.html">End of Level</a>
+            <p>Highlights popular books now accessible to learner, with premium confetti</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      </div>
-    </nav>
+    </sharpen-card>
+
+    <footer>
+      &copy; 2024 Sharpen.com, Inc.
+    </footer>
+
   </div>
 
-<audio id="completed" src="audio/lesson_completed.mp3"></audio>
-
-<script>
-
-function enableButtons() {
-  $(".disable-on-audio").removeAttr("disabled");
-}
-
-function disableButtons() {
-  $(".disable-on-audio").attr("disabled", "disabled");
-  $(".pulse").removeClass("pulse");
-}
-
-$(document).ready(function() {
-  var $audioCompleted = $("audio#completed");
-  $audioCompleted[0].play();
-});
-
-</script>
 
 </body>
 </html>

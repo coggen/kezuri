@@ -5,9 +5,26 @@ sharpen-alert {
   display: flex;
   margin-bottom: var(--spacing-md);
 
-  &[type="success"] { background-color: var(--color-light-green); }
-  &[type="warning"] { background-color: var(--color-light-orange); }
-  &[type="danger"]  { background-color: var(--color-light-red); }
+  &[type="success"] {
+    background-color: var(--color-light-green);
+    a { color: var(--color-dark-green); }
+  }
+
+  &[type="warning"] {
+    background-color: var(--color-light-orange);
+    a { color: var(--color-dark-orange); }
+  }
+
+  &[type="danger"]  {
+    background-color: var(--color-light-red);
+    a { color: var(--color-dark-red); }
+  }
+
+  &[type="info"]    {
+    background-color: var(--color-gray-4);
+    a { color: var(--color-gray-1); }
+  }
+
 
   .sharpen-alert--icon {
     padding-right: var(--spacing-md);

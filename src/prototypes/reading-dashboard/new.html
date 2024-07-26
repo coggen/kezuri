@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Reading Dashboard</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="reading-dashboard.css" />
+</head>
+<body>
+
+<sharpen-primary-navigation current-learner="Abby Santiago" current-user="Belinda Santiago" class="sharpen-mb-md">
+  <nav slot="app-links">
+    <sharpen-nav-link name="Reading" selected="true" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link name="Spelling" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link name="Storymaker" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link name="Assessments" href="javascript:void();"></sharpen-nav-link>
+  </nav>
+
+  <div slot="learner-links" class="sharpen-menu-links">
+    <h5 class="sharpen-nav-link-header">Learners</h5>
+    <sharpen-nav-link icon="face" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="face" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="face" name="Abby Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+  </div>
+
+  <div slot="user-links" class="sharpen-menu-links">
+    <sharpen-nav-link icon="account_box" name="Account" href="javascript:void();"></sharpen-nav-link>
+    <hr>
+    <h5 class="sharpen-nav-link-header">Learner Settings</h5>
+    <sharpen-nav-link icon="edit" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Abby Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+    <hr>
+    <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+  </div>      
+</sharpen-primary-navigation>
+
+<main class="container">
+
+  <h1 class="sharpen-heading-xl sharpen-heading--bordered sharpen-mb-md">
+    <i class="sharpen-icon">menu_book</i>Welcome to Sharpen Reading
+  </h1>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      <sharpen-card class="next-lesson sharpen-mb-md" border="none" padding="medium">
+        <div class="center-flex">
+          <dl class="sharpen-list">
+            <dt>Abby's next lesson</dt>
+            <dd>
+              <span class="sharpen-text-lg">Introduction</span>
+            </dd>
+          </dl>
+          <button class="sharpen-button sharpen-button--small sharpen-button--primary">
+            <i class="sharpen-icon">play_arrow</i>
+            Start
+          </button>
+        </div>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>About the next lesson</dt>
+          <dd><span class="sharpen-text-lg">Introduction</span></dd>
+        </dl>
+
+        <div class="level-description sharpen-text-xs sharpen-text--muted sharpen-text--body">
+          <p>This interactive introduction will walk you and your learner through how Sharpen Reading works.</p>
+        </div>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Printable resources</dt>
+          <dd>
+            As you progress through different units in the Sharpen curriculum,
+            links to additional printable resources will appear here.
+          </dd>
+        </dl>
+      </sharpen-card>
+
+      <hr class="d-md-none" />
+    </div>
+    <div class="col-md-6 col-lg-4">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Abby's reading journey</dt>
+        </dl>
+
+        <sharpen-learning-map>
+          <div class="map-container">
+            <ul>
+              <li class="current">
+                <i class="sharpen-icon filled">arrow_circle_right</i>Level A
+                <div class="map-level-content">
+                  <sharpen-progress-bar class="sharpen-my-sm" progress-val="0" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+                  <div class="sharpen-level-progress">
+                    <strong>0% complete (0 of 48 lessons)</strong>
+                  </div>
+                  <div class="level-description sharpen-my-sm">
+                    In Level A, Learners master the one-letter consonants, the so-called "short vowels," and the two-letter consonant spellings ll, sh, ch, th, and ck. Most of the words explored at this level consist of just three sounds (consonant-vowel-consonant).
+                  </div>
+                  <button class="sharpen-button sharpen-button--xsmall sharpen-button--muted sharpen-button--full-width sharpen-mb-md">Learn more &rsaquo;</button>
+                </div>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><span class="sharpen-text--color-gray-1">Level B1</span>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><span class="sharpen-text--color-gray-1">Level B2</span>
+              </li>
+            </ul>
+          </div>
+        </sharpen-learning-map>
+      </sharpen-card>
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Lessons too easy? Too hard?</dt>
+        </dl>
+        <p class="sharpen-mb-md">We can adjust your child’s level placement anytime.</p>
+        <button class="sharpen-button sharpen-button--small sharpen-button--secondary sharpen-button--full-width">Contact us &rsaquo;</button>
+      </sharpen-card>
+
+      <hr class="d-md-none" />
+
+    </div>
+    <div class="col-lg-4">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <sharpen-simple-metric>
+          <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">0</div>
+          <div slot="content">
+            <strong>Average weekly lessons completed</strong>
+          </div>
+        </sharpen-simple-metric>
+
+        <sharpen-alert type="info" icon="reminder" class="sharpen-mt-md sharpen-mb-0">Learners that complete 4 lessons per week typically see a 1-grade-level improvement in 3 months.</sharpen-alert>
+      </sharpen-card>
+
+
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Tips for parents</dt>
+          <dd>
+            <strong>Did you know?</strong> There are over 2,000 words covered by Sharpen Reading &amp; Spelling!
+          </dd>
+        </dl>
+      </sharpen-card>
+
+      <!-- <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list">
+          <dt>Your subscription</dt>
+        </dl>
+        <ul class="sharpen-list sharpen-mb-md">
+          <li>Your next monthly charge of $19.99 will occur on December 8.</li>
+        </ul>
+        <button class="sharpen-button sharpen-button--small sharpen-button--secondary sharpen-button--full-width">Manage subscription &rsaquo;</button>
+      </sharpen-card> -->
+
+      <sharpen-card border="none" padding="large" class="sharpen-mb-md sharpen-text--center">
+        <h3 class="sharpen-heading-xl">Fun, unique stories for practice between sessions</h3>
+        <div class="sharpen-mb-lg sharpen-text--body">
+          <div class="images sharpen-my-md">
+            <img src="../storymaker/images/dragon.png" />
+            <img src="../storymaker/images/dog.png" />
+            <img src="../storymaker/images/robot.png" />
+          </div>
+          <p>In <strong>Sharpen Storymaker</strong>, Abby can choose characters, settings, and plot twists to create fun &amp; unique stories, aligned with Abby's current Sharpen reading level.</p>
+        </div>
+        <button class="sharpen-button sharpen-button--small sharpen-button--secondary sharpen-button--full-width">Visit Storymaker &rsaquo;</button>
+      </sharpen-card>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <sharpen-card border="none" padding="large">
+    <h3 class="sharpen-heading-xl sharpen-mb-sm">Watch your child achieve their reading goals</h3>
+    <p class="sharpen-mb-md">
+      At the completion of every Sharpen level, your learner will be able to independently read fun new books.
+      These classics (and others like them) are widely available at bookstores and your local library.
+      Use them for extra reading practice between lessons.
+    </p>
+    <div class="row">
+      <div class="col-md-6 col-lg sharpen-mb-md">
+        <h4 class="sharpen-heading-md-sans sharpen-heading--bordered">Level A</h4>
+        <div class="goals-book-covers">
+          <div class="cover">
+            <img src="../milestones/img/book5.jpg" alt="Book Title">
+          </div>
+          <div class="cover">
+            <img src="../milestones/img/book6.jpg" alt="Book Title">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg sharpen-mb-md">
+        <h4 class="sharpen-heading-md-sans sharpen-heading--bordered">Level B1</h4>
+        <div class="goals-book-covers">
+          <div class="cover">
+            <img src="../milestones/img/book7.jpg" alt="Book Title">
+          </div>
+          <div class="cover">
+            <img src="../milestones/img/book8.jpg" alt="Book Title">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg sharpen-mb-md">
+        <h4 class="sharpen-heading-md-sans sharpen-heading--bordered">Level B2</h4>
+        <div class="goals-book-covers">
+          <div class="cover">
+            <img src="../milestones/img/book9.jpg" alt="Book Title">
+          </div>
+          <div class="cover">
+            <img src="../milestones/img/book2.jpg" alt="Book Title">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      The Sharpen Reading curriculum includes digital storybooks for Level A and fables  for Level B1.
+      Pick up printed versions in the <a href="#">Sharpen Store</a> and feel confident that your child can read decodable content aligned with their level.
+    </p>
+  </sharpen-card>
+
+</main>
+
+<sharpen-footer>
+  <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+  <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+</sharpen-footer>
+
+</body>
+</html>
