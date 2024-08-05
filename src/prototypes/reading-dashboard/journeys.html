@@ -9,10 +9,240 @@
   <script nomodule src="../build/kezuri.js"></script>
   
   <link rel="stylesheet" href="reading-dashboard.css" />
+  <style>
+    .table-map-units {
+      font-size: var(--font-size-xs);
+      border-collapse: collapse;
+    }
+
+    .table-map-units th, .table-map-units td {
+      padding: 0.5rem 0;
+    }
+
+    .table-map-units tr + tr th, .table-map-units tr + tr td {
+      border-top: 1px dotted #ccc;
+    }
+
+    .table-map-units th {
+      font-weight: normal;
+      white-space: nowrap;
+      padding-right: 1rem;
+    }
+  </style>
 </head>
 <body>
 
 <main class="container">
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Abby's reading journey</dt>
+          <dd><span class="sharpen-text-2xl">Level A</span></dd>
+        </dl>
+
+        <div class="sharpen-mb-sm"><strong>Unit 2</strong> of 12</div>
+        <sharpen-progress-bar class="sharpen-mb-sm" size="wide" progress-val="23" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+        <div class="sharpen-text-xs sharpen-mb-md sharpen-text--color-gray-1">
+          1 of 5 lessons complete (20%)
+        </div>
+        
+        <button class="sharpen-button sharpen-button--small sharpen-button--muted sharpen-button--full-width">Learn more &rsaquo;</button>
+      </sharpen-card>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Abby's reading journey</dt>
+          <dd><span class="sharpen-text-2xl">Level A</span></dd>
+        </dl>
+
+        <div class="sharpen-mb-sm"><strong>Unit 2</strong> of 12</div>
+        <sharpen-progress-bar class="sharpen-mb-sm" size="wide" progress-val="23" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+        <div class="sharpen-text-xs sharpen-mb-lg">
+          1 of 5 lessons complete (20%)
+        </div>
+
+        <div class="level-description sharpen-text--color-gray-1 sharpen-text-xs sharpen-mb-md">
+          In Level A, Learners master the one-letter consonants, the so-called "short vowels," and the two-letter consonant spellings ll, sh, ch, th, and ck. Most of the words explored at this level consist of just three sounds (consonant-vowel-consonant).
+        </div>
+        
+        <button class="sharpen-button sharpen-button--small sharpen-button--muted sharpen-button--full-width">Learn more &rsaquo;</button>
+      </sharpen-card>
+    </div>
+    <div class="col-md-6 col-lg-4">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Abby's reading journey</dt>
+        </dl>
+
+        <sharpen-learning-map class="sharpen-mb-md">
+          <div class="map-container">
+            <ul>
+              <li class="current">
+                <i class="sharpen-icon filled">arrow_circle_right</i><a href="#">Level A</a>
+                <div class="map-level-content">
+                  <div class="level-description sharpen-my-sm">
+                    In Level A, Learners master the one-letter consonants, the so-called "short vowels," and the two-letter consonant spellings ll, sh, ch, th, and ck. Most of the words explored at this level consist of just three sounds (consonant-vowel-consonant).
+                  </div>
+
+                  <div class="sharpen-mb-xs sharpen-text-sm sharpen-mt-md"><strong>12 units</strong></div>
+                  <i class="sharpen-icon filled sharpen-text--color-evergreen">check_circle</i>
+                  <span class="map-circle-number current">2</span>
+                  <span class="map-circle-number">3</span>
+                  <span class="map-circle-number">4</span>
+                  <span class="map-circle-number">5</span>
+                  <span class="map-circle-number">6</span>
+                  <span class="map-circle-number">7</span>
+                  <span class="map-circle-number">8</span>
+                  <span class="map-circle-number">9</span>
+                  <span class="map-circle-number">10</span>
+                  <span class="map-circle-number">11</span>
+                  <span class="map-circle-number">12</span>
+
+                  <div class="sharpen-mb-xs sharpen-text-xs sharpen-mt-md"><i class="sharpen-icon" style="font-size:18px;">arrow_forward</i><strong>Unit 2</strong> &mdash; 20% complete</div>
+                  <sharpen-progress-bar class="sharpen-mb-sm sharpen-mb-lg" size="wide" progress-val="23" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+                </div>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><a href="#" class="sharpen-text--color-gray-1">Level B1</a>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><a href="#" class="sharpen-text--color-gray-1">Level B2</a>
+              </li>
+            </ul>
+          </div>
+        </sharpen-learning-map>
+        <button class="sharpen-button sharpen-button--xsmall sharpen-button--muted sharpen-button--full-width sharpen-mt-md">Learn more &rsaquo;</button>
+      </sharpen-card>
+
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Abby's reading journey</dt>
+        </dl>
+
+        <sharpen-learning-map class="sharpen-mb-md">
+          <div class="map-container">
+            <ul>
+              <li class="current">
+                <i class="sharpen-icon filled">arrow_circle_right</i>Level A <span class="sharpen-text--color-gray-3">(12 units)</span>
+                <div class="map-level-content">
+                  <table class="table-map-units">
+                    <tbody>
+                      <tr>
+                        <th>Completed<br />Units</th>
+                        <td><i class="sharpen-icon filled sharpen-text--color-sunrise">check_circle</i></td>
+                      </tr>
+                      <tr>
+                        <th>
+                          Current<br />Unit 
+                          <span class="sharpen-text--color-gray-2">(#2)</span>
+                        </th>
+                        <td>
+                          <sharpen-progress-bar size="wide" progress-val="23" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+                          <div>
+                            11 of 48 lessons done (23%)
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Remaining<br />Units</th>
+                        <td>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                          <i class="sharpen-icon filled sharpen-text--color-gray-4">circle</i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="level-description sharpen-my-sm">
+                    In Level A, Learners master the one-letter consonants, the so-called "short vowels," and the two-letter consonant spellings ll, sh, ch, th, and ck. Most of the words explored at this level consist of just three sounds (consonant-vowel-consonant).
+                  </div>
+                  <button class="sharpen-button sharpen-button--xsmall sharpen-button--muted sharpen-button--full-width sharpen-mb-md">Learn more &rsaquo;</button>
+                </div>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><span class="sharpen-text--color-gray-1">Level B1</span>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><span class="sharpen-text--color-gray-1">Level B2</span>
+              </li>
+            </ul>
+          </div>
+        </sharpen-learning-map>
+      </sharpen-card>
+
+    </div>
+    <div class="col-md-6 col-lg-4">
+
+      <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+        <dl class="sharpen-list sharpen-mb-md">
+          <dt>Abby's reading journey</dt>
+        </dl>
+
+        <sharpen-learning-map class="sharpen-mb-md">
+          <div class="map-container">
+            <ul>
+              <li class="current">
+                <i class="sharpen-icon filled">arrow_circle_right</i>Level A<span class="level-unit-count">12 units, 48 lessons total</span>
+                <div class="map-level-content">
+                  <i class="sharpen-icon filled sharpen-text--color-evergreen">check_circle</i>
+                  <sharpen-progress-bar style="display: inline-block; vertical-align: -3px; width: 100px;" size="wide" progress-val="1" high-threshold="5" low-threshold="5" elevated-threshold="5"></sharpen-progress-bar>
+                  <span class="map-circle-number">3</span>
+                  <span class="map-circle-number">4</span>
+                  <span class="map-circle-number">5</span>
+                  <span class="map-circle-number">6</span>
+                  <span class="map-circle-number">7</span>
+                  <span class="map-circle-number">8</span>
+                  <span class="map-circle-number">9</span>
+                  <span class="map-circle-number">10</span>
+                  <span class="map-circle-number">11</span>
+                  <span class="map-circle-number">12</span>
+
+                  <div class="current-unit sharpen-text-xs sharpen-mt-sm">
+                    <strong>Current Unit:</strong> Unit 2<br />
+                    <strong>Unit Progress: </strong> 1 of 5 lessons complete
+                  </div>
+                  <div class="level-description sharpen-my-sm">
+                    In Level A, Learners master the one-letter consonants, the so-called "short vowels," and the two-letter consonant spellings ll, sh, ch, th, and ck. Most of the words explored at this level consist of just three sounds (consonant-vowel-consonant).
+                  </div>
+                  <button class="sharpen-button sharpen-button--xsmall sharpen-button--muted sharpen-button--full-width sharpen-mb-md">Learn more &rsaquo;</button>
+                </div>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><span class="sharpen-text--color-gray-1">Level B1</span>
+              </li>
+              <li>
+                <i class="sharpen-icon filled">circle</i><span class="sharpen-text--color-gray-1">Level B2</span>
+              </li>
+            </ul>
+          </div>
+        </sharpen-learning-map>
+      </sharpen-card>
+
+    </div>
+  </div>
+
+  <hr>
+
   <div class="row">
     <div class="col-md-6 col-lg-4">
       <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
@@ -178,7 +408,7 @@
               <li class="complete"><i class="sharpen-icon filled">check_circle</i>Introduction</li> -->
               <li class="current">
                 <i class="sharpen-icon filled">pending</i>Level A
-                <ul>
+                <ul class="map-unit-checks">
                   <li class="complete"><i class="sharpen-icon filled">check_circle</i></li>
                   <li class="current"><i class="sharpen-icon filled">circle</i></li>
                   <li><i class="sharpen-icon filled">circle</i></li>
@@ -195,7 +425,7 @@
               </li>
               <li>
                 <i class="sharpen-icon filled">circle</i>Level B1
-                <ul>
+                <ul class="map-unit-checks">
                   <li><i class="sharpen-icon filled">circle</i></li>
                   <li><i class="sharpen-icon filled">circle</i></li>
                   <li><i class="sharpen-icon filled">circle</i></li>
@@ -212,7 +442,7 @@
               </li>
               <li>
                 <i class="sharpen-icon filled">circle</i>Level B2
-                <ul>
+                <ul class="map-unit-checks">
                   <li><i class="sharpen-icon filled">circle</i></li>
                   <li><i class="sharpen-icon filled">circle</i></li>
                   <li><i class="sharpen-icon filled">circle</i></li>
@@ -247,7 +477,7 @@
             <ul>
               <li class="current">
                 <i class="sharpen-icon filled">arrow_circle_right</i>Level A <span class="sharpen-text--color-gray-3">(12 units)</span>
-                <ul>
+                <ul class="map-unit-checks">
                   <li class="complete"><i class="sharpen-icon filled">check_circle</i></li>
                   <li class="current">
                     <i class="sharpen-icon filled">pending</i>
@@ -289,7 +519,7 @@
               </li>
               <li class="current">
                 <i class="sharpen-icon filled">arrow_circle_right</i>Level B1 <span class="sharpen-text--color-gray-3">(12 units)</span>
-                <ul>
+                <ul class="map-unit-checks">
                   <li class="complete"><i class="sharpen-icon filled">check_circle</i></li>
                   <li class="current">
                     <i class="sharpen-icon filled">pending</i>
