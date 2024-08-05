@@ -67,9 +67,10 @@ sharpen-learning-map ul ul .sharpen-icon {
   font-size: 16pt;
 }
 
-sharpen-learning-map .sharpen-icon { color: var(--color-gray-4); }
-sharpen-learning-map .complete > .sharpen-icon { color: var(--color-evergreen); }
-sharpen-learning-map .current > .sharpen-icon { color: var(--color-pine); }
+sharpen-learning-map .map-unit-checks .sharpen-icon,
+sharpen-learning-map .map-container > ul > li > .sharpen-icon { color: var(--color-gray-4); }
+sharpen-learning-map .map-container > ul > li.complete > .sharpen-icon { color: var(--color-evergreen); }
+sharpen-learning-map .map-container > ul > li.current > .sharpen-icon { color: var(--color-pine); }
 
 sharpen-learning-map .map-level-content {
   margin-left: 2.6rem;
@@ -122,3 +123,29 @@ sharpen-learning-map .level-unit-count {
 .unit-progress-blocks .complete {
   color: var(--color-pine);
 }
+
+
+.map-circle-number {
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  color: var(--color-gray-2);
+  background-color: var(--color-gray-4);
+  border-radius: 100%;
+  font-size: var(--font-size-xs);
+  text-align: center;
+  line-height: 1.3;
+  vertical-align: 2px;
+}
+
+.map-circle-number.current {
+  background-color: var(--color-mint);
+}
+
+sharpen-progress-bar[size="wide"] .progress-container {
+  height: 30px;
+}
+
+.map-container > ul > li > a { text-decoration: none; }
+.map-container > ul > li.current > a { color: black; }
+.map-container > ul > li > a:hover { text-decoration: underline; }

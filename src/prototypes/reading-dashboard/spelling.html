@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Reading Dashboard</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+  
+  <link rel="stylesheet" href="reading-dashboard.css" />
+</head>
+<body>
+
+<sharpen-primary-navigation current-learner="Abby Santiago" current-user="Belinda Santiago" class="sharpen-mb-md">
+  <nav slot="app-links">
+    <sharpen-nav-link name="Reading" href="active.html"></sharpen-nav-link>
+    <sharpen-nav-link name="Spelling" selected="true" href="spelling.html"></sharpen-nav-link>
+    <sharpen-nav-link name="Storymaker" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link name="Assessments" href="javascript:void();"></sharpen-nav-link>
+  </nav>
+
+  <div slot="learner-links" class="sharpen-menu-links">
+    <h5 class="sharpen-nav-link-header">Learners</h5>
+    <sharpen-nav-link icon="face" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="face" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="face" name="Abby Profar" href="javascript:void();"></sharpen-nav-link>  
+    <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+  </div>
+
+  <div slot="user-links" class="sharpen-menu-links">
+    <sharpen-nav-link icon="account_box" name="Account" href="javascript:void();"></sharpen-nav-link>
+    <hr>
+    <h5 class="sharpen-nav-link-header">Learner Settings</h5>
+    <sharpen-nav-link icon="edit" name="Jurdrick Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Juremy Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Abby Profar" href="javascript:void();"></sharpen-nav-link>
+    <sharpen-nav-link icon="add" name="Add new..." href="javascript:void();"></sharpen-nav-link>  
+    <hr>
+    <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+  </div>      
+</sharpen-primary-navigation>
+
+<main class="container">
+
+  <div class="row">
+    <div class="col-md-4 col-lg-3">
+      <sharpen-alert type="info" icon="stars" heading="Free with your subscription">
+        <div class="sharpen-text--body">
+          <p>Research shows that learners who practice spelling become stronger readers.</p>
+          <p>We are pleased to provide Sharpen Spelling free with your learner's Sharpen Reading subscription.</p>
+          <p>Start Spelling any time after your learner reaches Reading Level B1.</p>
+        </div>
+      </sharpen-alert>
+      <!-- <sharpen-card border="gray" padding="medium" class="sharpen-text--body">
+        <p>Research shows that learners who practice spelling become stronger readers.</p>
+        <p>We are pleased to provide Sharpen Spelling free with your learner's Sharpen Reading subscription.</p>
+      </sharpen-card> -->
+    </div>
+    <div class="col-md-8 col-lg-9">
+      <h1 class="sharpen-heading-xl sharpen-heading--bordered sharpen-mb-md">
+        <i class="sharpen-icon">spellcheck</i>Welcome to Sharpen Spelling
+      </h1>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <sharpen-card class="next-lesson sharpen-mb-md" border="none" padding="medium">
+            <div class="center-flex">
+              <dl class="sharpen-list">
+                <dt>Abby's next lesson</dt>
+                <dd>
+                  <span class="sharpen-text-lg">Lesson 2</span>
+                </dd>
+              </dl>
+              <button class="sharpen-button sharpen-button--small sharpen-button--primary">
+                <i class="sharpen-icon">play_arrow</i>
+                Start
+              </button>
+            </div>
+          </sharpen-card>
+
+          <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+            <dl class="sharpen-list sharpen-mb-md">
+              <dt>About the next lesson</dt>
+              <dd><span class="sharpen-text-lg">Level B1 &rsaquo; Unit 1 &rsaquo; Lesson 2</span></dd>
+            </dl>
+
+            <div class="level-description sharpen-text-xs sharpen-text--muted sharpen-text--body">
+              <p>In this lesson, Learners will:</p>
+              <ul class="sharpen-list">
+                <li>Break words apart</li>
+                <li>Sort words by rime</li>
+                <li>Spell words with rimes visible</li>
+                <li>Spell words from memory (Flash Cards - Spelling)</li>
+              </ul>
+            </div>
+          </sharpen-card>
+
+          <hr class="d-md-none" />
+
+        </div>
+        <div class="col-lg-6">
+
+          <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+            <dl class="sharpen-list sharpen-mb-md">
+              <dt>Abby's spelling journey</dt>
+              <dd><span class="sharpen-text-2xl">Level B1</span></dd>
+            </dl>
+
+            <div class="sharpen-mb-sm"><strong>Unit 1</strong> of 19</div>
+            <sharpen-progress-bar class="sharpen-mb-sm" size="wide" progress-val="25" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
+            <div class="sharpen-text-xs sharpen-mb-lg">
+              1 of 4 lessons complete (25%)
+            </div>
+
+            <button class="sharpen-button sharpen-button--small sharpen-button--muted sharpen-button--full-width">Learn more &rsaquo;</button>
+          </sharpen-card>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<sharpen-footer>
+  <span class="copyright">&copy; 2023 Sharpen.com, Inc.</span>
+  <sharpen-nav-link name="Privacy Statement" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Terms of Service" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Cookie Policy" href="#"></sharpen-nav-link>
+  <sharpen-nav-link name="Contact Us" href="mailto:support@sharpen.com"></sharpen-nav-link>
+</sharpen-footer>
+
+</body>
+</html>
