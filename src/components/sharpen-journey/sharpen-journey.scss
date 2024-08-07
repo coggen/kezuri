@@ -1,0 +1,22 @@
+sharpen-journey {
+  display: block;
+
+  .journey-container {
+    position: relative;
+
+    &:before {
+      content: "";
+      background-color: var(--color-mint);
+      position: absolute;
+      width: 4px;
+      left: 14px;
+      top: 0;
+      bottom: 0px;
+    }
+
+    .journey-levels {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

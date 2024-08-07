@@ -9,6 +9,8 @@ export * from './components/sharpen-course-description/sharpen-course-descriptio
 export * from './components/sharpen-dashboard-card/sharpen-dashboard-card'
 export * from './components/sharpen-empty/sharpen-empty'
 export * from './components/sharpen-footer/sharpen-footer'
+export * from './components/sharpen-journey/sharpen-journey'
+export * from './components/sharpen-journey-level/sharpen-journey-level'
 export * from './components/sharpen-label/sharpen-label'
 export * from './components/sharpen-loading/sharpen-loading'
 export * from './components/sharpen-menu/sharpen-menu'

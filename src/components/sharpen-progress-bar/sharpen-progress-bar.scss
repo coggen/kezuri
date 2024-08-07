@@ -26,10 +26,12 @@ sharpen-progress-bar {
     font-weight: var(--font-weight-semibold);
   }
 
-  &[size="wide"] {
-    .progress-container { height: 20px; }
+  &[size="wide"], &[size="wider"] {
     .progress-container, .progress-amount { border-radius: 7px; }
   }
+
+  &[size="wide"]  { .progress-container { height: 20px; } }
+  &[size="wider"] { .progress-container { height: 30px; } }
 
   &[status="low"] {
     .progress-amount { background-color: var(--color-pine); }
