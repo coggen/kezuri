@@ -1,0 +1,92 @@
+sharpen-journey-level {
+  display: block;
+  margin: 6pt 0;
+
+  .level-name {
+    
+    .sharpen-icon {
+      font-size: 24pt;
+      margin-right: 0.25em;
+      vertical-align: -8px;
+      background-color: white;
+    }
+
+    button {
+      font-size: 16pt;
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &[status="current"] {
+    .level-name {
+      .sharpen-icon { color: var(--color-pine); }
+      button { color: black; }
+    }
+  }
+
+  &[status="unstarted"], &[status="completed"] {
+    .level-name button { color: var(--color-gray-1); }
+  }
+
+  &[status="unstarted"] {
+    .level-name  .sharpen-icon { color: var(--color-gray-4); }
+  }
+
+  &[status="completed"] {
+    .level-name  .sharpen-icon { color: var(--color-gray-1); }
+  }
+
+  .level-content {
+    display: none;
+    margin-left: 2.6rem;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .level-description {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-1);
+    margin: var(--spacing-sm) 0;
+  }
+
+  .level-unit-count { margin: var(--spacing-md) 0 var(--spacing-xs); }
+
+  .level-units {
+    > * { vertical-align: -5px; margin-right: var(--spacing-xs); }
+
+    .sharpen-icon { color: var(--color-evergreen); }
+
+    .unit-number {
+      width: 21px;
+      height: 21px;
+      display: inline-block;
+      color: var(--color-gray-2);
+      background-color: var(--color-gray-4);
+      border-radius: 100%;
+      font-size: var(--font-size-xs);
+      text-align: center;
+      line-height: 1.3;
+      vertical-align: 2px;
+
+      &.current { background-color: var(--color-mint); }
+    }
+  }
+
+  .unit-progress {
+    margin: var(--spacing-md) 0 var(--spacing-xs);
+    font-size: var(--font-size-xs);
+
+    .sharpen-icon { font-size:18px; }
+  }
+
+  sharpen-progress-bar { margin-bottom: var(--spacing-md); }
+}

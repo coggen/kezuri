@@ -12,6 +12,7 @@ enum ProgressBarStatus {
 })
 export class SharpenProgressBar {
 
+  @Prop() size;
   @Prop() highThreshold = 100;
   @Prop() lowThreshold = 0.33 * this.highThreshold;
   @Prop() elevatedThreshold = 0.66 * this.highThreshold;
@@ -32,7 +33,7 @@ export class SharpenProgressBar {
       description = (this.showDescription ? <div class="progress-description">{this.status} {this.statusLabel}</div> : '');
 
     return (
-      <Host status={this.status.toLowerCase()}>
+      <Host status={this.status.toLowerCase()} size={this.size}>
         <div class="progress-container">
           <div class="progress-amount" style={progressStyle}></div>
         </div>
