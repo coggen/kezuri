@@ -30,7 +30,7 @@ export default {
     },
     size: {
       description: 'How wide the progress bar should be. Default is narrow.',
-      options: ['', 'wide'],
+      options: ['', 'wide', 'wider'],
       control: 'select',
     },
   },
@@ -82,6 +82,14 @@ export const OnlyBar = {
 export const WideVariant = {
   args: {
     size: 'wide',
+    progressVal: 50,
+  },
+};
+
+
+export const WiderVariant = {
+  args: {
+    size: 'wider',
     progressVal: 50,
   },
 };

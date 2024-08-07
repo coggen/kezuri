@@ -79,6 +79,15 @@ export namespace Components {
          */
         "currentUser": string;
     }
+    interface SharpenJourney {
+    }
+    interface SharpenJourneyLevel {
+        "currentUnit": number;
+        "name": string;
+        "status": string;
+        "unitProgress": number;
+        "units": number;
+    }
     interface SharpenLabel {
         /**
           * Icon
@@ -123,6 +132,7 @@ export namespace Components {
         "lowThreshold": number;
         "progressVal": number;
         "showDescription": boolean;
+        "size": any;
         "statusLabel": string;
     }
     interface SharpenProgressCircle {
@@ -227,6 +237,18 @@ declare global {
     var HTMLSharpenFooterElement: {
         prototype: HTMLSharpenFooterElement;
         new (): HTMLSharpenFooterElement;
+    };
+    interface HTMLSharpenJourneyElement extends Components.SharpenJourney, HTMLStencilElement {
+    }
+    var HTMLSharpenJourneyElement: {
+        prototype: HTMLSharpenJourneyElement;
+        new (): HTMLSharpenJourneyElement;
+    };
+    interface HTMLSharpenJourneyLevelElement extends Components.SharpenJourneyLevel, HTMLStencilElement {
+    }
+    var HTMLSharpenJourneyLevelElement: {
+        prototype: HTMLSharpenJourneyLevelElement;
+        new (): HTMLSharpenJourneyLevelElement;
     };
     interface HTMLSharpenLabelElement extends Components.SharpenLabel, HTMLStencilElement {
     }
@@ -336,6 +358,8 @@ declare global {
         "sharpen-dashboard-card": HTMLSharpenDashboardCardElement;
         "sharpen-empty": HTMLSharpenEmptyElement;
         "sharpen-footer": HTMLSharpenFooterElement;
+        "sharpen-journey": HTMLSharpenJourneyElement;
+        "sharpen-journey-level": HTMLSharpenJourneyLevelElement;
         "sharpen-label": HTMLSharpenLabelElement;
         "sharpen-loading": HTMLSharpenLoadingElement;
         "sharpen-menu": HTMLSharpenMenuElement;
@@ -420,6 +444,15 @@ declare namespace LocalJSX {
          */
         "currentUser"?: string;
     }
+    interface SharpenJourney {
+    }
+    interface SharpenJourneyLevel {
+        "currentUnit"?: number;
+        "name": string;
+        "status": string;
+        "unitProgress"?: number;
+        "units"?: number;
+    }
     interface SharpenLabel {
         /**
           * Icon
@@ -464,6 +497,7 @@ declare namespace LocalJSX {
         "lowThreshold"?: number;
         "progressVal"?: number;
         "showDescription"?: boolean;
+        "size"?: any;
         "statusLabel"?: string;
     }
     interface SharpenProgressCircle {
@@ -513,6 +547,8 @@ declare namespace LocalJSX {
         "sharpen-dashboard-card": SharpenDashboardCard;
         "sharpen-empty": SharpenEmpty;
         "sharpen-footer": SharpenFooter;
+        "sharpen-journey": SharpenJourney;
+        "sharpen-journey-level": SharpenJourneyLevel;
         "sharpen-label": SharpenLabel;
         "sharpen-loading": SharpenLoading;
         "sharpen-menu": SharpenMenu;
@@ -546,6 +582,8 @@ declare module "@stencil/core" {
             "sharpen-dashboard-card": LocalJSX.SharpenDashboardCard & JSXBase.HTMLAttributes<HTMLSharpenDashboardCardElement>;
             "sharpen-empty": LocalJSX.SharpenEmpty & JSXBase.HTMLAttributes<HTMLSharpenEmptyElement>;
             "sharpen-footer": LocalJSX.SharpenFooter & JSXBase.HTMLAttributes<HTMLSharpenFooterElement>;
+            "sharpen-journey": LocalJSX.SharpenJourney & JSXBase.HTMLAttributes<HTMLSharpenJourneyElement>;
+            "sharpen-journey-level": LocalJSX.SharpenJourneyLevel & JSXBase.HTMLAttributes<HTMLSharpenJourneyLevelElement>;
             "sharpen-label": LocalJSX.SharpenLabel & JSXBase.HTMLAttributes<HTMLSharpenLabelElement>;
             "sharpen-loading": LocalJSX.SharpenLoading & JSXBase.HTMLAttributes<HTMLSharpenLoadingElement>;
             "sharpen-menu": LocalJSX.SharpenMenu & JSXBase.HTMLAttributes<HTMLSharpenMenuElement>;

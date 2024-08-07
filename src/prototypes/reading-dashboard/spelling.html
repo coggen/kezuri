@@ -49,13 +49,9 @@
         <div class="sharpen-text--body">
           <p>Research shows that learners who practice spelling become stronger readers.</p>
           <p>We are pleased to provide Sharpen Spelling free with your learner's Sharpen Reading subscription.</p>
-          <p>Start Spelling any time after your learner reaches Reading Level B1.</p>
+          <p>Start Spelling any time after your learner completes Reading Level B1.</p>
         </div>
       </sharpen-alert>
-      <!-- <sharpen-card border="gray" padding="medium" class="sharpen-text--body">
-        <p>Research shows that learners who practice spelling become stronger readers.</p>
-        <p>We are pleased to provide Sharpen Spelling free with your learner's Sharpen Reading subscription.</p>
-      </sharpen-card> -->
     </div>
     <div class="col-md-8 col-lg-9">
       <h1 class="sharpen-heading-xl sharpen-heading--bordered sharpen-mb-md">
@@ -104,16 +100,34 @@
           <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
             <dl class="sharpen-list sharpen-mb-md">
               <dt>Abby's spelling journey</dt>
-              <dd><span class="sharpen-text-2xl">Level B1</span></dd>
             </dl>
 
-            <div class="sharpen-mb-sm"><strong>Unit 1</strong> of 19</div>
-            <sharpen-progress-bar class="sharpen-mb-sm" size="wide" progress-val="25" high-threshold="100" low-threshold="100" elevated-threshold="100"></sharpen-progress-bar>
-            <div class="sharpen-text-xs sharpen-mb-lg">
-              1 of 4 lessons complete (25%)
-            </div>
+            <sharpen-journey>
+              <sharpen-journey-level name="Level B1" status="current" units="12" current-unit="1" unit-progress="25">
+                Description to be written
+              </sharpen-journey-level>
+              <sharpen-journey-level name="Level B2" status="unstarted" units="12">
+                Description to be written
+              </sharpen-journey-level>
+            </sharpen-journey>
+          </sharpen-card>
 
-            <button class="sharpen-button sharpen-button--small sharpen-button--muted sharpen-button--full-width">Learn more &rsaquo;</button>
+          <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+            <sharpen-simple-metric>
+              <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">2.2</div>
+              <div slot="content">
+                <strong>Average weekly lessons completed</strong>
+              </div>
+            </sharpen-simple-metric>
+          </sharpen-card>
+
+          <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
+            <dl class="sharpen-list">
+              <dt>Tips for parents</dt>
+              <dd>
+                <strong>Did you know?</strong> There are over 2,000 words covered by Sharpen Reading &amp; Spelling!
+              </dd>
+            </dl>
           </sharpen-card>
 
         </div>
