@@ -9,9 +9,6 @@
     <script nomodule src="../build/kezuri.js"></script>
 
     <link rel="stylesheet" href="enterprise-layout.css" />
-    <style>
-      .learner-name { font-weight: var(--font-weight-semibold); }
-    </style>
   </head>
   <body>
 
@@ -22,10 +19,10 @@
         <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
 
         <nav class="sharpen-mb-md">
-          <sharpen-nav-link icon="near_me" name="District" href="javascript:void();"></sharpen-nav-link>
-          <sharpen-nav-link icon="supervisor_account" name="Users" href="javascript:void();"></sharpen-nav-link>
-          <sharpen-nav-link icon="school" name="Schools" href="javascript:void();"></sharpen-nav-link>
-          <sharpen-nav-link icon="face" name="Students" href="javascript:void();"></sharpen-nav-link>
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
@@ -41,6 +38,7 @@
           Students
         </h1>
 
+        <!--
         <ul class="sharpen-tabs">
           <li class="tab selected">
             <a href=""><i class="sharpen-icon">info</i>Details</a>  
@@ -49,6 +47,7 @@
             <a href=""><i class="sharpen-icon">info</i>History</a>  
           </li>
         </ul>
+        -->
 
         <div class="sharpen-mb-lg">
           <div class="sharpen-button-bar">
@@ -72,6 +71,9 @@
               <i class="sharpen-icon">add</i>
               Add student
             </button>
+            <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
+              <i class="sharpen-icon">upload</i>
+            </button>
           </div>
         </div>
 
@@ -80,7 +82,7 @@
             <tr>
               <th></th>
               <th>Name <!--<i class="sharpen-icon">arrow_drop_down</i>--></th>
-              <th>Class</th>
+              <th>School / Class</th>
               <th>Sharpen Level</th>
               <th></th>
             </tr>
@@ -88,10 +90,10 @@
           <tbody>
             <tr>
               <td><i class="sharpen-icon">face</i></td>
-              <td class="learner-name"><a href="#">Abelli, Onni</a></td>
+              <td><a href="#">Abelli, Onni</a></td>
               <td>
                 <div class="sharpen-text-xs">Runkle School</div>
-                G1 &middot; Mrs. Elliott
+                Grade 1 &middot; Mrs. Elliott
               </td>
               <td>A</td>
               <td>
@@ -105,10 +107,10 @@
             </tr>
             <tr>
               <td><i class="sharpen-icon">face</i></td>
-              <td class="learner-name"><a href="#">Houk, Ranko</a></td>
+              <td><a href="#">Houk, Ranko</a></td>
               <td>
                 <div class="sharpen-text-xs">Runkle School</div>
-                G1 &middot; Mrs. Elliott
+                Grade 1 &middot; Mrs. Elliott
               </td>
               <td>A</td>
               <td>
@@ -122,10 +124,10 @@
             </tr>
             <tr>
               <td><i class="sharpen-icon">face</i></td>
-              <td class="learner-name"><a href="#">Khachaturian, Ruf</a></td>
+              <td><a href="#">Khachaturian, Ruf</a></td>
               <td>
                 <div class="sharpen-text-xs">Runkle School</div>
-                G1 &middot; Mrs. Elliott
+                Grade 1 &middot; Mrs. Elliott
               </td>
               <td>A</td>
               <td>
@@ -141,32 +143,32 @@
         </table>
 
         <nav class="sharpen-mt-lg">
-      <ul class="sharpen-pagination">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_left</i></span>
-          </a>
-        </li>
-        <li class="page-item disabled">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_left</i></span>
-          </a>
-        </li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_right</i></span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+          <ul class="sharpen-pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_left</i></span>
+              </a>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_left</i></span>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_right</i></span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
       </main>
     </div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link selected icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          District &rsaquo; Public Schools of Brookline
+        </h1>
+
+        
+        <ul class="sharpen-tabs sharpen-mb-lg">
+          <li class="tab selected">
+            <a href="district_show.html"><i class="sharpen-icon">info</i>About</a>  
+          </li>
+          <li class="tab">
+            <a href="district_administrators.html">
+              <i class="sharpen-icon">shield_person</i>Administrators
+              <span class="sharpen-badge">3</span>
+            </a>  
+          </li>
+        </ul>
+
+        <div class="row sharpen-mb-lg">
+          <div class="col-md-4">
+            <sharpen-card border="gray" padding="medium">
+              <sharpen-simple-metric>
+                <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">8</div>
+                <div slot="content">
+                  <strong>Schools</strong>
+                </div>
+               </sharpen-simple-metric>
+            </sharpen-card>
+          </div>
+          <div class="col-md-4">
+            <sharpen-card border="gray" padding="medium">
+              <sharpen-simple-metric>
+                <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">64</div>
+                <div slot="content">
+                  <strong>Staff</strong>
+                </div>
+               </sharpen-simple-metric>
+            </sharpen-card>
+          </div>
+          <div class="col-md-4">
+            <sharpen-card border="gray" padding="medium">
+              <sharpen-simple-metric>
+                <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">371</div>
+                <div slot="content">
+                  <strong>Students</strong>
+                </div>
+               </sharpen-simple-metric>
+            </sharpen-card>
+          </div>
+        </div>
+
+        <sharpen-empty>
+          Data and analytics here
+        </sharpen-empty>
+
+      </main>
+    </div>
+
+  </body>
+</html>
