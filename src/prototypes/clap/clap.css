@@ -1,0 +1,37 @@
+.sharpen-clap .left-hand {
+  fill: #eee;
+  stroke: #000;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sharpen-clap .right-hand {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sharpen-clap.animate .left-hand {
+  transform-origin: 114px 67px;
+  animation: clap-move-down 0.5s ease;
+}
+
+.sharpen-clap.animate .right-hand {
+  transform-origin: 114px 67px;
+  animation: clap-move-up 0.5s ease;
+}
+
+@keyframes clap-move-down {
+  0%   { transform: translate(0,0); }
+  50%  { transform: translate(30px,30px); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes clap-move-up {
+  0%   { transform: translate(0,0); }
+  50%  { transform: translate(-25px,-25px); }
+  100% { transform: translate(0,0); }
+}

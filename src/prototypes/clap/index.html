@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Clap Animation</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <style>
+    body {
+      padding: 4rem;
+    }
+
+    .sharpen-clap {
+      width: 20em;
+    }
+  </style>
+  <link rel="stylesheet" href="clap.css" />
+</head>
+<body>
+
+<svg class="sharpen-clap" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px" y="0px"
+    viewBox="-275 150 300 310" style="enable-background:new -270 87 417.1 387;" xml:space="preserve">
+
+  <path class="left-hand" d="M-268.1,338l21.7-21.7c2.3-2.3,3.5-5.3,3.5-8.5v-55.7c0-5.6,2.2-10.9,6.2-14.9l32.4-32.4
+    c2.1-2.1,5.8-1.8,7.4,0.8c2.8,4.4,5,11.4-1.4,18.9c-5.1,5.9-10.3,10.9-13.7,14.1c-2.2,2-2.2,5.4-0.1,7.5l0,0c2,2,5.3,2,7.3,0
+    l87.6-87.6c4.6-4.6,12.2-4.6,16.8,0l0,0c4.6,4.6,4.6,12.2,0,16.8l-66.2,66.2c-2.4,2.4-2.4,6.4,0,8.8l0,0c2.4,2.4,6.4,2.4,8.8,0
+    l74.5-75.3c4.6-4.7,12.2-4.7,16.9,0l1.8,1.8c4.6,4.6,4.6,12.1,0.1,16.8l-70.4,71.3c-2.2,2.3-2.2,5.9,0,8.2l0,0
+    c2.3,2.3,5.9,2.3,8.2,0l61.2-61.2c4.6-4.6,12.2-4.6,16.8,0l0.2,0.2c4.6,4.6,4.6,12.2,0,16.8l-67.1,67.1c-1.7,1.7-1.7,4.6,0,6.3l0,0
+    c1.7,1.7,4.6,1.7,6.3,0l50.7-50.7c3.9-3.9,10.1-3.9,13.9,0l0,0c3.9,3.9,3.9,10.1,0,13.9l-98.2,98.2c-1.2,1.2-2.6,2.2-4.1,3
+    c-5.3,2.5-18.3,7.7-35.5,6.6l-13.7,13.6c-2.1,2.1-5.4,2.4-7.8,0.7l-63.6-44.8C-269.3,341.7-269.5,339.4-268.1,338z"/>
+  
+  <path class="right-hand" d="M-208.1,398l21.7-21.7c2.3-2.3,3.5-5.3,3.5-8.5v-55.7c0-5.6,2.2-10.9,6.2-14.9l32.4-32.4
+    c2.1-2.1,5.8-1.8,7.4,0.8c2.8,4.4,5,11.4-1.4,18.9c-5.1,5.9-10.3,10.9-13.7,14.1c-2.2,2-2.2,5.4-0.1,7.5l0,0c2,2,5.3,2,7.3,0
+    l87.6-87.6c4.6-4.6,12.2-4.6,16.8,0l0,0c4.6,4.6,4.6,12.2,0,16.8l-66.2,66.2c-2.4,2.4-2.4,6.4,0,8.8l0,0c2.4,2.4,6.4,2.4,8.8,0
+    l74.5-75.3c4.6-4.7,12.2-4.7,16.9,0l1.8,1.8c4.6,4.6,4.6,12.1,0.1,16.8l-70.4,71.3c-2.2,2.3-2.2,5.9,0,8.2l0,0
+    c2.3,2.3,5.9,2.3,8.2,0l61.2-61.2c4.6-4.6,12.2-4.6,16.8,0l0.2,0.2c4.6,4.6,4.6,12.2,0,16.8L-55.6,356c-1.7,1.7-1.7,4.6,0,6.3l0,0
+    c1.7,1.7,4.6,1.7,6.3,0l50.7-50.7c3.9-3.9,10.1-3.9,13.9,0l0,0c3.9,3.9,3.9,10.1,0,13.9l-98.2,98.2c-1.2,1.2-2.6,2.2-4.1,3
+    c-5.3,2.5-18.3,7.7-35.5,6.6l-13.7,13.6c-2.1,2.1-5.4,2.4-7.8,0.7l-63.6-44.8C-209.3,401.7-209.5,399.4-208.1,398z"/>
+</svg>
+
+<audio id="clap" src="clap.mp3"></audio>
+
+<div>
+  <button id="clapper">Clap!</button>
+</div>
+
+<script>
+var $btnClapper = $("#clapper"),
+    $clap = $(".sharpen-clap"),
+    $audio = $("audio#clap");
+
+$btnClapper.click(function() {
+  $clap.addClass("animate");
+
+  $("audio#clap")[0].currentTime = 0;
+  $("audio#clap")[0].play();
+
+  $clap.one("animationend", () => {
+    $clap.removeClass("animate");
+  });
+});
+</script>
+
+</body>
+</html>

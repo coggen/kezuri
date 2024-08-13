@@ -34,7 +34,15 @@
   background-color: white;
 
   th, td {
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md) calc(var(--spacing-lg) / 2);
+
+    &:first-child {
+      padding-left: var(--spacing-lg);
+    }
+
+    &:last-child {
+      padding-right: var(--spacing-lg);
+    }
   }
 }
 
