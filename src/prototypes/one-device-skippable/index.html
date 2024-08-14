@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: One-Device Reading Lesson</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="../one-device/one-device.css" />
+  <link rel="stylesheet" href="../milestones/milestones.css" />
+  <style>
+
+  </style>
+</head>
+<body class="sharpen-lesson">
+
+  <div class="interface">
+    <div class="primary">
+      <section class="instruction">
+        <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--circle sharpen-button--muted disable-on-audio"><i class="sharpen-icon">play_arrow</i></button></div>
+        <div class="text"></div>
+        <div class="brand"><img src="../build/assets/images/brand/sharpen_mark_evergreen.png" alt="Sharpen" /></div>
+      </section>
+      <section class="activity up-next">
+        <h1>Instructor's Choice</h1>
+        <h2>The next activities teach how to write the letters that were just introduced.</h2>
+        <h2>To practice this skill, tap Next. To skip this practice, tap Skip.</h2>
+        <div class="lessons">
+          <sharpen-card border="none" padding="medium">
+            <img src="../milestones/img/handwriting.jpg" />
+            Handwriting
+          </sharpen-card>
+        </div>
+
+      </section>
+      <div class="help-content hide">
+      </div>
+    </div>
+    <nav>
+      <div class="movement">
+        
+        <div class="metadata">
+          <div class="lesson">
+            Level A<br />
+            Unit 1 <br />
+            Activity 5
+          </div>
+          <!-- <button class="lesson-close"><i class="sharpen-icon">close</i></button> -->
+          <a href="index.html" class="lesson-close"><i class="sharpen-icon">close</i></a>
+        </div>
+
+        <button class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_back</i> Back</button>
+        <div class="activity-step">
+          &hellip;
+        </div>
+        <button id="next" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio">Next <i class="sharpen-icon">arrow_forward</i></button>  
+
+      </div>
+      <div class="actions">
+
+        <button id="skip" class="sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio">Skip <i class="sharpen-icon">keyboard_double_arrow_right</i></button>
+        <!-- <button class="sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio">Show word</button>
+        <button class="sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio">Clear writing</button> -->
+
+      </div>
+      <div class="help">
+
+        <button id="help" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">question_mark</i></button>
+
+      </div>
+    </nav>
+  </div>
+
+
+<audio id="a_1" src="skippable.mp3"></audio>
+
+<script>
+
+function enableButtons() {
+  $(".disable-on-audio").removeAttr("disabled");
+}
+
+function disableButtons() {
+  $(".disable-on-audio").attr("disabled", "disabled");
+}
+
+$(document).ready(function() {
+
+  var $audio = $("audio"),
+      $instructionText = $(".instruction .text"),
+      $btnNext = $("#next"),
+      $btnSkip = $("#skip"),
+      $listenHtml = $('<i class="sharpen-icon">hearing</i> <span class="listen">Listen</span>');
+
+  disableButtons();
+
+  $instructionText.html($listenHtml);
+
+  $audio[0].play();
+  $audio.on("ended", function() {
+    $instructionText.html("Tap <strong>Next</strong> or <strong>Skip</strong>.");
+    enableButtons();
+    $btnNext.addClass("pulse");
+    $btnSkip.addClass("pulse");
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>

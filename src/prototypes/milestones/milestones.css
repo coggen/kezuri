@@ -47,6 +47,7 @@
 
 .sharpen-lesson .up-next .lessons > * {
   flex: 1;
+  max-width: 20rem;
 }
 
 .sharpen-lesson .up-next .lessons img {
