@@ -32,7 +32,7 @@
       background-color: white;
       padding: 24pt 48pt;
       border-radius: 24pt;
-      box-shadow: 2px 2px 2px #000;
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -41,7 +41,7 @@
   <div class="interface">
     <div class="primary">
       <section class="instruction">
-        <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--circle sharpen-button--muted disable-on-audio"><i class="sharpen-icon">play_arrow</i></button></div>
+        <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--circle sharpen-button--muted disable-on-audio"><i class="sharpen-icon">refresh</i></button></div>
         <div class="text"></div>
         <div class="brand"><img src="../build/assets/images/brand/sharpen_mark_evergreen.png" alt="Sharpen" /></div>
       </section>
@@ -120,8 +120,15 @@
 
 <script>
 
+let mostRecentStep = 1;
+
 $(document).ready(function() {
   playStep(1);
+});
+
+$("#repeat").on("click", function() {
+  let visibleId = "#" + $(".placement .placement-container > *").not(".hide").attr("id");
+  hide(visibleId).then(() => { playStep(mostRecentStep); });
 });
 
 
@@ -187,6 +194,8 @@ function playStep(step) {
       $btnSkip = $("#skip"),
       $btnLetterName = $("#letter_name"),
       $listenHtml = $('<i class="sharpen-icon">hearing</i> <span class="listen">Listen</span>');
+
+  mostRecentStep = step;
 
   clearScreen();
   disableButtons();
