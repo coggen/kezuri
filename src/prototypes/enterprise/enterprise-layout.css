@@ -106,7 +106,6 @@ html, body, .sharpen-enterprise-container {
 */
 
 .sharpen-badge {
-/*  background-color: var(--color-gray-4);*/
   color: var(--color-pine);
   background-color: var(--color-mint);
   font-size: 85%;
@@ -117,3 +116,19 @@ html, body, .sharpen-enterprise-container {
   vertical-align: 1px;
   margin-left: var(--spacing-xs);
 }
+
+
+.profile-button-set {
+  margin-top: 2em;
+}
+
+.profile-button-set button + button {
+  margin-top: 0.5em;
+}
+
+
+
+
+.sharpen-bg--light-green,  .sharpen-bg-success { background-color: var(--color-mint); }
+.sharpen-bg--light-orange, .sharpen-bg-warning { background-color: var(--color-light-orange); }
+.sharpen-bg--light-red,    .sharpen-bg-danger  { background-color: var(--color-light-red); }

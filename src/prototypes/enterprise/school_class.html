@@ -26,10 +26,10 @@
           <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
           <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
           <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
-          <sharpen-nav-link selected icon="meeting_room" name="Classes" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
           <sharpen-nav-link icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="shield_person" name="Admins" href="school_admins.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
@@ -42,123 +42,194 @@
       <main>
         
         <h1 class="sharpen-heading-2xl">
-          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; <a href="school_classes.html">Classes</a> &rsaquo; Grade K - Room 4
+          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; <a href="school_classes.html">Classes</a> &rsaquo; Mr. Cardigan - Room 4
         </h1>
 
-        <sharpen-card border="none" padding="medium" class="sharpen-my-lg">
-          <table class="sharpen-table sharpen-table--horizontal sharpen-table--headless">
-            <tbody>
-              <tr>
-                <th>Class</th>
-                <td>Grade K - Room 4</td>
-              </tr>
-              <tr>
-                <th>Staff</th>
-                <td>
-                  <div><a href="#">Mr. Cardigan</a></div>
-                  <div><a href="#">Mr. Guiste</a></div>
-                </td>
-              </tr>
-              <tr>
-                <th></th>
-                <td>
-                  <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
-                    <i class="sharpen-icon">edit</i>
-                    Edit
-                  </button>
-                  <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                    <i class="sharpen-icon">archive</i>
-                    Archive
-                  </button>
-                  <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                    <i class="sharpen-icon">delete</i>
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </sharpen-card>
+        <div class="row">
+          <div class="col-md-3">
+            <sharpen-card border="gray" padding="medium">
+              <dl class="sharpen-list">
+                <dt>Class</dt>
+                <dd class="sharpen-text-lg">Mr. Cardigan - Room 4</dd>
 
-        <table class="sharpen-table sharpen-table--icon-start sharpen-table--learners sharpen-table--enclosed sharpen-table-controls-end sharpen-table-hover">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Student Name</th>
-              <th>Sharpen Level</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><i class="sharpen-icon">face</i></td>
-              <td><a href="#">Abelli, Onni</a></td>
-              <td>A</td>
-              <td>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">edit</i>
-                </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">play_arrow</i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td><i class="sharpen-icon">face</i></td>
-              <td><a href="#">Houk, Ranko</a></td>
-              <td>A</td>
-              <td>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">edit</i>
-                </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">play_arrow</i>
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td><i class="sharpen-icon">face</i></td>
-              <td><a href="#">Khachaturian, Ruf</a></td>
-              <td>A</td>
-              <td>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">edit</i>
-                </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">play_arrow</i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                <dt>Staff</dt>
+                <dd>
+                  <div><a href="staff_show.html">Dante Cardigan</a></div>
+                  <div><a href="staff_show.html">Humberto Guiste</a></div>
+                </dd>
 
-        <nav class="sharpen-mt-lg">
-          <ul class="sharpen-pagination">
-            <li class="page-item disabled">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_left</i></span>
-              </a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_left</i></span>
-              </a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>
-              </a>
-            </li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_right</i></span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+                <dt>School</dt>
+                <dd><a href="school_show.html">Runkle School</a></dd>
+              </dl>
+
+              <div class="profile-button-set">
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
+                  <i class="sharpen-icon">edit</i>
+                  Edit
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
+                  <i class="sharpen-icon">archive</i>
+                  Archive
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger sharpen-button--full-width">
+                  <i class="sharpen-icon">delete</i>
+                  Delete
+                </button>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-md-9">
+            <ul class="sharpen-tabs sharpen-mb-md">
+              <li class="tab selected">
+                <a href="school_class.html"><i class="sharpen-icon">face</i>Students</a>  
+              </li>
+              <li class="tab">
+                <a href="#"><i class="sharpen-icon">bar_chart</i>Classroom Data</a>  
+              </li>
+            </ul>
+
+            <table class="sharpen-table sharpen-table--icon-start sharpen-table--learners sharpen-table--enclosed sharpen-table-controls-end sharpen-table-hover">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Student Name</th>
+                  <th>Next Lesson</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Abelli, Onni</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Houk, Ranko</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Khachaturian, Ruf</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Abelli, Onni</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Houk, Ranko</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Khachaturian, Ruf</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Abelli, Onni</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Houk, Ranko</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Khachaturian, Ruf</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><i class="sharpen-icon">face</i></td>
+                  <td><a href="school_student.html">Abelli, Onni</a></td>
+                  <td>Level A: Unit 11, Lesson 3</td>
+                  <td>
+                    <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                      <i class="sharpen-icon">play_arrow</i> Start
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <nav class="sharpen-mt-lg">
+              <ul class="sharpen-pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_left</i></span>
+                  </a>
+                </li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_left</i></span>
+                  </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_right</i></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
       </main>
     </div>

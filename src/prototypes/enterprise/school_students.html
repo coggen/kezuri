@@ -20,10 +20,16 @@
 
         <nav class="sharpen-mb-md">
           <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
-          <sharpen-nav-link selected icon="face" name="Students" href="students.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="shield_person" name="Admins" href="district_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
@@ -35,20 +41,9 @@
       </div>
       <main>
         
-        <h1 class="sharpen-heading-2xl">
-          Students
+        <h1 class="sharpen-heading-2xl sharpen-mb-md">
+          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; Students
         </h1>
-
-        <!--
-        <ul class="sharpen-tabs">
-          <li class="tab selected">
-            <a href=""><i class="sharpen-icon">info</i>Details</a>  
-          </li>
-          <li class="tab">
-            <a href=""><i class="sharpen-icon">info</i>History</a>  
-          </li>
-        </ul>
-        -->
 
         <div class="sharpen-mb-lg">
           <div class="sharpen-button-bar">
@@ -84,8 +79,8 @@
               <th></th>
               <th>Name <!--<i class="sharpen-icon">arrow_drop_down</i>--></th>
               <th>Grade</th>
-              <th>School</th>
-              <th>Sharpen Placement</th>
+              <th>Sharpen Tutor</th>
+              <th>Reading Progress</th>
               <th>Next Lesson</th>
               <th></th>
             </tr>
@@ -95,10 +90,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Abelli, Onni</a></td>
               <td>K</td>
+              <td>Leo Tillens</td>
               <td>
-                Hayes School
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -113,10 +108,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Houk, Ranko</a></td>
               <td>1</td>
+              <td>Leo Tillens</td>
               <td>
-                Runkle School
+                <sharpen-label type="warning" icon="warning">1 grade behind</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -131,10 +126,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Khachaturian, Ruf</a></td>
               <td>2</td>
+              <td>Leo Tillens</td>
               <td>
-                Ridley School
+                <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -149,10 +144,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Marnix, Forrest</a></td>
               <td>1</td>
+              <td>Leo Tillens</td>
               <td>
-                Ridley School
+                <sharpen-label type="warning" icon="warning">1 grade behind</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -167,10 +162,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Beaufort, Shehu</a></td>
               <td>1</td>
+              <td>Leo Tillens</td>
               <td>
-                Lawrence School
+                <sharpen-label type="warning" icon="warning">1 grade behind</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -185,10 +180,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Becket, Ingolf</a></td>
               <td>K</td>
+              <td>Leo Tillens</td>
               <td>
-                Lincoln School
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -203,10 +198,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Alonso, Mia</a></td>
               <td>K</td>
+              <td>Leo Tillens</td>
               <td>
-                Runkle School
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -221,10 +216,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Stenberg, Nitza</a></td>
               <td>3</td>
+              <td>Leo Tillens</td>
               <td>
-                Lawrence School
+                <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -239,10 +234,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Marcos, Lina</a></td>
               <td>2</td>
+              <td>Leo Tillens</td>
               <td>
-                Pierce School
+                <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
@@ -257,10 +252,10 @@
               <td><i class="sharpen-icon">face</i></td>
               <td><a href="school_student.html">Bello, Jacob</a></td>
               <td>K</td>
+              <td>Leo Tillens</td>
               <td>
-                Driscoll School
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
               </td>
-              <td>Level A</td>
               <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
