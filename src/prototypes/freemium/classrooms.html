@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="../enterprise/enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Sharpen for Schools, Free Edition</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="home" name="Home" href="home.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="meeting_room" name="Classrooms" href="classrooms.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <div></div>
+          <sharpen-nav-link icon="upgrade" name="Upgrade" href="upgrade.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Elaine Fransman" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          Classrooms
+        </h1>
+
+        <table class="sharpen-table sharpen-table--icon-start sharpen-table--learners sharpen-table--enclosed sharpen-table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Grade</th>
+              <th>Name</th>
+              <th>Staff</th>
+              <th>Students</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><i class="sharpen-icon">meeting_room</i></td>
+              <td>
+                Kindergarten
+              </td>
+              <td>
+                <a href="classroom.html">Reading - Cardigan</a>
+              </td>
+              <td>
+                <div>Dante Cardigan</div>
+                <div>Elaine Fransman</div>
+              </td>
+              <td>
+                8
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">meeting_room</i></td>
+              <td>
+                Grade 1
+              </td>
+              <td>
+                <a href="classroom.html">Reading - Costa</a>
+              </td>
+              <td>
+                <div>Joan Costa</div>
+                <div>Elaine Fransman</div>
+              </td>
+              <td>
+                7
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">meeting_room</i></td>
+              <td>
+                Grade 2
+              </td>
+              <td>
+                <a href="classroom.html">Reading - Montana</a>
+              </td>
+              <td>
+                <div>Mary Montana</div>
+                <div>Elaine Fransman</div>
+              </td>
+              <td>
+                11
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </main>
+    </div>
+
+  </body>
+</html>
