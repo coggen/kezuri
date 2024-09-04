@@ -61,33 +61,88 @@
           </div>
 
           <div class="sharpen-form-group">
-            <label class="sharpen-form-label" for="select1">Assign to school</label>
-            <select class="sharpen-form-control" id="select1">
-              <option>None / District Staff</option>
-              <option>Baker School</option>
-              <option>Driscoll School</option>
-              <option>Hayes School</option>
-            </select>
+            <label class="sharpen-form-label">District Role</label>
+            <div class="sharpen-form-check">
+              <input type="radio" checked class="sharpen-form-check-input" name="district_role" id="district_role_none" />
+              <label class="sharpen-form-label" for="district_role_none">
+                None
+                <div class="sharpen-text-xs">Cannot view cross-district data.</div>
+              </label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="district_role" id="district_role_staff" />
+              <label class="sharpen-form-label" for="district_role_staff">
+                District Staff
+                <div class="sharpen-text-xs">Can view all cross-district data.</div>
+              </label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="district_role" id="district_role_manager" />
+              <label class="sharpen-form-label" for="district_role_manager">
+                District Manager
+                <div class="sharpen-text-xs">Can view and manage all cross-district data.</div>
+              </label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" class="sharpen-form-check-input" name="district_role" id="district_role_admin" />
+              <label class="sharpen-form-label" for="district_role_admin">
+                District Administrator
+                <div class="sharpen-text-xs">Can view and manage all cross-district data, and grant access to others.</div>
+              </label>
+            </div>
           </div>
 
           <div class="row">
             <div class="col-md-6">
               <div class="sharpen-form-group">
-                <label class="sharpen-form-label" for="select1">School role</label>
-                <select class="sharpen-form-control" disabled id="select1">
-                  <option>Instructional</option>
-                  <option>Non-Instructional</option>
+                <label class="sharpen-form-label" for="select1">Assign to school</label>
+                <select class="sharpen-form-control" id="select1">
+                  <option>None</option>
+                  <option>Baker School</option>
+                  <option>Driscoll School</option>
+                  <option>Hayes School</option>
                 </select>
-                <div class="sharpen-form-text">Non-instructional staff may access only their assigned students.</div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="sharpen-form-group">
-                <label class="sharpen-form-label" for="select1">Assign to classroom</label>
+                <label class="sharpen-form-label" for="select1">Assign to classroom (Optional)</label>
                 <select class="sharpen-form-control" disabled id="select1">
-                  <option>None / Later</option>
+                  <option>None</option>
                 </select>
               </div>
+            </div>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">School Role</label>
+            <div class="sharpen-form-check">
+              <input type="radio" disabled checked class="sharpen-form-check-input" name="school_role" id="school_role_noninstructional" />
+              <label class="sharpen-form-label" for="school_role_noninstructional">
+                Non-Instructional Staff
+                <div class="sharpen-text-xs">Can view only assigned students.</div>
+              </label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" disabled class="sharpen-form-check-input" name="school_role" id="school_role_instructional" />
+              <label class="sharpen-form-label" for="school_role_instructional">
+                Instructional Staff
+                <div class="sharpen-text-xs">Can view all school data.</div>
+              </label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" disabled class="sharpen-form-check-input" name="school_role" id="school_role_manager" />
+              <label class="sharpen-form-label" for="school_role_manager">
+                School Manager
+                <div class="sharpen-text-xs">Can view and manage all school data.</div>
+              </label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="radio" disabled class="sharpen-form-check-input" name="school_role" id="school_role_admin" />
+              <label class="sharpen-form-label" for="district_role_admin">
+                School Administrator
+                <div class="sharpen-text-xs">Can view and manage all school data, and grant school access to others.</div>
+              </label>
             </div>
           </div>
 
