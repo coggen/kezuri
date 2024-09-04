@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="shield_person" name="Admins" href="district_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          Schools
+        </h1>
+
+        <div class="sharpen-mb-lg">
+          <div class="sharpen-button-bar">
+            <form>
+              <input type="text" class="sharpen-form-control sharpen-form-control--small" placeholder="Search schools..." />
+            </form>
+            <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
+              <i class="sharpen-icon">add</i>
+              Add school
+            </button>
+          </div>
+        </div>
+
+        <table class="sharpen-table sharpen-table--icon-start sharpen-table--enclosed sharpen-table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Staff</th>
+              <th>Classes</th>
+              <th>Students</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Baker School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Driscoll School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Hayes School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Lawrence School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Lincoln School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Pierce School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Ridley School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">school</i></td>
+              <td><a href="school_show.html">Runkle School</a></td>
+              <td>8</td>
+              <td>32</td>
+              <td>46</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </main>
+    </div>
+
+  </body>
+</html>

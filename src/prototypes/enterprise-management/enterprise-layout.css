@@ -1,0 +1,134 @@
+html, body, .sharpen-enterprise-container {
+  height: 100%;
+}
+
+.sharpen-enterprise-container {
+  display: flex;
+  max-width: 1360px;
+}
+
+.sharpen-enterprise-container > main {
+  flex: 1;
+  background-color: white;
+  padding: var(--spacing-lg);
+  overflow-y: scroll;
+}
+
+.sharpen-enterprise-navigation {
+  width: 15rem;
+  padding: var(--spacing-lg);
+  background-color: var(--color-evergreen);
+  color: white;
+}
+
+.sharpen-enterprise-navigation .district {
+  color: white;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px dotted white;
+}
+
+.sharpen-enterprise-navigation .school {
+  color: white;
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+}
+
+.sharpen-enterprise-navigation .brand {
+  display: block;
+  margin-bottom: var(--spacing-md);
+}
+
+.sharpen-enterprise-navigation .brand img {
+  max-width: 8rem;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link {
+  display: block;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link + sharpen-nav-link {
+  margin-top: 0.5rem;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link a {
+  color: var(--color-sunrise);
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link[selected] a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sharpen-enterprise-navigation sharpen-nav-link .sharpen-icon {
+  margin-right: 0.25em;
+  vertical-align: -4pt;
+}
+
+.sharpen-enterprise-navigation .support-links,
+.sharpen-enterprise-navigation .school-links {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px dotted white;
+
+}
+
+.sharpen-enterprise-navigation .school-links sharpen-nav-link a { color: var(--color-white); }
+.sharpen-enterprise-navigation .support-links sharpen-nav-link a { color: var(--color-mint); }
+
+.sharpen-enterprise-navigation .school-links sharpen-nav-link:first-child a {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.sharpen-button-bar {
+  display: flex;
+  gap: 1em;
+}
+
+.sharpen-button-bar form {
+  flex: 1;
+}
+
+.sharpen-table--horizontal tr > :first-child {
+  width: 8rem;
+  text-align: right;
+  padding-right: var(--spacing-lg);
+}
+
+.sharpen-table--horizontal th, .sharpen-table--horizontal td {
+  vertical-align: top;
+}
+
+/*
+** BADGE
+*/
+
+.sharpen-badge {
+  color: var(--color-pine);
+  background-color: var(--color-mint);
+  font-size: 85%;
+  display: inline-block;
+  border-radius: 0.5em;
+  padding: 0 0.5em;
+  height: 1.5em;
+  vertical-align: 1px;
+  margin-left: var(--spacing-xs);
+}
+
+
+.profile-button-set {
+  margin-top: 2em;
+}
+
+.profile-button-set button + button {
+  margin-top: 0.5em;
+}
+
+
+
+
+.sharpen-bg--light-green,  .sharpen-bg-success { background-color: var(--color-mint); }
+.sharpen-bg--light-orange, .sharpen-bg-warning { background-color: var(--color-light-orange); }
+.sharpen-bg--light-red,    .sharpen-bg-danger  { background-color: var(--color-light-red); }

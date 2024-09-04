@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; <a href="school_classes.html">Classrooms</a> &rsaquo; Mr. Cardigan - Room 4
+        </h1>
+
+        <div class="row">
+          <div class="col-md-3">
+            <sharpen-card border="gray" padding="medium">
+              <dl class="sharpen-list">
+                <dt>Classroom</dt>
+                <dd class="sharpen-text-lg">Mr. Cardigan - Room 4</dd>
+
+                <dt>Staff</dt>
+                <dd>
+                  <div><a href="staff_show.html">Dante Cardigan</a></div>
+                  <div><a href="staff_show.html">Humberto Guiste</a></div>
+                </dd>
+
+                <dt>School</dt>
+                <dd><a href="school_show.html">Runkle School</a></dd>
+              </dl>
+
+              <div class="profile-button-set">
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
+                  <i class="sharpen-icon">edit</i>
+                  Edit
+                </button>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-md-9">
+            <ul class="sharpen-tabs sharpen-mb-md">
+              <li class="tab">
+                <a href="school_class.html"><i class="sharpen-icon">face</i>Students</a>  
+              </li>
+              <li class="tab selected">
+                <a href="school_class_transitions.html"><i class="sharpen-icon">sync_alt</i>Transitions</a>
+              </li>
+            </ul>
+
+            <sharpen-card border="gray" padding="large" class="sharpen-mb-md">
+              <h2 class="sharpen-heading-md">Archive classroom</h2>
+              <ul class="sharpen-list sharpen-mb-md">
+                <li>Archive a classroom when a teacher no longer teaches this subject or grade.</li>
+                <li>The historical data for this classroom will be preserved.</li>
+                <li>Archived classrooms can be found and reactivated via the Classrooms dashboard</li>
+                <li>All students and staff will be unassigned from this classroom.</li>
+              </ul>
+              <button class="sharpen-button sharpen-button--small sharpen-button--primary">
+                <i class="sharpen-icon">archive</i> Archive
+              </button>
+            </sharpen-card>
+
+            <sharpen-card border="gray" padding="large" class="sharpen-mb-md">
+              <h2 class="sharpen-heading-md">Delete classroom</h2>
+              <ul class="sharpen-list sharpen-mb-md">
+                <li>Delete a classroom only if the information is invalid or mistaken.</li>
+                <li>All students and staff will be unassigned from this classroom.</li>
+                <li>This classroom will be permanently removed.</li>
+              </ul>
+              <button class="sharpen-button sharpen-button--small sharpen-button--danger">
+                <i class="sharpen-icon">delete</i>
+                Delete record
+              </button>
+            </sharpen-card>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  </body>
+</html>
