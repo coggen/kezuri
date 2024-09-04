@@ -45,6 +45,13 @@ import * as WizardStories from './wizard.stories';
 
 <Canvas of={WizardStories.EmailQuestion} sourceState="hidden" />
 
+## Existing Email Address
+
+* If the user enters an email address that matches an existing account, we
+  gently redirect them to the login page.
+
+<Canvas of={WizardStories.ExistingEmail} sourceState="hidden" />
+
 ## Estimate
 
 * Apply `sharpen-background--green` to the `body` tag so that the entire page
