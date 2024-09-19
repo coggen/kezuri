@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Point effect</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script>
+
+  <style>
+    html, body, table {
+      width: 100%;
+      max-width: 60rem;
+      height: 100%;
+      max-height: 40rem;
+    }
+
+    body {
+      padding: 4em;
+    }
+
+    table {
+      margin-bottom: 4em;
+      border-collapse: collapse;
+      font-family: Lexend;
+    }
+
+    td {
+      text-align: center;
+      font-size:48pt;
+      border: 1px dashed #999;
+      width: 50%
+    }
+
+    div {
+      margin-bottom: 2em; 
+    }
+  </style>
+</head>
+<body>
+
+
+<table>
+  <tr>
+    <td>
+      <span id="chicken">chicken</span>
+    </td>
+    <td>
+      <span id="cabbage">cabbage</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <span id="pasta">pasta</span>
+    </td>
+    <td>
+      <span id="rice">rice-a-roni</span>
+    </td>
+  </tr>
+</table>
+
+
+<div>
+  chicken:
+  <button id="chicken_show">circle</button>
+  <button id="chicken_hide">clear circle</button>
+</div>
+
+<div>
+  cabbage:
+  <button id="cabbage_show">box</button>
+  <button id="cabbage_hide">clear box</button>
+</div>
+
+<div>
+  pasta:
+  <button id="pasta_show">highlight</button>
+  <button id="pasta_hide">clear highlight</button>
+</div>
+
+<div>
+  rice-a-roni
+  <button id="rice_show">underline</button>
+  <button id="rice_hide">clear underline</button>
+</div>
+
+
+<script>
+
+window.addEventListener("DOMContentLoaded", () => {
+
+  const a1 = RoughNotation.annotate(document.querySelector('#chicken'), { type: 'circle', padding: 25, strokeWidth: 8, color: '#59C3E144' });
+  const a2 = RoughNotation.annotate(document.querySelector('#cabbage'), { type: 'box', padding: 10, strokeWidth: 4, color: 'rgba(49, 119, 108, 0.4)' });
+  const a3 = RoughNotation.annotate(document.querySelector('#pasta'), { type: 'highlight', color: '#FFD54F77' });
+  const a4 = RoughNotation.annotate(document.querySelector('#rice'), { type: 'underline', strokeWidth: 6, color: '#D0505099', iterations: 3, animationDuration: '400' });
+
+  // const ag = RoughNotation.annotationGroup([a1, a2, a3, a4]);
+
+  $("#chicken_show").click(function() { a1.show(); });
+  $("#chicken_hide").click(function() { a1.hide(); });
+
+  $("#cabbage_show").click(function() { a2.show(); });
+  $("#cabbage_hide").click(function() { a2.hide(); });
+
+  $("#pasta_show").click(function() { a3.show(); });
+  $("#pasta_hide").click(function() { a3.hide(); });
+
+  $("#rice_show").click(function() { a4.show(); });
+  $("#rice_hide").click(function() { a4.hide(); });
+
+
+  
+
+  // a1.show();
+  // a2.show();
+  // a3.show();
+  // a4.show();
+
+});
+
+</script>
+
+</body>
+</html>
