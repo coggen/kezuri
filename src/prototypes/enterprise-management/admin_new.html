@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="shield_person" name="Admins" href="district_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          <a href="district_administrators.html">District Administrators</a> &rsaquo; Add New Administrator
+        </h1>
+
+        <sharpen-card border="gray" padding="large" class="sharpen-mt-lg">
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">Select a staff person</label>
+            <select class="sharpen-form-control">
+              <option>Cardigan, Dante (cardigan.dante@psob.org) </option>
+              <option>Doverspike, Brady (doverspike.brady@psob.org) </option>
+              <option>Kinnaird, Pratap (kinnaird.pratap@psob.org) </option>
+              <option>Matveeva, Dixie (matveeva.dixie@psob.org) </option>
+              <option>Meaney, Eliav (meaney.eliav@psob.org) </option>
+              <option>Notaro, Emrys (notaro.emrys@psob.org) </option>
+              <option>Stafford, Ainsley (stafford.ainsley@psob.org) </option>
+              <option>Tillens, Leo (tillens.leo@psob.org) </option>
+              <option>Wieczorek, Balthasar (wieczorek.balthasar@psob.org) </option>
+              <option>Zeng, Cosima (zeng.cosima@psob.org) </option>
+            </select>
+          </div>
+          
+          <div class="sharpen-form-group sharpen-mt-lg">
+            <a href="district_administrators.html" class="sharpen-button sharpen-button--primary sharpen-button--large">Add</a>
+          </div>
+          
+        </sharpen-card>
+
+
+
+      </main>
+    </div>
+
+  </body>
+</html>
