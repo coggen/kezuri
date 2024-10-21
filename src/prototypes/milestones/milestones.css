@@ -41,12 +41,20 @@
 .sharpen-lesson .up-next .lessons {
   margin: 2em;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1em;
   font-style: italic;
 }
 
 .sharpen-lesson .up-next .lessons > * {
-  flex: 1;
+  width: 10rem;
+}
+
+@media (min-width: 992px) { 
+  .sharpen-lesson .up-next .lessons > * {
+    width: 15rem;
+  }
 }
 
 .sharpen-lesson .up-next .lessons img {

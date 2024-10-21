@@ -256,6 +256,40 @@ export const EmailQuestion = {
 `,
 };
 
+export const ExistingEmail = {
+  render: () => `
+<div class="sharpen-wizard-container">
+
+  <sharpen-wizard-header section="Learning Profile" current-step="2" total-steps="20" back-href="foo.html"></sharpen-wizard-header>
+
+  <form>
+
+    <div class="question-content sharpen-text--body sharpen-mt-lg sharpen-mb-md">
+
+      <sharpen-card border="gray" padding="large">
+      <h1 class="sharpen-heading-lg-sans">Welcome back!</h1>
+
+      <p>The email address <strong>brady@doverspike.net</strong>
+      is already a Sharpen user.</p>
+      <p>To add a new learner to your account, please log in instead.</p>
+
+      <a href="#" class="sharpen-button sharpen-button--full-width sharpen-button--primary sharpen-button--large">Log In &rsaquo;</a>
+      </sharpen-card>
+
+    </div>
+
+    
+
+    <div class="sharpen-text--body sharpen-text-xs sharpen-text--center sharpen-text--muted sharpen-mt-lg">
+      <p>Need help? Email us at <a href="mailto:support@sharpen.com">support@sharpen.com</a></p>
+    </div>
+  
+  </form>
+
+</div>
+`,
+};
+
 export const Estimate = {
   render: () => `
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>

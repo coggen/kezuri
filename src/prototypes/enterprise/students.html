@@ -23,6 +23,7 @@
           <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
           <sharpen-nav-link selected icon="face" name="Students" href="students.html"></sharpen-nav-link>
           <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="shield_person" name="Admins" href="district_administrators.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
@@ -67,10 +68,10 @@
             <form>
               <input type="text" class="sharpen-form-control sharpen-form-control--small" placeholder="Search students..." />
             </form>
-            <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
+            <a href="student_new.html" class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
               <i class="sharpen-icon">add</i>
               Add student
-            </button>
+            </a>
             <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
               <i class="sharpen-icon">upload</i>
             </button>
@@ -82,23 +83,28 @@
             <tr>
               <th></th>
               <th>Name <!--<i class="sharpen-icon">arrow_drop_down</i>--></th>
-              <th>School / Class</th>
-              <th>Sharpen Level</th>
+              <th>Grade</th>
+              <th>School</th>
+              <th>Sharpen Tutor</th>
+              <th>Reading Progress</th>
+              <th>Next Lesson</th>
               <th></th>
             </tr>
           </thead>
-          <tbody>
+                    <tbody>
             <tr>
               <td><i class="sharpen-icon">face</i></td>
-              <td><a href="#">Abelli, Onni</a></td>
+              <td><a href="school_student.html">Abelli, Onni</a></td>
+              <td>K</td>
+              <td>Hayes School</td>
+              <td>Leo Tillens</td>
               <td>
-                <div class="sharpen-text-xs">Runkle School</div>
-                Grade 1 &middot; Mrs. Elliott
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
               </td>
-              <td>A</td>
+              <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">edit</i>
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">play_arrow</i>
@@ -107,15 +113,17 @@
             </tr>
             <tr>
               <td><i class="sharpen-icon">face</i></td>
-              <td><a href="#">Houk, Ranko</a></td>
+              <td><a href="school_student.html">Houk, Ranko</a></td>
+              <td>1</td>
+              <td>Runkle School</td>
+              <td>Leo Tillens</td>
               <td>
-                <div class="sharpen-text-xs">Runkle School</div>
-                Grade 1 &middot; Mrs. Elliott
+                <sharpen-label type="warning" icon="warning">1 grade behind</sharpen-label>
               </td>
-              <td>A</td>
+              <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">edit</i>
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">play_arrow</i>
@@ -124,15 +132,150 @@
             </tr>
             <tr>
               <td><i class="sharpen-icon">face</i></td>
-              <td><a href="#">Khachaturian, Ruf</a></td>
+              <td><a href="school_student.html">Khachaturian, Ruf</a></td>
+              <td>2</td>
+              <td>Pierce School</td>
+              <td>Evelyn Chan</td>
               <td>
-                <div class="sharpen-text-xs">Runkle School</div>
-                Grade 1 &middot; Mrs. Elliott
+                <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
               </td>
-              <td>A</td>
+              <td>A: Unit 5, Lesson 2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
-                  <i class="sharpen-icon">edit</i>
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Marnix, Forrest</a></td>
+              <td>1</td>
+              <td>Ridley School</td>
+              <td>Cam Winston</td>
+              <td>
+                <sharpen-label type="warning" icon="warning">1 grade behind</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Beaufort, Shehu</a></td>
+              <td>1</td>
+              <td>Runkle School</td>
+              <td>Evelyn Chan</td>
+              <td>
+                <sharpen-label type="warning" icon="warning">1 grade behind</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Becket, Ingolf</a></td>
+              <td>K</td>
+              <td>Driscoll School</td>
+              <td>Evelyn Chan</td>
+              <td>
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Alonso, Mia</a></td>
+              <td>K</td>
+              <td>Lawrence School</td>
+              <td>Leo Tillens</td>
+              <td>
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Stenberg, Nitza</a></td>
+              <td>3</td>
+              <td>Lawrence School</td>
+              <td>Cam Winston</td>
+              <td>
+                <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Marcos, Lina</a></td>
+              <td>2</td>
+              <td>Ridley School</td>
+              <td>Leo Tillens</td>
+              <td>
+                <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">play_arrow</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">face</i></td>
+              <td><a href="school_student.html">Bello, Jacob</a></td>
+              <td>K</td>
+              <td>Pierce School</td>
+              <td>Evelyn Chan</td>
+              <td>
+                <sharpen-label type="success" icon="check">Grade level</sharpen-label>
+              </td>
+              <td>A: Unit 5, Lesson 2</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">play_arrow</i>
@@ -157,6 +300,8 @@
             <li class="page-item active"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>

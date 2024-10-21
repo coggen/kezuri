@@ -61,6 +61,15 @@
 .sharpen-my-xl { margin-top:    var(--spacing-xl) !important;
                  margin-bottom: var(--spacing-xl) !important; }
 
+.sharpen-m-2xl  { margin:        var(--spacing-2xl) !important; }
+.sharpen-mt-2xl { margin-top:    var(--spacing-2xl) !important; }
+.sharpen-mr-2xl { margin-right:  var(--spacing-2xl) !important; }
+.sharpen-mb-2xl { margin-bottom: var(--spacing-2xl) !important; }
+.sharpen-ml-2xl { margin-left:   var(--spacing-2xl) !important; }
+.sharpen-mx-2xl { margin-left:   var(--spacing-2xl) !important;
+                  margin-right:  var(--spacing-2xl) !important; }
+.sharpen-my-2xl { margin-top:    var(--spacing-2xl) !important;
+                  margin-bottom: var(--spacing-2xl) !important; }
 
 /* Padding */
 .sharpen-p-0   { padding:        0 !important; }
@@ -122,3 +131,13 @@
                  padding-right:  var(--spacing-xl) !important; }
 .sharpen-py-xl { padding-top:    var(--spacing-xl) !important;
                  padding-bottom: var(--spacing-xl) !important; }
+
+.sharpen-p-2xl  { padding:        var(--spacing-2xl) !important; }
+.sharpen-pt-2xl { padding-top:    var(--spacing-2xl) !important; }
+.sharpen-pr-2xl { padding-right:  var(--spacing-2xl) !important; }
+.sharpen-pb-2xl { padding-bottom: var(--spacing-2xl) !important; }
+.sharpen-pl-2xl { padding-left:   var(--spacing-2xl) !important; }
+.sharpen-px-2xl { padding-left:   var(--spacing-2xl) !important;
+                  padding-right:  var(--spacing-2xl) !important; }
+.sharpen-py-2xl { padding-top:    var(--spacing-2xl) !important;
+                  padding-bottom: var(--spacing-2xl) !important; }

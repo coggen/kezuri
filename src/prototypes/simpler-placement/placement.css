@@ -1,0 +1,20 @@
+.sharpen-lesson .activity.placement img {
+  margin-top: 0;
+  max-width: 80%;
+}
+
+.activity.placement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity .tile {
+  display: inline-block;
+  font-family: 'Lexend';
+  font-size: 96pt;
+  background-color: white;
+  padding: 24pt 48pt;
+  border-radius: 24pt;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+}

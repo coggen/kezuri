@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; Staff
+        </h1>
+
+        <div class="sharpen-mb-lg">
+          <div class="sharpen-button-bar">
+            <form>
+              <select class="sharpen-form-control sharpen-form-control--small">
+                <option>Active Staff (8)</option>
+                <option>Invited Staff (1)</option>
+                <option>Archived Staff (0)</option>
+              </select>
+            </form>
+            <form>
+              <select class="sharpen-form-control sharpen-form-control--small">
+                <option>All roles (8)</option>
+                <option>Instructional (4)</option>
+                <option>Non-Instructional (4)</option>
+              </select>
+            </form>
+            <form>
+              <input type="text" class="sharpen-form-control sharpen-form-control--small" placeholder="Search staff..." />
+            </form>
+            <a href="staff_new.html" class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
+              <i class="sharpen-icon">add</i>
+              Add Staff
+            </a>
+            <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
+              <i class="sharpen-icon">upload</i>
+            </button>
+          </div>
+        </div>
+
+        <sharpen-alert type="info" icon="info">These staff are your school's Sharpen users. Non-instructional staff can only see data for the students they tutor.</sharpen-alert>
+
+        <table class="sharpen-table sharpen-table--icon-start sharpen-table--learners sharpen-table--enclosed sharpen-table-controls-end sharpen-table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>School Role</th>
+              <th>Classrooms</th>
+              <th>Sharpen Tutees</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Cardigan, Dante</a>
+              </td>
+              <td>
+                Instructional Staff
+              </td>
+              <td>
+                Mr. Cardigan - Room 4
+              </td>
+              <td>0</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Doverspike, Brady</a>
+              </td>
+              <td>
+                Non-Instructional Staff
+              </td>
+              <td>
+                <div>Ms. Kinnaird - Room 202</div>
+                <div>Resource Room</div>
+              </td>
+              <td>17</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Kinnaird, Pratap</a>
+              </td>
+              <td>Instructional Staff</td>
+              <td>
+                Ms. Kinnaird - Room 202
+              </td>
+              <td>0</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Matveeva, Dixie</a>
+              </td>
+              <td>
+                Administrator
+              </td>
+              <td>
+                Ms. Matveeva - Room 9
+              </td>
+              <td>0</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Meaney, Eliav</a>
+              </td>
+              <td>Instructional Staff</td>
+              <td>
+                Mr. Meany - Room 127
+              </td>
+              <td>0</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Notaro, Emrys</a>
+              <td>Instructional Staff</td>
+              <td>
+                Mrs. Notaro - Room 242
+              </td>
+              <td>0</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Stafford, Ainsley</a>
+              </div>
+              </td>
+              <td>
+                Manager
+              </td>
+              <td>
+                Mrs. Stafford - Room 243
+              </td>
+              <td>0</td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td><i class="sharpen-icon">supervisor_account</i></td>
+              <td>
+                <a href="staff_show.html">Tillens, Leo</a>
+              </td>
+              <td>Non-Instructional Staff</td>
+              <td>
+                <div>Mr. Cardigan - Room 4</div>
+                <div>Resource Room</div>
+              </td>
+              <td>
+                3
+              </td>
+              <td>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">edit</i>
+                </button>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </main>
+    </div>
+
+  </body>
+</html>

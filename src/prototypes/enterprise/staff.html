@@ -23,6 +23,7 @@
           <sharpen-nav-link selected icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
           <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
           <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="shield_person" name="Admins" href="district_administrators.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
@@ -38,7 +39,7 @@
           Staff
         </h1>
 
-        <div class="sharpen-mb-lg">
+        <div class="sharpen-mb-md">
           <div class="sharpen-button-bar">
             <form>
               <select class="sharpen-form-control sharpen-form-control--small">
@@ -49,31 +50,34 @@
             </form>
             <form>
               <select class="sharpen-form-control sharpen-form-control--small">
-                <option>All roles (71)</option>
-                <option>District admins (3)</option>
-                <option>School admins (16)</option>
+                <option>All roles (8)</option>
+                <option>Instructional (4)</option>
+                <option>Non-Instructional (4)</option>
               </select>
             </form>
             <form>
               <input type="text" class="sharpen-form-control sharpen-form-control--small" placeholder="Search staff..." />
             </form>
-            <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
+            <a href="staff_new.html" class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
               <i class="sharpen-icon">add</i>
               Add Staff
-            </button>
+            </a>
             <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary">
               <i class="sharpen-icon">upload</i>
             </button>
           </div>
         </div>
 
+        <sharpen-alert type="info" icon="info">These staff are your district's Sharpen users. Staff assigned to schools can only see data within their school. Non-instructional staff can only see data for the students they tutor.</sharpen-alert>
+
         <table class="sharpen-table sharpen-table--icon-start sharpen-table--learners sharpen-table--enclosed sharpen-table-controls-end sharpen-table-hover">
           <thead>
             <tr>
               <th></th>
-              <th>Name / Email</th>
-              <th>Role</th>
+              <th>Name</th>
               <th>School</th>
+              <th>School Role</th>
+              <th>Sharpen Tutees</th>
               <th></th>
             </tr>
           </thead>
@@ -81,176 +85,175 @@
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="#">Cardigan, Dante</a>
-                <div>dcardigan@psob.gov</div>
+                <a href="staff_show.html">Cardigan, Dante</a>
+                <div class="sharpen-text-xs">District Admin</div>
               </td>
-              <td>
-                District Admin
-              </td>
-              <td></td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>0</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="#">Doverspike, Brady</a>
-                <div>bdoverspike@psob.gov</div>
+                <a href="staff_show.html">Doverspike, Brady</a>
+                <div class="sharpen-text-xs">District Admin</div>
               </td>
-              <td>
-                District Admin
-              </td>
-              <td></td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>0</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Kinnaird, Pratap</a>
-                <div>kinnaird@psob.gov</div>
+                <a href="staff_show.html">Kinnaird, Pratap</a>
               </td>
-              <td>Staff</td>
               <td>Runkle School</td>
+              <td>Instructional</td>
+              <td>2</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Matveeva, Dixie</a>
-                <div>matveeva@psob.gov</div>
+                <a href="staff_show.html">Matveeva, Dixie</a>
+                <div class="sharpen-text-xs">School Admin</div>
               </td>
-              <td>School Admin</td>
               <td>Lincoln School</td>
+              <td>Instructional</td>
+              <td>0</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Meaney, Eliav</a>
-                <div>meaney@psob.gov</div>
+                <a href="staff_show.html">Meaney, Eliav</a>
               </td>
-              <td>Staff</td>
               <td>Ridley School</td>
+              <td>Non-Instructional</td>
+              <td>17</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Notaro, Emrys</a>
-                <div>notaro@psob.gov</div></td>
-              <td>Staff</td>
+                <a href="staff_show.html">Notaro, Emrys</a>
+              </td>
               <td>Driscoll School</td>
+              <td>Instructional</td>
+              <td>1</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="#">Stafford, Ainsley</a>
-                <div>astafford@psob.gov</div>
+                <a href="staff_show.html">Stafford, Ainsley</a>
+                <div class="sharpen-text-xs">District Admin</div>
               </div>
               </td>
-              <td>
-                District Admin
-              </td>
-              <td></td>
+              <td>&mdash;</td>
+              <td>&mdash;</td>
+              <td>0</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Tillens, Leo</a>
-                <div>tillens@psob.gov</div>
+                <a href="staff_show.html">Tillens, Leo</a>
               </td>
-              <td>Staff</td>
               <td>Pierce School</td>
+              <td>Non-Instructional</td>
+              <td>3</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Wieczorek, Balthasar</a>
-                <div>wieczorek@psob.gov</div>
+                <a href="staff_show.html">Wieczorek, Balthasar</a>
               </td>
-              <td>Staff</td>
               <td>Lawrence School</td>
+              <td>Instructional</td>
+              <td>0</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>
             <tr>
               <td><i class="sharpen-icon">supervisor_account</i></td>
               <td>
-                <a href="user_show.html">Zeng, Cosima</a>
-                <div>zeng@psob.gov</div>
+                <a href="staff_show.html">Zeng, Cosima</a>
               </td>
-              <td>Staff</td>
-              <td>Runkley School</td>
+              <td>Runkle School</td>
+              <td>Non-Instructional</td>
+              <td>6</td>
               <td>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
                   <i class="sharpen-icon">edit</i>
                 </button>
-                <button class="sharpen-button sharpen-button--xsmall sharpen-button--danger">
-                  <i class="sharpen-icon">delete</i>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary">
+                  <i class="sharpen-icon">sync_alt</i>
                 </button>
               </td>
             </tr>

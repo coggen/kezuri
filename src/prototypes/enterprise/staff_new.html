@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="shield_person" name="Admins" href="district_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          <a href="staff.html">Staff</a> &rsaquo; Add New Staff
+        </h1>
+
+        <sharpen-card border="gray" padding="large" class="sharpen-mt-lg">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="sharpen-form-group">
+                <label class="sharpen-form-label">First Name</label>
+                <input type="text" class="sharpen-form-control" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="sharpen-form-group">
+                <label class="sharpen-form-label">Last Name</label>
+                <input type="text" class="sharpen-form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label">E-mail</label>
+            <input type="email" class="sharpen-form-control" />
+          </div>
+
+          <div class="sharpen-form-group">
+            <label class="sharpen-form-label" for="select1">Assign to school</label>
+            <select class="sharpen-form-control" id="select1">
+              <option>None / District Staff</option>
+              <option>Baker School</option>
+              <option>Driscoll School</option>
+              <option>Hayes School</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="sharpen-form-group">
+                <label class="sharpen-form-label" for="select1">School role</label>
+                <select class="sharpen-form-control" disabled id="select1">
+                  <option>Instructional</option>
+                  <option>Non-Instructional</option>
+                </select>
+                <div class="sharpen-form-text">Non-instructional staff may access only their assigned students.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="sharpen-form-group">
+                <label class="sharpen-form-label" for="select1">Assign to classroom</label>
+                <select class="sharpen-form-control" disabled id="select1">
+                  <option>None / Later</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="sharpen-form-group">
+            <div class="sharpen-form-check">
+              <input type="checkbox" class="sharpen-form-check-input" name="check_district" id="check_district" />
+              <label class="sharpen-form-label" for="check_district">Assign as a district administrator</label>
+            </div>
+            <div class="sharpen-form-check">
+              <input type="checkbox" disabled class="sharpen-form-check-input" name="check_school" id="check_school" />
+              <label class="sharpen-form-label" for="check_school">Assign as a school administrator</label>
+            </div>
+          </div> -->
+          
+          <div class="sharpen-form-group sharpen-mt-lg">
+            <a href="staff.html" class="sharpen-button sharpen-button--primary sharpen-button--large">Send invitation</a>
+          </div>
+
+          <sharpen-alert type="info" icon="mail" class="sharpen-mt-lg sharpen-mb-0">
+            Sharpen will send a unique sign-up link to the email address you enter.
+            You can track pending invitations from the Staff dashboard.
+          </sharpen-alert>
+        </sharpen-card>
+
+
+
+      </main>
+    </div>
+
+  </body>
+</html>

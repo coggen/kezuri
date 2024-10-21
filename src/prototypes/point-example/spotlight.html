@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Point effect</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <style>
+    body { background: url('adding_s.png') no-repeat; }
+    .spotlight {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-image: radial-gradient(
+        circle at 200px 500px,
+        transparent 160px,
+        rgba(0, 0, 0, 0.5) 180px
+      );
+    }
+  </style>
+</head>
+<body>
+
+
+<div class="spotlight"></div>
+
+
+<script>
+
+window.addEventListener("DOMContentLoaded", () => {
+
+  const spotlight = document.querySelector('.spotlight');
+  let spotlightSize = 'transparent 160px, rgba(0, 0, 0, 0.5) 180px)';
+  
+  function updateSpotlight(x, y) {
+    spotlight.style.backgroundImage = `radial-gradient(circle at ${x}px ${y}px, ${spotlightSize}`;
+  }
+
+  window.addEventListener('click', e => updateSpotlight(e.clientX, e.clientY));
+
+});
+
+</script>
+
+</body>
+</html>

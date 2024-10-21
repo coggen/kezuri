@@ -68,6 +68,11 @@
     font-size: var(--font-size-lg);
   }
 
+  &--xlarge {
+    padding: var(--spacing-md) var(--spacing-2xl) calc(var(--spacing-md) * 1.25);
+    font-size: var(--font-size-4xl);
+  }
+
   &--full-width {
     width: 100%;
   }

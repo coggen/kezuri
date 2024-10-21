@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Sharpen Prototype: Placement intro with no constraints</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="../one-device/one-device.css" />
+  <link rel="stylesheet" href="../milestones/milestones.css" />
+  <link rel="stylesheet" href="placement.css" />
+</head>
+<body class="sharpen-lesson">
+
+<div class="interface">
+  <div class="primary">
+    <section class="instruction">
+      <div class="controls"><button id="repeat" class="sharpen-button sharpen-button--circle sharpen-button--muted disable-on-audio"><i class="sharpen-icon">refresh</i></button></div>
+      <div class="text"></div>
+      <div class="brand"><img src="../build/assets/images/brand/sharpen_mark_evergreen.png" alt="Sharpen" /></div>
+    </section>
+    <section class="activity placement">
+      <div class="placement-container">
+
+        <img id="img01" class="hide" src="placement-images/levels.png" />
+        <img id="img02" class="hide" src="placement-images/three-parts.png" />
+        <img id="img03" class="hide" src="placement-images/letter-name.png" />
+        <img id="img04" class="hide" src="placement-images/five-seconds.png" />
+        <img id="img05" class="hide" src="placement-images/nonsense-examples.png" />
+        <img id="img06" class="hide" src="placement-images/errors.png" />
+        <img id="img07" class="hide" src="placement-images/no-hints.png" />
+        <img id="img08" class="hide" src="placement-images/feedback.png" />
+        <img id="img09" class="hide" src="placement-images/encourage.png" />
+        <img id="img10" class="hide" src="placement-images/side-by-side.png" />
+
+        <div id="tile_letter" class="hide tile tile-letter">t</div>
+        <div id="tile_word" class="hide tile tile-word">map</div>
+        <div id="tile_nonsense" class="hide tile tile-nonsense">zom</div>
+
+      </div>
+    </section>
+    <div class="help-content hide">
+    </div>
+  </div>
+  <nav>
+    <div class="movement">
+      
+      <div class="metadata">
+        <div class="lesson">
+          Placement Assessment
+        </div>
+        <a href="index.html" class="lesson-close"><i class="sharpen-icon">close</i></a>
+      </div>
+
+      <button class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio"><i class="sharpen-icon">arrow_back</i> Back</button>
+      <button id="next" class="sharpen-button sharpen-button--small sharpen-button--primary disable-on-audio">Next <i class="sharpen-icon">arrow_forward</i></button>  
+
+    </div>
+    <div class="actions">
+
+      <button id="correct" class="hide sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio">Correct</button>
+      <button id="skip" class="hide sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio">Skip <i class="sharpen-icon">keyboard_double_arrow_right</i></button>
+      <button id="letter_name" class="hide sharpen-button sharpen-button--small sharpen-button--secondary disable-on-audio">Letter Name</button>
+
+    </div>
+    <div class="help">
+
+      
+
+    </div>
+  </nav>
+</div>
+
+<audio id="a_1"  src="audio/c01.mp3"></audio>
+<audio id="a_2"  src="audio/c02.mp3"></audio>
+<audio id="a_3"  src="audio/c03.mp3"></audio>
+<audio id="a_4"  src="audio/c04.mp3"></audio>
+<audio id="a_5"  src="audio/c05.mp3"></audio>
+<audio id="a_6"  src="audio/c06.mp3"></audio>
+<audio id="a_7"  src="audio/c07.mp3"></audio>
+<audio id="a_8"  src="audio/c08.mp3"></audio>
+<audio id="a_9"  src="audio/c09.mp3"></audio>
+<audio id="a_10" src="audio/c10.mp3"></audio>
+<audio id="a_11" src="audio/c11.mp3"></audio>
+
+<audio id="a_correction" src="audio/letter_name_correction.mp3"></audio>
+
+<script>
+
+
+let mostRecentStep = 1;
+
+$(document).ready(function() {
+  playStep(1);
+});
+
+$("#repeat").on("click", function() {
+  let visibleId = "#" + $(".placement .placement-container > *").not(".hide").attr("id");
+  hide(visibleId).then(() => { playStep(mostRecentStep); });
+});
+
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    const node = document.querySelector(element);
+
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, {once: true});
+  });
+
+function enableButtons() {
+  $(".disable-on-audio").removeAttr("disabled");
+}
+
+function disableButtons() {
+  $(".disable-on-audio").attr("disabled", "disabled");
+}
+
+function clearScreen() {
+  $(".pulse").removeClass("pulse");
+  $("nav .actions button").addClass("hide");
+}
+
+function play(audioId, endedFunction) {
+  $(audioId)[0].play();
+  if (endedFunction) {
+    $(audioId).on("ended", endedFunction);  
+  }
+}
+
+function nextStep(step, buttons, instruction) {
+  $(".instruction .text").html(instruction);
+  enableButtons();
+  $(buttons).addClass("pulse").one('click', function() {
+    let visibleId = "#" + $(".placement .placement-container > *").not(".hide").attr("id");
+    // Fade out then continue
+    hide(visibleId).then(() => { playStep(step); });
+  });
+}
+
+function show(selector) {
+  $(selector).removeClass("hide");
+  animateCSS(selector, 'fadeIn');
+}
+
+function hide(selector) {
+  return animateCSS(selector, 'fadeOut').then(() => { $(selector).addClass("hide"); });
+}
+
+function playStep(step) {
+  var $instructionText = $(".instruction .text"),
+      $btnNext = $("#next"),
+      $btnCorrect = $("#correct"),
+      $btnSkip = $("#skip"),
+      $btnLetterName = $("#letter_name"),
+      $listenHtml = $('<i class="sharpen-icon">hearing</i> <span class="listen">Listen</span>');
+
+  mostRecentStep = step;
+
+  clearScreen();
+  disableButtons();
+  $instructionText.html($listenHtml);
+
+  switch (step) {
+    case 1:
+      play("#a_1", function() {
+        show("#img01");
+        play("#a_2", function() { nextStep(2, "#next", "Tap <strong>Next</strong>"); });
+      });
+      break;
+
+    case 2:
+      show("#img02");
+      play("#a_3", function() {
+        hide("#img02").then(() => {
+          show("#tile_letter, #correct, #skip, #letter_name");
+          play("#a_4", function() { nextStep(3, "#correct, #skip", "Tap <strong>Correct</strong> or <strong>Skip</strong>."); });  
+        })      
+      });
+      break;
+
+    case 3:
+      show("#img03, #correct, #skip, #letter_name");
+      play("#a_5", () => {
+        hide("#img03").then(() => {
+          show("#tile_letter");
+          play("#a_6", function() {
+            nextStep(4, "#next", "Tap <strong>Letter Name</strong> or <strong>Next</strong> to continue.");
+
+            // User can also tap the letter name button
+            $("#letter_name").addClass("pulse").on('click', function() {
+              play("#a_correction");
+            });
+          });
+        });
+      });
+      break;
+
+    case 4:
+      show("#img06");
+      play("#a_7", () => {
+        hide("#img06").then(() => {
+          show("#img07");
+          play("#a_8", () => {
+            hide("#img07").then(() => {
+              show("#img08");
+              play("#a_9", () => {
+                hide("#img08").then(() => {
+                  show("#img09");
+                  play("#a_10", () => {
+                    hide("#img09").then(() => {
+                      show("#img10");
+                      play("#a_11", () => { nextStep(5, "#next", "Tap <strong>Next</strong> to begin.")})
+                    })
+                  })
+                })
+              })
+            })
+          })
+        })
+      });
+      break;
+
+    case 5:
+      alert("First quiz would start now.")
+      break;
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -66,34 +66,24 @@
 
 <script>
 
-function enableButtons() {
-  $(".disable-on-audio").removeAttr("disabled");
-}
-
-function disableButtons() {
-  $(".disable-on-audio").attr("disabled", "disabled");
-  $(".pulse").removeClass("pulse");
-}
+const emojis = ["🦄", "🌈", "🐥", "💥", "⚡️", "🌹", "🍩", "🍓", "🍒", "🏀", "🧸", "❤️"];
 
 $(document).ready(function() {
   var $audioCompleted = $("audio#completed");
   $audioCompleted[0].play();
 
   confetti({
-    spread: 360,
-    ticks: 200,
+    spread: 180,
     gravity: 1,
     decay: 0.94,
-    startVelocity: 30,
-    particleCount: 100,
-    scalar: 3,
-    shapes: ["image"],
+    startVelocity: 40,
+    particleCount: 50,
+    shapes: ["emoji"],
     shapeOptions: {
-      image: [{
-        src: "../build/assets/images/brand/sharpen_mark_evergreen.png",
-        width: 32,
-        height: 32,
-      }]
+      emoji: {
+        particles: { size: { value: 40 }},
+        value: [emojis[(Math.floor(Math.random() * emojis.length))]]
+      }
     }
   });
 });

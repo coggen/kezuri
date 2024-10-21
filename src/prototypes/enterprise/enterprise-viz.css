@@ -1,0 +1,84 @@
+/*<tr>
+  <td class="date">Sep '23</td>
+  <td class="level"><span>A</span></td>
+  <td class="duration">10h</td>
+  <td class="finish"><i class="sharpen-icon">check</i></td>
+  <td></td>
+</tr>*/
+
+table.student-progress {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.student-progress td {
+  vertical-align: middle;
+}
+
+.student-progress tbody + tbody {
+  border-top: 1rem solid white;
+}
+
+.student-progress .date {
+  font-size: var(--font-size-xs);
+  color: #999;
+  text-align: right;
+}
+
+.student-progress .level, .student-progress .finish, .student-progress .timepoint {
+  width: 3rem;
+  text-align: center;
+}
+
+.student-progress .level span {
+  display: inline-block;
+  background-color: var(--color-evergreen);
+  color: white;
+  text-align: center;
+  width: 2.3rem;
+  padding: 0.4rem 0 0.5rem;
+  border-radius: 100%;
+  margin: 0 0.25rem;
+}
+
+.student-progress .duration {
+  width: 150px;
+  background-color: #eee;
+  padding-left: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  font-size: var(--font-size-xs);
+}
+
+.student-progress .finish {
+  background-color: #eee;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.student-progress .duration.complete,
+.student-progress .duration.complete + .finish {
+  background-color: var(--color-mint);
+}
+
+.student-progress .duration.in-progress {
+  
+}
+
+.student-progress .duration.in-progress + .finish {
+  background: rgb(238,238,238);
+  background: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 100%); 
+}
+
+.student-progress .duration.complete + .finish .sharpen-icon {
+  color: var(--color-pine);
+}
+
+.student-progress .separator {
+  font-size: var(--font-size-xs);
+  color: #999;
+  height: 1.4em;
+  white-space: nowrap;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Layout</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+
+    <link rel="stylesheet" href="enterprise-layout.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="supervisor_account" name="Staff" href="staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="school" name="Schools" href="schools.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link> -->
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link selected icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          <a href="schools.html">Schools</a> &rsaquo; Runkle School
+        </h1>
+
+        <div class="row sharpen-my-lg">
+          <div class="col-md-4">
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-md">
+              <sharpen-simple-metric>
+                <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">8</div>
+                <div slot="content">
+                  <strong>Classrooms</strong>
+                </div>
+               </sharpen-simple-metric>
+            </sharpen-card>
+
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-md">
+              <sharpen-simple-metric>
+                <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">28</div>
+                <div slot="content">
+                  <strong>Staff</strong>
+                </div>
+               </sharpen-simple-metric>
+            </sharpen-card>
+
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-md">
+              <sharpen-simple-metric>
+                <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">86</div>
+                <div slot="content">
+                  <strong>Students</strong>
+                </div>
+               </sharpen-simple-metric>
+            </sharpen-card>
+          </div>
+          <div class="col-md-8">
+            
+            <div class="sharpen-text--body">
+              <h2 class="sharpen-heading-md">Welcome to Sharpen Reading for Schools!</h2>
+              <p class="sharpen-text-intro">Using our evidence-based, highly effective curriculum your students can improve a grade-level in reading in as little as 3 months. Our integrated progress monitoring personalizes the learning experience to adjust to each student's development.</p>
+              <p>With over 100 hours of learning content and 35+ digital activities, within a structured program, your students will be motivated to build their core reading skills &amp; confidence at every step of their reading journeys.</p>
+              <p>Sharpen Reading focuses on:</p>
+              <ul class="sharpen-list">
+                <li>Systematic and explicit instruction in phonics</li>
+                <li>Advanced phonemic awareness</li>
+                <li>Decoding and fluency</li>
+                <li>Handwriting and spelling practice</li>
+              </ul>
+            </div>
+
+          </div>            
+        </div>
+
+      </main>
+    </div>
+
+  </body>
+</html>
