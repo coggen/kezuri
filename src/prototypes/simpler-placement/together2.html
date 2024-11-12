@@ -30,8 +30,6 @@
         <img id="img01" class="hide" src="placement-images/02_levels.gif" />
         <img id="img02" class="hide" src="placement-images/03_parts.gif" />
         <img id="img03" class="hide" src="placement-images/05_letter_sound.gif" />
-        <!-- <img id="img04" class="hide" src="placement-images/five-seconds.png" />
-        <img id="img05" class="hide" src="placement-images/nonsense-examples.png" /> -->
         <img id="img06" class="hide" src="placement-images/07_stop.gif" />
         <img id="img07" class="hide" src="placement-images/08_no_hints.gif" />
         <img id="img08" class="hide" src="placement-images/09_no_feedback.gif" />
@@ -39,6 +37,7 @@
         <img id="img10" class="hide" src="placement-images/11_lets_start.gif" />
 
         <div id="tile_letter" class="hide tile tile-letter">t</div>
+        <div id="tile_letter_2" class="hide tile tile-letter">b</div>
         <div id="tile_word" class="hide tile tile-word">map</div>
         <div id="tile_nonsense" class="hide tile tile-nonsense">zom</div>
 
@@ -87,6 +86,7 @@
 <audio id="a_9"  src="audio/screen_09.mp3"></audio>
 <audio id="a_10" src="audio/screen_10.mp3"></audio>
 <audio id="a_11" src="audio/screen_11.mp3"></audio>
+<audio id="a_11" src="audio/screen_12.mp3"></audio>
 
 <audio id="a_correction" src="audio/letter_name_correction.mp3"></audio>
 
@@ -211,20 +211,32 @@ function playStep(step) {
       break;
 
     case 4:
+      show("#tile_letter_2, #correct, #skip, #letter_name");
+      play("#a_7", function() {
+        nextStep(5, "#next", "What sound does this letter make?");
+        $("#correct, #skip").addClass("pulse");
+        // User can also tap the letter name button
+        $("#letter_name").on('click', function() {
+          play("#a_correction");
+        });
+      });
+      break;
+
+    case 5:
       show("#img06");
-      play("#a_7", () => {
+      play("#a_8", () => {
         hide("#img06").then(() => {
           show("#img07");
-          play("#a_8", () => {
+          play("#a_9", () => {
             hide("#img07").then(() => {
               show("#img08");
-              play("#a_9", () => {
+              play("#a_10", () => {
                 hide("#img08").then(() => {
                   show("#img09");
-                  play("#a_10", () => {
+                  play("#a_11", () => {
                     hide("#img09").then(() => {
                       show("#img10");
-                      play("#a_11", () => { nextStep(5, "#next", "Tap <strong>Next</strong> to begin.")})
+                      play("#a_12", () => { nextStep(5, "#next", "Tap <strong>Next</strong> to begin.")})
                     })
                   })
                 })

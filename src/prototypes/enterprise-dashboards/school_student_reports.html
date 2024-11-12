@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Dashboards - Student Reports</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+    <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
+
+    <style>
+      .sharpen-table-compact {
+        font-size: var(--font-size-xs);
+      }
+
+      .sharpen-table-compact th, .sharpen-table-compact td {
+        padding: var(--spacing-sm);
+      }
+
+      .table-skill-tracker thead th, .table-skill-tracker tbody td {
+        text-align: center;
+      }
+
+      .legend .sharpen-icon {
+        font-size: 120%;
+      }
+
+      .table-skill-tracker .encountered {
+        background-color: var(--color-gray-5);
+        color: var(--color-gray-2);
+      }
+
+      .table-skill-tracker .mastered {
+        background-color: var(--color-mint);
+        color: var(--color-pine);
+      }
+
+      .sharpen-table-skill-details td {
+        line-height: 1.6;
+      }
+
+      .skill-item {
+        font-family: monospace;
+        font-size: 9pt;
+        background-color: var(--color-gray-4);
+        border-radius: var(--border-radius-sm);
+        padding: 2px 6px;
+        color: var(--color-gray-1);
+      }
+
+      .skill-item.mastered {
+        background-color: var(--color-mint);
+        color: var(--color-pine);
+        font-weight: bold;
+      }
+
+      .sharpen-table-skill-details thead th:first-child {
+        width: 12%;
+      }
+
+      .sharpen-table-skill-details thead th:nth-child(2),
+      .sharpen-table-skill-details tbody td:nth-child(2) {
+        text-align: center;
+        width: 10%;
+        background-color: var(--color-gray-5);
+      }
+
+      .sharpen-table-skill-details thead th:nth-child(3),
+      .sharpen-table-skill-details tbody td:nth-child(3) {
+        padding-left: var(--spacing-md);
+      }
+
+      .sharpen-student-profile {
+        position: sticky;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl sharpen-mb-md">
+          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; <a href="school_students.html">Students</a> &rsaquo; Onni Abelli
+        </h1>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <sharpen-card border="gray" padding="medium" class="sharpen-student-profile">
+              <dl class="sharpen-list">
+                <dt>Name</dt>
+                <dd class="sharpen-text-lg">Onni Abelli</dd>
+
+                <dt>Reading Status</dt>
+                <dd>
+                  <sharpen-label type="success" icon="check">At grade level</sharpen-label>
+                </dd>
+
+                <dt>Sharpen Tutor</dt>
+                <dd>
+                  <a href="staff_show.html">Leo Tillens</a>
+                </dd>
+
+                <dt>Current Grade</dt>
+                <dd>3</dd>
+
+                <dt>Sharpen Level</dt>
+                <dd>B2</dd>
+
+                <dt>School</dt>
+                <dd><a href="school_show.html">Runkle School</a></dd>
+
+                <dt>Classrooms</dt>
+                <dd><a href="school_class.html">Mr. Cardigan - Room 4</a></dd>
+              </dl>
+
+              <div class="profile-button-set">
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary sharpen-button--full-width">
+                  <i class="sharpen-icon">play_arrow</i>
+                  Start lesson
+                </button>
+                <hr>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
+                  <i class="sharpen-icon">edit</i>
+                  Edit
+                </button>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-lg-9">
+            <ul class="sharpen-tabs sharpen-mb-md">
+              <li class="tab">
+                <a href="school_student.html"><i class="sharpen-icon">show_chart</i>Progress</a>  
+              </li>
+              <li class="tab selected">
+                <a href="school_student_reports.html"><i class="sharpen-icon">lab_profile</i>Reports</a>
+              </li>
+              <li class="tab">
+                <a href="school_student_history.html"><i class="sharpen-icon">calendar_today</i>Session History</a>  
+              </li>
+              <li class="tab">
+                <a href="school_student_transitions.html"><i class="sharpen-icon">sync_alt</i>Transitions</a>  
+              </li>
+            </ul>
+
+            <sharpen-card border="gray" padding="large" class="sharpen-mb-lg">
+              <h2 class="sharpen-heading-lg">Foundational Reading Skills Tracker</h2>
+              <div class="legend sharpen-mb-md sharpen-text-xs">
+                <i class="sharpen-icon">circle</i> Encountered&emsp;&emsp;<i class="sharpen-icon">check_circle</i> Mastered
+              </div>
+              <h3 class="sharpen-heading-sans-md">Letter-Sound Mastery: <strong>Single-Letter Consonants</strong></h3>
+              <table class="sharpen-table sharpen-table-compact table-skill-tracker sharpen-mb-lg">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Jan 2024</th>
+                    <th>Feb 2024</th>
+                    <th>Mar 2024</th>
+                    <th>Apr 2024</th>
+                    <th>May 2024</th>
+                    <th>Jun 2024</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>a</th>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>b</th>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>c</th>
+                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>d</th>
+                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="sharpen-heading-sans-md">Letter-Sound Mastery: <strong>Consonant Digraphs</strong></h3>
+              <table class="sharpen-table sharpen-table-compact table-skill-tracker sharpen-mb-lg">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Jan 2024</th>
+                    <th>Feb 2024</th>
+                    <th>Mar 2024</th>
+                    <th>Apr 2024</th>
+                    <th>May 2024</th>
+                    <th>Jun 2024</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>bl</th>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>br</th>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>ch</th>
+                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>sh</th>
+                    <td></td>
+                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
+                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="sharpen-heading-sans-md">Letter-Sound Mastery: <strong>Consonant Blends</strong></h3>
+              <sharpen-empty class="sharpen-mb-lg">table here</sharpen-empty>
+
+              <h3 class="sharpen-heading-sans-md">Spelling Mastery</strong></h3>
+              <sharpen-empty class="sharpen-mb-lg">table here</sharpen-empty>
+
+              <h3 class="sharpen-heading-sans-md">Word Reading Mastery</strong></h3>
+              <sharpen-empty class="sharpen-mb-lg">table here</sharpen-empty>
+            </sharpen-card>
+
+            <sharpen-card border="gray" padding="large">
+              <h2 class="sharpen-heading-lg">Foundational Reading Skills Tracker</h2>
+
+              <div class="legend sharpen-mb-md sharpen-text-xs">
+                <span class="skill-item">&ndash;</span> Encountered&emsp;&emsp;
+                <span class="skill-item mastered">&ndash;</span> Mastered
+              </div>
+
+              <h3 class="sharpen-heading-sans-md">Letter Sounds</h3>
+              <table class="sharpen-table sharpen-table-compact sharpen-table-skill-details sharpen-mb-lg">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Mastery</th>
+                    <th>Single-Letter Consonants</th>
+                    <th>Consonant Digraphs</th>
+                    <th>Consonant Blends</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Jan 2024</th>
+                    <td>63%</td>
+                    <td>
+                      <span class="skill-item mastered">/a/</span>
+                      <span class="skill-item mastered">/b/</span>
+                      <span class="skill-item">/c/</span>
+                      <span class="skill-item">/d/</span>
+                    </td>
+                    <td>
+                      <span class="skill-item mastered">/bl/</span>
+                      <span class="skill-item mastered">/br/</span>
+                      <span class="skill-item">/ch/</span>
+                    </td>
+                    <td>
+                      <span class="skill-item">/qu/</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Feb 2024</th>
+                    <td>63%</td>
+                    <td>
+                      <span class="skill-item mastered">/c/</span>
+                      <span class="skill-item mastered">/d/</span>
+                      <span class="skill-item">/e/</span>
+                    </td>
+                    <td>
+                      <span class="skill-item mastered">/ch/</span>
+                      <span class="skill-item">/sh/</span>
+                    </td>
+                    <td>
+                      <span class="skill-item">/qu/</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Mar 2024</th>
+                    <td>63%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Apr 2024</th>
+                    <td>63%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>May 2024</th>
+                    <td>63%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Jun 2024</th>
+                    <td>63%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="sharpen-heading-sans-md">Spelling</h3>
+              <table class="sharpen-table sharpen-table-compact sharpen-table-skill-details sharpen-mb-lg">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Mastery</th>
+                    <th>Target Words</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Jan 2024</th>
+                    <td>66%</td>
+                    <td>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item">hat</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Feb 2024</th>
+                    <td>66%</td>
+                    <td>
+                      <span class="skill-item mastered">hat</span>
+                      <span class="skill-item mastered">bag</span>
+                      <span class="skill-item">cot</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Mar 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Apr 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>May 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Jun 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h3 class="sharpen-heading-sans-md">Word Reading</h3>
+              <table class="sharpen-table sharpen-table-compact sharpen-table-skill-details sharpen-mb-lg">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Mastery</th>
+                    <th>Target Words</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Jan 2024</th>
+                    <td>66%</td>
+                    <td>
+                      <span class="skill-item mastered">cat</span>
+                      <span class="skill-item mastered">dog</span>
+                      <span class="skill-item">hat</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Feb 2024</th>
+                    <td>66%</td>
+                    <td>
+                      <span class="skill-item mastered">hat</span>
+                      <span class="skill-item mastered">bag</span>
+                      <span class="skill-item">cot</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Mar 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Apr 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>May 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>Jun 2024</th>
+                    <td>66%</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </sharpen-card>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  </body>
+</html>

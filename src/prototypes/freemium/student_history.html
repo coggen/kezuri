@@ -8,8 +8,8 @@
     <script type="module" src="../build/kezuri.esm.js"></script>
     <script nomodule src="../build/kezuri.js"></script>
 
-    <link rel="stylesheet" href="enterprise-layout.css" />
-    <link rel="stylesheet" href="enterprise-viz.css" />
+    <link rel="stylesheet" href="../enterprise/enterprise-layout.css" />
+    <link rel="stylesheet" href="../enterprise/enterprise-viz.css" />
   </head>
   <body>
 
@@ -17,24 +17,21 @@
       <div class="sharpen-enterprise-navigation">
         <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
 
-        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+        <h1 class="district sharpen-heading-sm">Sharpen for Schools, Free Edition</h1>
 
         <nav class="sharpen-mb-md">
-          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="home" name="Home" href="home.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="face" name="Students" href="students.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="classrooms.html"></sharpen-nav-link>
         </nav>
 
         <nav class="school-links">
-          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
-          <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
-          <sharpen-nav-link selected icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
-          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
-          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+          <div></div>
+          <sharpen-nav-link icon="upgrade" name="Upgrade" href="upgrade.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
-          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="account_box" name="Elaine Fransman" href="javascript:void();"></sharpen-nav-link>  
           <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
           <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
         </nav>
@@ -43,7 +40,7 @@
       <main>
         
         <h1 class="sharpen-heading-2xl sharpen-mb-md">
-          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; <a href="school_students.html">Students</a> &rsaquo; Onni Abelli
+          <a href="students.html">Students</a> &rsaquo; Onni Abelli
         </h1>
 
         <div class="row">
@@ -56,16 +53,8 @@
                 <dt>Grade</dt>
                 <dd>3</dd>
 
-                <dt>School</dt>
-                <dd><a href="school_show.html">Runkle School</a></dd>
-
                 <dt>Classrooms</dt>
-                <dd><a href="school_class.html">Mr. Cardigan - Room 4</a></dd>
-
-                <dt>Sharpen Tutors</dt>
-                <dd>
-                  <a href="staff_show.html">Leo Tillens</a>
-                </dd>
+                <dd><a href="classroom.html">Mr. Cardigan - Room 4</a></dd>
               </dl>
 
               <div class="profile-button-set">
@@ -73,24 +62,23 @@
                   <i class="sharpen-icon">play_arrow</i>
                   Start lesson
                 </button>
+                <!--
                 <hr>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
                   <i class="sharpen-icon">edit</i>
                   Edit
                 </button>
+                -->
               </div>
             </sharpen-card>
           </div>
           <div class="col-md-9">
             <ul class="sharpen-tabs sharpen-mb-md">
               <li class="tab">
-                <a href="school_student.html"><i class="sharpen-icon">bar_chart</i>Usage &amp; Progress</a>  
+                <a href="student.html"><i class="sharpen-icon">bar_chart</i>Progress</a>  
               </li>
               <li class="tab selected">
-                <a href="school_student_history.html"><i class="sharpen-icon">calendar_today</i>Session History</a>  
-              </li>
-              <li class="tab">
-                <a href="school_student_transitions.html"><i class="sharpen-icon">sync_alt</i>Transitions</a>  
+                <a href="student_sessions.html"><i class="sharpen-icon">calendar_today</i>Session History</a>  
               </li>
             </ul>
 
@@ -196,6 +184,11 @@
             </nav>
           </div>
         </div>
+
+        
+
+        
+
       </main>
     </div>
 

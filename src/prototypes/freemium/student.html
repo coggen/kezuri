@@ -54,7 +54,7 @@
                 <dd>3</dd>
 
                 <dt>Classrooms</dt>
-                <dd><a href="school_class.html">Mr. Cardigan - Room 4</a></dd>
+                <dd><a href="classroom.html">Mr. Cardigan - Room 4</a></dd>
               </dl>
 
               <div class="profile-button-set">
@@ -62,125 +62,28 @@
                   <i class="sharpen-icon">play_arrow</i>
                   Start lesson
                 </button>
+                <!--
                 <hr>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
                   <i class="sharpen-icon">edit</i>
                   Edit
                 </button>
+                -->
               </div>
             </sharpen-card>
           </div>
           <div class="col-md-9">
             <ul class="sharpen-tabs sharpen-mb-md">
               <li class="tab selected">
-                <a href="#"><i class="sharpen-icon">bar_chart</i>Usage &amp; Progress</a>  
+                <a href="student.html"><i class="sharpen-icon">bar_chart</i>Progress</a>  
               </li>
               <li class="tab">
-                <a href="#"><i class="sharpen-icon">calendar_today</i>Session History</a>  
+                <a href="student_history.html"><i class="sharpen-icon">calendar_today</i>Session History</a>  
               </li>
             </ul>
 
-            <sharpen-alert type="warning" icon="trophy">
-              Onni has improved reading skills by <strong>2.5 grade levels</strong>
-              in 41 hours of tutoring over 7 months
-            </sharpen-alert>
+            <sharpen-empty>Progress dashboard content for student will appear here</sharpen-empty>
 
-            <sharpen-card border="none" padding="medium" class="sharpen-mb-md">
-              <table class="student-progress">
-                <tbody>
-                  <tr class="separator">
-                    <td class="timepoint">Sep '23</td>
-                    <td></td>
-                    <td class="timepoint">Oct '23</td>
-                  </tr>
-                  <tr>
-                    <td class="level"><span>A</span></td>
-                    <td class="duration complete" style="width: 24%;"><a href="school_student_history.html">10h 4m</a></td>
-                    <td class="finish"><i class="sharpen-icon">check</i></td>
-                    <td></td>
-                  </tr>
-                  <tr class="separator">
-                    <td colspan="4"></td>
-                    <td class="timepoint">Mar '24</td>
-                  </tr>
-                  <tr>
-                    <td colspan="2"></td>
-                    <td class="level"><span>B1</span></td>
-                    <td class="duration complete" style="width: 48%;"><a href="school_student_history.html">19h 53m</a></td>
-                    <td class="finish"><i class="sharpen-icon">check</i></td>
-                    <td></td>
-                  </tr>
-                  <tr class="separator">
-                    <td colspan="6"></td>
-                    <td class="timepoint">Now</td>
-                  </tr>
-                  <tr>
-                    <td colspan="4"></td>
-                    <td class="level"><span>B2</span></td>
-                    <td class="duration in-progress" style="width: 27%;"><a href="school_student_history.html">11h 18m</a></td>
-                    <td class="finish"></td>
-                  </tr>
-                  <!-- <tr>
-                    <td colspan="4"></td>
-                    <td class="level"><span>B2</span></td>
-                    <td class="duration" style="width: 27%;">11h 18m</td>
-                    <td class="finish"><i class="sharpen-icon">more_horiz</i></td>
-                  </tr> -->
-                </tbody>
-              </table>
-            </sharpen-card>
-
-            <!-- <div class="row">
-              <div class="col-md-6">
-                <sharpen-card class="sharpen-mb-md sharpen-bg-success" border="none" padding="medium">
-                  <dl class="sharpen-list sharpen-mb-sm">
-                    <dt>Reading Progress</dt>
-                    <dd>
-                      <span class="sharpen-text-xl sharpen-text--color-pine">
-                        <i class="sharpen-icon">check</i>
-                        At grade level
-                      </span>
-                    </dd>
-                  </dl>
-                  <p>After the most recent lesson (6 days ago), Onni's reading was at or better than grade level.</p>
-                </sharpen-card>
-              </div>
-            </div> -->
-
-            <hr>
-
-            <div class="row">
-              <div class="col-md-6 col-lg-4">
-                <sharpen-card class="next-lesson sharpen-mb-md" border="none" padding="medium">
-                  <dl class="sharpen-list">
-                    <dt>Next lesson</dt>
-                    <dd>
-                      <span class="sharpen-text-lg">B: Unit 5, Lesson 3</span>
-                    </dd>
-                  </dl>
-                </sharpen-card>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <sharpen-card class="next-lesson sharpen-mb-md" border="none" padding="medium">
-                  <dl class="sharpen-list">
-                    <dt>Lessons Completed</dt>
-                    <dd>
-                      <span class="sharpen-text-lg">7</span>
-                    </dd>
-                  </dl>
-                </sharpen-card>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <sharpen-card class="next-lesson sharpen-mb-md" border="none" padding="medium">
-                  <dl class="sharpen-list">
-                    <dt>Total Session Time</dt>
-                    <dd>
-                      <span class="sharpen-text-lg">3h 21m</span>
-                    </dd>
-                  </dl>
-                </sharpen-card>
-              </div>
-            </div>
           </div>
         </div>
 

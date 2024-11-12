@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Dashboards - Student</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+    <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
+
+    <style>
+      .card-student-at-start {
+        background-color: var(--color-gray-5);
+      }
+
+      .card-overall-progress {
+        background-color: #F1FAF5;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+        <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <!-- <sharpen-nav-link icon="groups" name="Groups" href="school_groups.html"></sharpen-nav-link> -->
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl sharpen-mb-md">
+          <a href="schools.html">Schools</a> &rsaquo; <a href="school_show.html">Runkle School</a> &rsaquo; <a href="school_students.html">Students</a> &rsaquo; Onni Abelli
+        </h1>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <sharpen-card border="gray" padding="medium">
+              <dl class="sharpen-list">
+                <dt>Name</dt>
+                <dd class="sharpen-text-lg">Onni Abelli</dd>
+
+                <dt>Reading Status</dt>
+                <dd>
+                  <sharpen-label type="success" icon="check">At grade level</sharpen-label>
+                </dd>
+
+                <dt>Sharpen Tutor</dt>
+                <dd>
+                  <a href="staff_show.html">Leo Tillens</a>
+                </dd>
+
+                <dt>Current Grade</dt>
+                <dd>3</dd>
+
+                <dt>Sharpen Level</dt>
+                <dd>B2</dd>
+
+                <dt>School</dt>
+                <dd><a href="school_show.html">Runkle School</a></dd>
+
+                <dt>Classrooms</dt>
+                <dd><a href="school_class.html">Mr. Cardigan - Room 4</a></dd>
+              </dl>
+
+              <div class="profile-button-set">
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--primary sharpen-button--full-width">
+                  <i class="sharpen-icon">play_arrow</i>
+                  Start lesson
+                </button>
+                <hr>
+                <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
+                  <i class="sharpen-icon">edit</i>
+                  Edit
+                </button>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-lg-9">
+            <ul class="sharpen-tabs sharpen-mb-md">
+              <li class="tab selected">
+                <a href="school_student.html"><i class="sharpen-icon">show_chart</i>Progress</a>  
+              </li>
+              <li class="tab">
+                <a href="school_student_reports.html"><i class="sharpen-icon">lab_profile</i>Reports</a>
+              </li>
+              <li class="tab">
+                <a href="school_student_history.html"><i class="sharpen-icon">calendar_today</i>Session History</a>  
+              </li>
+              <li class="tab">
+                <a href="school_student_transitions.html"><i class="sharpen-icon">sync_alt</i>Transitions</a>  
+              </li>
+            </ul>
+
+            <div class="row sharpen-mb-lg">
+              <div class="col-lg-4">
+                <sharpen-card border="gray" padding="medium" class="card-student-at-start">
+                  <dl class="sharpen-list">
+                    <dt>Sharpen Start Date</dt>
+                    <dd>
+                      May 18, 2024
+                    </dd>
+
+                    <dt>Reading Status at start</dt>
+                    <dd>
+                      <sharpen-label type="warning" icon="warning">2 grades behind</sharpen-label>
+                    </dd>
+
+                    <dt>Grade at start</dt>
+                    <dd>2</dd>
+
+                    <dt>Sharpen Level at start</dt>
+                    <dd>A</dd>
+                  </dl>
+                </sharpen-card>
+              </div>
+              <div class="col-lg-8">
+                <sharpen-card border="gray" padding="medium" class="card-overall-progress">
+                  <dl class="sharpen-list">
+                    <dt>Overall progress</dt>
+                    <dd>
+                      <div class="sharpen-text-lg"><strong>+2.34 grade levels improved</strong></div>
+                      <div class="sharpen-text-xs">in 6 months of usage</div>
+                    </dd>
+                  </dl>
+
+                  <canvas id="viz-overall-progress" class="sharpen-mt-md"></canvas>
+                </sharpen-card>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <sharpen-card border="gray" padding="medium">
+                  <sharpen-simple-metric>
+                    <sharpen-progress-circle slot="metric" progress-val="80" progress-label="80%"></sharpen-progress-circle>
+                    <div slot="content">
+                      Dosage level
+                    </div>
+                  </sharpen-simple-metric>
+                </sharpen-card>
+              </div>
+              <div class="col-md-8">
+                <sharpen-card border="gray" padding="medium">
+                  <dl class="sharpen-list">
+                    <dt>Weekly Session Minutes</dt>
+                  </dl>
+
+                  <canvas id="viz-weekly-session-minutes" class="sharpen-mt-md"></canvas>
+                </sharpen-card>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <script>
+      const ctx = document.getElementById('viz-overall-progress');
+      
+      // Register the plugin
+      Chart.register(ChartDataLabels);
+      
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['May 1', 'Jun 1', 'Jul 1', 'Aug 1', 'Sep 1', 'Oct 1', 'Nov 1'],
+          datasets: [{
+            label: 'Grade Levels Improved',
+            data: [0, 0.46, 0.85, 1.36, 1.85, 2.25, 2.60],
+            borderColor: '#68a362',
+            backgroundColor: '#e8f5e6',
+            fill: true,
+            tension: 0.4,
+            pointRadius: 6,
+            pointBackgroundColor: '#68a362',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              },
+              ticks: {
+                callback: value => `${value.toFixed(2)}`
+              }
+            },
+            x: {
+              grid: {
+                color: '#e5e5e5'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => `+${context.raw.toFixed(2)} grade levels`
+              }
+            },
+            datalabels: {
+              align: 'top',
+              offset: 10,
+              formatter: (value) => `+${value.toFixed(2)}`,
+              color: '#68a362',
+              font: {
+                weight: 'bold'
+              }
+            }
+          }
+        }
+      });
+
+      // Add Weekly Session Minutes Chart
+      const weeklyCtx = document.getElementById('viz-weekly-session-minutes');
+      
+      new Chart(weeklyCtx, {
+        type: 'line',
+        data: {
+          labels: Array(25).fill('').map((_, i) => {
+            // Only show month labels on the first week of each month
+            if (i % 4 === 0) return ['May 1', 'Jun 1', 'Jul 1', 'Aug 1', 'Sep 1', 'Oct 1', 'Nov 1'][Math.floor(i/4)];
+            return '';
+          }),
+          datasets: [{
+            label: 'Weekly Minutes',
+            data: [67, 150, 130, 160, 80, 116, 100, 112, 98, 120, 165, 175, 58, 132, 135, 80, 110, 90, 130, 128, 96, 105, 93, 115, 140],
+            borderColor: '#1a73e8',
+            backgroundColor: '#e8f0fe',
+            fill: false,
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#1a73e8',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              min: 50,
+              max: 200,
+              grid: {
+                color: '#e5e5e5'
+              },
+              ticks: {
+                stepSize: 50
+              }
+            },
+            x: {
+              grid: {
+                color: '#e5e5e5'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => `${context.raw} minutes`
+              }
+            },
+            datalabels: {
+              align: 'top',
+              offset: 8,
+              formatter: (value) => value,
+              color: '#1a73e8',
+              font: {
+                size: 11,
+                weight: 'bold'
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

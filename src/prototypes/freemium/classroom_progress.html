@@ -21,12 +21,12 @@
         <nav class="sharpen-mb-md">
           <sharpen-nav-link icon="home" name="Home" href="home.html"></sharpen-nav-link>
           <sharpen-nav-link icon="face" name="Students" href="students.html"></sharpen-nav-link>
-          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="classrooms.html"></sharpen-nav-link>
+          <sharpen-nav-link selected icon="meeting_room" name="Classrooms" href="classrooms.html"></sharpen-nav-link>
         </nav>
 
         <nav class="school-links">
           <div></div>
-          <sharpen-nav-link selected icon="upgrade" name="Upgrade" href="upgrade.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="upgrade" name="Upgrade" href="upgrade.html"></sharpen-nav-link>
         </nav>
 
         <nav class="support-links">
@@ -38,11 +38,42 @@
       </div>
       <main>
         
-        <h1 class="sharpen-heading-2xl sharpen-mb-md">
-          Upgrade your school or district
+        <h1 class="sharpen-heading-2xl">
+          <a href="classrooms.html">Classrooms</a> &rsaquo; Reading - Cardigan
         </h1>
 
-        <sharpen-empty>Need content about upgrading</sharpen-empty>
+        <div class="row">
+          <div class="col-md-3">
+            <sharpen-card border="gray" padding="medium">
+              <dl class="sharpen-list">
+                <dt>Class</dt>
+                <dd class="sharpen-text-lg">Reading - Cardigan</dd>
+
+                <dt>Grade</dt>
+                <dd>K</dd>
+
+                <dt>Staff</dt>
+                <dd>
+                  <div>Dante Cardigan</div>
+                  <div>Elaine Fransman</div>
+                </dd>
+              </dl>
+            </sharpen-card>
+          </div>
+          <div class="col-md-9">
+            <ul class="sharpen-tabs sharpen-mb-md">
+              <li class="tab">
+                <a href="classroom.html"><i class="sharpen-icon">face</i>Students</a>  
+              </li>
+              <li class="tab selected">
+                <a href="classroom_progress.html"><i class="sharpen-icon">bar_chart</i>Progress</a>  
+              </li>
+            </ul>
+
+            <sharpen-empty>Classroom progress data will appear here.</sharpen-empty>
+
+          </div>
+        </div>
 
       </main>
     </div>
