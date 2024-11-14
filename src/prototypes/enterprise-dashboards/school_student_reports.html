@@ -50,6 +50,7 @@
         border-radius: var(--border-radius-sm);
         padding: 2px 6px;
         color: var(--color-gray-1);
+        white-space: nowrap;
       }
 
       .skill-item.mastered {
@@ -174,127 +175,6 @@
               </li>
             </ul>
 
-            <sharpen-card border="gray" padding="large" class="sharpen-mb-lg">
-              <h2 class="sharpen-heading-lg">Foundational Reading Skills Tracker</h2>
-              <div class="legend sharpen-mb-md sharpen-text-xs">
-                <i class="sharpen-icon">circle</i> Encountered&emsp;&emsp;<i class="sharpen-icon">check_circle</i> Mastered
-              </div>
-              <h3 class="sharpen-heading-sans-md">Letter-Sound Mastery: <strong>Single-Letter Consonants</strong></h3>
-              <table class="sharpen-table sharpen-table--compact table-skill-tracker sharpen-mb-lg">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Jan 2024</th>
-                    <th>Feb 2024</th>
-                    <th>Mar 2024</th>
-                    <th>Apr 2024</th>
-                    <th>May 2024</th>
-                    <th>Jun 2024</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>a</th>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>b</th>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>c</th>
-                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>d</th>
-                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <h3 class="sharpen-heading-sans-md">Letter-Sound Mastery: <strong>Consonant Digraphs</strong></h3>
-              <table class="sharpen-table sharpen-table--compact table-skill-tracker sharpen-mb-lg">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Jan 2024</th>
-                    <th>Feb 2024</th>
-                    <th>Mar 2024</th>
-                    <th>Apr 2024</th>
-                    <th>May 2024</th>
-                    <th>Jun 2024</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>bl</th>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>br</th>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>ch</th>
-                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>sh</th>
-                    <td></td>
-                    <td class="encountered"><i class="sharpen-icon">circle</i></td>
-                    <td class="mastered"><i class="sharpen-icon">check_circle</i></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <h3 class="sharpen-heading-sans-md">Letter-Sound Mastery: <strong>Consonant Blends</strong></h3>
-              <sharpen-empty class="sharpen-mb-lg">table here</sharpen-empty>
-
-              <h3 class="sharpen-heading-sans-md">Spelling Mastery</strong></h3>
-              <sharpen-empty class="sharpen-mb-lg">table here</sharpen-empty>
-
-              <h3 class="sharpen-heading-sans-md">Word Reading Mastery</strong></h3>
-              <sharpen-empty class="sharpen-mb-lg">table here</sharpen-empty>
-            </sharpen-card>
-
             <sharpen-card border="gray" padding="large">
               <h2 class="sharpen-heading-lg">Foundational Reading Skills Tracker</h2>
 
@@ -309,9 +189,11 @@
                   <tr>
                     <th>Date</th>
                     <th>Mastery</th>
-                    <th>Single-Letter Consonants</th>
-                    <th>Consonant Digraphs</th>
-                    <th>Consonant Blends</th>
+                    <th>Short Vowel Sounds</th>
+                    <th>Consonants &amp; Digraphs</th>
+                    <th>Long Vowel Sounds</th>
+                    <th>R-controlled</th>
+                    <th>Other vowel pairs</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -332,6 +214,8 @@
                     <td>
                       <span class="skill-item">/qu/</span>
                     </td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <th>Feb 2024</th>
@@ -348,10 +232,14 @@
                     <td>
                       <span class="skill-item">/qu/</span>
                     </td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <th>Mar 2024</th>
                     <td>63%</td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -362,6 +250,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <th>May 2024</th>
@@ -369,10 +259,14 @@
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
                   </tr>
                   <tr>
                     <th>Jun 2024</th>
                     <td>63%</td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
