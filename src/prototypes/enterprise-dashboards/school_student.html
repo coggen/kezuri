@@ -9,6 +9,7 @@
     <script nomodule src="../build/kezuri.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
 
     <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
 
@@ -19,6 +20,47 @@
 
       .card-overall-progress {
         background-color: #F1FAF5;
+      }
+
+      .sharpen-table-dosage-metrics th:last-child {
+        width: 10rem;
+      }
+
+      .sharpen-table-dosage-metrics .metric-status {
+        width: 1rem;
+      }
+
+      .sharpen-table-dosage-metrics .metric-value {
+        text-align: center;
+        width: 15%;
+      }
+
+      .sharpen-table-dosage-metrics .metric-value.off-target {
+        background-color: var(--color-light-orange);
+        color: var(--color-dark-orange);
+        font-weight: bold;
+      }
+
+      .sharpen-table-dosage-metrics .metric-value.on-target {
+        background-color: var(--color-mint);
+        color: var(--color-pine);
+        font-weight: bold;
+      }
+
+      .sharpen-table-dosage-metrics .metric-status.off-target {
+        color: var(--color-dark-orange);
+      }
+
+      .sharpen-table-dosage-metrics .metric-status.on-target {
+        color: var(--color-pine);
+      }
+
+      .sharpen-table--compact {
+        font-size: var(--font-size-xs);
+      }
+
+      .sharpen-table--compact th, .sharpen-table--compact td {
+        padding: var(--spacing-sm);
       }
     </style>
   </head>
@@ -153,27 +195,83 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row sharpen-mb-lg">
               <div class="col-md-4">
                 <sharpen-card border="gray" padding="medium">
+                  <dl class="sharpen-list">
+                    <dt>Dosage level, 4-week average</dt>
+                  </dl>
                   <sharpen-simple-metric>
-                    <sharpen-progress-circle slot="metric" progress-val="80" progress-label="80%"></sharpen-progress-circle>
+                    <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">114%</div>
                     <div slot="content">
-                      Dosage level
+                      of target
                     </div>
                   </sharpen-simple-metric>
+                  <hr class="sharpen-my-md">
+                  <div class="sharpen-text-xs">Improve outcomes by increasing the number of lessons you complete per session.</div>
                 </sharpen-card>
               </div>
               <div class="col-md-8">
                 <sharpen-card border="gray" padding="medium">
                   <dl class="sharpen-list">
-                    <dt>Weekly Session Minutes</dt>
+                    <dt>Weekly dosage, percent of target</dt>
                   </dl>
 
-                  <canvas id="viz-weekly-session-minutes" class="sharpen-mt-md"></canvas>
+                  <canvas id="viz-weekly-dosage" class="sharpen-mt-md"></canvas>
                 </sharpen-card>
               </div>
             </div>
+
+            <table class="sharpen-table sharpen-table--compact sharpen-table--enclosed sharpen-table-dosage-metrics sharpen-mb-lg">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Dosage Metric</th>
+                  <th class="metric-value">Target</th>
+                  <th class="metric-value">Average,<br />all time</th>
+                  <th class="metric-value">Average,<br />last 4 weeks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="metric-status off-target">
+                    <i class="sharpen-icon">warning</i>
+                  </td>
+                  <td>Sessions per week</td>
+                  <td class="metric-value">3</td>
+                  <td class="metric-value off-target">2.3</td>
+                  <td class="metric-value off-target">2.9</td>
+                </tr>
+                <tr>
+                  <td class="metric-status on-target">
+                    <i class="sharpen-icon">check</i>
+                  </td>
+                  <td>Session length (minutes)</td>
+                  <td class="metric-value">20</td>
+                  <td class="metric-value off-target">18</td>
+                  <td class="metric-value on-target">21</td>
+                </tr>
+                <tr>
+                  <td class="metric-status on-target">
+                    <i class="sharpen-icon">check</i>
+                  </td>
+                  <td>Lessons per session</td>
+                  <td class="metric-value">1</td>
+                  <td class="metric-value on-target">1.1</td>
+                  <td class="metric-value on-target">1.2</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <sharpen-card border="gray" padding="medium">
+              <dl class="sharpen-list">
+                <dt>Mastery of Material by Skill</dt>
+              </dl>
+
+              <div style="height: 200px;">
+                <canvas id="viz-mastery-by-skill" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
 
           </div>
         </div>
@@ -190,15 +288,25 @@
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ['May 1', 'Jun 1', 'Jul 1', 'Aug 1', 'Sep 1', 'Oct 1', 'Nov 1'],
+          labels: Array(20).fill('').map((_, i) => {
+            // Only show month labels on the first week of each month
+            if (i % 4 === 0) return ['Feb 1', 'Mar 1', 'Apr 1', 'May 1', 'Jun 1'][Math.floor(i/4)];
+            return '';
+          }),
           datasets: [{
             label: 'Grade Levels Improved',
-            data: [0, 0.46, 0.85, 1.36, 1.85, 2.25, 2.60],
+            data: [
+              0.1, 0.3, 0.4, 0.5,           // February
+              0.8, 1.1, 1.2, 1.25,           // March
+              1.3, 1.35, 1.4, 1.5,           // April
+              1.55, 1.6, 1.7, 1.8,           // May
+              2.0, 2.1, 2.2, 2.3            // June
+            ],
             borderColor: '#68a362',
             backgroundColor: '#e8f5e6',
             fill: true,
             tension: 0.4,
-            pointRadius: 6,
+            pointRadius: 4,
             pointBackgroundColor: '#68a362',
             pointBorderColor: '#fff',
             pointBorderWidth: 2
@@ -208,16 +316,19 @@
           scales: {
             y: {
               beginAtZero: true,
+              max: 3.0,
               grid: {
                 color: '#e5e5e5'
               },
               ticks: {
-                callback: value => `${value.toFixed(2)}`
+                callback: value => `${value.toFixed(1)}`
               }
             },
             x: {
               grid: {
-                color: '#e5e5e5'
+                color: '#e5e5e5',
+                // Only show gridlines for month labels
+                callback: (value, index) => index % 4 === 0
               }
             }
           },
@@ -232,57 +343,56 @@
             },
             datalabels: {
               align: 'top',
-              offset: 10,
-              formatter: (value) => `+${value.toFixed(2)}`,
+              // offset: 10,
+              formatter: (value) => `${value.toFixed(2)}`,
               color: '#68a362',
               font: {
-                weight: 'bold'
+                size: 9
+                // weight: 'bold'
               }
             }
           }
         }
       });
 
-      // Add Weekly Session Minutes Chart
-      const weeklyCtx = document.getElementById('viz-weekly-session-minutes');
+      // Weekly dosage chart
+      const weeklyDosageCtx = document.getElementById('viz-weekly-dosage');
       
-      new Chart(weeklyCtx, {
-        type: 'line',
+      new Chart(weeklyDosageCtx, {
+        type: 'bar',
         data: {
-          labels: Array(25).fill('').map((_, i) => {
-            // Only show month labels on the first week of each month
-            if (i % 4 === 0) return ['May 1', 'Jun 1', 'Jul 1', 'Aug 1', 'Sep 1', 'Oct 1', 'Nov 1'][Math.floor(i/4)];
-            return '';
-          }),
+          labels: ['Jun 8', 'Jun 15', 'Jun 22', 'Jun 29', 'Feb 5', 'Feb 12', 'Feb 19', 'Feb 26', 'Mar 4', 'Mar 18', 'Mar 25', 'Apr 1', 'Apr 8', 'Apr 15', 'Apr 22', 'Apr 29', 'May 6', 'May 13', 'May 20', 'May 27', 'Jun 3', 'Jun 10', 'Jun 17', 'Jun 24'],
           datasets: [{
-            label: 'Weekly Minutes',
-            data: [67, 150, 130, 160, 80, 116, 100, 112, 98, 120, 165, 175, 58, 132, 135, 80, 110, 90, 130, 128, 96, 105, 93, 115, 140],
-            borderColor: '#1a73e8',
-            backgroundColor: '#e8f0fe',
-            fill: false,
-            tension: 0.4,
-            pointRadius: 4,
-            pointBackgroundColor: '#1a73e8',
-            pointBorderColor: '#fff',
-            pointBorderWidth: 2
+            data: [100, 131, 113, 70, 144, 128, 100, 156, 83, 83, 105, 105, 110, 115, 94, 119, 80, 120, 68, 128, 119, 113, 85],
+            backgroundColor: function(context) {
+              const value = context.raw;
+              return value < 80 ? '#C2862B' : '#999999';
+            },
+            borderColor: 'transparent',
+            borderWidth: 1,
+            barPercentage: 0.8,
           }]
         },
         options: {
+          responsive: true,
           scales: {
             y: {
               beginAtZero: true,
-              min: 50,
-              max: 200,
+              max: 160,
               grid: {
                 color: '#e5e5e5'
               },
               ticks: {
-                stepSize: 50
+                callback: value => `${value}%`
               }
             },
             x: {
               grid: {
-                color: '#e5e5e5'
+                display: false
+              },
+              ticks: {
+                maxRotation: 45,
+                minRotation: 45
               }
             }
           },
@@ -292,18 +402,96 @@
             },
             tooltip: {
               callbacks: {
-                label: (context) => `${context.raw} minutes`
+                label: (context) => `${context.raw}% of target`
               }
             },
             datalabels: {
-              align: 'top',
-              offset: 8,
-              formatter: (value) => value,
-              color: '#1a73e8',
-              font: {
-                size: 11,
-                weight: 'bold'
+              display: false  // This will disable the datalabels plugin for this chart
+            }
+          }
+        }
+      });
+
+      // Mastery by skill chart
+      const masteryCtx = document.getElementById('viz-mastery-by-skill');
+
+      new Chart(masteryCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Feb 1', 'Mar 1', 'Apr 1', 'May 1', 'Jun 1', 'Jul 1'],
+          datasets: [
+            {
+              label: 'Letter Sounds',
+              data: [96, 63, 74, 64, 91, 80],
+              backgroundColor: '#2E5E29',
+              borderColor: 'transparent',
+              borderWidth: 1,
+            },
+            {
+              label: 'Spelling',
+              data: [89, 88, 81, 96, 84, 83],
+              backgroundColor: '#68A362',
+              borderColor: 'transparent',
+              borderWidth: 1,
+            },
+            {
+              label: 'Words',
+              data: [77, 82, 69, 66, 79, 93],
+              backgroundColor: '#B8DBAA',
+              borderColor: 'transparent',
+              borderWidth: 1,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              grid: {
+                color: '#e5e5e5'
+              },
+              ticks: {
+                callback: value => `${value}%`
               }
+            },
+            x: {
+              grid: {
+                display: false
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'left',
+              align: 'middle',
+              labels: {
+                boxWidth: 12,
+                usePointStyle: true,
+                pointStyle: 'rect'
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => `${context.dataset.label}: ${context.raw}%`
+              }
+            },
+            annotation: {
+              annotations: {
+                line1: {
+                  type: 'line',
+                  yMin: 70,
+                  yMax: 70,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5]
+                }
+              }
+            },
+            datalabels: {
+              display: false
             }
           }
         }
