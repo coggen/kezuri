@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Sharpen Prototype: Enterprise Dashboards - Student</title>
+    <title>Sharpen Prototype: Enterprise Dashboard Concepts - Student</title>
     <link rel="stylesheet" href="../build/kezuri.css" />
     <script type="module" src="../build/kezuri.esm.js"></script>
     <script nomodule src="../build/kezuri.js"></script>
@@ -158,6 +158,7 @@
               </li>
             </ul>
 
+            <!--
             <div class="row sharpen-mb-lg">
               <div class="col-lg-4">
                 <sharpen-card border="gray" padding="medium" class="card-student-at-start">
@@ -181,19 +182,23 @@
                 </sharpen-card>
               </div>
               <div class="col-lg-8">
-                <sharpen-card border="gray" padding="medium" class="card-overall-progress">
-                  <dl class="sharpen-list">
-                    <dt>Overall progress</dt>
-                    <dd>
-                      <div class="sharpen-text-lg"><strong>+2.34 grade levels improved</strong></div>
-                      <div class="sharpen-text-xs">in 6 months of usage</div>
-                    </dd>
-                  </dl>
-
-                  <canvas id="viz-overall-progress" class="sharpen-mt-md"></canvas>
-                </sharpen-card>
+                
               </div>
             </div>
+            -->
+
+            <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-md">
+              <dl class="sharpen-list">
+                <dt>Overall progress</dt>
+                <dd>
+                  <div class="sharpen-text-lg"><strong>+2.34 grade levels improved</strong></div>
+                  <div class="sharpen-text-xs">in 6 months of usage</div>
+                </dd>
+              </dl>
+              <div style="height:250px;">
+                <canvas id="viz-overall-progress" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
 
             <div class="row sharpen-mb-lg">
               <div class="col-md-4">
@@ -288,11 +293,7 @@
       new Chart(ctx, {
         type: 'line',
         data: {
-          labels: Array(20).fill('').map((_, i) => {
-            // Only show month labels on the first week of each month
-            if (i % 4 === 0) return ['Feb 1', 'Mar 1', 'Apr 1', 'May 1', 'Jun 1'][Math.floor(i/4)];
-            return '';
-          }),
+          labels: ['Jan 8', 'Jan 15', 'Jan 22', 'Jan 29', 'Feb 5', 'Feb 12', 'Feb 19', 'Feb 26', 'Mar 4', 'Mar 18', 'Mar 25', 'Apr 1', 'Apr 8', 'Apr 15', 'Apr 22', 'Apr 29', 'May 6', 'May 13', 'May 20', 'May 27'],
           datasets: [{
             label: 'Grade Levels Improved',
             data: [
@@ -313,6 +314,7 @@
           }]
         },
         options: {
+          maintainAspectRatio: false,
           scales: {
             y: {
               beginAtZero: true,
@@ -350,6 +352,36 @@
                 size: 9
                 // weight: 'bold'
               }
+            },
+            annotation: {
+              annotations: {
+                line1: {
+                  type: 'line',
+                  xMin: 4.75,
+                  xMax: 4.75,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5],
+                  label: {
+                    display: true,
+                    content: '1 grade level',
+                    font: { size: 10 }
+                  }
+                },
+                line2: {
+                  type: 'line',
+                  xMin: 15.75,
+                  xMax: 15.75,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5],
+                  label: {
+                    display: true,
+                    content: '2 grade levels',
+                    font: { size: 10 }
+                  }
+                }
+              }
             }
           }
         }
@@ -361,7 +393,7 @@
       new Chart(weeklyDosageCtx, {
         type: 'bar',
         data: {
-          labels: ['Jun 8', 'Jun 15', 'Jun 22', 'Jun 29', 'Feb 5', 'Feb 12', 'Feb 19', 'Feb 26', 'Mar 4', 'Mar 18', 'Mar 25', 'Apr 1', 'Apr 8', 'Apr 15', 'Apr 22', 'Apr 29', 'May 6', 'May 13', 'May 20', 'May 27', 'Jun 3', 'Jun 10', 'Jun 17', 'Jun 24'],
+          labels: ['Jan 8', 'Jan 15', 'Jan 22', 'Jan 29', 'Feb 5', 'Feb 12', 'Feb 19', 'Feb 26', 'Mar 4', 'Mar 18', 'Mar 25', 'Apr 1', 'Apr 8', 'Apr 15', 'Apr 22', 'Apr 29', 'May 6', 'May 13', 'May 20', 'May 27', 'Jun 3', 'Jun 10', 'Jun 17', 'Jun 24'],
           datasets: [{
             data: [100, 131, 113, 70, 144, 128, 100, 156, 83, 83, 105, 105, 110, 115, 94, 119, 80, 120, 68, 128, 119, 113, 85],
             backgroundColor: function(context) {

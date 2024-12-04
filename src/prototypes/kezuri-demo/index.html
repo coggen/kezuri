@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Kezuri</title>
+  <link rel="stylesheet" href="../build/kezuri.css" />
+  <script type="module" src="../build/kezuri.esm.js"></script>
+  <script nomodule src="../build/kezuri.js"></script>
+  <style>
+    .icon-grid > * {
+      display: inline-block;
+      background-color: white;
+      padding: 10px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body class="sharpen-p-lg">
+
+<div class="row sharpen-mb-lg">
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Forms</h1>
+    <input type="text" class="sharpen-form-control sharpen-mb-md" id="input1" placeholder="Enter your value..." />
+    <div class="sharpen-form-check">
+      <input type="radio" class="sharpen-form-check-input" name="radio1" id="radio1_1" />
+      <label class="sharpen-form-label" for="radio1_1">Chocolate</label>
+    </div>
+    <div class="sharpen-form-check">
+      <input type="radio" class="sharpen-form-check-input" name="radio1" id="radio1_2" />
+      <label class="sharpen-form-label" for="radio1_2">Strawberry</label>
+    </div>
+    <div class="sharpen-form-check">
+      <input type="radio" class="sharpen-form-check-input" name="radio1" id="radio1_3" />
+      <label class="sharpen-form-label" for="radio1_3">
+        Other
+        <div class="sharpen-text-xs">E-mail us with the flavor you desire.</div>
+      </label>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Icons</h1>
+    <div class="icon-grid">
+      <i class="sharpen-icon">alarm</i>
+      <i class="sharpen-icon">apps</i>
+      <i class="sharpen-icon">arrow_back</i>
+      <i class="sharpen-icon">arrow_circle_up</i>
+      <i class="sharpen-icon">assessment</i>
+      <i class="sharpen-icon">attach_file</i>
+      <i class="sharpen-icon">audiotrack</i>
+      <i class="sharpen-icon">badge</i>
+      <i class="sharpen-icon">balance</i>
+      <i class="sharpen-icon">ballot</i>
+      <i class="sharpen-icon">bar_chart</i>
+      <i class="sharpen-icon">bedtime</i>
+      <i class="sharpen-icon">bookmark</i>
+      <i class="sharpen-icon">border_top</i>
+      <i class="sharpen-icon">broken_image</i>
+      <i class="sharpen-icon">business</i>
+      <i class="sharpen-icon">cake</i>
+      <i class="sharpen-icon">cast</i>
+      <i class="sharpen-icon">chat_bubble</i>
+      <i class="sharpen-icon">close</i>
+      <i class="sharpen-icon">cloud_done</i>
+      <i class="sharpen-icon">dangerous</i>
+      <i class="sharpen-icon">date_range</i>
+      <i class="sharpen-icon">dehaze</i>
+      <i class="sharpen-icon">delete</i>
+      <i class="sharpen-icon">desktop_mac</i>
+      <i class="sharpen-icon">details</i>
+      <i class="sharpen-icon">device_hub</i>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Tables</h1>
+    <table class="sharpen-table sharpen-table--icon-start sharpen-table--enclosed">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td>Jul 1, 2023</td>
+          <td>$49.00</td>
+          <td><a href="https://sharpen.com">View</a></td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td>Aug 1, 2023</td>
+          <td>$49.00</td>
+          <td><a href="https://sharpen.com">View</a></td>
+        </tr>
+        <tr>
+          <td><i class="sharpen-icon">face</i></td>
+          <td>Sep 1, 2023</td>
+          <td>$49.00</td>
+          <td><a href="https://sharpen.com">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Buttons</h1>
+    <button class="sharpen-button sharpen-button--primary sharpen-button--large sharpen-button--full-width sharpen-mb-sm">Large</button>
+    <button class="sharpen-button sharpen-button--secondary sharpen-button--small sharpen-button--full-width sharpen-mb-sm"> <i class="sharpen-icon">arrow_left_alt</i> Secondary</button>
+    <button class="sharpen-button sharpen-button--danger sharpen-button--small sharpen-button--full-width sharpen-mb-sm">Danger</button>
+    <button class="sharpen-button sharpen-button--variant sharpen-button--xsmall sharpen-button--full-width sharpen-mb-sm">rs1555839</button>
+  </div>
+</div>
+
+<div class="row sharpen-mb-lg">
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Cards</h1>
+    <sharpen-card border="none">
+      <sharpen-card-header>Family History Assessment</sharpen-card-header>
+      <sharpen-card-content padding="large">
+        Content here
+      </sharpen-card-content>
+    </sharpen-card>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Alerts</h1>
+    <sharpen-alert type="success" icon="done" heading="A success alert">In which we describe something good that happened.</sharpen-alert>
+    <sharpen-alert type="warning" icon="info">Warning appears in yellow</sharpen-alert>
+    <sharpen-alert type="danger" icon="info">Danger appears in red</sharpen-alert>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Labels</h1>
+    <sharpen-label type="success" icon="check">Complete</sharpen-label>
+    <sharpen-label type="info">Info</sharpen-label>
+    <sharpen-label type="danger">Danger</sharpen-label>
+    <sharpen-label type="warning">Warning</sharpen-label>
+    <sharpen-label type="success">Success</sharpen-label>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Pagination</h1>
+    <nav>
+      <ul class="sharpen-pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="javascript:void(0);" aria-label="First">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_left</i></span>
+          </a>
+        </li>
+        <li class="page-item disabled">
+          <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_left</i></span>
+          </a>
+        </li>
+        <li class="page-item active" aria-current="page"><a class="page-link" href="javascript:void(0);">1</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="javascript:void(0);" aria-label="Next">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_double_arrow_right</i></span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="javascript:void(0);" aria-label="Last">
+            <span aria-hidden="true"><i class="sharpen-icon">keyboard_arrow_right</i></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>  
+</div>
+
+<div class="row sharpen-mb-lg">
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Page Navigation</h1>
+    <sharpen-card border="gray" padding="medium">
+      <sharpen-page-navigation>
+        <sharpen-nav-link name="Account" icon="account_circle" href="#"></sharpen-nav-link>
+        <sharpen-nav-link name="Payment Method" icon="credit_card" href="#"></sharpen-nav-link>
+        <sharpen-nav-link name="Learners" icon="school" href="#" selected="true"></sharpen-nav-link>
+        <sharpen-nav-link name="Invoices" icon="receipt" href="#"></sharpen-nav-link>
+      </sharpen-page-navigation>
+    </sharpen-card>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Risk Bars</h1>
+    <sharpen-progress-bar progress-val="10" show-description="true"></sharpen-progress-bar>
+    <sharpen-progress-bar progress-val="50" show-description="true"></sharpen-progress-bar>
+    <sharpen-progress-bar progress-val="90" show-description="true"></sharpen-progress-bar>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Menu</h1>
+    <sharpen-menu class="show">
+  <div class="sharpen-menu-links">
+    <sharpen-nav-link icon="account_box" name="Account" href="#"></sharpen-nav-link>
+    <hr>
+    <h5 class="sharpen-nav-link-header">Learner Settings</h5>
+    <sharpen-nav-link icon="edit" name="Jurdrick Profar" href="#"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Juremy Profar" href="#"></sharpen-nav-link>
+    <sharpen-nav-link icon="edit" name="Jurickson Profar" href="#"></sharpen-nav-link>
+    <sharpen-nav-link icon="add" name="Add new..." href="#"></sharpen-nav-link>  
+    <hr>
+    <sharpen-nav-link icon="logout" name="Log Out" href="#"></sharpen-nav-link>  
+  </div>
+</sharpen-menu>
+  </div>
+  <div class="col-md-3">
+    <h1 class="sharpen-heading-sm">Metrics</h1>
+    <sharpen-simple-metric class="sharpen-mb-md">
+      <sharpen-progress-circle slot="metric" progress-val="33" progress-label="33%"></sharpen-progress-circle>
+      <div slot="content">
+        <div class="sharpen-text-lg">Level A &rsaquo; Unit 2</div>
+        <div>3 / 10 lessons completed</div>
+      </div>
+    </sharpen-simple-metric>
+    <sharpen-simple-metric>
+      <div slot="metric" class="sharpen-text--center sharpen-text-4xl sharpen-text--color-pine">2.2</div>
+      <div slot="content">
+        <strong>Average weekly lessons completed</strong>
+      </div>
+    </sharpen-simple-metric>
+  </div>
+</div>
+
+</body>
+</html>
