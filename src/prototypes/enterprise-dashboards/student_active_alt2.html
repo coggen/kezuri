@@ -13,6 +13,53 @@
 
     <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
     <link rel="stylesheet" href="dashboards.css" />
+
+    <style>
+      .card-student-at-start {
+        background-color: var(--color-gray-5);
+      }
+
+      .sharpen-table-dosage-metrics .metric-status {
+        width: 1rem;
+      }
+
+      .sharpen-table-dosage-metrics .sharpen-icon {
+        font-size: var(--font-size-sm);
+      }
+
+      .sharpen-table-dosage-metrics .metric-value {
+        text-align: center;
+        width: 15%;
+      }
+
+      .sharpen-table-dosage-metrics .metric-value.off-target {
+        background-color: var(--color-light-orange);
+        color: var(--color-dark-orange);
+        font-weight: bold;
+      }
+
+      .sharpen-table-dosage-metrics .metric-value.on-target {
+        background-color: var(--color-mint);
+        color: var(--color-pine);
+        font-weight: bold;
+      }
+
+      .sharpen-table-dosage-metrics .metric-status.off-target {
+        color: var(--color-dark-orange);
+      }
+
+      .sharpen-table-dosage-metrics .metric-status.on-target {
+        color: var(--color-pine);
+      }
+
+      .sharpen-table--compact {
+        font-size: var(--font-size-xs);
+      }
+
+      .sharpen-table--compact th, .sharpen-table--compact td {
+        padding: var(--spacing-sm);
+      }
+    </style>
   </head>
   <body>
 
@@ -107,6 +154,35 @@
               </li>
             </ul>
 
+            <!--
+            <div class="row sharpen-mb-lg">
+              <div class="col-lg-4">
+                <sharpen-card border="gray" padding="medium" class="card-student-at-start">
+                  <dl class="sharpen-list">
+                    <dt>Sharpen Start Date</dt>
+                    <dd>
+                      May 18, 2024
+                    </dd>
+
+                    <dt>Reading Status at start</dt>
+                    <dd>
+                      <sharpen-label type="warning" icon="warning">2 grades behind</sharpen-label>
+                    </dd>
+
+                    <dt>Grade at start</dt>
+                    <dd>2</dd>
+
+                    <dt>Sharpen Level at start</dt>
+                    <dd>A</dd>
+                  </dl>
+                </sharpen-card>
+              </div>
+              <div class="col-lg-8">
+                
+              </div>
+            </div>
+            -->
+
             <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-md">
               <dl class="sharpen-list">
                 <dt>Overall progress</dt>
@@ -115,82 +191,8 @@
                   <div class="sharpen-text-xs">in 39.4 hours of usage</div>
                 </dd>
               </dl>
-              <div class="progress-legend sharpen-my-md">
-                <span class="target-legend"></span> Pace target
-              </div>
               <div style="height:250px;">
                 <canvas id="viz-overall-progress" class="sharpen-mt-md"></canvas>
-              </div>
-            </sharpen-card>
-
-            <div class="row">
-              <div class="col-lg-6">
-                <table class="sharpen-table sharpen-table--compact sharpen-table--enclosed sharpen-table-dosage-metrics sharpen-mb-md">
-                  <thead>
-                    <tr>
-                      <th>Dosage</th>
-                      <th class="metric-value">Target</th>
-                      <th class="metric-value">Average,<br />last 4w</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Sessions per week</td>
-                      <td class="metric-value">3</td>
-                      <td class="metric-value off-target">2.9</td>
-                      <td class="metric-status off-target">
-                        <i class="sharpen-icon">warning</i>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Session length (minutes)</td>
-                      <td class="metric-value">20</td>
-                      <td class="metric-value on-target">21</td>
-                      <td class="metric-status on-target">
-                        <i class="sharpen-icon">check</i>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <a href="targets.html" class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width sharpen-mb-lg">
-                  <i class="sharpen-icon">edit</i>
-                  Change dosage targets
-                </a>
-              </div>
-              <div class="col-lg-6">
-                <table class="sharpen-table sharpen-table--compact sharpen-table--enclosed sharpen-table-dosage-metrics sharpen-mb-lg">
-                  <thead>
-                    <tr>
-                      <th>Pace</th>
-                      <th class="metric-value">Target</th>
-                      <th class="metric-value">Average,<br />last 4w</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Lessons per hour</td>
-                      <td class="metric-value">2</td>
-                      <td class="metric-value on-target">1.9</td>
-                      <td class="metric-status on-target">
-                        <i class="sharpen-icon">check</i>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <sharpen-card border="gray" padding="medium">
-              <dl class="sharpen-list">
-                <dt>Mastery of Material by Skill</dt>
-              </dl>
-
-              <div class="sharpen-text-xs sharpen-mb-md"><em>Target: Student masters 70% of items encountered</em></div>
-
-              <div style="height: 200px;">
-                <canvas id="viz-mastery-by-skill" class="sharpen-mt-md"></canvas>
               </div>
             </sharpen-card>
 
@@ -270,6 +272,8 @@
               { x: 38, y: 2.3, date: "2024 Aug 1" }
             ],
             borderColor: '#68a362',
+            // backgroundColor: '#e8f5e6',
+            // fill: true,
             tension: 0.4,
             pointRadius: 4,
             pointBackgroundColor: '#68a362',
@@ -289,7 +293,7 @@
             },
             y: {
               beginAtZero: true,
-              max: 3,
+              max: 3.5,
               grid: {
                 color: '#e5e5e5'
               },
@@ -315,42 +319,16 @@
             },
             annotation: {
               annotations: {
-                pace1: {
-                  type: 'line',
-                  drawTime: 'beforeDraw',
-                  xMin: 0,
-                  xMax: 24,
-                  yMax: 1,
-                  borderColor: '#e8f5e6',
-                  borderWidth: 40,
-                },
-                pace2: {
-                  type: 'line',
-                  drawTime: 'beforeDraw',
-                  xMin: 23,
-                  xMax: 36,
-                  yMin: 0.95,
-                  yMax: 2,
-                  borderColor: '#e8f5e6',
-                  borderWidth: 40,
-                },
-                pace3: {
-                  type: 'line',
-                  drawTime: 'beforeDraw',
-                  xMin: 35,
-                  xMax: 45,
-                  yMin: 1.93,
-                  yMax: 3,
-                  borderColor: '#e8f5e6',
-                  borderWidth: 40,
-                },
                 level1: {
                   type: 'line',
-                  xMin: 24,
+                  // drawTime: 'beforeDraw',
+                  xMin: 0,
                   xMax: 24,
-                  borderColor: '#666666',
-                  borderWidth: 1,
-                  borderDash: [5, 5],
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#cccccc',
+                  borderWidth: 2,
+                  // borderDash: [5, 5],
                   label: {
                     display: true,
                     content: '1 grade at pace',
@@ -360,11 +338,14 @@
                 },
                 level2: {
                   type: 'line',
-                  xMin: 36,
+                  // drawTime: 'beforeDraw',
+                  xMin: 0,
                   xMax: 36,
-                  borderColor: '#666666',
-                  borderWidth: 1,
-                  borderDash: [5, 5],
+                  yMin: 2,
+                  yMax: 2,
+                  borderColor: '#cccccc',
+                  borderWidth: 2,
+                  // borderDash: [5, 5],
                   label: {
                     display: true,
                     content: '2 grades at pace',
@@ -374,11 +355,14 @@
                 },
                 level3: {
                   type: 'line',
-                  xMin: 45,
+                  // drawTime: 'beforeDraw',
+                  xMin: 0,
                   xMax: 45,
-                  borderColor: '#666666',
-                  borderWidth: 1,
-                  borderDash: [5, 5],
+                  yMin: 3,
+                  yMax: 3,
+                  borderColor: '#cccccc',
+                  borderWidth: 2,
+                  // borderDash: [5, 5],
                   label: {
                     display: true,
                     content: '3 grades at pace',
@@ -386,10 +370,151 @@
                     position: 'start'
                   }
                 }
+
+
+                // pace1: {
+                //   type: 'line',
+                //   drawTime: 'beforeDraw',
+                //   xMin: 0,
+                //   xMax: 24,
+                //   yMax: 1,
+                //   borderColor: '#e8f5e6',
+                //   borderWidth: 40,
+                // },
+                // pace2: {
+                //   type: 'line',
+                //   drawTime: 'beforeDraw',
+                //   xMin: 23,
+                //   xMax: 36,
+                //   yMin: 0.95,
+                //   yMax: 2,
+                //   borderColor: '#e8f5e6',
+                //   borderWidth: 40,
+                // },
+                // pace3: {
+                //   type: 'line',
+                //   drawTime: 'beforeDraw',
+                //   xMin: 35,
+                //   xMax: 45,
+                //   yMin: 1.93,
+                //   yMax: 3,
+                //   borderColor: '#e8f5e6',
+                //   borderWidth: 40,
+                // },
+                // level1: {
+                //   type: 'line',
+                //   xMin: 24,
+                //   xMax: 24,
+                //   borderColor: '#666666',
+                //   borderWidth: 1,
+                //   borderDash: [5, 5],
+                //   label: {
+                //     display: true,
+                //     content: '1 grade at pace',
+                //     font: { size: 10 },
+                //     position: 'start'
+                //   }
+                // },
+                // level2: {
+                //   type: 'line',
+                //   xMin: 36,
+                //   xMax: 36,
+                //   borderColor: '#666666',
+                //   borderWidth: 1,
+                //   borderDash: [5, 5],
+                //   label: {
+                //     display: true,
+                //     content: '2 grades at pace',
+                //     font: { size: 10 },
+                //     position: 'start'
+                //   }
+                // },
+                // level3: {
+                //   type: 'line',
+                //   xMin: 45,
+                //   xMax: 45,
+                //   borderColor: '#666666',
+                //   borderWidth: 1,
+                //   borderDash: [5, 5],
+                //   label: {
+                //     display: true,
+                //     content: '3 grades at pace',
+                //     font: { size: 10 },
+                //     position: 'start'
+                //   }
+                // }
               }
             }
           }
         }
+        // options: {
+        //   maintainAspectRatio: false,
+        //   scales: {
+        //     y: {
+        //       beginAtZero: true,
+        //       max: 3.0,
+        //       grid: {
+        //         color: '#e5e5e5'
+        //       },
+        //     },
+        //     x: {
+        //       beginAtZero: true,
+        //       max: 45,
+        //       grid: {
+        //         color: '#e5e5e5',
+        //       }
+        //     }
+        //   },
+        //   plugins: {
+        //     legend: {
+        //       display: false
+        //     },
+        //     tooltip: {
+        //       // callbacks: {
+        //       //   label: (context) => `+${context.raw.toFixed(2)} grade levels`
+        //       // }
+        //     },
+        //     datalabels: {
+        //       align: 'top',
+        //       // offset: 10,
+        //       // formatter: (value) => `${value.toFixed(2)}`,
+        //       color: '#68a362',
+        //       font: {
+        //         size: 9
+        //       }
+        //     },
+        //     annotation: {
+        //       annotations: {
+        //         line1: {
+        //           type: 'line',
+        //           xMin: 4.75,
+        //           xMax: 4.75,
+        //           borderColor: '#666666',
+        //           borderWidth: 1,
+        //           borderDash: [5, 5],
+        //           label: {
+        //             display: true,
+        //             content: '1 grade level',
+        //             font: { size: 10 }
+        //           }
+        //         },
+        //         line2: {
+        //           type: 'line',
+        //           xMin: 15.75,
+        //           xMax: 15.75,
+        //           borderColor: '#666666',
+        //           borderWidth: 1,
+        //           borderDash: [5, 5],
+        //           label: {
+        //             display: true,
+        //             content: '2 grade levels',
+        //             font: { size: 10 }
+        //           }
+        //         }
+        //       }
+        //     }
+        //   }
+        // }
       });
 
       // Mastery by skill chart

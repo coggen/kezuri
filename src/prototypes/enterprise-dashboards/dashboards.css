@@ -1,0 +1,58 @@
+.card-student-at-start {
+  background-color: var(--color-gray-5);
+}
+
+.progress-legend {
+  font-size: 12px;
+  color: var(--color-gray-1);
+}
+
+.target-legend {
+  display: inline-block;
+  background-color: #e8f5e6;
+  width: 2rem;
+  height: 1rem;
+  vertical-align: -4px;
+  margin-right: 0.25rem;
+}
+
+.sharpen-table-dosage-metrics .metric-status {
+  width: 1rem;
+}
+
+.sharpen-table-dosage-metrics .sharpen-icon {
+  font-size: var(--font-size-sm);
+}
+
+.sharpen-table-dosage-metrics .metric-value {
+  text-align: center;
+  width: 15%;
+}
+
+.sharpen-table-dosage-metrics .metric-value.off-target {
+  background-color: var(--color-light-orange);
+  color: var(--color-dark-orange);
+  font-weight: bold;
+}
+
+.sharpen-table-dosage-metrics .metric-value.on-target {
+  background-color: var(--color-mint);
+  color: var(--color-pine);
+  font-weight: bold;
+}
+
+.sharpen-table-dosage-metrics .metric-status.off-target {
+  color: var(--color-dark-orange);
+}
+
+.sharpen-table-dosage-metrics .metric-status.on-target {
+  color: var(--color-pine);
+}
+
+.sharpen-table--compact {
+  font-size: var(--font-size-xs);
+}
+
+.sharpen-table--compact th, .sharpen-table--compact td {
+  padding: var(--spacing-sm);
+}

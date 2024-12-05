@@ -57,7 +57,7 @@
 
                 <dt>Reading Status</dt>
                 <dd>
-                  <sharpen-label type="success" icon="check">At grade level</sharpen-label>
+                  <sharpen-label type="danger" icon="warning">2 grades behind</sharpen-label>
                 </dd>
 
                 <dt>Sharpen Tutor</dt>
@@ -69,7 +69,7 @@
                 <dd>3</dd>
 
                 <dt>Sharpen Level</dt>
-                <dd>B2</dd>
+                <dd>A</dd>
 
                 <dt>School</dt>
                 <dd><a href="school_show.html">Runkle School</a></dd>
@@ -111,8 +111,8 @@
               <dl class="sharpen-list">
                 <dt>Overall progress</dt>
                 <dd>
-                  <div class="sharpen-text-lg"><strong>+2.34 grade levels improved</strong></div>
-                  <div class="sharpen-text-xs">in 39.4 hours of usage</div>
+                  <div class="sharpen-text-lg"><strong>Ready to start!</strong></div>
+                  <div class="sharpen-text-xs">Below, we'll map Onni's progress as you move through the Sharpen Reading curriculum. The green path shows expected improvement when you follow Sharpen's dosage and pace recommendations.</div>
                 </dd>
               </dl>
               <div class="progress-legend sharpen-my-md">
@@ -138,17 +138,14 @@
                     <tr>
                       <td>Sessions per week</td>
                       <td class="metric-value">3</td>
-                      <td class="metric-value off-target">2.9</td>
-                      <td class="metric-status off-target">
-                        <i class="sharpen-icon">warning</i>
-                      </td>
+                      <td class="metric-value">&mdash;</td>
+                      <td class="metric-status"></td>
                     </tr>
                     <tr>
                       <td>Session length (minutes)</td>
                       <td class="metric-value">20</td>
-                      <td class="metric-value on-target">21</td>
-                      <td class="metric-status on-target">
-                        <i class="sharpen-icon">check</i>
+                      <td class="metric-value">&mdash;</td>
+                      <td class="metric-status"></td>
                       </td>
                     </tr>
                   </tbody>
@@ -172,9 +169,8 @@
                     <tr>
                       <td>Lessons per hour</td>
                       <td class="metric-value">2</td>
-                      <td class="metric-value on-target">1.9</td>
-                      <td class="metric-status on-target">
-                        <i class="sharpen-icon">check</i>
+                      <td class="metric-value">&mdash;</td>
+                      <td class="metric-status"></td>
                       </td>
                     </tr>
                   </tbody>
@@ -228,47 +224,7 @@
         type: 'line',
         data: {
           datasets: [{
-            data: [
-              { x: 0, y: 0 },
-              { x: 1, y: 0.05, date: "2024 May 18" },
-              { x: 2, y: 0.1, date: "2024 May 20" },
-              { x: 3, y: 0.15, date: "2024 May 22" },
-              { x: 4, y: 0.2, date: "2024 May 24" },
-              { x: 5, y: 0.25, date: "2024 May 26" },
-              { x: 6, y: 0.3, date: "2024 May 28" },
-              { x: 7, y: 0.4, date: "2024 May 30" },
-              { x: 8, y: 0.5, date: "2024 Jun 1" },
-              { x: 9, y: 0.6, date: "2024 Jun 3" },
-              { x: 10, y: 0.65, date: "2024 Jun 5" },
-              { x: 11, y: 0.67, date: "2024 Jun 7" },
-              { x: 12, y: 0.7, date: "2024 Jun 9" },
-              { x: 13, y: 0.71, date: "2024 Jun 11" },
-              { x: 14, y: 0.75, date: "2024 Jun 13" },
-              { x: 15, y: 0.8, date: "2024 Jun 15" },
-              { x: 16, y: 0.81, date: "2024 Jun 17" },
-              { x: 17, y: 0.82, date: "2024 Jun 19" },
-              { x: 18, y: 0.83, date: "2024 Jun 21" },
-              { x: 19, y: 0.85, date: "2024 Jun 23" },
-              { x: 20, y: 0.87, date: "2024 Jun 25" },
-              { x: 21, y: 0.9, date: "2024 Jun 27" },
-              { x: 22, y: 0.92, date: "2024 Jun 29" },
-              { x: 23, y: 0.95, date: "2024 Jul 1" },
-              { x: 24, y: 1.0, date: "2024 Jul 3" },
-              { x: 25, y: 1.05, date: "2024 Jul 5" },
-              { x: 26, y: 1.2, date: "2024 Jul 7" },
-              { x: 27, y: 1.3, date: "2024 Jul 9" },
-              { x: 28, y: 1.4, date: "2024 Jul 11" },
-              { x: 29, y: 1.5, date: "2024 Jul 13" },
-              { x: 30, y: 1.6, date: "2024 Jul 15" },
-              { x: 31, y: 1.7, date: "2024 Jul 17" },
-              { x: 32, y: 1.8, date: "2024 Jul 19" },
-              { x: 33, y: 1.9, date: "2024 Jul 21" },
-              { x: 34, y: 2.1, date: "2024 Jul 23" },
-              { x: 35, y: 2.15, date: "2024 Jul 25" },
-              { x: 36, y: 2.2, date: "2024 Jul 27" },
-              { x: 37, y: 2.25, date: "2024 Jul 29" },
-              { x: 38, y: 2.3, date: "2024 Aug 1" }
-            ],
+            data: [],
             borderColor: '#68a362',
             tension: 0.4,
             pointRadius: 4,
@@ -398,25 +354,25 @@
       new Chart(masteryCtx, {
         type: 'bar',
         data: {
-          labels: ['B1 Unit 10', 'B1 Unit 11', 'B1 Unit 12', 'B2 Unit 1', 'B2 Unit 2', 'B2 Unit 3'],
+          labels: ['A Unit 1', 'A Unit 2', 'A Unit 3', 'A Unit 4', 'A Unit 5', 'A Unit 6'],
           datasets: [
             {
               label: 'Letter Sounds',
-              data: [96, 63, 74, 64, 91, 80],
+              data: [],
               backgroundColor: '#2E5E29',
               borderColor: 'transparent',
               borderWidth: 1,
             },
             {
               label: 'Spelling',
-              data: [89, 88, 81, 96, 84, 83],
+              data: [],
               backgroundColor: '#68A362',
               borderColor: 'transparent',
               borderWidth: 1,
             },
             {
               label: 'Words',
-              data: [77, 82, 69, 66, 79, 93],
+              data: [],
               backgroundColor: '#B8DBAA',
               borderColor: 'transparent',
               borderWidth: 1,

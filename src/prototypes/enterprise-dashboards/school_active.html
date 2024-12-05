@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Dashboards - School - Active</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+
+    <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
+    <link rel="stylesheet" href="dashboards.css" />
+  </head>
+  <body>
+
+    <div class="sharpen-enterprise-container">
+      <div class="sharpen-enterprise-navigation">
+        <a class="brand" href="#"><img src="../build/assets/images/brand/sharpen_logo_ivory.png" /></a>
+
+        <h1 class="district sharpen-heading-sm">Public Schools of Brookline</h1>
+
+        <nav class="sharpen-mb-md">
+          <sharpen-nav-link icon="near_me" name="District" href="district_show.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="school-links">
+          <h2 class="school sharpen-heading-sans-sm">Runkle School</h2>
+          <sharpen-nav-link selected icon="info" name="About" href="school_show.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="supervisor_account" name="Staff" href="school_staff.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="meeting_room" name="Classrooms" href="school_classes.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="face" name="Students" href="school_students.html"></sharpen-nav-link>
+          <sharpen-nav-link icon="shield_person" name="Admins" href="school_administrators.html"></sharpen-nav-link>
+        </nav>
+
+        <nav class="support-links">
+          <sharpen-nav-link icon="account_box" name="Dante Cardigan" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="help" name="Support" href="javascript:void();"></sharpen-nav-link>  
+          <sharpen-nav-link icon="logout" name="Log Out" href="javascript:void();"></sharpen-nav-link>  
+        </nav>
+        
+      </div>
+      <main>
+        
+        <h1 class="sharpen-heading-2xl">
+          <a href="schools.html">Schools</a> &rsaquo; Runkle School
+        </h1>
+
+        <ul class="sharpen-tabs sharpen-mb-lg">
+          <li class="tab selected">
+            <a href="school_active.html"><i class="sharpen-icon">bar_chart</i>Current Status</a>  
+          </li>
+          <li class="tab">
+            <a href="school_outcomes.html"><i class="sharpen-icon">verified</i>Outcomes</a>
+          </li>
+        </ul>
+
+        <h2 class="sharpen-heading-lg">Active students</h2>
+
+        <div class="row sharpen-mb-lg">
+          <div class="col-lg-4">
+            <sharpen-card border="gray" padding="medium" class="card-students-by-grade">
+              <dl class="sharpen-list">
+                <dt>By grade</dt>
+              </dl>
+              <div style="height:200px;">
+                <canvas id="viz-students-by-grade" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-lg-4">
+            <sharpen-card border="gray" padding="medium" class="card-students-by-reading-risk-level">
+              <dl class="sharpen-list">
+                <dt>By reading risk level</dt>
+              </dl>
+              <div style="height:200px;">
+                <canvas id="viz-students-by-reading-risk-level" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-lg-4">
+            <sharpen-card border="gray" padding="medium" class="card-students-by-session-target">
+              <dl class="sharpen-list">
+                <dt>By weekly session target</dt>
+              </dl>
+              <div style="height:200px;">
+                <canvas id="viz-students-by-session-target" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
+          </div>
+        </div>
+
+        <h2 class="sharpen-heading-lg">Sharpen tutoring dosage &amp; pace</h2>
+        <sharpen-card border="gray" padding="medium" class="card-dosage-pace sharpen-mb-lg">
+          <dl class="sharpen-list">
+            <dt>% students meeting dosage &amp; pace, by week</dt>
+          </dl>
+          <div style="height:250px;">
+            <canvas id="viz-dosage-pace" class="sharpen-mt-md"></canvas>
+          </div>
+        </sharpen-card>
+
+        <table class="sharpen-table sharpen-table--enclosed sharpen-mb-lg">
+          <thead>
+            <tr>
+              <th>Tutor</th>
+              <th>Active students</th>
+              <th>% on pace</th>
+              <th>% proper dosage, last 4w</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="javascript:void();">Roxanne Michalski</a></td>
+              <td>39</td>
+              <td>91%</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <td><a href="javascript:void();">Katherine O'Neill</a></td>
+              <td>39</td>
+              <td>91%</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <td><a href="javascript:void();">Ruben Polina</a></td>
+              <td>10</td>
+              <td>90%</td>
+              <td>80%</td>
+            </tr>
+            <tr>
+              <td><a href="javascript:void();">Leo Tillens</a></td>
+              <td>39</td>
+              <td>91%</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <td><a href="javascript:void();">Aura Zimmer</a></td>
+              <td>43</td>
+              <td>92%</td>
+              <td>95%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="sharpen-heading-lg">Sharpen tutoring activity</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
+              <dl class="sharpen-list">
+                <dt>Active students per week</dt>
+              </dl>
+              <div style="height:200px;">
+                <canvas id="viz-sharpen-students-per-week" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
+          </div>
+          <div class="col-lg-6">
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
+              <dl class="sharpen-list">
+                <dt>Sharpen sessions per week</dt>
+              </dl>
+              <div style="height:200px;">
+                <canvas id="viz-sharpen-sessions-per-week" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <script>
+      // Register the plugin
+      Chart.register(ChartDataLabels);
+
+      Chart.defaults.font.family = 'Sharpen Sans';
+
+      const gradeCtx = document.getElementById('viz-students-by-grade');
+
+      new Chart(gradeCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5'],
+          datasets: [{
+            label: 'Number of Students',
+            data: [25, 47, 77, 65, 44],
+            backgroundColor: 'rgba(128, 128, 128, 0.7)', // Gray color
+            borderWidth: 0
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          indexAxis: 'y', // This makes the chart horizontal
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              }
+            },
+            y: {
+              grid: {
+                display: false
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: (value) => `${value}`,
+              color: '#000',
+              font: {
+                size: 10
+              }
+            }
+          }
+        }
+      });
+
+      const readingRiskCtx = document.getElementById('viz-students-by-reading-risk-level');
+
+      new Chart(readingRiskCtx, {
+        type: 'bar',
+        data: {
+          labels: ['At Grade\nLevel', '1 Grade\nBehind', '2 Grades\nBehind', '3+ Grades\nBehind'],
+          datasets: [{
+            label: 'Number of Students',
+            data: [34, 74, 109, 41],
+            backgroundColor: [
+              '#68A362', // Green
+              '#F2C94C', // Yellow
+              '#F2994A', // Orange
+              '#B71C1C'  // Red
+            ],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          indexAxis: 'y', // This makes the chart horizontal
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              }
+            },
+            y: {
+              grid: {
+                display: false
+              },
+              ticks: {
+                callback: function(value) {
+                  return this.getLabelForValue(value).split('\n');
+                }
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: (value) => `${value}`,
+              color: function(context) {
+                return context.dataset.backgroundColor[context.dataIndex];
+              }
+            }
+          }
+        }
+      });
+
+      const sessionTargetCtx = document.getElementById('viz-students-by-session-target');
+
+      new Chart(sessionTargetCtx, {
+        type: 'bar',
+        data: {
+          labels: ['2 sessions', '3 sessions', '4 sessions'],
+          datasets: [{
+            label: 'Number of Students',
+            data: [77, 120, 61],
+            backgroundColor: 'rgba(128, 128, 128, 0.7)', // Gray color
+            borderWidth: 0
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          indexAxis: 'y', // This makes the chart horizontal
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              }
+            },
+            y: {
+              grid: {
+                display: false
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: (value) => `${value}`,
+              color: '#000',
+              font: {
+                size: 10
+              }
+            }
+          }
+        }
+      });
+
+      const dosagePaceCtx = document.getElementById('viz-dosage-pace');
+
+      new Chart(dosagePaceCtx, {
+        type: 'bar',
+        data: {
+          labels: [
+            'Jan 1, 2024', 'Jan 8, 2024', 'Jan 15, 2024', 
+            'Jan 22, 2024', 'Jan 29, 2024', 'Feb 5, 2024', 
+            'Feb 12, 2024', 'Feb 19, 2024'
+          ],
+          datasets: [
+            {
+              label: 'Proper dosage',
+              data: [65, 75, 50, 80, 70, 60, 55, 50],
+              backgroundColor: '#31776C99',
+              borderWidth: 0
+            },
+            {
+              label: 'Proper pace',
+              data: [80, 85, 60, 90, 75, 70, 80, 85],
+              backgroundColor: '#2C5652EE',
+              borderWidth: 0
+            }
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20 // Add padding to the top
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              }
+            },
+            y: {
+              beginAtZero: true,
+              max: 100,
+              grid: {
+                color: '#e5e5e5'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'left', // Position the legend on the left
+              labels: {
+                usePointStyle: true
+              }
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: (value) => `${value}%`,
+              color: '#000',
+              font: {
+                size: 10
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => `${context.raw}% of students at ${context.dataset.label.toLowerCase()}`
+              }
+            },
+          }
+        }
+      });
+
+      const studentsPerWeekCtx = document.getElementById('viz-sharpen-students-per-week');
+
+      new Chart(studentsPerWeekCtx, {
+        type: 'bar',
+        data: {
+          labels: [
+            'Jan 1', 'Jan 8', 'Jan 15', 
+            'Jan 22', 'Jan 29', 'Feb 5', 
+            'Feb 12', 'Feb 19'
+          ],
+          datasets: [{
+            label: 'Students per Week',
+            data: [170, 247, 151, 178, 154, 211, 180, 184],
+            backgroundColor: '#2C5652EE',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20 // Add padding to the top
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                color: '#e5e5e5'
+              }
+            },
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: (value) => `${value}`,
+              color: '#2C5652', // SteelBlue color
+              font: {
+                size: 12
+              }
+            }
+          }
+        }
+      });
+
+      const sessionsPerWeekCtx = document.getElementById('viz-sharpen-sessions-per-week');
+
+      new Chart(sessionsPerWeekCtx, {
+        type: 'bar',
+        data: {
+          labels: [
+            'Jan 1', 'Jan 8', 'Jan 15', 
+            'Jan 22', 'Jan 29', 'Feb 5', 
+            'Feb 12', 'Feb 19'
+          ],
+          datasets: [{
+            label: 'Sessions per Week',
+            data: [1700, 2470, 1510, 1780, 1540, 2110, 1800, 1840],
+            backgroundColor: '#2C5652EE',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20 // Add padding to the top
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                color: '#e5e5e5'
+              }
+            },
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: '#e5e5e5'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'end',
+              formatter: (value) => `${value}`,
+              color: '#2C5652', // SteelBlue color
+              font: {
+                size: 12
+              }
+            }
+          }
+        }
+      });
+    </script>
+
+  </body>
+</html>
