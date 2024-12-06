@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Sharpen Prototype: Enterprise Dashboards - School - Active</title>
+    <title>Sharpen Prototype: Enterprise Dashboards - School - Outcomes</title>
     <link rel="stylesheet" href="../build/kezuri.css" />
     <script type="module" src="../build/kezuri.esm.js"></script>
     <script nomodule src="../build/kezuri.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-error-bars@4.4.4/build/index.umd.min.js"></script>
 
     <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
     <link rel="stylesheet" href="dashboards.css" />
@@ -50,15 +50,15 @@
         </h1>
 
         <ul class="sharpen-tabs sharpen-mb-lg">
-          <li class="tab selected">
+          <li class="tab">
             <a href="school_active.html"><i class="sharpen-icon">bar_chart</i>Current Status</a>  
           </li>
-          <li class="tab">
+          <li class="tab selected">
             <a href="school_outcomes.html"><i class="sharpen-icon">verified</i>Outcomes</a>
           </li>
         </ul>
 
-        <h2 class="sharpen-heading-lg">258 active students</h2>
+        <h2 class="sharpen-heading-lg">All students, when they start Sharpen Reading</h2>
 
         <div class="row sharpen-mb-lg">
           <div class="col-lg-4">
@@ -93,82 +93,27 @@
           </div>
         </div>
 
-        <h2 class="sharpen-heading-lg">Sharpen tutoring dosage &amp; pace</h2>
-        <sharpen-card border="gray" padding="medium" class="card-dosage-pace sharpen-mb-lg">
+        <h2 class="sharpen-heading-lg">Student achievement using Sharpen Reading</h2>
+        <sharpen-card border="gray" padding="medium" class="card-student-achievement sharpen-mb-md">
           <dl class="sharpen-list">
-            <dt>% students meeting dosage &amp; pace, by week</dt>
+            <dt>Average grade level improvement per month of usage</dt>
           </dl>
           <div style="height:250px;">
-            <canvas id="viz-dosage-pace" class="sharpen-mt-md"></canvas>
+            <canvas id="viz-improvement-by-month" class="sharpen-mt-md"></canvas>
           </div>
         </sharpen-card>
 
-        <table class="sharpen-table sharpen-table--enclosed sharpen-mb-lg">
-          <thead>
-            <tr>
-              <th>Tutor</th>
-              <th>Active students</th>
-              <th>% on pace</th>
-              <th>% proper dosage, last 4w</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="javascript:void();">Roxanne Michalski</a></td>
-              <td>39</td>
-              <td>91%</td>
-              <td>90%</td>
-            </tr>
-            <tr>
-              <td><a href="javascript:void();">Katherine O'Neill</a></td>
-              <td>39</td>
-              <td>91%</td>
-              <td>90%</td>
-            </tr>
-            <tr>
-              <td><a href="javascript:void();">Ruben Polina</a></td>
-              <td>10</td>
-              <td>90%</td>
-              <td>80%</td>
-            </tr>
-            <tr>
-              <td><a href="javascript:void();">Leo Tillens</a></td>
-              <td>39</td>
-              <td>91%</td>
-              <td>90%</td>
-            </tr>
-            <tr>
-              <td><a href="javascript:void();">Aura Zimmer</a></td>
-              <td>43</td>
-              <td>92%</td>
-              <td>95%</td>
-            </tr>
-          </tbody>
-        </table>
+        <sharpen-card border="gray" padding="medium">
+          <dl class="sharpen-list">
+            <dt>Average skill mastery by month of usage</dt>
+          </dl>
 
-        <h2 class="sharpen-heading-lg">Sharpen tutoring activity</h2>
-        <div class="row">
-          <div class="col-lg-6">
-            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
-              <dl class="sharpen-list">
-                <dt>Active students per week</dt>
-              </dl>
-              <div style="height:200px;">
-                <canvas id="viz-sharpen-students-per-week" class="sharpen-mt-md"></canvas>
-              </div>
-            </sharpen-card>
+          <div class="sharpen-text-xs sharpen-mb-md"><em>Target: Student masters 70% of items encountered</em></div>
+
+          <div style="height: 200px;">
+            <canvas id="viz-mastery-by-skill" class="sharpen-mt-md"></canvas>
           </div>
-          <div class="col-lg-6">
-            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
-              <dl class="sharpen-list">
-                <dt>Sharpen sessions per week</dt>
-              </dl>
-              <div style="height:200px;">
-                <canvas id="viz-sharpen-sessions-per-week" class="sharpen-mt-md"></canvas>
-              </div>
-            </sharpen-card>
-          </div>
-        </div>
+        </sharpen-card>
 
       </main>
     </div>
@@ -326,186 +271,170 @@
         }
       });
 
-      const dosagePaceCtx = document.getElementById('viz-dosage-pace');
+      const improvementCtx = document.getElementById('viz-improvement-by-month');
 
-      new Chart(dosagePaceCtx, {
-        type: 'bar',
+      new Chart(improvementCtx, {
+        type: 'lineWithErrorBars',
         data: {
-          labels: [
-            'Jan 1, 2024', 'Jan 8, 2024', 'Jan 15, 2024', 
-            'Jan 22, 2024', 'Jan 29, 2024', 'Feb 5, 2024', 
-            'Feb 12, 2024', 'Feb 19, 2024'
-          ],
+          labels: ['1 month', '2 months', '3 months', '4 months', '5 months', '6+ months'],
           datasets: [
             {
-              label: 'Proper dosage',
-              data: [65, 75, 50, 80, 70, 60, 55, 50],
-              backgroundColor: '#31776C99',
-              borderWidth: 0
+              label: 'Proper Dosage',
+              data: [
+                { y: 0.88, yMin: 0.73, yMax: 1.03 },
+                { y: 1.09, yMin: 0.91, yMax: 1.27 },
+                { y: 1.53, yMin: 1.27, yMax: 1.79 },
+                { y: 1.87, yMin: 1.56, yMax: 2.18 },
+                { y: 1.89, yMin: 1.57, yMax: 2.21 },
+                { y: 2.30, yMin: 1.92, yMax: 2.68 }
+              ],
+              backgroundColor: '#68A362', // Green
+              borderColor: '#68A362', // Green
+              borderWidth: 2,
+              pointRadius: 5,
+              errorBarColor: 'rgba(128, 128, 128, 0.5)', // Light grey
+              errorBarWhiskerColor: 'rgba(128, 128, 128, 0.5)'
             },
             {
-              label: 'Proper pace',
-              data: [80, 85, 60, 90, 75, 70, 80, 85],
-              backgroundColor: '#2C5652EE',
-              borderWidth: 0
+              label: 'Below Dosage',
+              data: [
+                { y: 0.15, yMin: 0.00, yMax: 0.30 },
+                { y: 0.18, yMin: 0.00, yMax: 0.36 },
+                { y: 0.26, yMin: 0.00, yMax: 0.52 },
+                { y: 0.31, yMin: 0.00, yMax: 0.62 },
+                { y: 0.32, yMin: 0.00, yMax: 0.64 },
+                { y: 0.38, yMin: 0.00, yMax: 0.76 }
+              ],
+              backgroundColor: '#808080', // Gray
+              borderColor: '#808080', // Gray
+              borderWidth: 2,
+              pointRadius: 5,
+              errorBarColor: 'rgba(128, 128, 128, 0.5)', // Light grey
+              errorBarWhiskerColor: 'rgba(128, 128, 128, 0.5)'
             }
           ]
         },
         options: {
           maintainAspectRatio: false,
-          layout: {
-            padding: {
-              top: 20 // Add padding to the top
-            }
-          },
           scales: {
-            x: {
+            y: {
               beginAtZero: true,
+              min: 0,
+              max: 3, // Adjusted to add more space
               grid: {
                 color: '#e5e5e5'
               }
             },
+            x: {
+              grid: {
+                display: false
+              },
+              offset: true // Adds padding to the x-axis
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'left'
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'top',
+              formatter: (value) => `+${value.y.toFixed(2)}`,
+              color: function(context) {
+                return context.dataset.borderColor;
+              },
+              font: {
+                size: 12
+              }
+            }
+          }
+        }
+      });
+
+      // Mastery by skill chart
+      const masteryCtx = document.getElementById('viz-mastery-by-skill');
+
+      new Chart(masteryCtx, {
+        type: 'bar',
+        data: {
+          labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+          datasets: [
+            {
+              label: 'Letter Sounds',
+              data: [96, 63, 74, 64, 91, 80],
+              backgroundColor: '#2E5E29',
+              borderColor: 'transparent',
+              borderWidth: 1,
+            },
+            {
+              label: 'Spelling',
+              data: [89, 88, 81, 96, 84, 83],
+              backgroundColor: '#68A362',
+              borderColor: 'transparent',
+              borderWidth: 1,
+            },
+            {
+              label: 'Words',
+              data: [77, 82, 69, 66, 79, 93],
+              backgroundColor: '#B8DBAA',
+              borderColor: 'transparent',
+              borderWidth: 1,
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
             y: {
               beginAtZero: true,
               max: 100,
               grid: {
                 color: '#e5e5e5'
+              },
+              ticks: {
+                callback: value => `${value}%`
+              }
+            },
+            x: {
+              grid: {
+                display: false
               }
             }
           },
           plugins: {
             legend: {
-              position: 'left', // Position the legend on the left
+              position: 'left',
+              align: 'middle',
               labels: {
-                usePointStyle: true
-              }
-            },
-            datalabels: {
-              anchor: 'end',
-              align: 'end',
-              formatter: (value) => `${value}%`,
-              color: '#000',
-              font: {
-                size: 10
+                boxWidth: 12,
+                usePointStyle: true,
+                pointStyle: 'rect'
               }
             },
             tooltip: {
               callbacks: {
-                label: (context) => `${context.raw}% of students at ${context.dataset.label.toLowerCase()}`
+                label: (context) => `${context.dataset.label}: ${context.raw}%`
               }
             },
-          }
-        }
-      });
-
-      const studentsPerWeekCtx = document.getElementById('viz-sharpen-students-per-week');
-
-      new Chart(studentsPerWeekCtx, {
-        type: 'bar',
-        data: {
-          labels: [
-            'Jan 1', 'Jan 8', 'Jan 15', 
-            'Jan 22', 'Jan 29', 'Feb 5', 
-            'Feb 12', 'Feb 19'
-          ],
-          datasets: [{
-            label: 'Students per Week',
-            data: [170, 247, 151, 178, 154, 211, 180, 184],
-            backgroundColor: '#2C5652EE',
-            borderWidth: 0
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          layout: {
-            padding: {
-              top: 20 // Add padding to the top
-            }
-          },
-          scales: {
-            x: {
-              grid: {
-                color: '#e5e5e5'
+            annotation: {
+              annotations: {
+                line1: {
+                  type: 'line',
+                  yMin: 70,
+                  yMax: 70,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5]
+                }
               }
-            },
-            y: {
-              beginAtZero: true,
-              grid: {
-                color: '#e5e5e5'
-              }
-            }
-          },
-          plugins: {
-            legend: {
-              display: false
             },
             datalabels: {
-              anchor: 'end',
-              align: 'end',
-              formatter: (value) => `${value}`,
-              color: '#2C5652', // SteelBlue color
-              font: {
-                size: 12
-              }
-            }
-          }
-        }
-      });
-
-      const sessionsPerWeekCtx = document.getElementById('viz-sharpen-sessions-per-week');
-
-      new Chart(sessionsPerWeekCtx, {
-        type: 'bar',
-        data: {
-          labels: [
-            'Jan 1', 'Jan 8', 'Jan 15', 
-            'Jan 22', 'Jan 29', 'Feb 5', 
-            'Feb 12', 'Feb 19'
-          ],
-          datasets: [{
-            label: 'Sessions per Week',
-            data: [1700, 2470, 1510, 1780, 1540, 2110, 1800, 1840],
-            backgroundColor: '#2C5652EE',
-            borderWidth: 0
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          layout: {
-            padding: {
-              top: 20 // Add padding to the top
-            }
-          },
-          scales: {
-            x: {
-              grid: {
-                color: '#e5e5e5'
-              }
-            },
-            y: {
-              beginAtZero: true,
-              grid: {
-                color: '#e5e5e5'
-              }
-            }
-          },
-          plugins: {
-            legend: {
               display: false
-            },
-            datalabels: {
-              anchor: 'end',
-              align: 'end',
-              formatter: (value) => `${value}`,
-              color: '#2C5652', // SteelBlue color
-              font: {
-                size: 12
-              }
             }
           }
         }
       });
     </script>
-
   </body>
 </html>
