@@ -49,82 +49,320 @@
           <a href="schools.html">Schools</a> &rsaquo; Runkle School
         </h1>
 
-        <form class="sharpen-mb-md">
-          <select class="sharpen-form-control">
-            <option>All grades</option>
-            <option>Grade 1</option>
-            <option>Grade 2</option>
-            <option>Grade 3</option>
-            <option>Grade 4</option>
-            <option>Grade 5</option>
-          </select>
-        </form>
-
         <ul class="sharpen-tabs sharpen-mb-lg">
           <li class="tab">
-            <a href="school_active.html"><i class="sharpen-icon">bar_chart</i>Current Status</a>  
+            <a href="school_active.html"><i class="sharpen-icon">bar_chart</i>Snapshot</a>  
           </li>
           <li class="tab selected">
             <a href="school_outcomes.html"><i class="sharpen-icon">verified</i>Outcomes</a>
           </li>
         </ul>
 
-        <h2 class="sharpen-heading-lg">All students, when they start Sharpen Reading</h2>
+        <div class="row">
+          <div class="col-xl-2 col-lg-3">
+            <sharpen-page-navigation>
+              <sharpen-nav-link name="All Grades" icon="apps" selected="true" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade 1" icon="looks_one" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade 2" icon="looks_two" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade 3" icon="looks_3" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade 4" icon="looks_4" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade 5" icon="looks_5" href="javascript:void();"></sharpen-nav-link>
+            </sharpen-page-navigation>
+          </div>
+          <div class="col-xl-10 col-lg-9">
 
-        <div class="row sharpen-mb-lg">
-          <div class="col-lg-4">
-            <sharpen-card border="gray" padding="medium" class="card-students-by-grade">
+            <h1 class="sharpen-heading-2xl-sans sharpen-mb-lg">2,058 students, all time, all grades</h1>
+
+            <h2 class="sharpen-heading-lg">Status at Start of Sharpen Reading</h2>
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
               <dl class="sharpen-list">
-                <dt>By grade</dt>
+                <dt>Initial Reading Risk Level, By Grade</dt>
               </dl>
-              <div style="height:200px;">
-                <canvas id="viz-students-by-grade" class="sharpen-mt-md"></canvas>
+              <div style="height:250px;">
+                <canvas id="viz-risk-level-by-grade" class="sharpen-mt-md"></canvas>
               </div>
             </sharpen-card>
-          </div>
-          <div class="col-lg-4">
-            <sharpen-card border="gray" padding="medium" class="card-students-by-reading-risk-level">
+          
+            <h2 class="sharpen-heading-lg">Student Achievement using Sharpen Reading</h2>
+            <sharpen-card border="gray" padding="medium" class="card-student-achievement sharpen-mb-md">
               <dl class="sharpen-list">
-                <dt>By reading risk level</dt>
+                <dt>Average Grade Level Improvement per Hours of Dosage</dt>
               </dl>
-              <div style="height:200px;">
-                <canvas id="viz-students-by-reading-risk-level" class="sharpen-mt-md"></canvas>
+              <div style="height:250px;">
+                <canvas id="viz-improvement-by-month" class="sharpen-mt-md"></canvas>
               </div>
             </sharpen-card>
-          </div>
-          <div class="col-lg-4">
-            <sharpen-card border="gray" padding="medium" class="card-students-by-session-target">
+
+            <sharpen-card border="gray" padding="medium">
               <dl class="sharpen-list">
-                <dt>By weekly session target</dt>
+                <dt>Average Skill Mastery by Unit</dt>
               </dl>
-              <div style="height:200px;">
-                <canvas id="viz-students-by-session-target" class="sharpen-mt-md"></canvas>
+              <div class="row">
+                <div class="col-md-4">
+                  <h3 class="sharpen-heading-md sharpen-heading--bordered sharpen-mt-md sharpen-mb-0">Level A</h3>
+                  <table class="sharpen-table sharpen-table--compact sharpen-table--mastery">
+                    <thead>
+                      <tr>
+                        <th>Unit</th>
+                        <th>Letter Sounds</th>
+                        <th>Spelling</th>
+                        <th>Words</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Unit 1</td>
+                        <td class="value high">92%</td>
+                        <td class="value high">88%</td>
+                        <td class="value low">63%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 2</td>
+                        <td class="value high">85%</td>
+                        <td class="value medium">73%</td>
+                        <td class="value high">80%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 3</td>
+                        <td class="value medium">78%</td>
+                        <td class="value low">65%</td>
+                        <td class="value high">88%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 4</td>
+                        <td class="value low">67%</td>
+                        <td class="value high">83%</td>
+                        <td class="value high">84%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 5</td>
+                        <td class="value high">95%</td>
+                        <td class="value high">95%</td>
+                        <td class="value medium">71%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 6</td>
+                        <td class="value medium">74%</td>
+                        <td class="value high">87%</td>
+                        <td class="value low">62%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 7</td>
+                        <td class="value low">66%</td>
+                        <td class="value medium">77%</td>
+                        <td class="value high">91%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 8</td>
+                        <td class="value high">86%</td>
+                        <td class="value high">80%</td>
+                        <td class="value high">88%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 9</td>
+                        <td class="value medium">72%</td>
+                        <td class="value high">89%</td>
+                        <td class="value low">55%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 10</td>
+                        <td class="value low">61%</td>
+                        <td class="value medium">79%</td>
+                        <td class="value high">84%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 11</td>
+                        <td class="value high">93%</td>
+                        <td class="value high">80%</td>
+                        <td class="value medium">73%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 12</td>
+                        <td class="value high">84%</td>
+                        <td class="value high">82%</td>
+                        <td class="value low">67%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-4">
+                  <h3 class="sharpen-heading-md sharpen-heading--bordered sharpen-mt-md sharpen-mb-0">Level B1</h3>
+                  <table class="sharpen-table sharpen-table--compact sharpen-table--mastery">
+                    <thead>
+                      <tr>
+                        <th>Unit</th>
+                        <th>Letter Sounds</th>
+                        <th>Spelling</th>
+                        <th>Words</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Unit 1</td>
+                        <td class="value high">85%</td>
+                        <td class="value medium">73%</td>
+                        <td class="value high">80%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 2</td>
+                        <td class="value medium">78%</td>
+                        <td class="value low">65%</td>
+                        <td class="value high">88%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 3</td>
+                        <td class="value low">67%</td>
+                        <td class="value high">83%</td>
+                        <td class="value high">84%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 4</td>
+                        <td class="value high">95%</td>
+                        <td class="value high">95%</td>
+                        <td class="value medium">71%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 5</td>
+                        <td class="value medium">74%</td>
+                        <td class="value high">87%</td>
+                        <td class="value low">62%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 6</td>
+                        <td class="value low">66%</td>
+                        <td class="value medium">77%</td>
+                        <td class="value high">91%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 7</td>
+                        <td class="value high">86%</td>
+                        <td class="value high">80%</td>
+                        <td class="value high">88%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 8</td>
+                        <td class="value medium">72%</td>
+                        <td class="value high">89%</td>
+                        <td class="value low">55%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 9</td>
+                        <td class="value low">61%</td>
+                        <td class="value medium">79%</td>
+                        <td class="value high">84%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 10</td>
+                        <td class="value high">93%</td>
+                        <td class="value high">80%</td>
+                        <td class="value medium">73%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 11</td>
+                        <td class="value high">84%</td>
+                        <td class="value high">82%</td>
+                        <td class="value low">67%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 12</td>
+                        <td class="value high">92%</td>
+                        <td class="value high">88%</td>
+                        <td class="value low">63%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-4">
+                  <h3 class="sharpen-heading-md sharpen-heading--bordered sharpen-mt-md sharpen-mb-0">Level B2</h3>
+                  <table class="sharpen-table sharpen-table--compact sharpen-table--mastery">
+                    <thead>
+                      <tr>
+                        <th>Unit</th>
+                        <th>Letter Sounds</th>
+                        <th>Spelling</th>
+                        <th>Words</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Unit 1</td>
+                        <td class="value high">92%</td>
+                        <td class="value high">88%</td>
+                        <td class="value low">63%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 2</td>
+                        <td class="value high">85%</td>
+                        <td class="value medium">73%</td>
+                        <td class="value high">80%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 3</td>
+                        <td class="value medium">78%</td>
+                        <td class="value low">65%</td>
+                        <td class="value high">88%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 4</td>
+                        <td class="value low">67%</td>
+                        <td class="value high">83%</td>
+                        <td class="value high">84%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 5</td>
+                        <td class="value high">95%</td>
+                        <td class="value high">95%</td>
+                        <td class="value medium">71%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 6</td>
+                        <td class="value medium">74%</td>
+                        <td class="value high">87%</td>
+                        <td class="value low">62%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 7</td>
+                        <td class="value low">66%</td>
+                        <td class="value medium">77%</td>
+                        <td class="value high">91%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 8</td>
+                        <td class="value high">86%</td>
+                        <td class="value high">80%</td>
+                        <td class="value high">88%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 9</td>
+                        <td class="value medium">72%</td>
+                        <td class="value high">89%</td>
+                        <td class="value low">55%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 10</td>
+                        <td class="value low">61%</td>
+                        <td class="value medium">79%</td>
+                        <td class="value high">84%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 11</td>
+                        <td class="value high">93%</td>
+                        <td class="value high">80%</td>
+                        <td class="value medium">73%</td>
+                      </tr>
+                      <tr>
+                        <td>Unit 12</td>
+                        <td class="value high">84%</td>
+                        <td class="value high">82%</td>
+                        <td class="value low">67%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </sharpen-card>
+            </div>
           </div>
-        </div>
-
-        <h2 class="sharpen-heading-lg">Student achievement using Sharpen Reading</h2>
-        <sharpen-card border="gray" padding="medium" class="card-student-achievement sharpen-mb-md">
-          <dl class="sharpen-list">
-            <dt>Average grade level improvement per month of usage</dt>
-          </dl>
-          <div style="height:250px;">
-            <canvas id="viz-improvement-by-month" class="sharpen-mt-md"></canvas>
-          </div>
-        </sharpen-card>
-
-        <sharpen-card border="gray" padding="medium">
-          <dl class="sharpen-list">
-            <dt>Average skill mastery by month of usage</dt>
-          </dl>
-
-          <div class="sharpen-text-xs sharpen-mb-md"><em>Target: Student masters 70% of items encountered</em></div>
-
-          <div style="height: 200px;">
-            <canvas id="viz-mastery-by-skill" class="sharpen-mt-md"></canvas>
-          </div>
-        </sharpen-card>
 
       </main>
     </div>
@@ -135,131 +373,52 @@
 
       Chart.defaults.font.family = 'Sharpen Sans';
 
-      const gradeCtx = document.getElementById('viz-students-by-grade');
+      const riskLevelCtx = document.getElementById('viz-risk-level-by-grade');
 
-      new Chart(gradeCtx, {
+      new Chart(riskLevelCtx, {
         type: 'bar',
         data: {
           labels: ['Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5'],
-          datasets: [{
-            label: 'Number of Students',
-            data: [25, 47, 77, 65, 44],
-            backgroundColor: 'rgba(128, 128, 128, 0.7)', // Gray color
-            borderWidth: 0
-          }]
+          datasets: [
+            {
+              label: 'At Grade Level',
+              data: [0, 0, 0, 0, 0],
+              backgroundColor: '#68A362', // Green
+            },
+            {
+              label: '1 Grade Behind',
+              data: [200, 260, 190, 120, 90],
+              backgroundColor: '#F2C94C', // Yellow
+            },
+            {
+              label: '2 Grades Behind',
+              data: [0, 140, 350, 430, 200],
+              backgroundColor: '#F2994A', // Orange
+            },
+            {
+              label: '3+ Grades Behind',
+              data: [0, 0, 200, 90, 110],
+              backgroundColor: '#B71C1C', // Red
+            }
+          ]
         },
         options: {
           maintainAspectRatio: false,
-          indexAxis: 'y', // This makes the chart horizontal
+          indexAxis: 'y', // Horizontal bar chart
           scales: {
             x: {
               beginAtZero: true,
+              stacked: true, // Stack the bars
               grid: {
                 color: '#e5e5e5'
-              }
-            },
-            y: {
-              grid: {
-                display: false
-              }
-            }
-          },
-          plugins: {
-            legend: {
-              display: false
-            },
-            datalabels: {
-              anchor: 'end',
-              align: 'end',
-              formatter: (value) => `${value}`,
-              color: '#000',
-              font: {
-                size: 10
-              }
-            }
-          }
-        }
-      });
-
-      const readingRiskCtx = document.getElementById('viz-students-by-reading-risk-level');
-
-      new Chart(readingRiskCtx, {
-        type: 'bar',
-        data: {
-          labels: ['At Grade\nLevel', '1 Grade\nBehind', '2 Grades\nBehind', '3+ Grades\nBehind'],
-          datasets: [{
-            label: 'Number of Students',
-            data: [34, 74, 109, 41],
-            backgroundColor: [
-              '#68A362', // Green
-              '#F2C94C', // Yellow
-              '#F2994A', // Orange
-              '#B71C1C'  // Red
-            ],
-            borderWidth: 0
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          indexAxis: 'y', // This makes the chart horizontal
-          scales: {
-            x: {
-              beginAtZero: true,
-              grid: {
-                color: '#e5e5e5'
-              }
-            },
-            y: {
-              grid: {
-                display: false
               },
-              ticks: {
-                callback: function(value) {
-                  return this.getLabelForValue(value).split('\n');
-                }
-              }
-            }
-          },
-          plugins: {
-            legend: {
-              display: false
-            },
-            datalabels: {
-              anchor: 'end',
-              align: 'end',
-              formatter: (value) => `${value}`,
-              color: function(context) {
-                return context.dataset.backgroundColor[context.dataIndex];
-              }
-            }
-          }
-        }
-      });
-
-      const sessionTargetCtx = document.getElementById('viz-students-by-session-target');
-
-      new Chart(sessionTargetCtx, {
-        type: 'bar',
-        data: {
-          labels: ['2 sessions', '3 sessions', '4 sessions'],
-          datasets: [{
-            label: 'Number of Students',
-            data: [77, 120, 61],
-            backgroundColor: 'rgba(128, 128, 128, 0.7)', // Gray color
-            borderWidth: 0
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          indexAxis: 'y', // This makes the chart horizontal
-          scales: {
-            x: {
-              beginAtZero: true,
-              grid: {
-                color: '#e5e5e5'
+              title: {
+                display: true,
+                text: 'Total Students'
               }
             },
             y: {
+              stacked: true, // Stack the bars
               grid: {
                 display: false
               }
@@ -267,16 +426,15 @@
           },
           plugins: {
             legend: {
-              display: false
+              position: 'bottom',
+              labels: {
+                usePointStyle: true
+              }
             },
             datalabels: {
-              anchor: 'end',
-              align: 'end',
-              formatter: (value) => `${value}`,
-              color: '#000',
-              font: {
-                size: 10
-              }
+              display: true,
+              formatter: function (value, context) { return (value === 0 ? null : value);  },
+              labels: { value: { color: 'white' } }
             }
           }
         }
@@ -287,16 +445,21 @@
       new Chart(improvementCtx, {
         type: 'lineWithErrorBars',
         data: {
-          labels: ['1 month', '2 months', '3 months', '4 months', '5 months', '6+ months'],
+          labels: [
+            '0–5h', '5–10h', '10–15h', '15–20h', '20–25h',
+            '25–30h', '30–35h', '35–40h', '40–45h'],
           datasets: [
             {
-              label: 'Proper Dosage',
+              label: 'Met Dosage',
               data: [
                 { y: 0.88, yMin: 0.73, yMax: 1.03 },
+                { y: 0.98, yMin: 0.83, yMax: 1.13 },
                 { y: 1.09, yMin: 0.91, yMax: 1.27 },
+                { y: 1.19, yMin: 1.01, yMax: 1.37 },
                 { y: 1.53, yMin: 1.27, yMax: 1.79 },
+                { y: 1.63, yMin: 1.47, yMax: 1.89 },
                 { y: 1.87, yMin: 1.56, yMax: 2.18 },
-                { y: 1.89, yMin: 1.57, yMax: 2.21 },
+                { y: 1.97, yMin: 1.66, yMax: 2.28 },
                 { y: 2.30, yMin: 1.92, yMax: 2.68 }
               ],
               backgroundColor: '#68A362', // Green
@@ -310,11 +473,14 @@
               label: 'Below Dosage',
               data: [
                 { y: 0.15, yMin: 0.00, yMax: 0.30 },
+                { y: 0.16, yMin: 0.05, yMax: 0.32 },
                 { y: 0.18, yMin: 0.00, yMax: 0.36 },
+                { y: 0.21, yMin: 0.1, yMax: 0.39 },
                 { y: 0.26, yMin: 0.00, yMax: 0.52 },
-                { y: 0.31, yMin: 0.00, yMax: 0.62 },
-                { y: 0.32, yMin: 0.00, yMax: 0.64 },
-                { y: 0.38, yMin: 0.00, yMax: 0.76 }
+                { y: 0.28, yMin: 0.1, yMax: 0.60 },
+                { y: 0.31, yMin: 0.2, yMax: 0.72 },
+                { y: 0.32, yMin: 0.25, yMax: 0.84 },
+                { y: 0.38, yMin: 0.1, yMax: 0.76 }
               ],
               backgroundColor: '#808080', // Gray
               borderColor: '#808080', // Gray
@@ -363,89 +529,89 @@
       });
 
       // Mastery by skill chart
-      const masteryCtx = document.getElementById('viz-mastery-by-skill');
+      // const masteryCtx = document.getElementById('viz-mastery-by-skill');
 
-      new Chart(masteryCtx, {
-        type: 'bar',
-        data: {
-          labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
-          datasets: [
-            {
-              label: 'Letter Sounds',
-              data: [96, 63, 74, 64, 91, 80],
-              backgroundColor: '#2E5E29',
-              borderColor: 'transparent',
-              borderWidth: 1,
-            },
-            {
-              label: 'Spelling',
-              data: [89, 88, 81, 96, 84, 83],
-              backgroundColor: '#68A362',
-              borderColor: 'transparent',
-              borderWidth: 1,
-            },
-            {
-              label: 'Words',
-              data: [77, 82, 69, 66, 79, 93],
-              backgroundColor: '#B8DBAA',
-              borderColor: 'transparent',
-              borderWidth: 1,
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 100,
-              grid: {
-                color: '#e5e5e5'
-              },
-              ticks: {
-                callback: value => `${value}%`
-              }
-            },
-            x: {
-              grid: {
-                display: false
-              }
-            }
-          },
-          plugins: {
-            legend: {
-              position: 'left',
-              align: 'middle',
-              labels: {
-                boxWidth: 12,
-                usePointStyle: true,
-                pointStyle: 'rect'
-              }
-            },
-            tooltip: {
-              callbacks: {
-                label: (context) => `${context.dataset.label}: ${context.raw}%`
-              }
-            },
-            annotation: {
-              annotations: {
-                line1: {
-                  type: 'line',
-                  yMin: 70,
-                  yMax: 70,
-                  borderColor: '#666666',
-                  borderWidth: 1,
-                  borderDash: [5, 5]
-                }
-              }
-            },
-            datalabels: {
-              display: false
-            }
-          }
-        }
-      });
+      // new Chart(masteryCtx, {
+      //   type: 'bar',
+      //   data: {
+      //     labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+      //     datasets: [
+      //       {
+      //         label: 'Letter Sounds',
+      //         data: [96, 63, 74, 64, 91, 80],
+      //         backgroundColor: '#2E5E29',
+      //         borderColor: 'transparent',
+      //         borderWidth: 1,
+      //       },
+      //       {
+      //         label: 'Spelling',
+      //         data: [89, 88, 81, 96, 84, 83],
+      //         backgroundColor: '#68A362',
+      //         borderColor: 'transparent',
+      //         borderWidth: 1,
+      //       },
+      //       {
+      //         label: 'Words',
+      //         data: [77, 82, 69, 66, 79, 93],
+      //         backgroundColor: '#B8DBAA',
+      //         borderColor: 'transparent',
+      //         borderWidth: 1,
+      //       }
+      //     ]
+      //   },
+      //   options: {
+      //     responsive: true,
+      //     maintainAspectRatio: false,
+      //     scales: {
+      //       y: {
+      //         beginAtZero: true,
+      //         max: 100,
+      //         grid: {
+      //           color: '#e5e5e5'
+      //         },
+      //         ticks: {
+      //           callback: value => `${value}%`
+      //         }
+      //       },
+      //       x: {
+      //         grid: {
+      //           display: false
+      //         }
+      //       }
+      //     },
+      //     plugins: {
+      //       legend: {
+      //         position: 'left',
+      //         align: 'middle',
+      //         labels: {
+      //           boxWidth: 12,
+      //           usePointStyle: true,
+      //           pointStyle: 'rect'
+      //         }
+      //       },
+      //       tooltip: {
+      //         callbacks: {
+      //           label: (context) => `${context.dataset.label}: ${context.raw}%`
+      //         }
+      //       },
+      //       annotation: {
+      //         annotations: {
+      //           line1: {
+      //             type: 'line',
+      //             yMin: 70,
+      //             yMax: 70,
+      //             borderColor: '#666666',
+      //             borderWidth: 1,
+      //             borderDash: [5, 5]
+      //           }
+      //         }
+      //       },
+      //       datalabels: {
+      //         display: false
+      //       }
+      //     }
+      //   }
+      // });
     </script>
   </body>
 </html>

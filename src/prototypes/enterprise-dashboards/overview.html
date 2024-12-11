@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Dashboards - Overview chart variations</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+    <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
+    <link rel="stylesheet" href="dashboards.css" />
+
+    <script>
+      // Register the plugin
+      Chart.register(ChartDataLabels);
+      Chart.defaults.font.family = 'Sharpen Sans';
+
+      const afterDrawPlugin = {
+        afterDraw: chart => {
+          if (chart.tooltip?._active?.length) {
+            let x = chart.tooltip._active[0].element.x;
+            let yAxis = chart.scales.y;
+            let ctx = chart.ctx;
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(x, yAxis.top);
+            ctx.lineTo(x, yAxis.bottom);
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'rgba(104, 104, 104, 0.4)';
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      };
+      
+      const progressData = [
+        { x: 0, y: 0, date: "2024 May 17" },
+        { x: 1, y: 0.05, date: "2024 May 18" },
+        { x: 2, y: 0.1, date: "2024 May 20" },
+        { x: 3, y: 0.15, date: "2024 May 22" },
+        { x: 4, y: 0.2, date: "2024 May 24" },
+        { x: 5, y: 0.25, date: "2024 May 26" },
+        { x: 6, y: 0.3, date: "2024 May 28" },
+        { x: 7, y: 0.4, date: "2024 May 30" },
+        { x: 8, y: 0.5, date: "2024 Jun 1" },
+        { x: 9, y: 0.6, date: "2024 Jun 3" },
+        { x: 10, y: 0.65, date: "2024 Jun 5" },
+        { x: 11, y: 0.67, date: "2024 Jun 7" },
+        { x: 12, y: 0.7, date: "2024 Jun 9" },
+        { x: 13, y: 0.71, date: "2024 Jun 11" },
+        { x: 14, y: 0.75, date: "2024 Jun 13" },
+        { x: 15, y: 0.8, date: "2024 Jun 15" },
+        { x: 16, y: 0.81, date: "2024 Jun 17" },
+        { x: 17, y: 0.82, date: "2024 Jun 19" },
+        { x: 18, y: 0.83, date: "2024 Jun 21" },
+        { x: 19, y: 0.85, date: "2024 Jun 23" },
+        { x: 20, y: 0.87, date: "2024 Jun 25" },
+        { x: 21, y: 0.9, date: "2024 Jun 27" },
+        { x: 22, y: 0.92, date: "2024 Jun 29" },
+        { x: 23, y: 0.95, date: "2024 Jul 1" },
+        { x: 24, y: 1.0, date: "2024 Jul 3" },
+        { x: 25, y: 1.05, date: "2024 Jul 5" },
+        { x: 26, y: 1.2, date: "2024 Jul 7" },
+        { x: 27, y: 1.3, date: "2024 Jul 9" },
+        { x: 28, y: 1.4, date: "2024 Jul 11" },
+        { x: 29, y: 1.5, date: "2024 Jul 13" },
+        { x: 30, y: 1.6, date: "2024 Jul 15" },
+        { x: 31, y: 1.7, date: "2024 Jul 17" },
+        // { x: 32, y: 1.8, date: "2024 Jul 19" },
+        // { x: 33, y: 1.9, date: "2024 Jul 21" },
+        // { x: 34, y: 2.1, date: "2024 Jul 23" },
+        // { x: 35, y: 2.15, date: "2024 Jul 25" },
+        // { x: 36, y: 2.2, date: "2024 Jul 27" },
+        // { x: 37, y: 2.25, date: "2024 Jul 29" },
+        // { x: 38, y: 2.3, date: "2024 Aug 1" }
+      ];
+
+      const progressScales = {
+        x: {
+          type: 'linear',
+          max: 45,
+          ticks: { padding: 1, callback: value => `${value}h` },
+          offset: true
+        },
+        y: {
+          beginAtZero: true,
+          max: 3.5,
+          ticks: { callback: value => `+${value}` },
+          title: { display: true, text: 'Grade Levels Improved' }
+        }
+      };
+
+      const progressTooltip = {
+        intersect: false,
+        callbacks: {
+          title: (context) => `${context[0].raw.x} total hours`,
+          afterTitle: (context) => `as of ${context[0].raw.date}`,
+          label: (context) => `+${context.raw.y.toFixed(2)} grade levels improved`
+        }
+      };
+    </script>
+
+    <style>
+      body { padding: 4rem; max-width: 60rem; }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="sharpen-heading-2xl sharpen-mb-0">Variant 1</h1>
+    <p class="sharpen-text sharpen-mb-md">"Tornado path" with grade-level pace markers</p>
+
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <dl class="sharpen-list">
+        <dt>Overview of student progress</dt>
+        <dd>
+          <div class="sharpen-text-lg"><strong>+2.34 grade levels of improvement</strong></div>
+          <div class="sharpen-text-sm">in 39.4 hours of dosage</div>
+        </dd>
+      </dl>
+      <div class="progress-legend sharpen-my-md">
+        <span class="target-legend"></span> Expected progress based on target pace&emsp;&emsp;&emsp;
+        <span class="actual-legend"></span> Actual progress
+      </div>
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress" class="sharpen-mt-md"></canvas>
+      </div>
+      <div class="sharpen-text-xs"><em>Onni started Sharpen in May 2024 at 2 grade levels behind. She placed into Sharpen Level A.</em></div>
+    </sharpen-card>
+
+    <h1 class="sharpen-heading-2xl sharpen-mb-0">Variant 2</h1>
+    <p class="sharpen-text sharpen-mb-md">"Tornado path" with two-dimensional level/pace targets</p>
+
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <dl class="sharpen-list">
+        <dt>Overview of student progress</dt>
+        <dd>
+          <div class="sharpen-text-lg"><strong>+2.34 grade levels of improvement</strong></div>
+          <div class="sharpen-text-sm">in 39.4 hours of dosage</div>
+        </dd>
+      </dl>
+      <div class="progress-legend sharpen-my-md">
+        <span class="target-legend"></span> Expected progress based on target pace&emsp;&emsp;&emsp;
+        <span class="actual-legend"></span> Actual progress
+      </div>
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress2" class="sharpen-mt-md"></canvas>
+      </div>
+      <div class="sharpen-text-xs"><em>Onni started Sharpen in May 2024 at 2 grade levels behind. She placed into Sharpen Level A.</em></div>
+    </sharpen-card>
+
+    <h1 class="sharpen-heading-2xl sharpen-mb-0">Variant 3</h1>
+    <p class="sharpen-text sharpen-mb-md">Above/below curve</p>
+
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <dl class="sharpen-list">
+        <dt>Overview of student progress</dt>
+        <dd>
+          <div class="sharpen-text-lg"><strong>+2.34 grade levels of improvement</strong></div>
+          <div class="sharpen-text-sm">in 39.4 hours of dosage</div>
+        </dd>
+      </dl>
+      <div class="progress-legend sharpen-my-md">
+        <span class="target-legend"></span> On or better than target pace&emsp;&emsp;&emsp;
+        <span class="belowtarget-legend"></span> Below target pace&emsp;&emsp;&emsp;
+        <span class="actual-legend"></span> Actual progress
+      </div>
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress3" class="sharpen-mt-md"></canvas>
+      </div>
+      <div class="sharpen-text-xs"><em>Onni started Sharpen in May 2024 at 2 grade levels behind. She placed into Sharpen Level A.</em></div>
+    </sharpen-card>
+
+    <script>
+      const ctx = document.getElementById('viz-overall-progress');
+      
+      new Chart(ctx, {
+        plugins: [afterDrawPlugin],
+        type: 'line',
+        data: {
+          datasets: [{
+            data: progressData,
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: progressScales,
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: progressTooltip,
+            annotation: {
+              annotations: {
+                pace1: {
+                  type: 'line',
+                  drawTime: 'beforeDraw',
+                  xMin: 0,
+                  xMax: 24,
+                  yMax: 1,
+                  borderColor: '#C8EBD7',
+                  borderWidth: 40,
+                },
+                pace2: {
+                  type: 'line',
+                  drawTime: 'beforeDraw',
+                  xMin: 23,
+                  xMax: 36,
+                  yMin: 0.95,
+                  yMax: 2,
+                  borderColor: '#C8EBD7',
+                  borderWidth: 40,
+                },
+                pace3: {
+                  type: 'line',
+                  drawTime: 'beforeDraw',
+                  xMin: 35,
+                  xMax: 45,
+                  yMin: 1.93,
+                  yMax: 3,
+                  borderColor: '#C8EBD7',
+                  borderWidth: 40,
+                },
+
+                level1: {
+                  type: 'line',
+                  xMin: 24,
+                  xMax: 24,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5],
+                  label: {
+                    display: true,
+                    content: '1 grade at pace',
+                    font: { size: 10 },
+                    position: 'start'
+                  }
+                },
+                level2: {
+                  type: 'line',
+                  xMin: 36,
+                  xMax: 36,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5],
+                  label: {
+                    display: true,
+                    content: '2 grades at pace',
+                    font: { size: 10 },
+                    position: 'start'
+                  }
+                },
+                level3: {
+                  type: 'line',
+                  xMin: 45,
+                  xMax: 45,
+                  borderColor: '#666666',
+                  borderWidth: 1,
+                  borderDash: [5, 5],
+                  label: {
+                    display: true,
+                    content: '3 grades at pace',
+                    font: { size: 10 },
+                    position: 'start'
+                  }
+                }
+              }
+            }
+          }
+        }
+      });
+
+      const ctx2 = document.getElementById('viz-overall-progress2');
+      
+      new Chart(ctx2, {
+        plugins: [afterDrawPlugin],
+        type: 'line',
+        data: {
+          datasets: [{
+            data: progressData,
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }, {
+            data: [{x: 0, y: 0}, {x: 24, y: 1}, {x: 36, y: 2}, {x: 45, y: 3}],
+            borderWidth: 30,
+            pointRadius: 0,
+            borderColor: '#C8EBD766',
+            borderCapStyle: 'round',
+            tension: 0.5
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: progressScales,
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: progressTooltip,
+            annotation: {
+              annotations: {
+                level1target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 22,
+                  xMax: 26,
+                  yMin: 0.875,
+                  yMax: 1.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                level1success: {
+                  type: 'line',
+                  drawTime: 'beforeDraw',
+                  xMin: 0,
+                  xMax: 24,
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  label: {
+                    display: true,
+                    content: '+1 GLI achieved @ 24h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#31776C'
+                  }
+                },
+                level2descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 33.5,
+                  yMin: 2,
+                  yMax: 2,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+2 GLI target @ 36h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                level2target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 34,
+                  xMax: 38,
+                  yMin: 1.875,
+                  yMax: 2.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                level3descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 42.5,
+                  yMin: 3,
+                  yMax: 3,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+3 GLI target @ 45h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                level3target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 43,
+                  xMax: 47,
+                  yMin: 2.875,
+                  yMax: 3.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+              }
+            }
+          }
+        }
+      });
+
+      const ctx3 = document.getElementById('viz-overall-progress3');
+      
+      new Chart(ctx3, {
+        plugins: [afterDrawPlugin],
+        type: 'line',
+        data: {
+          datasets: [{
+            data: progressData,
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }, {
+            data: [{x: 5, y: 0}, {x: 24, y: 0.6}, {x: 37, y: 1.6}, {x: 50, y: 3.2}],
+            borderWidth: 0,
+            pointRadius: 0,
+            fill: {
+              target: 'origin',
+              // above: '#FFE7C3'
+              above: '#FF000033'
+            }
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: 'linear',
+              max: 50,
+              grid: { color: 'white' },
+              ticks: { callback: value => `${value}h` }
+            },
+            y: {
+              beginAtZero: true,
+              max: 3.5,
+              grid: { color: 'white' },
+              ticks: { callback: value => `+${value}` }
+            }
+          },
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: progressTooltip,
+            annotation: {
+              annotations: {
+                background: {
+                  drawTime: 'beforeDraw',
+                  type: 'box',
+                  xMin: 0,
+                  xMax: 50,
+                  yMin: 0,
+                  yMax: 3.5,
+                  backgroundColor: '#C8EBD7'
+                },
+
+                level1success: {
+                  type: 'line',
+                  drawTime: 'beforeDatasetsDraw',
+                  xMin: 0,
+                  xMax: 24,
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#31776C',
+                  borderWidth: 2,
+                  label: {
+                    display: true,
+                    content: '+1 achieved @ 24 hours',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#31776C'
+                  }
+                },
+
+                level2target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 32,
+                  xMax: 38,
+                  yMin: 1.875,
+                  yMax: 2.125,
+                  borderColor: '#2C565277',
+                  borderWidth: '4',
+                  backgroundColor: 'transparent'
+                },
+
+                level2marker: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 32,
+                  yMin: 2,
+                  yMax: 2,
+                  borderColor: '#2C565244',
+                  borderWidth: 2,
+                  label: {
+                    display: true,
+                    content: '+2 target @ 36 hours',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#2C565277'
+                  }
+                },
+
+                level3target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 41,
+                  xMax: 47,
+                  yMin: 2.875,
+                  yMax: 3.125,
+                  borderColor: '#2C565277',
+                  borderWidth: '4',
+                  backgroundColor: 'transparent'
+                },
+
+                level3marker: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 41,
+                  yMin: 3,
+                  yMax: 3,
+                  borderColor: '#2C565244',
+                  borderWidth: 2,
+                  label: {
+                    display: true,
+                    content: '+3 target @ 45 hours',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#2C565277'
+                  }
+                },
+
+              }
+            }
+          }
+        }
+      });
+
+    </script>
+  </body>
+</html>

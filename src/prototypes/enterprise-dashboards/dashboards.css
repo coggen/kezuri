@@ -7,13 +7,21 @@
   color: var(--color-gray-1);
 }
 
-.target-legend {
+.target-legend, .actual-legend, .belowtarget-legend {
   display: inline-block;
-  background-color: #e8f5e6;
+  background-color: var(--color-mint);
   width: 2rem;
   height: 1rem;
   vertical-align: -4px;
   margin-right: 0.25rem;
+}
+
+.actual-legend {
+  background-color: var(--color-pine);
+}
+
+.belowtarget-legend {
+  background-color: var(--color-light-red);
 }
 
 .sharpen-table-dosage-metrics .metric-status {
@@ -56,3 +64,73 @@
 .sharpen-table--compact th, .sharpen-table--compact td {
   padding: var(--spacing-sm);
 }
+
+
+
+.level-continuum {
+  width: 100%;
+  font-family: var(--font-family-sans);
+  border-collapse: collapse;
+  border-top: 1px solid #ccc;
+  color: var(--color-evergreen);
+}
+
+.level-continuum td, .level-continuum th {
+  padding: var(--spacing-sm);
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.level-continuum th {
+  font-weight: var(--font-weight-semibold);
+  padding-right: var(--spacing-md);
+  white-space: nowrap;
+}
+
+.level-continuum .current th, .level-continuum .current td {
+  background-color: var(--color-mint);
+}
+
+.level-continuum .current td {
+  width: 2em;
+}
+
+.level-continuum .sharpen-icon {
+  vertical-align: -6px;
+}
+
+.level-continuum .grade {
+  font-size: var(--font-size-xs);
+  font-weight: normal;
+  padding-right: var(--spacing-md);
+  color: #999;
+  white-space: nowrap;
+}
+
+
+.sharpen-table--mastery td {
+  width: 25%;
+  white-space: nowrap;
+}
+
+.sharpen-table--mastery tr > :not(:first-child) {
+  text-align: center;
+}
+
+.sharpen-table--mastery .value.high {
+  background-color: var(--color-mint);
+}
+
+.sharpen-table--mastery .value.medium {
+  background-color: var(--color-light-orange);
+}
+
+.sharpen-table--mastery .value.low {
+  background-color: var(--color-light-red);
+}
+
+/*.sharpen-table--mastery .value sharpen-progress-bar {
+  display: inline-block;
+  width: 8rem;
+  margin-left: 0.5rem;
+}*/

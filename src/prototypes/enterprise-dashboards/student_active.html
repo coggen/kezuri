@@ -50,32 +50,26 @@
 
         <div class="row">
           <div class="col-lg-3">
-            <sharpen-card border="gray" padding="medium">
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-md">
               <dl class="sharpen-list">
                 <dt>Name</dt>
                 <dd class="sharpen-text-lg">Onni Abelli</dd>
+
+                <dt>Current Grade</dt>
+                <dd>3</dd>
 
                 <dt>Reading Status</dt>
                 <dd>
                   <sharpen-label type="success" icon="check">At grade level</sharpen-label>
                 </dd>
 
+                <dt>Classrooms</dt>
+                <dd><a href="school_class.html">Mr. Cardigan - Room 4</a></dd>
+
                 <dt>Sharpen Tutor</dt>
                 <dd>
                   <a href="staff_show.html">Leo Tillens</a>
                 </dd>
-
-                <dt>Current Grade</dt>
-                <dd>3</dd>
-
-                <dt>Sharpen Level</dt>
-                <dd>B2</dd>
-
-                <dt>School</dt>
-                <dd><a href="school_show.html">Runkle School</a></dd>
-
-                <dt>Classrooms</dt>
-                <dd><a href="school_class.html">Mr. Cardigan - Room 4</a></dd>
               </dl>
 
               <div class="profile-button-set">
@@ -83,12 +77,67 @@
                   <i class="sharpen-icon">play_arrow</i>
                   Start lesson
                 </button>
-                <hr>
                 <button class="sharpen-button sharpen-button--xsmall sharpen-button--secondary sharpen-button--full-width">
                   <i class="sharpen-icon">edit</i>
                   Edit
                 </button>
               </div>
+            </sharpen-card>
+
+            <sharpen-card border="gray" padding="medium">
+              <dl class="sharpen-list sharpen-mb-md">
+                <dt>Sharpen Level</dt>
+                <dd>
+                  The Sharpen curriculum contains 5 levels. Onni is currently
+                  in <strong>Level B2</strong>.
+                </dd>
+              </dl>
+              <table class="level-continuum">
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <th>
+                      A
+                      <div class="grade">Grades K–1</div>
+                    </th>
+                  </tr>
+                  <!-- <tr>
+                    <td></td>
+                    <th>
+                      A Accelerated
+                      <div class="grade">Grades K–1</div>
+                    </th>
+                  </tr> -->
+                  <tr>
+                    <td></td>
+                    <th>
+                      B1
+                      <div class="grade">Grade 1</div>
+                    </th>
+                  </tr>
+                  <tr class="current">
+                    <td><i class="sharpen-icon">arrow_forward</i></td>
+                    <th>
+                      B2
+                      <div class="grade">Grade 2</div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <th>
+                      C
+                      <div class="grade">Grades 3–4</div>
+                    </th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <th>
+                      D
+                      <div class="grade">Grades 5–6</div>
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
             </sharpen-card>
           </div>
           <div class="col-lg-9">
@@ -109,18 +158,20 @@
 
             <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-md">
               <dl class="sharpen-list">
-                <dt>Overall progress</dt>
+                <dt>Overview of Student Progress</dt>
                 <dd>
-                  <div class="sharpen-text-lg"><strong>+2.34 grade levels improved</strong></div>
-                  <div class="sharpen-text-xs">in 39.4 hours of usage</div>
+                  <div class="sharpen-text-lg"><strong>+1.7 grade levels of improvement</strong></div>
+                  <div class="sharpen-text-sm">in 31 hours of dosage</div>
                 </dd>
               </dl>
               <div class="progress-legend sharpen-my-md">
-                <span class="target-legend"></span> Pace target
+                <span class="target-legend"></span> Expected progress based on target pace&emsp;&emsp;&emsp;
+                <span class="actual-legend"></span> Actual progress
               </div>
               <div style="height:250px;">
                 <canvas id="viz-overall-progress" class="sharpen-mt-md"></canvas>
               </div>
+              <div class="sharpen-text-xs sharpen-text--muted"><em>Onni started Sharpen in May 2024 at 2 grade levels behind. She placed into Sharpen Level A.</em></div>
             </sharpen-card>
 
             <div class="row">
@@ -170,9 +221,9 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Lessons per hour</td>
-                      <td class="metric-value">2</td>
-                      <td class="metric-value on-target">1.9</td>
+                      <td>Lessons per half-hour</td>
+                      <td class="metric-value">1</td>
+                      <td class="metric-value on-target">0.9</td>
                       <td class="metric-status on-target">
                         <i class="sharpen-icon">check</i>
                       </td>
@@ -187,7 +238,7 @@
                 <dt>Mastery of Material by Skill</dt>
               </dl>
 
-              <div class="sharpen-text-xs sharpen-mb-md"><em>Target: Student masters 70% of items encountered</em></div>
+              <div class="sharpen-text-xs sharpen-mb-md"><em>Target: Student masters 80% of items encountered</em></div>
 
               <div style="height: 200px;">
                 <canvas id="viz-mastery-by-skill" class="sharpen-mt-md"></canvas>
@@ -208,28 +259,11 @@
       Chart.defaults.font.family = 'Sharpen Sans';
       
       new Chart(ctx, {
-        plugins: [{
-          afterDraw: chart => {
-            if (chart.tooltip?._active?.length) {
-              let x = chart.tooltip._active[0].element.x;
-              let yAxis = chart.scales.y;
-              let ctx = chart.ctx;
-              ctx.save();
-              ctx.beginPath();
-              ctx.moveTo(x, yAxis.top);
-              ctx.lineTo(x, yAxis.bottom);
-              ctx.lineWidth = 1;
-              ctx.strokeStyle = 'rgba(104, 104, 104, 0.4)';
-              ctx.stroke();
-              ctx.restore();
-            }
-          }
-        }],
         type: 'line',
         data: {
           datasets: [{
             data: [
-              { x: 0, y: 0 },
+              { x: 0, y: 0, date: "2024 May 17" },
               { x: 1, y: 0.05, date: "2024 May 18" },
               { x: 2, y: 0.1, date: "2024 May 20" },
               { x: 3, y: 0.15, date: "2024 May 22" },
@@ -260,21 +294,20 @@
               { x: 28, y: 1.4, date: "2024 Jul 11" },
               { x: 29, y: 1.5, date: "2024 Jul 13" },
               { x: 30, y: 1.6, date: "2024 Jul 15" },
-              { x: 31, y: 1.7, date: "2024 Jul 17" },
-              { x: 32, y: 1.8, date: "2024 Jul 19" },
-              { x: 33, y: 1.9, date: "2024 Jul 21" },
-              { x: 34, y: 2.1, date: "2024 Jul 23" },
-              { x: 35, y: 2.15, date: "2024 Jul 25" },
-              { x: 36, y: 2.2, date: "2024 Jul 27" },
-              { x: 37, y: 2.25, date: "2024 Jul 29" },
-              { x: 38, y: 2.3, date: "2024 Aug 1" }
-            ],
-            borderColor: '#68a362',
+              { x: 31, y: 1.7, date: "2024 Jul 17" }],
+            borderColor: '#31776C',
             tension: 0.4,
             pointRadius: 4,
-            pointBackgroundColor: '#68a362',
+            pointBackgroundColor: '#31776C',
             pointBorderColor: '#fff',
             pointBorderWidth: 2
+          }, {
+            data: [{x: 0, y: 0}, {x: 24, y: 1}, {x: 36, y: 2}, {x: 45, y: 3}],
+            borderWidth: 30,
+            pointRadius: 0,
+            borderColor: '#C8EBD766',
+            borderCapStyle: 'round',
+            tension: 0.5
           }]
         },
         options: {
@@ -282,29 +315,20 @@
           scales: {
             x: {
               type: 'linear',
-              max: 50,
-              ticks: {
-                callback: value => `${value}h`
-              }
+              max: 45,
+              ticks: { padding: 1, callback: value => `${value}h` },
+              offset: true
             },
             y: {
               beginAtZero: true,
-              max: 3,
-              grid: {
-                color: '#e5e5e5'
-              },
-              ticks: {
-                callback: value => `+${value}`
-              }
+              max: 3.5,
+              ticks: { callback: value => `+${value}` },
+              title: { display: true, text: 'Grade Level Improvement (GLI)' }
             }
           },
           plugins: {
-            datalabels: {
-              display: false
-            },
-            legend: {
-              display: false
-            },
+            datalabels: { display: false },
+            legend: { display: false },
             tooltip: {
               intersect: false,
               callbacks: {
@@ -315,77 +339,95 @@
             },
             annotation: {
               annotations: {
-                pace1: {
+                level1target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 22,
+                  xMax: 26,
+                  yMin: 0.875,
+                  yMax: 1.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                level1success: {
                   type: 'line',
                   drawTime: 'beforeDraw',
                   xMin: 0,
                   xMax: 24,
+                  yMin: 1,
                   yMax: 1,
-                  borderColor: '#e8f5e6',
-                  borderWidth: 40,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  label: {
+                    display: true,
+                    content: '+1 GLI achieved @ 24h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#31776C'
+                  }
                 },
-                pace2: {
+                level2descriptor: {
                   type: 'line',
-                  drawTime: 'beforeDraw',
-                  xMin: 23,
-                  xMax: 36,
-                  yMin: 0.95,
+                  xMin: 0,
+                  xMax: 33.5,
+                  yMin: 2,
                   yMax: 2,
-                  borderColor: '#e8f5e6',
-                  borderWidth: 40,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+2 GLI target @ 36h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
                 },
-                pace3: {
-                  type: 'line',
+                level2target: {
+                  type: 'box',
                   drawTime: 'beforeDraw',
-                  xMin: 35,
-                  xMax: 45,
-                  yMin: 1.93,
+                  xMin: 34,
+                  xMax: 38,
+                  yMin: 1.875,
+                  yMax: 2.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                level3descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 42.5,
+                  yMin: 3,
                   yMax: 3,
-                  borderColor: '#e8f5e6',
-                  borderWidth: 40,
-                },
-                level1: {
-                  type: 'line',
-                  xMin: 24,
-                  xMax: 24,
-                  borderColor: '#666666',
+                  borderColor: '#999999',
                   borderWidth: 1,
-                  borderDash: [5, 5],
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
                   label: {
                     display: true,
-                    content: '1 grade at pace',
-                    font: { size: 10 },
-                    position: 'start'
+                    content: '+3 GLI target @ 45h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
                   }
                 },
-                level2: {
-                  type: 'line',
-                  xMin: 36,
-                  xMax: 36,
-                  borderColor: '#666666',
+                level3target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 43,
+                  xMax: 47,
+                  yMin: 2.875,
+                  yMax: 3.125,
+                  borderColor: '#31776C',
                   borderWidth: 1,
-                  borderDash: [5, 5],
-                  label: {
-                    display: true,
-                    content: '2 grades at pace',
-                    font: { size: 10 },
-                    position: 'start'
-                  }
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
                 },
-                level3: {
-                  type: 'line',
-                  xMin: 45,
-                  xMax: 45,
-                  borderColor: '#666666',
-                  borderWidth: 1,
-                  borderDash: [5, 5],
-                  label: {
-                    display: true,
-                    content: '3 grades at pace',
-                    font: { size: 10 },
-                    position: 'start'
-                  }
-                }
               }
             }
           }
@@ -462,8 +504,8 @@
               annotations: {
                 line1: {
                   type: 'line',
-                  yMin: 70,
-                  yMax: 70,
+                  yMin: 80,
+                  yMax: 80,
                   borderColor: '#666666',
                   borderWidth: 1,
                   borderDash: [5, 5]
