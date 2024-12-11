@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Sharpen Prototype: Enterprise Dashboards - Student overview graph variations</title>
+    <link rel="stylesheet" href="../build/kezuri.css" />
+    <script type="module" src="../build/kezuri.esm.js"></script>
+    <script nomodule src="../build/kezuri.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+    <link rel="stylesheet" href="../enterprise-management/enterprise-layout.css" />
+    <link rel="stylesheet" href="dashboards.css" />
+
+    <style>
+      body { padding: 4rem; max-width: 60rem; }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="sharpen-heading-xl sharpen-mb-sm">Variant: Level A placement</h1>
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress-a"></canvas>
+      </div>
+    </sharpen-card>
+
+    <h1 class="sharpen-heading-xl sharpen-mb-sm">Variant: Level A Accelerated placement</h1>
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress-aa"></canvas>
+      </div>
+    </sharpen-card>
+
+    <h1 class="sharpen-heading-xl sharpen-mb-sm">Variant: Level B1 placement</h1>
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress-b1"></canvas>
+      </div>
+    </sharpen-card>
+
+    <h1 class="sharpen-heading-xl sharpen-mb-sm">Variant: Level B2 placement</h1>
+    <sharpen-card border="gray" padding="medium" class="card-overall-progress sharpen-mb-lg">
+      <div style="height:250px;">
+        <canvas id="viz-overall-progress-b2"></canvas>
+      </div>
+    </sharpen-card>
+
+    <script>
+            // Register the plugin
+      Chart.register(ChartDataLabels);
+      Chart.defaults.font.family = 'Sharpen Sans';
+      
+      const ctx = document.getElementById('viz-overall-progress-a');
+
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [{
+            data: [
+              { x: 0, y: 0, date: "2024 May 17" },
+              { x: 1, y: 0.05, date: "2024 May 18" },
+              { x: 2, y: 0.1, date: "2024 May 20" },
+              { x: 3, y: 0.15, date: "2024 May 22" },
+              { x: 4, y: 0.2, date: "2024 May 24" },
+              { x: 5, y: 0.25, date: "2024 May 26" },
+              { x: 6, y: 0.3, date: "2024 May 28" },
+              { x: 7, y: 0.4, date: "2024 May 30" },
+              { x: 8, y: 0.5, date: "2024 Jun 1" },
+              { x: 9, y: 0.6, date: "2024 Jun 3" },
+              { x: 10, y: 0.65, date: "2024 Jun 5" },
+              { x: 11, y: 0.67, date: "2024 Jun 7" },
+              { x: 12, y: 0.7, date: "2024 Jun 9" },
+              { x: 13, y: 0.71, date: "2024 Jun 11" },
+              { x: 14, y: 0.75, date: "2024 Jun 13" },
+              { x: 15, y: 0.8, date: "2024 Jun 15" },
+              { x: 16, y: 0.81, date: "2024 Jun 17" },
+              { x: 17, y: 0.82, date: "2024 Jun 19" },
+              { x: 18, y: 0.83, date: "2024 Jun 21" },
+              { x: 19, y: 0.85, date: "2024 Jun 23" },
+              { x: 20, y: 0.87, date: "2024 Jun 25" },
+              { x: 21, y: 0.9, date: "2024 Jun 27" },
+              { x: 22, y: 0.92, date: "2024 Jun 29" },
+              { x: 23, y: 0.95, date: "2024 Jul 1" },
+              { x: 24, y: 1.0, date: "2024 Jul 3" },
+              { x: 25, y: 1.05, date: "2024 Jul 5" },
+              { x: 26, y: 1.2, date: "2024 Jul 7" },
+              { x: 27, y: 1.3, date: "2024 Jul 9" },
+              { x: 28, y: 1.4, date: "2024 Jul 11" },
+              { x: 29, y: 1.5, date: "2024 Jul 13" },
+              { x: 30, y: 1.6, date: "2024 Jul 15" },
+              { x: 31, y: 1.7, date: "2024 Jul 17" }],
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }, {
+            data: [{x: 0, y: 0}, {x: 24, y: 1}, {x: 36, y: 2}, {x: 45, y: 3}],
+            borderWidth: 30,
+            pointRadius: 0,
+            borderColor: '#C8EBD766',
+            borderCapStyle: 'round',
+            tension: 0.5
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: 'linear',
+              max: 45,
+              ticks: { padding: 1, callback: value => `${value}h` },
+              offset: true
+            },
+            y: {
+              beginAtZero: true,
+              max: 3.5,
+              ticks: { callback: value => `+${value}` },
+              title: { display: true, text: 'Grade Level Improvement (GLI)' }
+            }
+          },
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: {
+              intersect: false,
+              callbacks: {
+                title: (context) => `${context[0].raw.x} total hours`,
+                afterTitle: (context) => `as of ${context[0].raw.date}`,
+                label: (context) => `+${context.raw.y.toFixed(2)} grade levels improved`
+              }
+            },
+            annotation: {
+              annotations: {
+                levelAtarget: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 22,
+                  xMax: 26,
+                  yMin: 0.875,
+                  yMax: 1.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                levelAsuccess: {
+                  type: 'line',
+                  drawTime: 'beforeDraw',
+                  xMin: 0,
+                  xMax: 24,
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  label: {
+                    display: true,
+                    content: '+1 GLI achieved @ 24h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#31776C'
+                  }
+                },
+                levelB1descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 33.5,
+                  yMin: 2,
+                  yMax: 2,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+2 GLI target @ 36h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB1target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 34,
+                  xMax: 38,
+                  yMin: 1.875,
+                  yMax: 2.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                levelB2descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 42.5,
+                  yMin: 3,
+                  yMax: 3,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+3 GLI target @ 45h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB2target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 43,
+                  xMax: 47,
+                  yMin: 2.875,
+                  yMax: 3.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+              }
+            }
+          }
+        }
+      });
+
+      const ctx_aa = document.getElementById('viz-overall-progress-aa');
+
+      new Chart(ctx_aa, {
+        type: 'line',
+        data: {
+          datasets: [{
+            data: [
+              { x: 0, y: 0, date: "2024 May 17" },
+              { x: 1, y: 0.05, date: "2024 May 18" },
+              { x: 2, y: 0.1, date: "2024 May 20" },
+              { x: 3, y: 0.2, date: "2024 May 22" },
+              { x: 4, y: 0.3, date: "2024 May 24" },
+              { x: 5, y: 0.35, date: "2024 May 26" },
+              { x: 6, y: 0.4, date: "2024 May 28" },
+              { x: 7, y: 0.5, date: "2024 May 30" },
+              { x: 8, y: 0.7, date: "2024 Jun 1" },
+              { x: 9, y: 0.85, date: "2024 Jun 3" },
+              { x: 10, y: 1, date: "2024 Jun 5" }],
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }, {
+            data: [{x: 0, y: 0}, {x: 10.5, y: 1}, {x: 22.5, y: 2}, {x: 32.5, y: 3}],
+            borderWidth: 35,
+            pointRadius: 0,
+            borderColor: '#C8EBD766',
+            borderCapStyle: 'round',
+            tension: 0.5
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: 'linear',
+              max: 35,
+              ticks: { padding: 1, callback: value => `${value}h` },
+              offset: true
+            },
+            y: {
+              beginAtZero: true,
+              max: 3.5,
+              ticks: { callback: value => `+${value}` },
+              title: { display: true, text: 'Grade Level Improvement (GLI)' }
+            }
+          },
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: {
+              intersect: false,
+              callbacks: {
+                title: (context) => `${context[0].raw.x} total hours`,
+                afterTitle: (context) => `as of ${context[0].raw.date}`,
+                label: (context) => `+${context.raw.y.toFixed(2)} grade levels improved`
+              }
+            },
+            annotation: {
+              annotations: {
+                levelAtarget: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 8.5,
+                  xMax: 12.5,
+                  yMin: 0.875,
+                  yMax: 1.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                levelAsuccess: {
+                  type: 'line',
+                  drawTime: 'beforeDraw',
+                  xMin: 0,
+                  xMax: 10,
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  label: {
+                    display: true,
+                    content: '+1 GLI achieved @ 10h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    backgroundColor: '#31776C'
+                  }
+                },
+                levelB1descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 20,
+                  yMin: 2,
+                  yMax: 2,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+2 GLI target @ 22.5h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB1target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 20.5,
+                  xMax: 24.5,
+                  yMin: 1.875,
+                  yMax: 2.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                levelB2descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 30,
+                  yMin: 3,
+                  yMax: 3,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+3 GLI target @ 32.5h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB2target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 30.5,
+                  xMax: 34.5,
+                  yMin: 2.875,
+                  yMax: 3.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+              }
+            }
+          }
+        }
+      });
+
+      const ctx_b1 = document.getElementById('viz-overall-progress-b1');
+
+      new Chart(ctx_b1, {
+        type: 'line',
+        data: {
+          datasets: [{
+            data: [
+              { x: 0, y: 0, date: "2024 May 17" },
+              { x: 1, y: 0.05, date: "2024 May 18" },
+              { x: 2, y: 0.1, date: "2024 May 20" },
+              { x: 3, y: 0.2, date: "2024 May 22" },
+              { x: 4, y: 0.3, date: "2024 May 24" },
+              { x: 5, y: 0.35, date: "2024 May 26" },
+              { x: 6, y: 0.4, date: "2024 May 28" },
+              { x: 7, y: 0.5, date: "2024 May 30" },
+              { x: 8, y: 0.7, date: "2024 Jun 1" }],
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }, {
+            data: [{x: 0, y: 0}, {x: 12, y: 1}, {x: 22, y: 2} ],
+            borderWidth: 50,
+            pointRadius: 0,
+            borderColor: '#C8EBD766',
+            borderCapStyle: 'round',
+            tension: 0.5
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: 'linear',
+              max: 25,
+              ticks: { padding: 1, callback: value => `${value}h` },
+              offset: true
+            },
+            y: {
+              beginAtZero: true,
+              max: 2.5,
+              ticks: { callback: value => `+${value}` },
+              title: { display: true, text: 'Grade Level Improvement (GLI)' }
+            }
+          },
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: {
+              intersect: false,
+              callbacks: {
+                title: (context) => `${context[0].raw.x} total hours`,
+                afterTitle: (context) => `as of ${context[0].raw.date}`,
+                label: (context) => `+${context.raw.y.toFixed(2)} grade levels improved`
+              }
+            },
+            annotation: {
+              annotations: {
+                levelB1descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 9.5,
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+1 GLI target @ 12h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB1target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 10,
+                  xMax: 14,
+                  yMin: 0.875,
+                  yMax: 1.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+                levelB2descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 19.5,
+                  yMin: 2,
+                  yMax: 2,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+2 GLI target @ 22h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB2target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 20,
+                  xMax: 24,
+                  yMin: 1.875,
+                  yMax: 2.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+              }
+            }
+          }
+        }
+      });
+
+      const ctx_b2 = document.getElementById('viz-overall-progress-b2');
+
+      new Chart(ctx_b2, {
+        type: 'line',
+        data: {
+          datasets: [{
+            data: [
+              { x: 0, y: 0, date: "2024 May 17" },
+              { x: 1, y: 0.05, date: "2024 May 18" },
+              { x: 2, y: 0.1, date: "2024 May 20" },
+              { x: 3, y: 0.2, date: "2024 May 22" },
+              { x: 4, y: 0.3, date: "2024 May 24" },
+              { x: 5, y: 0.35, date: "2024 May 26" },
+              { x: 6, y: 0.4, date: "2024 May 28" },
+              { x: 7, y: 0.5, date: "2024 May 30" },
+              { x: 8, y: 0.7, date: "2024 Jun 1" }],
+            borderColor: '#31776C',
+            tension: 0.4,
+            pointRadius: 4,
+            pointBackgroundColor: '#31776C',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2
+          }, {
+            data: [{x: 0, y: 0}, {x: 10, y: 1}],
+            borderWidth: 60,
+            pointRadius: 0,
+            borderColor: '#C8EBD766',
+            borderCapStyle: 'round',
+            tension: 0.5
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: 'linear',
+              max: 12,
+              ticks: { padding: 1, callback: value => `${value}h` },
+              offset: true
+            },
+            y: {
+              beginAtZero: true,
+              max: 1.2,
+              ticks: { callback: value => `+${value}` },
+              title: { display: true, text: 'Grade Level Improvement (GLI)' }
+            }
+          },
+          plugins: {
+            datalabels: { display: false },
+            legend: { display: false },
+            tooltip: {
+              intersect: false,
+              callbacks: {
+                title: (context) => `${context[0].raw.x} total hours`,
+                afterTitle: (context) => `as of ${context[0].raw.date}`,
+                label: (context) => `+${context.raw.y.toFixed(2)} grade levels improved`
+              }
+            },
+            annotation: {
+              annotations: {
+                levelB2descriptor: {
+                  type: 'line',
+                  xMin: 0,
+                  xMax: 7.5,
+                  yMin: 1,
+                  yMax: 1,
+                  borderColor: '#999999',
+                  borderWidth: 1,
+                  arrowHeads: { end: { display: true, width: 4, length: 6 } },
+                  label: {
+                    display: true,
+                    content: '+1 GLI target @ 10h',
+                    font: { size: 10, weight: 'normal' },
+                    position: 'start',
+                    color: '#31776C',
+                    backgroundColor: '#C8EBD7'
+                  }
+                },
+                levelB2target: {
+                  type: 'box',
+                  drawTime: 'beforeDraw',
+                  xMin: 8,
+                  xMax: 12,
+                  yMin: 0.875,
+                  yMax: 1.125,
+                  borderColor: '#31776C',
+                  borderWidth: 1,
+                  borderDash: [4, 2],
+                  backgroundColor: 'transparent'
+                },
+              }
+            }
+          }
+        }
+      });
+
+    </script>
+  </body>
+</html>
