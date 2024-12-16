@@ -62,6 +62,7 @@
           <div class="col-xl-2 col-lg-3">
             <sharpen-page-navigation>
               <sharpen-nav-link name="All Grades" icon="apps" selected="true" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade K" icon="check_box_outline_blank" href="javascript:void();"></sharpen-nav-link>
               <sharpen-nav-link name="Grade 1" icon="looks_one" href="javascript:void();"></sharpen-nav-link>
               <sharpen-nav-link name="Grade 2" icon="looks_two" href="javascript:void();"></sharpen-nav-link>
               <sharpen-nav-link name="Grade 3" icon="looks_3" href="javascript:void();"></sharpen-nav-link>
@@ -72,18 +73,53 @@
           <div class="col-xl-10 col-lg-9">
 
             <h1 class="sharpen-heading-2xl-sans sharpen-mb-lg">2,058 students, all time, all grades</h1>
-
-            <h2 class="sharpen-heading-lg">Status at Start of Sharpen Reading</h2>
-            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
-              <dl class="sharpen-list">
-                <dt>Initial Reading Risk Level, By Grade</dt>
-              </dl>
-              <div style="height:250px;">
-                <canvas id="viz-risk-level-by-grade" class="sharpen-mt-md"></canvas>
-              </div>
-            </sharpen-card>
           
             <h2 class="sharpen-heading-lg">Student Achievement using Sharpen Reading</h2>
+            
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-md">
+              <dl class="sharpen-list">
+                <dt>% students with grade-level improvement after recommended dosage</dt>
+              </dl>
+              <div class="row">
+                <div class="col-md-6 col-lg-3">
+                  <div style="height:150px;">
+                    <canvas id="viz-gli-level-a" class="sharpen-mt-md"></canvas>
+                  </div>
+                  <div class="sharpen-text--center">
+                    Level A
+                    <div class="sharpen-text--muted">(24&ndash;26 hours)</div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div style="height:150px;">
+                    <canvas id="viz-gli-level-aa" class="sharpen-mt-md"></canvas>
+                  </div>
+                  <div class="sharpen-text--center">
+                    Level AA
+                    <div class="sharpen-text--muted">(10.5&ndash;12.5 hours)</div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div style="height:150px;">
+                    <canvas id="viz-gli-level-b1" class="sharpen-mt-md"></canvas>
+                  </div>
+                  <div class="sharpen-text--center">
+                    Level B1
+                    <div class="sharpen-text--muted">(12&ndash;14 hours)</div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <div style="height:150px;">
+                    <canvas id="viz-gli-level-b2" class="sharpen-mt-md"></canvas>
+                  </div>
+                  <div class="sharpen-text--center">
+                    Level B2
+                    <div class="sharpen-text--muted">(10&ndash;12 hours)</div>
+                  </div>
+                </div>
+              </div>
+            </sharpen-card>
+
             <sharpen-card border="gray" padding="medium" class="card-student-achievement sharpen-mb-md">
               <dl class="sharpen-list">
                 <dt>Average Grade Level Improvement per Hours of Dosage</dt>
@@ -93,7 +129,7 @@
               </div>
             </sharpen-card>
 
-            <sharpen-card border="gray" padding="medium">
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
               <dl class="sharpen-list">
                 <dt>Average Skill Mastery by Unit</dt>
               </dl>
@@ -361,9 +397,19 @@
                 </div>
               </div>
             </sharpen-card>
-            </div>
-          </div>
 
+            <h2 class="sharpen-heading-lg">Status at Start of Sharpen Reading</h2>
+            <sharpen-card border="gray" padding="medium" class="sharpen-mb-lg">
+              <dl class="sharpen-list">
+                <dt>Initial Reading Risk Level, By Grade</dt>
+              </dl>
+              <div style="height:250px;">
+                <canvas id="viz-risk-level-by-grade" class="sharpen-mt-md"></canvas>
+              </div>
+            </sharpen-card>
+
+          </div>
+        </div>
       </main>
     </div>
 
@@ -372,6 +418,114 @@
       Chart.register(ChartDataLabels);
 
       Chart.defaults.font.family = 'Sharpen Sans';
+
+      const gliLevelACtx = document.getElementById('viz-gli-level-a');
+
+      new Chart(gliLevelACtx, {
+        type: 'pie',
+        data: {
+          labels: ['Achieved GLI', 'Did not achieve GLI'],
+          datasets: [{
+            data: [219, 39],
+            backgroundColor: ['#C8EBD7', '#DDDDDD']
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: {
+            legend: false,
+            datalabels: {
+              formatter: (value, ctx) => {
+                  const datapoints = ctx.chart.data.datasets[0].data
+                  const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                  const percentage = value / total * 100
+                  return percentage.toFixed(1) + "%";
+              },
+            }
+          }
+        }
+      });
+
+      const gliLevelAACtx = document.getElementById('viz-gli-level-aa');
+
+      new Chart(gliLevelAACtx, {
+        type: 'pie',
+        data: {
+          labels: ['Achieved GLI', 'Did not achieve GLI'],
+          datasets: [{
+            data: [219, 29],
+            backgroundColor: ['#C8EBD7', '#DDDDDD']
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: {
+            legend: false,
+            datalabels: {
+              formatter: (value, ctx) => {
+                  const datapoints = ctx.chart.data.datasets[0].data
+                  const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                  const percentage = value / total * 100
+                  return percentage.toFixed(1) + "%";
+              },
+            }
+          }
+        }
+      });
+
+      const gliLevelB1Ctx = document.getElementById('viz-gli-level-b1');
+
+      new Chart(gliLevelB1Ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Achieved GLI', 'Did not achieve GLI'],
+          datasets: [{
+            data: [219, 19],
+            backgroundColor: ['#C8EBD7', '#DDDDDD']
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: {
+            legend: false,
+            datalabels: {
+              formatter: (value, ctx) => {
+                  const datapoints = ctx.chart.data.datasets[0].data
+                  const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                  const percentage = value / total * 100
+                  return percentage.toFixed(1) + "%";
+              },
+            }
+          }
+        }
+      });
+
+      const gliLevelB2Ctx = document.getElementById('viz-gli-level-b2');
+
+      new Chart(gliLevelB2Ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Achieved GLI', 'Did not achieve GLI'],
+          datasets: [{
+            data: [219, 9],
+            backgroundColor: ['#C8EBD7', '#DDDDDD']
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: {
+            legend: false,
+            datalabels: {
+              formatter: (value, ctx) => {
+                  const datapoints = ctx.chart.data.datasets[0].data
+                  const total = datapoints.reduce((total, datapoint) => total + datapoint, 0)
+                  const percentage = value / total * 100
+                  return percentage.toFixed(1) + "%";
+              },
+            }
+          }
+        }
+      });
 
       const riskLevelCtx = document.getElementById('viz-risk-level-by-grade');
 
@@ -494,19 +648,20 @@
         options: {
           maintainAspectRatio: false,
           scales: {
+            x: {
+              grid: {
+                display: false
+              },
+              offset: true, // Adds padding to the x-axis
+            },
             y: {
               beginAtZero: true,
               min: 0,
               max: 3, // Adjusted to add more space
               grid: {
                 color: '#e5e5e5'
-              }
-            },
-            x: {
-              grid: {
-                display: false
               },
-              offset: true // Adds padding to the x-axis
+              title: { display: true, text: 'Grade Level Improvement (GLI)' }
             }
           },
           plugins: {

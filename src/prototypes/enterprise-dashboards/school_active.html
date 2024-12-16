@@ -73,6 +73,7 @@
           <div class="col-xl-2 col-lg-3">
             <sharpen-page-navigation>
               <sharpen-nav-link name="All Grades" icon="apps" selected="true" href="javascript:void();"></sharpen-nav-link>
+              <sharpen-nav-link name="Grade K" icon="check_box_outline_blank" href="javascript:void();"></sharpen-nav-link>
               <sharpen-nav-link name="Grade 1" icon="looks_one" href="javascript:void();"></sharpen-nav-link>
               <sharpen-nav-link name="Grade 2" icon="looks_two" href="javascript:void();"></sharpen-nav-link>
               <sharpen-nav-link name="Grade 3" icon="looks_3" href="javascript:void();"></sharpen-nav-link>
@@ -99,11 +100,12 @@
               <div class="col-lg-4">
                 <sharpen-card border="gray" padding="medium">
                   <dl class="sharpen-list">
-                    <dt>On/Off Pace (8w average)</dt>
+                    <dt>% students on target pace</dt>
                   </dl>
-                  <div style="height:250px;">
+                  <div style="height:200px;">
                     <canvas id="viz-students-on-pace" class="sharpen-mt-md"></canvas>
                   </div>
+                  <div class="sharpen-text-xs">Students meet target pace if they complete 1 lesson per 30 minutes of dosage, on average over 8 weeks.</div>
                 </sharpen-card>
               </div>
             </div>
@@ -275,9 +277,7 @@
         options: {
           maintainAspectRatio: false,
           plugins: {
-            legend: {
-              position: 'bottom'
-            },
+            legend: false,
             datalabels: {
               formatter: (value, ctx) => {
                   const datapoints = ctx.chart.data.datasets[0].data

@@ -121,13 +121,13 @@
   background-color: var(--color-mint);
 }
 
-.sharpen-table--mastery .value.medium {
+/*.sharpen-table--mastery .value.medium {
   background-color: var(--color-light-orange);
 }
 
 .sharpen-table--mastery .value.low {
   background-color: var(--color-light-red);
-}
+}*/
 
 /*.sharpen-table--mastery .value sharpen-progress-bar {
   display: inline-block;
